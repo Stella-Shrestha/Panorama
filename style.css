@@ -1,0 +1,16 @@
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  font:
+    16px/1.5 "Inter",
+    sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgb(252, 252, 252);
+  font-weight: 300;
+  /* letter-spacing: .9px; */
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  /* font-family: "Inter", sans-serif; */
+}

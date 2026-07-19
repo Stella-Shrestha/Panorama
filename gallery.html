@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery | Panorama Trekking</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Sans+3:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .gallery-filter[aria-selected="true"] {
+        border-color: #122b55;
+        background: #122b55;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#fcfcfc] text-slate-900">
+    <header>
+      <div class="hidden w-full bg-[#122B55] lg:block">
+        <div
+          class="mx-auto flex w-full max-w-[1584px] items-center justify-between px-5 py-2"
+        >
+          <div class="flex items-center gap-6">
+            <a
+              href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="map-pin" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>Kapan, Kathmandu, Nepal</span>
+            </a>
+            <a
+              href="tel:+9771234567890"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="phone" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>+977 123 456 7890</span>
+            </a>
+            <a
+              href="mailto:info@panoramatrekking.com"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="mail" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>info@panoramatrekking.com</span>
+            </a>
+          </div>
+
+          <div class="inline-flex items-center gap-3">
+            <span class="text-xs font-bold uppercase text-[#FAB331]">
+              English
+            </span>
+            <span class="h-4 w-px bg-white/30" aria-hidden="true"></span>
+            <span class="text-xs font-bold uppercase text-white">Français</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav
+      class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm"
+      aria-label="Main navigation"
+    >
+      <div
+        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 px-5 py-3"
+      >
+        <a href="./index.html" class="shrink-0" aria-label="Panorama home">
+          <img
+            src="./Images/logo.png"
+            alt="Panorama Trekking"
+            class="h-auto w-32 object-contain lg:w-36"
+          />
+        </a>
+
+        <div class="hidden items-center gap-8 text-sm font-semibold lg:flex">
+          <a href="./index.html" class="transition-colors hover:text-[#F58220]">
+            Home
+          </a>
+          <a
+            href="./index.html#aboutus"
+            class="transition-colors hover:text-[#F58220]"
+          >
+            About Us
+          </a>
+          <a
+            href="./gallery.html?region=all"
+            class="text-[#F58220]"
+            aria-current="page"
+          >
+            Gallery
+          </a>
+          <a
+            href="./index.html#contact"
+            class="transition-colors hover:text-[#F58220]"
+          >
+            Contact Us
+          </a>
+        </div>
+
+        <a
+          href="./index.html#quote"
+          class="hidden rounded-lg bg-[#F58220] px-4 py-3 text-sm font-bold uppercase text-white transition-colors hover:bg-[#d96b11] lg:inline-flex"
+        >
+          Get a Quote
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="bg-white">
+        <div
+          class="mx-auto grid w-full max-w-[1584px] gap-8 px-5 py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(360px,0.55fr)] lg:items-end lg:py-16"
+        >
+          <div>
+            <a
+              href="./index.html"
+              class="mb-7 inline-flex items-center gap-2 text-sm font-bold text-[#122B55] transition-colors hover:text-[#F58220]"
+            >
+              <i data-lucide="arrow-left" class="h-4 w-4"></i>
+              Back to Home
+            </a>
+
+            <p class="mb-2 text-sm font-bold uppercase text-[#F58220]">
+              Photo Gallery
+            </p>
+            <h1
+              class="max-w-3xl text-4xl font-extrabold leading-tight text-[#122B55] md:text-5xl"
+            >
+              Trekking albums from Nepal's mountain regions
+            </h1>
+          </div>
+
+          <p class="max-w-xl text-base font-medium leading-7 text-slate-600">
+            Browse each region as its own album, or keep View All selected to
+            scan the complete collection.
+          </p>
+        </div>
+      </section>
+
+      <section class="border-y border-slate-200 bg-slate-50">
+        <div class="mx-auto w-full max-w-[1584px] px-5 py-5">
+          <div
+            id="galleryFilters"
+            class="flex gap-3 overflow-x-auto pb-1"
+            role="tablist"
+            aria-label="Gallery categories"
+          ></div>
+        </div>
+      </section>
+
+      <section class="mx-auto w-full max-w-[1584px] px-5 py-10 lg:py-14">
+        <div
+          class="mb-7 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between"
+        >
+          <div>
+            <h2
+              id="galleryTitle"
+              class="text-2xl font-extrabold text-[#122B55]"
+            ></h2>
+            <p
+              id="galleryCount"
+              class="mt-1 text-sm font-medium text-slate-600"
+            ></p>
+          </div>
+        </div>
+
+        <div
+          id="galleryGrid"
+          class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          aria-live="polite"
+        ></div>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+
+        const categories = [
+          { label: "View All", value: "all" },
+          { label: "Everest Region", value: "everest" },
+          { label: "Annapurna Region", value: "annapurna" },
+          { label: "Langtang Region", value: "langtang" },
+          { label: "Wilderness Trekking", value: "wilderness" },
+          { label: "Homestay Trekking", value: "homestay" },
+          { label: "Newly Opened Treks", value: "newly-opened" },
+        ];
+
+        const galleryImages = [
+          {
+            id: 1,
+            src: "./Images/Home/everest.png",
+            title: "Everest Trails",
+            category: "everest",
+          },
+          {
+            id: 2,
+            src: "./Images/Home/Background.png",
+            title: "Snowline Paths",
+            category: "everest",
+          },
+          {
+            id: 3,
+            src: "./Images/Home/annapurna.png",
+            title: "Annapurna Panorama",
+            category: "annapurna",
+          },
+          {
+            id: 4,
+            src: "./Images/Home/adventure.png",
+            title: "Mardi Himal Ridge",
+            category: "annapurna",
+          },
+          {
+            id: 5,
+            src: "./Images/Home/manaslu.png",
+            title: "Langtang Valley Road",
+            category: "langtang",
+          },
+          {
+            id: 6,
+            src: "./Images/Home/manaslu1.png",
+            title: "Kyanjin Trail",
+            category: "langtang",
+          },
+          {
+            id: 7,
+            src: "./Images/Home/mustang.png",
+            title: "Upper Mustang",
+            category: "wilderness",
+          },
+          {
+            id: 8,
+            src: "./Images/Home/adventure.png",
+            title: "Remote River Crossing",
+            category: "wilderness",
+          },
+          {
+            id: 9,
+            src: "./Images/Home/team.png",
+            title: "Village Welcome",
+            category: "homestay",
+          },
+          {
+            id: 10,
+            src: "./Images/Home/annapurna.png",
+            title: "Community Trail",
+            category: "homestay",
+          },
+          {
+            id: 11,
+            src: "./Images/Home/annapurna.png",
+            title: "New Annapurna Route",
+            category: "newly-opened",
+          },
+          {
+            id: 12,
+            src: "./Images/Home/manaslu1.png",
+            title: "Fresh Himalayan Trail",
+            category: "newly-opened",
+          },
+          {
+            id: 13,
+            src: "./Images/Home/Background.png",
+            title: "New Mountain Viewpoint",
+            category: "newly-opened",
+          },
+        ];
+
+        const filters = document.getElementById("galleryFilters");
+        const grid = document.getElementById("galleryGrid");
+        const title = document.getElementById("galleryTitle");
+        const count = document.getElementById("galleryCount");
+        const params = new URLSearchParams(window.location.search);
+        const requestedRegion = params.get("region");
+        let activeCategory = categories.some(function (category) {
+          return category.value === requestedRegion;
+        })
+          ? requestedRegion
+          : "all";
+
+        function getCategoryLabel(categoryValue) {
+          const category = categories.find(function (item) {
+            return item.value === categoryValue;
+          });
+
+          return category ? category.label : "View All";
+        }
+
+        function renderFilters() {
+          filters.innerHTML = categories
+            .map(function (category) {
+              return `
+                <button
+                  type="button"
+                  class="gallery-filter shrink-0 rounded-md border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold text-[#122B55] transition-colors hover:border-[#122B55]"
+                  data-category="${category.value}"
+                  role="tab"
+                  aria-selected="${category.value === activeCategory}"
+                >
+                  ${category.label}
+                </button>
+              `;
+            })
+            .join("");
+        }
+
+        function renderGallery() {
+          const visibleImages =
+            activeCategory === "all"
+              ? galleryImages
+              : galleryImages.filter(function (image) {
+                  return image.category === activeCategory;
+                });
+
+          title.textContent = getCategoryLabel(activeCategory);
+          count.textContent =
+            visibleImages.length +
+            (visibleImages.length === 1 ? " photo" : " photos");
+
+          grid.innerHTML = visibleImages
+            .map(function (image) {
+              return `
+                <article class="group overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-slate-200">
+                  <div class="aspect-[4/3] overflow-hidden bg-slate-200">
+                    <img
+                      src="${image.src}"
+                      alt="${image.title}"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <p class="text-sm font-bold text-[#F58220]">
+                      ${getCategoryLabel(image.category)}
+                    </p>
+                    <h3 class="mt-1 text-lg font-extrabold text-[#122B55]">
+                      ${image.title}
+                    </h3>
+                  </div>
+                </article>
+              `;
+            })
+            .join("");
+        }
+
+        function setActiveCategory(category) {
+          activeCategory = category;
+          const nextUrl = new URL(window.location.href);
+          nextUrl.searchParams.set("region", activeCategory);
+          window.history.pushState({}, "", nextUrl);
+          renderFilters();
+          renderGallery();
+        }
+
+        filters.addEventListener("click", function (event) {
+          const button = event.target.closest(".gallery-filter");
+
+          if (!button) {
+            return;
+          }
+
+          setActiveCategory(button.dataset.category);
+        });
+
+        window.addEventListener("popstate", function () {
+          const nextRegion = new URLSearchParams(window.location.search).get(
+            "region",
+          );
+          activeCategory = categories.some(function (category) {
+            return category.value === nextRegion;
+          })
+            ? nextRegion
+            : "all";
+          renderFilters();
+          renderGallery();
+        });
+
+        renderFilters();
+        renderGallery();
+      });
+    </script>
+  </body>
+</html>

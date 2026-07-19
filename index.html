@@ -1,0 +1,2750 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Panorama Trekking</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Sans+3:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .desktop-dropdown {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition:
+          opacity 200ms ease,
+          transform 200ms ease,
+          visibility 200ms ease;
+      }
+
+      .desktop-dropdown.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .dropdown-arrow {
+        transition: transform 200ms ease;
+      }
+
+      .dropdown-arrow.rotate {
+        transform: rotate(180deg);
+      }
+
+      /* Keep trek-card images crisp and prevent hover scaling blur. */
+      .trek-card-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        image-rendering: auto;
+      }
+
+      .home-gallery-thumb[aria-current="true"] {
+        border-color: #f58220;
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-900">
+    <!-- Header -->
+    <header>
+      <!-- Top Bar -->
+      <div class="hidden w-full bg-[#122B55] lg:block">
+        <div
+          class="mx-auto flex w-full max-w-[1584px] items-center justify-between px-5 py-2"
+        >
+          <!-- Contact Information -->
+          <div class="flex items-center gap-6">
+            <a
+              href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i
+                data-lucide="map-pin"
+                class="h-4 w-4 shrink-0 text-[#FAB331]"
+              ></i>
+
+              <span>Kapan, Kathmandu, Nepal</span>
+            </a>
+
+            <a
+              href="tel:+9771234567890"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i
+                data-lucide="phone"
+                class="h-4 w-4 shrink-0 text-[#FAB331]"
+              ></i>
+
+              <span>+977 123 456 7890</span>
+            </a>
+
+            <a
+              href="mailto:info@panoramatrekking.com"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i
+                data-lucide="mail"
+                class="h-4 w-4 shrink-0 text-[#FAB331]"
+              ></i>
+
+              <span>info@panoramatrekking.com</span>
+            </a>
+          </div>
+
+          <!-- Language Switcher -->
+          <div
+            class="inline-flex items-center gap-3"
+            aria-label="Language switcher"
+          >
+            <a
+              href="#"
+              lang="en"
+              aria-current="page"
+              class="text-xs font-bold uppercase tracking-[0.04em] text-[#FAB331] transition-colors hover:text-white sm:text-[13px]"
+            >
+              English
+            </a>
+
+            <span
+              class="h-4 w-px bg-white/30"
+              aria-hidden="true"
+            ></span>
+
+            <a
+              href="#"
+              lang="fr"
+              class="text-xs font-bold uppercase tracking-[0.04em] text-white transition-colors hover:text-[#FAB331] sm:text-[13px]"
+            >
+              Français
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm"
+      aria-label="Main navigation"
+    >
+      <div
+        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 py-3 lg:px-5 py-3"
+      >
+        <!-- Logo -->
+        <a
+          href="#"
+          class="shrink-0"
+          aria-label="Panorama Trekking home"
+        >
+          <!-- Change Images to images if your folder is lowercase -->
+          <img
+            src="./Images/logo.png"
+            alt="Panorama Trekking"
+            class="h-auto w-32 object-contain lg:w-36"
+          />
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul
+          class="hidden flex-1 items-center justify-center gap-4 text-[14px] font-semibold text-slate-950 lg:flex xl:gap-9 xl:text-[15px]"
+        >
+          <li>
+            <a
+              href="#"
+              class="relative inline-flex py-3 text-[#F58220] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#F58220] after:content-['']"
+              aria-current="page"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#aboutus"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+            >
+              About Us
+            </a>
+          </li>
+
+          <!-- Treks Dropdown -->
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="treksDropdown"
+            >
+              Treks
+
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4"
+              ></i>
+            </button>
+
+            <div
+              id="treksDropdown"
+              class="desktop-dropdown absolute left-1/2 top-full w-[min(680px,calc(100vw-2rem))] -translate-x-1/2 pt-3"
+            >
+              <div
+                class="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_24px_65px_-20px_rgba(15,23,42,0.35)]"
+              >
+                <div class="grid grid-cols-3 gap-6">
+                  <!-- Everest Region -->
+                  <div>
+                    <div
+                      class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
+                    >
+                      <span
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                      >
+                        <i
+                          data-lucide="mountain"
+                          class="h-5 w-5"
+                        ></i>
+                      </span>
+
+                      <h3 class="font-bold text-[#122B55]">
+                        Everest Region
+                      </h3>
+                    </div>
+
+                    <ul class="space-y-1">
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Everest Base Camp Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Everest Gokyo Lake Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Three Passes Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Island Peak Climbing
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Annapurna Region -->
+                  <div>
+                    <div
+                      class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
+                    >
+                      <span
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                      >
+                        <i
+                          data-lucide="map"
+                          class="h-5 w-5"
+                        ></i>
+                      </span>
+
+                      <h3 class="font-bold text-[#122B55]">
+                        Annapurna Region
+                      </h3>
+                    </div>
+
+                    <ul class="space-y-1">
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Annapurna Base Camp
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Annapurna Circuit Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Mardi Himal Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Ghorepani Poon Hill
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Langtang Region -->
+                  <div>
+                    <div
+                      class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
+                    >
+                      <span
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                      >
+                        <i
+                          data-lucide="trees"
+                          class="h-5 w-5"
+                        ></i>
+                      </span>
+
+                      <h3 class="font-bold text-[#122B55]">
+                        Langtang Region
+                      </h3>
+                    </div>
+
+                    <ul class="space-y-1">
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Langtang Valley Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Gosaikunda Lake Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Tamang Heritage Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Helambu Trek
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div
+                  class="mt-6 flex items-center justify-between rounded-xl bg-[#122B55] px-5 py-4"
+                >
+                  <div>
+                    <p class="text-sm font-bold text-white">
+                      Explore trekking adventures
+                    </p>
+
+                    <p class="mt-1 text-xs text-white/70">
+                      Discover the best trekking routes in Nepal.
+                    </p>
+                  </div>
+
+                  <a
+                    href="#treks"
+                    class="inline-flex items-center gap-2 rounded-lg bg-[#F58220] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-white hover:text-[#122B55]"
+                  >
+                    View All Treks
+
+                    <i
+                      data-lucide="arrow-right"
+                      class="h-4 w-4"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Destinations Dropdown -->
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="destinationsDropdown"
+            >
+              Peaks & Expendition
+
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4"
+              ></i>
+            </button>
+
+            <div
+              id="destinationsDropdown"
+              class="desktop-dropdown absolute left-1/2 top-full w-64 -translate-x-1/2 pt-3"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="mountain-snow"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Nepal
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="landmark"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Tibet
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="trees"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Bhutan
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="map-pinned"
+                    class="h-4 w-4"
+                  ></i>
+
+                  India
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a
+              href="#dayTours"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+            >
+              Day Tours
+            </a>
+          </li>
+
+          <!-- Travel Guide Dropdown -->
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="travelGuideDropdown"
+            >
+              Travel Guide
+
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4"
+              ></i>
+            </button>
+
+            <div
+              id="travelGuideDropdown"
+              class="desktop-dropdown absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="calendar-days"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Best Time to Visit
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="backpack"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Trekking Equipment
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="badge-dollar-sign"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Nepal Visa Information
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="shield-check"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Travel Insurance
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="circle-help"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Frequently Asked Questions
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+
+        <!-- Quote Button -->
+        <a
+          href="#quote"
+          class="hidden shrink-0 rounded-lg bg-[#F58220] px-4 py-3 text-sm font-bold uppercase text-white shadow-sm transition-colors duration-300 hover:bg-[#d96b11] lg:inline-flex xl:px-7"
+        >
+          Get a Quote
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobileMenuButton"
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 text-[#122B55] transition-colors hover:border-[#F58220] hover:bg-[#F58220] hover:text-white lg:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <i
+            id="mobileMenuIcon"
+            data-lucide="menu"
+            class="h-6 w-6"
+          ></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobileMenu"
+        class="hidden max-h-[calc(100vh-76px)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden"
+      >
+        <div class="px-5 py-5">
+          <ul class="space-y-1 text-sm font-semibold text-[#122B55]">
+            <li>
+              <a
+                href="#"
+                class="mobile-link block rounded-lg bg-orange-50 px-4 py-3 text-[#F58220]"
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#aboutus"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              >
+                About Us
+              </a>
+            </li>
+
+            <!-- Mobile Treks -->
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileTreksDropdown"
+              >
+                <span>Treks</span>
+
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4"
+                ></i>
+              </button>
+
+              <div
+                id="mobileTreksDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-4"
+                >
+                  <div>
+                    <h3
+                      class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
+                    >
+                      <i
+                        data-lucide="mountain"
+                        class="h-4 w-4 text-[#F58220]"
+                      ></i>
+
+                      Everest Region
+                    </h3>
+
+                    <div class="space-y-1 border-l border-slate-300 pl-3">
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Everest Base Camp Trek
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Everest Gokyo Trek
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Three Passes Trek
+                      </a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3
+                      class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
+                    >
+                      <i
+                        data-lucide="map"
+                        class="h-4 w-4 text-[#F58220]"
+                      ></i>
+
+                      Annapurna Region
+                    </h3>
+
+                    <div class="space-y-1 border-l border-slate-300 pl-3">
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Annapurna Base Camp
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Annapurna Circuit
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Mardi Himal Trek
+                      </a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3
+                      class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
+                    >
+                      <i
+                        data-lucide="trees"
+                        class="h-4 w-4 text-[#F58220]"
+                      ></i>
+
+                      Langtang Region
+                    </h3>
+
+                    <div class="space-y-1 border-l border-slate-300 pl-3">
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Langtang Valley Trek
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Gosaikunda Lake Trek
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Mobile Destinations -->
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileDestinationsDropdown"
+              >
+                <span>Destinations</span>
+
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4"
+                ></i>
+              </button>
+
+              <div
+                id="mobileDestinationsDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Nepal
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Tibet
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Bhutan
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    India
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="#dayTours"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              >
+                Day Tours
+              </a>
+            </li>
+
+            <!-- Mobile Travel Guide -->
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileTravelDropdown"
+              >
+                <span>Travel Guide</span>
+
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4"
+                ></i>
+              </button>
+
+              <div
+                id="mobileTravelDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Best Time to Visit
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Trekking Equipment
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Nepal Visa Information
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Travel Insurance
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              >
+                Contact Us
+              </a>
+            </li>
+          </ul>
+
+          <a
+            href="#quote"
+            class="mobile-link mt-4 flex items-center justify-center rounded-lg bg-[#F58220] px-6 py-3 text-sm font-bold uppercase text-white transition-colors hover:bg-[#d96b11]"
+          >
+            Get a Quote
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Example Page Content -->
+    <main>
+      <!-- explore start -->
+      <section
+        class="relative mb-[22rem] flex min-h-[560px] items-center justify-center overflow-visible px-5 pb-28 pt-20 sm:mb-[16rem] sm:justify-start md:mb-[12rem] md:min-h-[640px] lg:mb-16 lg:px-8"
+      >
+        <!-- Background image -->
+        <img
+          src="Images/Home/Background.png"
+          alt="Himalayan trekking background"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-slate-950/50"></div>
+
+        <!-- Hero content -->
+        <div
+          class="relative z-10 mx-auto w-full max-w-[1584px] text-center sm:text-left"
+        >
+          <div class="w-full max-w-[600px]">
+            <h1
+              class="mb-3 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
+            >
+              Experience Nepal. Live the
+              <span class="text-amber-600">Himalayas.</span>
+            </h1>
+
+            <div class="mx-auto mb-3 h-1 w-12 bg-[#F59E0B] sm:mx-0"></div>
+
+            <p
+              class="mx-auto mb-3 max-w-[398px] text-base leading-7 text-white/85 sm:mx-0 md:text-lg"
+            >
+              Private & group treks to Everest, Annapurna, Manaslu & remote
+              Himalayan valleys. Authentic experiences with local Sherpa
+              experts.
+            </p>
+
+            <div class="mx-auto mb-3 h-1 w-12 bg-[#F59E0B] sm:mx-0"></div>
+
+            <div
+              class="mt-3 flex flex-col justify-center gap-4 sm:flex-row sm:justify-start"
+            >
+              <a
+                href="#treks"
+                class="rounded-[4px] bg-[#F58220] px-7 py-3 text-center text-sm font-normal uppercase text-white transition-colors hover:bg-[#d96b11]"
+              >
+                Explore Treks
+              </a>
+
+              <a
+                href="#contact"
+                class="flex items-center justify-center gap-2 rounded-[4px] bg-green-600 px-7 py-3 text-center text-sm font-normal uppercase text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-[#122B55]"
+              >
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 32 32"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M16.03 3.2A12.74 12.74 0 0 0 3.31 15.91c0 2.24.59 4.43 1.72 6.36L3.2 28.8l6.7-1.76a12.7 12.7 0 0 0 6.12 1.56h.01a12.7 12.7 0 0 0 0-25.4Zm0 23.24h-.01c-1.92 0-3.79-.52-5.42-1.5l-.39-.23-3.97 1.04 1.06-3.87-.25-.4a10.47 10.47 0 1 1 8.98 4.96Zm5.73-7.84c-.31-.16-1.86-.92-2.15-1.02-.29-.11-.5-.16-.71.16-.21.31-.82 1.02-1 1.23-.18.21-.37.24-.68.08-.31-.16-1.33-.49-2.53-1.56-.94-.84-1.57-1.87-1.75-2.18-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.7-.97-2.33-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62s1.13 3.04 1.28 3.25c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.66.76.24 1.44.21 1.98.13.6-.09 1.86-.76 2.12-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"
+                  />
+                </svg>
+                Whatsapp us
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero stats -->
+        <div
+          class="absolute inset-x-0 bottom-[-340px] z-20 px-5 sm:bottom-[-220px] md:bottom-[-150px] lg:bottom-[-64px] lg:px-8"
+        >
+          <div
+            class="mx-auto grid w-full max-w-[1584px] grid-cols-2 overflow-hidden rounded-xl bg-white px-0 shadow-[0_14px_35px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/80 sm:grid-cols-3 lg:grid-cols-5"
+          >
+            <div
+              class="group flex min-h-28 flex-col items-center justify-center border-b border-r border-slate-200 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-orange-50 lg:border-b-0"
+            >
+              <i
+                data-lucide="award"
+                class="mb-3 h-10 w-10 text-[#F58220] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">
+                TAAN Registered
+              </h3>
+              <p class="text-xs font-medium text-slate-700">Company</p>
+            </div>
+
+            <div
+              class="group flex min-h-28 flex-col items-center justify-center border-b border-slate-200 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-sky-50 sm:border-r lg:border-b-0"
+            >
+              <i
+                data-lucide="users"
+                class="mb-3 h-10 w-10 text-[#2086D7] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">20+ Years</h3>
+              <p class="text-xs font-medium text-slate-700">Experience</p>
+            </div>
+
+            <div
+              class="group flex min-h-28 flex-col items-center justify-center border-b border-r border-slate-200 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-emerald-50 sm:border-r-0 lg:border-b-0 lg:border-r"
+            >
+              <i
+                data-lucide="mountain-snow"
+                class="mb-3 h-10 w-10 text-[#20B15A] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">5000+</h3>
+              <p class="text-xs font-medium text-slate-700">
+                Happy Trekkers
+              </p>
+            </div>
+
+            <div
+              class="group flex min-h-28 flex-col items-center justify-center border-b border-slate-200 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-violet-50 sm:border-b-0 sm:border-r"
+            >
+              <i
+                data-lucide="user-check"
+                class="mb-3 h-10 w-10 text-[#7C3AED] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">Licensed Local</h3>
+              <p class="text-xs font-medium text-slate-700">Guides</p>
+            </div>
+
+            <div
+              class="group col-span-2 flex min-h-28 flex-col items-center justify-center px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 sm:col-span-2 lg:col-span-1"
+            >
+              <i
+                data-lucide="shield-check"
+                class="mb-3 h-10 w-10 text-[#EF4444] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">Safety First</h3>
+              <p class="text-xs font-medium text-slate-700">Our Priority</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- explore end -->
+
+      <!-- popular treks start -->
+      <section
+        id="treks"
+        class="bg-white px-5 py-[52px] lg:px-8 lg:py-[110px]"
+      >
+        <div class="mx-auto w-full max-w-[1584px]">
+          <!-- Section heading -->
+          <div class="mb-8 text-center">
+            <h2
+              class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+            >
+              Our Popular Treks
+            </h2>
+
+            <div class="mx-auto mt-2 h-1 w-16 bg-[#F58220]"></div>
+
+            <p class="mt-3 text-sm font-medium text-slate-600 md:text-base">
+              Handpicked adventures in the heart of the Himalayas
+            </p>
+          </div>
+
+          <!-- Trek cards -->
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Everest Base Camp Trek -->
+            <article
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[3/2] overflow-hidden bg-slate-100">
+                <img
+                  src="./Images/Home/everest.png"
+                  alt="Everest Base Camp Trek"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="trek-card-image object-left"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5 text-center">
+                <h3
+                  class="text-xl font-extrabold uppercase leading-tight text-[#122B55]"
+                >
+                  Everest Base Camp Trek
+                </h3>
+
+                <div
+                  class="mt-3 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600"
+                >
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    14 Days
+                  </span>
+
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="user" class="h-4 w-4"></i>
+                    Moderate
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm font-semibold text-[#122B55]">
+                  From <span class="text-[#F58220]">USD 1,250</span>
+                </p>
+
+                <a
+                  href="#"
+                  class="mt-4 inline-flex rounded-md border border-[#F58220] px-8 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+                >
+                  View Details
+                </a>
+              </div>
+            </article>
+
+            <!-- Annapurna Circuit Trek -->
+            <article
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[3/2] overflow-hidden bg-slate-100">
+                <img
+                  src="./Images/Home/annapurna.png"
+                  alt="Annapurna Circuit Trek"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="trek-card-image object-center"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5 text-center">
+                <h3
+                  class="text-xl font-extrabold uppercase leading-tight text-[#122B55]"
+                >
+                  Annapurna Circuit Trek
+                </h3>
+
+                <div
+                  class="mt-3 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600"
+                >
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    12–18 Days
+                  </span>
+
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="user" class="h-4 w-4"></i>
+                    Moderate
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm font-semibold text-[#122B55]">
+                  From <span class="text-[#F58220]">USD 1,150</span>
+                </p>
+
+                <a
+                  href="#"
+                  class="mt-4 inline-flex rounded-md border border-[#F58220] px-8 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+                >
+                  View Details
+                </a>
+              </div>
+            </article>
+
+            <!-- Manaslu Circuit Trek -->
+            <article
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[3/2] overflow-hidden bg-slate-100">
+                <img
+                  src="./Images/Home/manaslu1.png"
+                  alt="Manaslu Circuit Trek"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="trek-card-image object-center"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5 text-center">
+                <h3
+                  class="text-xl font-extrabold uppercase leading-tight text-[#122B55]"
+                >
+                  Manaslu Circuit Trek
+                </h3>
+
+                <div
+                  class="mt-3 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600"
+                >
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    16–18 Days
+                  </span>
+
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="shield" class="h-4 w-4"></i>
+                    Challenging
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm font-semibold text-[#122B55]">
+                  From <span class="text-[#F58220]">USD 1,390</span>
+                </p>
+
+                <a
+                  href="#"
+                  class="mt-4 inline-flex rounded-md border border-[#F58220] px-8 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+                >
+                  View Details
+                </a>
+              </div>
+            </article>
+
+            <!-- Upper Mustang Trek -->
+            <article
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[3/2] overflow-hidden bg-slate-100">
+                <img
+                  src="./Images/Home/mustang.png"
+                  alt="Upper Mustang Trek"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="trek-card-image object-center"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5 text-center">
+                <h3
+                  class="text-xl font-extrabold uppercase leading-tight text-[#122B55]"
+                >
+                  Upper Mustang Trek
+                </h3>
+
+                <div
+                  class="mt-3 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600"
+                >
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    12–16 Days
+                  </span>
+
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="user" class="h-4 w-4"></i>
+                    Moderate
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm font-semibold text-[#122B55]">
+                  From <span class="text-[#F58220]">USD 1,450</span>
+                </p>
+
+                <a
+                  href="#"
+                  class="mt-4 inline-flex rounded-md border border-[#F58220] px-8 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+                >
+                  View Details
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="mt-8 text-center">
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 rounded-md border border-[#122B55] px-8 py-2.5 text-xs font-bold uppercase text-[#122B55] transition-colors hover:bg-[#122B55] hover:text-white"
+            >
+              View All Treks
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- popular treks end -->
+
+      <!-- why travel start -->
+      <section class="bg-white px-5 pb-[52px] lg:pb-[110px] lg:px-8">
+        <div class="mx-auto w-full max-w-[1584px]">
+          <div class="grid items-center gap-10 lg:grid-cols-[0.9fr_1.3fr]">
+            <div class="overflow-hidden rounded-md shadow-sm">
+              <img
+                src="Images/Home/team.png"
+                alt="Panorama Trekking team in the Himalayas"
+                class="h-72 w-full object-cover object-center md:h-80"
+              />
+            </div>
+
+            <div>
+              <h2
+                class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+              >
+                Why Travel With Us?
+              </h2>
+              <div class="mt-2 h-1 w-16 bg-[#F58220]"></div>
+              <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-700 md:text-base">
+                We are a local Himalayan trekking company based in Kathmandu.
+                Our Sherpa team is dedicated to giving you safe, authentic, and
+                unforgettable trekking experiences.
+              </p>
+
+              <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="text-center">
+                  <i
+                    data-lucide="mountain-snow"
+                    class="mx-auto mb-3 h-10 w-10 text-[#20B15A]"
+                  ></i>
+                  <h3 class="text-sm font-extrabold text-[#122B55]">
+                    Local Expertise
+                  </h3>
+                  <p class="mt-1 text-xs font-medium leading-5 text-slate-600">
+                    Born and based in the Himalayas
+                  </p>
+                </div>
+
+                <div class="text-center">
+                  <i
+                    data-lucide="users"
+                    class="mx-auto mb-3 h-10 w-10 text-[#7C3AED]"
+                  ></i>
+                  <h3 class="text-sm font-extrabold text-[#122B55]">
+                    Experienced Guides
+                  </h3>
+                  <p class="mt-1 text-xs font-medium leading-5 text-slate-600">
+                    Licensed, trained, and friendly local guides
+                  </p>
+                </div>
+
+                <div class="text-center">
+                  <i
+                    data-lucide="clipboard-check"
+                    class="mx-auto mb-3 h-10 w-10 text-[#2086D7]"
+                  ></i>
+                  <h3 class="text-sm font-extrabold text-[#122B55]">
+                    Custom Itineraries
+                  </h3>
+                  <p class="mt-1 text-xs font-medium leading-5 text-slate-600">
+                    Flexible plans for every traveler
+                  </p>
+                </div>
+
+                <div class="text-center">
+                  <i
+                    data-lucide="shield-check"
+                    class="mx-auto mb-3 h-10 w-10 text-[#F58220]"
+                  ></i>
+                  <h3 class="text-sm font-extrabold text-[#122B55]">
+                    Responsible Tourism
+                  </h3>
+                  <p class="mt-1 text-xs font-medium leading-5 text-slate-600">
+                    Supporting local people and nature
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href="#aboutus"
+                class="mt-7 inline-flex rounded bg-[#F58220] px-6 py-3 text-xs font-bold uppercase text-white transition-colors hover:bg-[#d96b11]"
+              >
+                Learn More About Us
+              </a>
+            </div>
+          </div>
+
+          <div class="py-[52px] text-center lg:py-[110px]">
+            <div class="mb-8 text-center">
+              <h2
+                class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+              >
+                Photo Gallery
+              </h2>
+              <div class="mx-auto mt-2 h-1 w-16 bg-[#F58220]"></div>
+            </div>
+            <div
+              class="mx-auto grid w-full max-w-[1584px] grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-12 lg:gap-5"
+              aria-label="Panorama Trekking photo gallery"
+            >
+              <a
+                href="./gallery.html?region=everest"
+                class="gallery-card group relative h-56 overflow-hidden bg-slate-200 shadow-sm sm:h-60 md:col-span-2 md:h-64 lg:col-span-3"
+                aria-label="Open Everest Region gallery"
+              >
+                <img
+                  src="./Images/Home/mustang.png"
+                  alt="Upper Mustang trekking landscape"
+                  class="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
+                ></div>
+                <span
+                  class="absolute bottom-4 left-4 text-sm font-semibold text-white"
+                >
+                  Everest Region
+                </span>
+              </a>
+
+              <a
+                href="./gallery.html?region=annapurna"
+                class="gallery-card group relative h-56 overflow-hidden bg-slate-200 shadow-sm sm:h-60 md:col-span-4 md:h-64 lg:col-span-5"
+                aria-label="Open Annapurna Region gallery"
+              >
+                <img
+                  src="./Images/Home/manaslu.png"
+                  alt="Road through a remote Himalayan valley"
+                  class="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
+                ></div>
+                <span
+                  class="absolute bottom-4 left-4 text-sm font-semibold text-white"
+                >
+                  Annapurna Region
+                </span>
+              </a>
+
+              <a
+                href="./gallery.html?region=langtang"
+                class="gallery-card group relative h-56 overflow-hidden bg-slate-200 shadow-sm sm:h-60 md:col-span-3 md:h-64 lg:col-span-4"
+                aria-label="Open Langtang Region gallery"
+              >
+                <img
+                  src="./Images/Home/team.png"
+                  alt="Panorama Trekking group watching the sunrise"
+                  class="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
+                ></div>
+                <span
+                  class="absolute bottom-4 left-4 text-sm font-semibold text-white"
+                >
+                  Langtang Region
+                </span>
+              </a>
+
+              <a
+                href="./gallery.html?region=wilderness"
+                class="gallery-card group relative h-56 overflow-hidden bg-slate-200 shadow-sm sm:h-60 md:col-span-3 md:h-64 lg:col-span-5"
+                aria-label="Open Wilderness Trekking gallery"
+              >
+                <img
+                  src="./Images/Home/adventure.png"
+                  alt="Adventure travel by Himalayan water"
+                  class="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
+                ></div>
+                <span
+                  class="absolute bottom-4 left-4 text-sm font-semibold text-white"
+                >
+                  Wilderness Trekking
+                </span>
+              </a>
+
+              <a
+                href="./gallery.html?region=homestay"
+                class="gallery-card group relative h-56 overflow-hidden bg-slate-200 shadow-sm sm:h-60 md:col-span-4 md:h-64 lg:col-span-4"
+                aria-label="Open Homestay Trekking gallery"
+              >
+                <img
+                  src="./Images/Home/everest.png"
+                  alt="Traveler beside a Himalayan lake"
+                  class="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
+                ></div>
+                <span
+                  class="absolute bottom-4 left-4 text-sm font-semibold text-white"
+                >
+                  Homestay Trekking
+                </span>
+              </a>
+
+              <a
+                href="./gallery.html?region=newly-opened"
+                class="gallery-card group relative h-56 overflow-hidden bg-slate-200 shadow-sm sm:h-60 md:col-span-2 md:h-64 lg:col-span-3"
+                aria-label="Open Newly Opened Treks gallery"
+              >
+                <img
+                  src="./Images/Home/annapurna.png"
+                  alt="Annapurna trekking route"
+                  class="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
+                ></div>
+                <span
+                  class="absolute bottom-4 left-4 text-sm font-semibold text-white"
+                >
+                  Newly Opened Treks
+                </span>
+              </a>
+
+            </div>
+
+            <a
+              id="viewGalleryButton"
+              href="./gallery.html?region=all"
+              class="mt-8 inline-flex items-center gap-2 rounded-md border border-[#122B55] px-8 py-2.5 text-xs font-bold uppercase text-[#122B55] transition-colors hover:bg-[#122B55] hover:text-white"
+            >
+              <span>View Gallery</span>
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+
+            <div
+              id="homeGalleryOverlay"
+              class="fixed inset-0 z-[100] hidden bg-black/80 px-3 py-4 text-left backdrop-blur-[1px] sm:px-5 sm:py-6"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Panorama Trekking album viewer"
+            >
+              <div
+                id="homeGalleryViewer"
+                class="mx-auto grid h-full max-w-[1740px] gap-4 lg:grid-cols-[auto_minmax(0,1fr)_160px]"
+              >
+                <div class="flex gap-2 lg:flex-col">
+                  <button
+                    id="closeHomeGallery"
+                    type="button"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded bg-black text-white transition-colors hover:bg-[#F58220]"
+                    aria-label="Close gallery"
+                  >
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                  </button>
+
+                  <button
+                    id="fullscreenHomeGallery"
+                    type="button"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded bg-black text-white transition-colors hover:bg-[#F58220]"
+                    aria-label="View gallery fullscreen"
+                  >
+                    <i data-lucide="maximize" class="h-5 w-5"></i>
+                  </button>
+                </div>
+
+                <div class="flex min-h-0 flex-col">
+                  <div
+                    class="mb-3 flex flex-col gap-1 text-white sm:flex-row sm:items-end sm:justify-between"
+                  >
+                    <div>
+                      <h2
+                        id="homeGalleryTitle"
+                        class="text-2xl font-extrabold"
+                      ></h2>
+                      <p
+                        id="homeGalleryCount"
+                        class="text-sm font-medium text-white/65"
+                      ></p>
+                    </div>
+
+                    <p
+                      id="homeGalleryCaption"
+                      class="text-sm font-bold text-[#FAB331]"
+                    ></p>
+                  </div>
+
+                  <div
+                    class="flex min-h-[360px] flex-1 items-center justify-center"
+                  >
+                    <img
+                      id="homeGalleryMainImage"
+                      src=""
+                      alt=""
+                      class="max-h-[78vh] w-full object-contain"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  id="homeGalleryThumbnails"
+                  class="flex max-h-[82vh] gap-3 overflow-x-auto pb-2 lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0"
+                  aria-label="Album thumbnails"
+                ></div>
+              </div>
+            </div>
+          </div>
+          
+<!-- recommended treks start -->
+       <section
+        id="treks"
+        class="bg-white px-5 pb-[52px] lg:px-8 lg:pb-[110px]"
+      >
+        <div class="mx-auto w-full max-w-[1584px]">
+          <!-- Section heading -->
+          <div class="mb-8 text-center">
+            <h2
+              class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+            >
+              Most Recommended Treks
+            </h2>
+
+            <div class="mx-auto mt-2 h-1 w-16 bg-[#F58220]"></div>
+
+            <p class="mt-3 text-sm font-medium text-slate-600 md:text-base">
+              Handpicked adventures in the heart of the Himalayas
+            </p>
+          </div>
+
+          <!-- Trek cards -->
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Everest Base Camp Trek -->
+            <article
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[3/2] overflow-hidden bg-slate-100">
+                <img
+                  src="./Images/Home/everest.png"
+                  alt="Everest Base Camp Trek"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="trek-card-image object-left"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5 text-center">
+                <h3
+                  class="text-xl font-extrabold uppercase leading-tight text-[#122B55]"
+                >
+                  Everest Base Camp Trek
+                </h3>
+
+                <div
+                  class="mt-3 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600"
+                >
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    14 Days
+                  </span>
+
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="user" class="h-4 w-4"></i>
+                    Moderate
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm font-semibold text-[#122B55]">
+                  From <span class="text-[#F58220]">USD 1,250</span>
+                </p>
+
+                <a
+                  href="#"
+                  class="mt-4 inline-flex rounded-md border border-[#F58220] px-8 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+                >
+                  View Details
+                </a>
+              </div>
+            </article>
+
+            <!-- Annapurna Circuit Trek -->
+            <article
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[3/2] overflow-hidden bg-slate-100">
+                <img
+                  src="./Images/Home/annapurna.png"
+                  alt="Annapurna Circuit Trek"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="trek-card-image object-center"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5 text-center">
+                <h3
+                  class="text-xl font-extrabold uppercase leading-tight text-[#122B55]"
+                >
+                  Annapurna Circuit Trek
+                </h3>
+
+                <div
+                  class="mt-3 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600"
+                >
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    12–18 Days
+                  </span>
+
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="user" class="h-4 w-4"></i>
+                    Moderate
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm font-semibold text-[#122B55]">
+                  From <span class="text-[#F58220]">USD 1,150</span>
+                </p>
+
+                <a
+                  href="#"
+                  class="mt-4 inline-flex rounded-md border border-[#F58220] px-8 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+                >
+                  View Details
+                </a>
+              </div>
+            </article>
+
+            <!-- Manaslu Circuit Trek -->
+            <article
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[3/2] overflow-hidden bg-slate-100">
+                <img
+                  src="./Images/Home/manaslu1.png"
+                  alt="Manaslu Circuit Trek"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="trek-card-image object-center"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5 text-center">
+                <h3
+                  class="text-xl font-extrabold uppercase leading-tight text-[#122B55]"
+                >
+                  Manaslu Circuit Trek
+                </h3>
+
+                <div
+                  class="mt-3 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600"
+                >
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    16–18 Days
+                  </span>
+
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="shield" class="h-4 w-4"></i>
+                    Challenging
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm font-semibold text-[#122B55]">
+                  From <span class="text-[#F58220]">USD 1,390</span>
+                </p>
+
+                <a
+                  href="#"
+                  class="mt-4 inline-flex rounded-md border border-[#F58220] px-8 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+                >
+                  View Details
+                </a>
+              </div>
+            </article>
+
+            <!-- Upper Mustang Trek -->
+            <!-- <article
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[3/2] overflow-hidden bg-slate-100">
+                <img
+                  src="./Images/Home/mustang.png"
+                  alt="Upper Mustang Trek"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="trek-card-image object-center"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5 text-center">
+                <h3
+                  class="text-xl font-extrabold uppercase leading-tight text-[#122B55]"
+                >
+                  Upper Mustang Trek
+                </h3>
+
+                <div
+                  class="mt-3 flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600"
+                >
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    12–16 Days
+                  </span>
+
+                  <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="user" class="h-4 w-4"></i>
+                    Moderate
+                  </span>
+                </div>
+
+                <p class="mt-4 text-sm font-semibold text-[#122B55]">
+                  From <span class="text-[#F58220]">USD 1,450</span>
+                </p>
+
+                <a
+                  href="#"
+                  class="mt-4 inline-flex rounded-md border border-[#F58220] px-8 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+                >
+                  View Details
+                </a>
+              </div>
+            </article> -->
+          </div>
+
+          <div class="mt-8 text-center">
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 rounded-md border border-[#122B55] px-8 py-2.5 text-xs font-bold uppercase text-[#122B55] transition-colors hover:bg-[#122B55] hover:text-white"
+            >
+              View All Treks
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+<!-- recommended treks end -->
+
+          <div class="text-center">
+            <h2
+              class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+            >
+              What Our Trekkers Say
+            </h2>
+            <div class="mx-auto mt-2 h-1 w-16 bg-[#F58220]"></div>
+          </div>
+
+          <div class="mt-7 grid gap-6 md:grid-cols-3">
+            <article
+              class="rounded-md bg-white p-6 shadow-[0_8px_20px_rgba(15,23,42,0.10)] ring-1 ring-slate-200"
+            >
+              <div class="flex text-[#F5B301]">
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+              </div>
+              <p class="mt-4 text-sm font-medium leading-6 text-slate-700">
+                "Amazing experience to EBC with Panorama Trekking. Our guide was
+                very professional and helpful. Highly recommended!"
+              </p>
+              <div class="mt-5 flex items-center gap-3">
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200 text-sm font-bold text-[#122B55]"
+                >
+                  S
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-[#122B55]">Sarah M.</p>
+                  <p class="text-xs text-slate-600">United Kingdom</p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="rounded-md bg-white p-6 shadow-[0_8px_20px_rgba(15,23,42,0.10)] ring-1 ring-slate-200"
+            >
+              <div class="flex text-[#F5B301]">
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+              </div>
+              <p class="mt-4 text-sm font-medium leading-6 text-slate-700">
+                "Perfect organization from start to finish. The team took care
+                of everything. I felt safe and well looked after."
+              </p>
+              <div class="mt-5 flex items-center gap-3">
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200 text-sm font-bold text-[#122B55]"
+                >
+                  D
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-[#122B55]">David L.</p>
+                  <p class="text-xs text-slate-600">Australia</p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="rounded-md bg-white p-6 shadow-[0_8px_20px_rgba(15,23,42,0.10)] ring-1 ring-slate-200"
+            >
+              <div class="flex text-[#F5B301]">
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+              </div>
+              <p class="mt-4 text-sm font-medium leading-6 text-slate-700">
+                "I did Manaslu Circuit with them and it was the best trek of my
+                life. Thank you for the wonderful memories!"
+              </p>
+              <div class="mt-5 flex items-center gap-3">
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200 text-sm font-bold text-[#122B55]"
+                >
+                  M
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-[#122B55]">Marie P.</p>
+                  <p class="text-xs text-slate-600">France</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="mt-7 text-center">
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 rounded border border-[#F58220] px-6 py-2.5 text-xs font-bold uppercase text-[#F58220] transition-colors hover:bg-[#F58220] hover:text-white"
+            >
+              Read More Reviews
+              <span class="text-base">G</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- why travel end -->
+
+      <!-- adventure cta start -->
+      <section
+        class="relative overflow-hidden bg-[#08213D] px-5 py-12 text-white lg:px-8"
+      >
+        <img
+          src="Images/Home/adventure.png"
+          alt=""
+          class="absolute inset-0 h-full w-full  object-cover object-[center_20%] opacity-25"
+        />
+        <div class="absolute inset-0 bg-[#08213D]/15"></div>
+
+        <div
+          class="relative z-10 mx-auto grid w-full max-w-[1400px] items-center gap-10 py-[52px] lg:grid-cols-[1.25fr_0.75fr] lg:py-[110px]"
+        >
+          <div class="max-w-3xl text-left">
+            <div
+              class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.28em] text-white shadow-sm backdrop-blur"
+            >
+              <span class="h-2.5 w-2.5 rounded-full bg-[#F58220]"></span>
+              Start Your Himalayan Journey
+            </div>
+
+            <h2
+              class="mt-7 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
+            >
+              Ready for your next
+              <span class="block text-[#F58220]">adventure?</span>
+            </h2>
+
+            <p
+              class="mt-6 max-w-2xl text-base font-medium leading-8 text-white/80 md:text-lg"
+            >
+              Speak with our local trekking experts and let us create a safe,
+              flexible, and unforgettable Himalayan experience designed around
+              your interests, schedule, and travel style.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center gap-3 rounded-md bg-green-600 px-7 py-4 text-xs font-extrabold uppercase tracking-wide text-white shadow-[0_16px_30px_rgba(22,163,74,0.28)] transition-colors hover:bg-green-700"
+              >
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 32 32"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M16.03 3.2A12.74 12.74 0 0 0 3.31 15.91c0 2.24.59 4.43 1.72 6.36L3.2 28.8l6.7-1.76a12.7 12.7 0 0 0 6.12 1.56h.01a12.7 12.7 0 0 0 0-25.4Zm0 23.24h-.01c-1.92 0-3.79-.52-5.42-1.5l-.39-.23-3.97 1.04 1.06-3.87-.25-.4a10.47 10.47 0 1 1 8.98 4.96Zm5.73-7.84c-.31-.16-1.86-.92-2.15-1.02-.29-.11-.5-.16-.71.16-.21.31-.82 1.02-1 1.23-.18.21-.37.24-.68.08-.31-.16-1.33-.49-2.53-1.56-.94-.84-1.57-1.87-1.75-2.18-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.7-.97-2.33-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62s1.13 3.04 1.28 3.25c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.66.76.24 1.44.21 1.98.13.6-.09 1.86-.76 2.12-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"
+                  />
+                </svg>
+                Whatsapp Us
+              </a>
+
+              <a
+                href="#quote"
+                class="inline-flex items-center justify-center gap-3 rounded-md bg-[#F58220] px-7 py-4 text-xs font-extrabold uppercase tracking-wide text-white shadow-[0_16px_30px_rgba(245,130,32,0.32)] transition-colors hover:bg-[#d96b11]"
+              >
+                Get A Free Quote
+                <i data-lucide="arrow-right" class="h-5 w-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="rounded-2xl border border-white/20 bg-white/10 p-6 shadow-[0_26px_70px_rgba(15,23,42,0.35)] backdrop-blur-md lg:justify-self-end"
+          >
+            <p
+              class="text-xs font-extrabold uppercase tracking-[0.28em] text-[#F58220]"
+            >
+              Why Book With Us?
+            </p>
+
+            <div class="mt-6 space-y-6">
+              <div class="flex gap-4">
+                <span
+                  class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#F58220]"
+                >
+                  <i data-lucide="shield-check" class="h-5 w-5"></i>
+                </span>
+                <div>
+                  <h3 class="text-sm font-extrabold text-white">
+                    Safe & Reliable
+                  </h3>
+                  <p class="mt-1 text-sm font-medium leading-5 text-white/65">
+                    Licensed local trekking guides
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span
+                  class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#F58220]"
+                >
+                  <i data-lucide="sliders-horizontal" class="h-5 w-5"></i>
+                </span>
+                <div>
+                  <h3 class="text-sm font-extrabold text-white">
+                    Flexible Trips
+                  </h3>
+                  <p class="mt-1 text-sm font-medium leading-5 text-white/65">
+                    Personalized and custom itineraries
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <span
+                  class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#F58220]"
+                >
+                  <i data-lucide="headphones" class="h-5 w-5"></i>
+                </span>
+                <div>
+                  <h3 class="text-sm font-extrabold text-white">
+                    Local Support
+                  </h3>
+                  <p class="mt-1 text-sm font-medium leading-5 text-white/65">
+                    Help before and during your trek
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- adventure cta end -->
+
+      <!-- footer start -->
+      <footer
+        class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8"
+      >
+        <!-- <img
+          src="Images/Home/Background.png"
+          alt=""
+          class="absolute inset-0 h-full w-full object-cover opacity-20"
+        /> -->
+        <div class="absolute inset-0 bg-[#08213D]/90"></div>
+
+        <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
+          <div
+            class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            <div>
+              <h3 class="text-sm font-extrabold uppercase">
+                Panorama Trekking
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-white/80">
+                A local trekking company in Nepal specialized in Himalayan
+                adventures with professional Sherpa guides.
+              </p>
+              <div class="mt-4 flex gap-2">
+                <a
+                  href="#"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-xs font-bold"
+                  aria-label="Facebook"
+                >
+                  f
+                </a>
+                <a
+                  href="#"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#E4405F] text-xs font-bold"
+                  aria-label="Instagram"
+                >
+                  ig
+                </a>
+                <a
+                  href="#"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#16A34A] text-xs font-bold"
+                  aria-label="Tripadvisor"
+                >
+                  ta
+                </a>
+                <a
+                  href="#"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FF0000] text-xs font-bold"
+                  aria-label="YouTube"
+                >
+                  yt
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
+              <ul class="mt-3 space-y-1 text-sm text-white/80">
+                <li><a href="#" class="hover:text-[#F58220]">Home</a></li>
+                <li>
+                  <a href="#aboutus" class="hover:text-[#F58220]">About Us</a>
+                </li>
+                <li>
+                  <a href="#treks" class="hover:text-[#F58220]">All Treks</a>
+                </li>
+                <li>
+                  <a href="#destinations" class="hover:text-[#F58220]">
+                    Peak & Expenditions
+                  </a>
+                </li>
+                <li>
+                  <a href="#travel-guide" class="hover:text-[#F58220]">
+                    Travel Guide
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-extrabold uppercase">Popular Treks</h3>
+              <ul class="mt-3 space-y-1 text-sm text-white/80">
+                <li>Everest Base Camp Trek</li>
+                <li>Annapurna Circuit Trek</li>
+                <li>Manaslu Circuit Trek</li>
+                <li>Langtang Valley Trek</li>
+                <li>Upper Mustang Trek</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-extrabold uppercase">Contact Info</h3>
+              <ul class="mt-3 space-y-2 text-sm text-white/80">
+                <li class="flex gap-2">
+                  <i
+                    data-lucide="map-pin"
+                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                  ></i>
+                  Kapan, Kathmandu, Nepal
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    data-lucide="phone"
+                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                  ></i>
+                  +977 9841373860 (24/7)
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    data-lucide="mail"
+                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                  ></i>
+                  info@panoramatrekking.com
+                </li>
+                <li class="flex gap-2">
+                  <i
+                    data-lucide="globe"
+                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                  ></i>
+                  www.panoramatrekking.com
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p
+            class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70"
+          >
+            © 2024 Panorama Trekking Nepal Pvt. Ltd. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
+      <!-- footer end -->
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+
+        const desktopDropdownButtons = document.querySelectorAll(
+          ".desktop-dropdown-button",
+        );
+
+        const mobileMenuButton =
+          document.getElementById("mobileMenuButton");
+
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        const mobileMenuIcon =
+          document.getElementById("mobileMenuIcon");
+
+        const mobileDropdownButtons = document.querySelectorAll(
+          ".mobile-dropdown-button",
+        );
+
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        /*
+         * Close every desktop dropdown.
+         */
+        function closeDesktopDropdowns(exceptButton = null) {
+          desktopDropdownButtons.forEach(function (button) {
+            if (button === exceptButton) {
+              return;
+            }
+
+            const dropdownId = button.getAttribute("aria-controls");
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = button.querySelector(".dropdown-arrow");
+
+            dropdown.classList.remove("open");
+            arrow.classList.remove("rotate");
+            button.setAttribute("aria-expanded", "false");
+          });
+        }
+
+        /*
+         * Desktop dropdown click events.
+         */
+        desktopDropdownButtons.forEach(function (button) {
+          button.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const dropdownId = button.getAttribute("aria-controls");
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = button.querySelector(".dropdown-arrow");
+
+            const isOpen = dropdown.classList.contains("open");
+
+            closeDesktopDropdowns(button);
+
+            if (isOpen) {
+              dropdown.classList.remove("open");
+              arrow.classList.remove("rotate");
+              button.setAttribute("aria-expanded", "false");
+            } else {
+              dropdown.classList.add("open");
+              arrow.classList.add("rotate");
+              button.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        /*
+         * Keep dropdown open when clicking inside it.
+         */
+        document
+          .querySelectorAll(".desktop-dropdown")
+          .forEach(function (dropdown) {
+            dropdown.addEventListener("click", function (event) {
+              event.stopPropagation();
+            });
+          });
+
+        /*
+         * Close desktop dropdown when clicking outside.
+         */
+        document.addEventListener("click", function () {
+          closeDesktopDropdowns();
+        });
+
+        /*
+         * Update the mobile hamburger icon.
+         */
+        function updateMobileMenuIcon(iconName) {
+          mobileMenuIcon.setAttribute("data-lucide", iconName);
+          lucide.createIcons();
+        }
+
+        /*
+         * Close all mobile submenu dropdowns.
+         */
+        function closeMobileDropdowns(exceptButton = null) {
+          mobileDropdownButtons.forEach(function (button) {
+            if (button === exceptButton) {
+              return;
+            }
+
+            const dropdownId = button.getAttribute("aria-controls");
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = button.querySelector(".dropdown-arrow");
+
+            dropdown.classList.add("hidden");
+            arrow.classList.remove("rotate");
+            button.setAttribute("aria-expanded", "false");
+          });
+        }
+
+        /*
+         * Close the complete mobile navigation.
+         */
+        function closeMobileMenu() {
+          mobileMenu.classList.add("hidden");
+          mobileMenuButton.setAttribute("aria-expanded", "false");
+          updateMobileMenuIcon("menu");
+          closeMobileDropdowns();
+        }
+
+        /*
+         * Mobile hamburger button.
+         */
+        mobileMenuButton.addEventListener("click", function () {
+          const isOpen = !mobileMenu.classList.contains("hidden");
+
+          if (isOpen) {
+            closeMobileMenu();
+          } else {
+            mobileMenu.classList.remove("hidden");
+            mobileMenuButton.setAttribute("aria-expanded", "true");
+            updateMobileMenuIcon("x");
+          }
+        });
+
+        /*
+         * Mobile submenu buttons.
+         */
+        mobileDropdownButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const dropdownId = button.getAttribute("aria-controls");
+            const dropdown = document.getElementById(dropdownId);
+            const arrow = button.querySelector(".dropdown-arrow");
+
+            const isOpen = !dropdown.classList.contains("hidden");
+
+            closeMobileDropdowns(button);
+
+            if (isOpen) {
+              dropdown.classList.add("hidden");
+              arrow.classList.remove("rotate");
+              button.setAttribute("aria-expanded", "false");
+            } else {
+              dropdown.classList.remove("hidden");
+              arrow.classList.add("rotate");
+              button.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        /*
+         * Close mobile navigation when clicking a link.
+         */
+        mobileLinks.forEach(function (link) {
+          link.addEventListener("click", closeMobileMenu);
+        });
+
+        /*
+         * Home page album gallery overlay.
+         */
+        const galleryAlbums = [
+          { label: "View All", value: "all" },
+          { label: "Everest Region", value: "everest" },
+          { label: "Annapurna Region", value: "annapurna" },
+          { label: "Langtang Region", value: "langtang" },
+          { label: "Wilderness Trekking", value: "wilderness" },
+          { label: "Homestay Trekking", value: "homestay" },
+          { label: "Newly Opened Treks", value: "newly-opened" },
+        ];
+
+        const homeGalleryImages = [
+          {
+            id: 1,
+            src: "./Images/Home/mustang.png",
+            title: "Everest Region Lake",
+            category: "everest",
+          },
+          {
+            id: 2,
+            src: "./Images/Home/everest.png",
+            title: "Everest Trails",
+            category: "everest",
+          },
+          {
+            id: 3,
+            src: "./Images/Home/Background.png",
+            title: "Everest Snowline",
+            category: "everest",
+          },
+          {
+            id: 4,
+            src: "./Images/Home/manaslu.png",
+            title: "Annapurna Forest Valley",
+            category: "annapurna",
+          },
+          {
+            id: 5,
+            src: "./Images/Home/annapurna.png",
+            title: "Annapurna Panorama",
+            category: "annapurna",
+          },
+          {
+            id: 6,
+            src: "./Images/Home/adventure.png",
+            title: "Annapurna Ridge Walk",
+            category: "annapurna",
+          },
+          {
+            id: 7,
+            src: "./Images/Home/team.png",
+            title: "Langtang Group Trek",
+            category: "langtang",
+          },
+          {
+            id: 8,
+            src: "./Images/Home/manaslu1.png",
+            title: "Langtang Mountain Trail",
+            category: "langtang",
+          },
+          {
+            id: 9,
+            src: "./Images/Home/manaslu.png",
+            title: "Langtang Remote Valley",
+            category: "langtang",
+          },
+          {
+            id: 10,
+            src: "./Images/Home/adventure.png",
+            title: "Wilderness Trekking",
+            category: "wilderness",
+          },
+          {
+            id: 11,
+            src: "./Images/Home/mustang.png",
+            title: "Upper Mustang Wilderness",
+            category: "wilderness",
+          },
+          {
+            id: 12,
+            src: "./Images/Home/manaslu1.png",
+            title: "Wild Himalayan Route",
+            category: "wilderness",
+          },
+          {
+            id: 13,
+            src: "./Images/Home/everest.png",
+            title: "Homestay Trekking Trail",
+            category: "homestay",
+          },
+          {
+            id: 14,
+            src: "./Images/Home/team.png",
+            title: "Village Welcome",
+            category: "homestay",
+          },
+          {
+            id: 15,
+            src: "./Images/Home/annapurna.png",
+            title: "Community Trek",
+            category: "homestay",
+          },
+          {
+            id: 16,
+            src: "./Images/Home/annapurna.png",
+            title: "Newly Opened Route",
+            category: "newly-opened",
+          },
+          {
+            id: 17,
+            src: "./Images/Home/Background.png",
+            title: "New Mountain Viewpoint",
+            category: "newly-opened",
+          },
+          {
+            id: 18,
+            src: "./Images/Home/manaslu1.png",
+            title: "Fresh Himalayan Trail",
+            category: "newly-opened",
+          },
+        ];
+
+        const galleryOverlay = document.getElementById("homeGalleryOverlay");
+        const galleryViewer = document.getElementById("homeGalleryViewer");
+        const closeGalleryButton = document.getElementById("closeHomeGallery");
+        const fullscreenGalleryButton = document.getElementById(
+          "fullscreenHomeGallery",
+        );
+        const homeGalleryTitle = document.getElementById("homeGalleryTitle");
+        const homeGalleryCount = document.getElementById("homeGalleryCount");
+        const homeGalleryCaption =
+          document.getElementById("homeGalleryCaption");
+        const homeGalleryMainImage = document.getElementById(
+          "homeGalleryMainImage",
+        );
+        const homeGalleryThumbnails = document.getElementById(
+          "homeGalleryThumbnails",
+        );
+        const homeGalleryLinks = document.querySelectorAll(
+          ".gallery-card",
+        );
+        let activeGalleryImages = [];
+        let activeGalleryImageIndex = 0;
+        let lastGalleryWheelTime = 0;
+        let galleryWheelDelta = 0;
+
+        function getAlbumLabel(albumValue) {
+          const album = galleryAlbums.find(function (item) {
+            return item.value === albumValue;
+          });
+
+          return album ? album.label : "View All";
+        }
+
+        function getAlbumFromHref(href) {
+          const url = new URL(href, window.location.href);
+          return url.searchParams.get("region") || "all";
+        }
+
+        function setActiveHomeGalleryImage(index) {
+          const image = activeGalleryImages[index];
+
+          if (!image) {
+            return;
+          }
+
+          activeGalleryImageIndex = index;
+          homeGalleryMainImage.src = image.src;
+          homeGalleryMainImage.alt = image.title;
+          homeGalleryCaption.textContent = image.title;
+
+          homeGalleryThumbnails
+            .querySelectorAll(".home-gallery-thumb")
+            .forEach(function (thumbnail) {
+              const isActive =
+                Number(thumbnail.dataset.index) === activeGalleryImageIndex;
+              thumbnail.setAttribute("aria-current", String(isActive));
+            });
+        }
+
+        function moveHomeGalleryImage(direction) {
+          if (!activeGalleryImages.length) {
+            return;
+          }
+
+          setActiveHomeGalleryImage(
+            (activeGalleryImageIndex + direction + activeGalleryImages.length) %
+              activeGalleryImages.length,
+          );
+        }
+
+        function openHomeGallery(albumValue) {
+          const safeAlbum = galleryAlbums.some(function (album) {
+            return album.value === albumValue;
+          })
+            ? albumValue
+            : "all";
+
+          activeGalleryImages =
+            safeAlbum === "all"
+              ? homeGalleryImages
+              : homeGalleryImages.filter(function (image) {
+                  return image.category === safeAlbum;
+                });
+
+          homeGalleryTitle.textContent = getAlbumLabel(safeAlbum);
+          homeGalleryCount.textContent =
+            activeGalleryImages.length +
+            (activeGalleryImages.length === 1 ? " photo" : " photos");
+
+          homeGalleryThumbnails.innerHTML = activeGalleryImages
+            .map(function (image, index) {
+              return `
+                <button
+                  type="button"
+                  class="home-gallery-thumb h-20 w-32 shrink-0 overflow-hidden rounded border-2 border-transparent bg-black opacity-70 shadow-lg transition hover:opacity-100 lg:h-24 lg:w-36"
+                  data-index="${index}"
+                  aria-current="false"
+                  aria-label="Show ${image.title}"
+                >
+                  <img
+                    src="${image.src}"
+                    alt=""
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              `;
+            })
+            .join("");
+
+          galleryOverlay.classList.remove("hidden");
+          document.body.classList.add("overflow-hidden");
+          setActiveHomeGalleryImage(0);
+          closeGalleryButton.focus();
+        }
+
+        function closeHomeGallery() {
+          if (galleryOverlay.classList.contains("hidden")) {
+            return;
+          }
+
+          galleryOverlay.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        }
+
+        homeGalleryLinks.forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            openHomeGallery(getAlbumFromHref(link.href));
+          });
+        });
+
+        homeGalleryThumbnails.addEventListener("click", function (event) {
+          const thumbnail = event.target.closest(".home-gallery-thumb");
+
+          if (!thumbnail) {
+            return;
+          }
+
+          setActiveHomeGalleryImage(Number(thumbnail.dataset.index));
+        });
+
+        galleryViewer.addEventListener(
+          "wheel",
+          function (event) {
+            if (
+              galleryOverlay.classList.contains("hidden") ||
+              event.target.closest("#homeGalleryThumbnails")
+            ) {
+              return;
+            }
+
+            const now = Date.now();
+
+            event.preventDefault();
+
+            if (now - lastGalleryWheelTime < 700) {
+              return;
+            }
+
+            galleryWheelDelta += Math.abs(event.deltaY) > Math.abs(event.deltaX)
+              ? event.deltaY
+              : event.deltaX;
+
+            if (Math.abs(galleryWheelDelta) < 120) {
+              return;
+            }
+
+            lastGalleryWheelTime = now;
+            const direction = galleryWheelDelta > 0 ? 1 : -1;
+            galleryWheelDelta = 0;
+            moveHomeGalleryImage(direction);
+          },
+          { passive: false },
+        );
+
+        closeGalleryButton.addEventListener("click", closeHomeGallery);
+
+        galleryOverlay.addEventListener("click", function (event) {
+          if (event.target === galleryOverlay) {
+            closeHomeGallery();
+          }
+        });
+
+        fullscreenGalleryButton.addEventListener("click", function () {
+          if (!document.fullscreenElement && galleryViewer.requestFullscreen) {
+            galleryViewer.requestFullscreen();
+            return;
+          }
+
+          if (document.fullscreenElement && document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        });
+
+        /*
+         * Close menus with Escape.
+         */
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeHomeGallery();
+            closeDesktopDropdowns();
+            closeMobileMenu();
+          }
+
+          if (galleryOverlay.classList.contains("hidden")) {
+            return;
+          }
+
+          if (event.key === "ArrowRight" && activeGalleryImages.length) {
+            moveHomeGalleryImage(1);
+          }
+
+          if (event.key === "ArrowLeft" && activeGalleryImages.length) {
+            moveHomeGalleryImage(-1);
+          }
+        });
+
+        /*
+         * Reset mobile menu when changing to desktop size.
+         */
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 1024) {
+            closeMobileMenu();
+          } else {
+            closeDesktopDropdowns();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
