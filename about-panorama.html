@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photo Gallery | Panorama Trekking</title>
+    <title>About Panorama | Panorama Trekking</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -15,22 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Sans+3:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-
-      .gallery-filter[aria-selected="true"] {
-        border-color: #122b55;
-        background: #122b55;
-        color: #ffffff;
-      }
-    </style>
   </head>
 
-  <body class="bg-[#fcfcfc] text-slate-900">
-  <header>
+  <body class="bg-[#f6f8fb] font-[Inter,sans-serif] text-[#10233f]">
+    <header>
 
       <div class="hidden w-full bg-[#122B55] lg:block">
         <div
@@ -106,7 +94,8 @@
         </div>
       </div>
     </header>
-   <nav
+
+    <nav
       class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm"
       aria-label="Main navigation"
     >
@@ -956,70 +945,511 @@
     </nav>
 
     <main>
-      <section class="bg-white">
-        <div
-          class="mx-auto grid w-full max-w-[1584px] gap-8 px-5 py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(360px,0.55fr)] lg:items-end lg:py-16"
-        >
+      <section class="bg-white px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <a
-              href="./index.html"
-              class="mb-7 inline-flex items-center gap-2 text-sm font-bold text-[#122B55] transition-colors hover:text-[#F58220]"
+            <p
+              class="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
             >
-              <i data-lucide="arrow-left" class="h-4 w-4"></i>
-              Back to Home
-            </a>
-
-            <p class="mb-2 text-sm font-bold uppercase text-[#F58220]">
-              Photo Gallery
+              <span class="h-0.5 w-8 bg-[#F58220]"></span>
+              Trekking in Nepal
             </p>
             <h1
-              class="max-w-3xl text-4xl font-extrabold leading-tight text-[#122B55] md:text-5xl"
+              class="max-w-xl text-3xl font-black leading-tight text-[#10233f] sm:text-4xl lg:text-5xl"
             >
-              Trekking albums from Nepal's mountain regions
+              About <br>
+              <span class="text-[#F58220]"> Panorama</span> Trekking
             </h1>
+            <p class="mt-6 max-w-2xl text-sm font-medium leading-7 text-slate-600">
+              It is because each person is different that the journey will be
+              unique. From this desire for exchange and sharing was born
+              Panorama Himalaya Trekking, a French-speaking trekking agency in
+              Nepal.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-[11px] font-black text-[#10233f]"
+              >
+                <i data-lucide="check" class="h-3.5 w-3.5 text-[#F58220]"></i>
+                French-speaking guides
+              </span>
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-[11px] font-black text-[#10233f]"
+              >
+                <i data-lucide="check" class="h-3.5 w-3.5 text-[#F58220]"></i>
+                Local Sherpa experience
+              </span>
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-[11px] font-black text-[#10233f]"
+              >
+                <i data-lucide="check" class="h-3.5 w-3.5 text-[#F58220]"></i>
+                Personalized adventures
+              </span>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#story"
+                class="inline-flex items-center gap-2 rounded-lg bg-[#F58220] px-5 py-3 text-xs font-black uppercase text-white transition-colors hover:bg-[#d96b11]"
+              >
+                Discover Our Story
+                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </a>
+              <a
+                href="./index.html#contact"
+                class="inline-flex rounded-lg bg-slate-100 px-5 py-3 text-xs font-black uppercase text-[#10233f] transition-colors hover:bg-slate-200"
+              >
+                Contact Us
+              </a>
+            </div>
           </div>
 
-          <p class="max-w-xl text-base font-medium leading-7 text-slate-600">
-            Browse each region as its own album, or keep View All selected to
-            scan the complete collection.
-          </p>
-        </div>
-      </section>
+          <div class="relative">
+            <div
+              class="overflow-hidden rounded-3xl bg-slate-200 shadow-[0_24px_70px_rgba(15,23,42,0.18)]"
+            >
+              <img
+                src="./Images/Home/team.png"
+                alt="Panorama Himalaya Trekking local team"
+                class="h-[420px] w-full object-cover object-center"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 rounded-b-3xl bg-gradient-to-t from-[#10233f]/85 to-transparent p-8 text-white"
+              >
+                <p
+                  class="text-[10px] font-black uppercase tracking-[0.28em] text-[#FAB331]"
+                >
+                  Panorama Himalaya Trekking
+                </p>
+                <p class="mt-3 max-w-md text-lg font-black leading-7">
+                  Local knowledge, personal care and authentic Himalayan
+                  journeys.
+                </p>
+              </div>
+            </div>
 
-      <section class="border-y border-slate-200 bg-slate-50">
-        <div class="mx-auto w-full max-w-[1584px] px-5 py-5">
-          <div
-            id="galleryFilters"
-            class="flex gap-3 overflow-x-auto pb-1"
-            role="tablist"
-            aria-label="Gallery categories"
-          ></div>
+            <div
+              class="absolute -left-7 top-8 max-w-[180px] rounded-2xl bg-white p-5 shadow-2xl"
+            >
+              <p class="text-2xl font-black text-[#F58220]">20+</p>
+              <p class="mt-1 text-xs font-black text-[#10233f]">
+                Years of significant experience
+              </p>
+              <p class="mt-2 text-[11px] leading-5 text-slate-500">
+                Accompanying and organizing trekking expeditions throughout
+                Nepal.
+              </p>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <section class="mx-auto w-full max-w-[1584px] px-5 py-10 lg:py-14">
         <div
-          class="mb-7 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between"
+          class="mx-auto mt-14 grid max-w-[1400px] gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
-          <div>
-            <h2
-              id="galleryTitle"
-              class="text-2xl font-extrabold text-[#122B55]"
-            ></h2>
-            <p
-              id="galleryCount"
-              class="mt-1 text-sm font-medium text-slate-600"
-            ></p>
+          <div class="rounded-2xl bg-slate-50 p-6">
+            <i
+              data-lucide="clock"
+              class="mb-3 h-8 w-8 rounded-xl bg-white p-2 text-[#F58220]"
+            ></i>
+            <p class="text-xl font-black">2010</p>
+            <p class="text-[11px] font-semibold text-slate-500">
+              Agency established in Nepal
+            </p>
           </div>
+          <div class="rounded-2xl bg-slate-50 p-6">
+            <i
+              data-lucide="user-round-check"
+              class="mb-3 h-8 w-8 rounded-xl bg-white p-2 text-[#F58220]"
+            ></i>
+            <p class="text-xl font-black">10</p>
+            <p class="text-[11px] font-semibold text-slate-500">
+              Specialized local guides
+            </p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 p-6">
+            <i
+              data-lucide="message-square"
+              class="mb-3 h-8 w-8 rounded-xl bg-white p-2 text-[#F58220]"
+            ></i>
+            <p class="text-xl font-black">4</p>
+            <p class="text-[11px] font-semibold text-slate-500">
+              Commonly used languages
+            </p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 p-6">
+            <i
+              data-lucide="mountain"
+              class="mb-3 h-8 w-8 rounded-xl bg-white p-2 text-[#F58220]"
+            ></i>
+            <p class="text-xl font-black">All Nepal</p>
+            <p class="text-[11px] font-semibold text-slate-500">
+              Trekking regions and activities
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="story" class="bg-white px-5 pb-20 lg:px-8 lg:pb-28">
+        <div class="mx-auto grid max-w-[1400px] gap-14 lg:grid-cols-2 lg:items-center">
+          <div class="relative min-h-[430px]">
+            <img
+              src="./Images/Home/adventure.png"
+              alt="Kusang and Pasang, founders of Panorama Himalaya Trekking"
+              class="h-[420px] w-[78%] rounded-3xl object-cover shadow-sm"
+            />
+            <img
+              src="./Images/Home/everest.png"
+              alt="Sherpa trekking guide in Nepal"
+              class="absolute bottom-0 right-0 h-56 w-[42%] rounded-2xl border-8 border-white object-cover shadow-xl"
+            />
+          </div>
+
+          <div>
+            <p
+              class="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
+            >
+              <span class="h-0.5 w-8 bg-[#F58220]"></span>
+              Our Story
+            </p>
+            <h2 class="max-w-2xl text-2xl font-black leading-tight sm:text-3xl">
+              Your local French-speaking agency
+            </h2>
+            <div class="mt-6 space-y-4 text-sm font-medium leading-7 text-slate-600">
+              <p>
+                Originally, two people, Kusang and his brother Pasang, started
+                creating a French-speaking trekking agency in Nepal in 2010. The
+                passion for the mountains and the profession of guide was passed
+                down from father to son.
+              </p>
+              <p>
+                Originally from the mountains and belonging to the Sherpa
+                people, they decided to pass on their love of travel to every
+                visitor who trusted their mountain routes.
+              </p>
+              <p>
+                Having started as porters, guides and then travel tour
+                organizers, they now have more than 20 years' significant
+                experience in accompanying and organizing trekking expeditions.
+              </p>
+            </div>
+            <blockquote
+              class="mt-7 rounded-2xl bg-orange-50 p-6 text-sm font-black leading-6 text-[#10233f]"
+            >
+              <span class="mr-3 text-2xl text-[#F58220]">“</span>
+              When we were children, we saw Dad working in tourism and we
+              thought it was possible to live from his passion.
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f1f4f8] px-5 py-20 lg:px-8">
+        <div class="mx-auto max-w-[1400px]">
+          <div class="mx-auto max-w-2xl text-center">
+            <p
+              class="mb-4 inline-flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
+            >
+              <span class="h-0.5 w-8 bg-[#F58220]"></span>
+              Our Purpose
+            </p>
+            <h2 class="text-2xl font-black sm:text-3xl">Mission and vision</h2>
+            <p class="mt-4 text-sm font-medium leading-7 text-slate-500">
+              We create journeys that respect each traveler, support local
+              communities and celebrate the natural and cultural richness of
+              Nepal.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-2">
+            <article class="rounded-3xl bg-[#12365f] p-8 text-white lg:p-10">
+              <span
+                class="rounded-full bg-[#F58220] px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em]"
+              >
+                01 · Mission
+              </span>
+              <i
+                data-lucide="badge-check"
+                class="mt-10 h-12 w-12 rounded-2xl bg-[#F58220] p-3"
+              ></i>
+              <h3 class="mt-8 text-2xl font-black">Our mission</h3>
+              <p class="mt-5 max-w-xl text-sm font-medium leading-7 text-white/75">
+                Our mission is to provide safe, personal and meaningful trekking
+                experiences adapted to every traveler's desires, physical
+                condition and expectations.
+              </p>
+            </article>
+
+            <article class="rounded-3xl bg-orange-50 p-8 lg:p-10">
+              <span
+                class="rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]"
+              >
+                02 · Vision
+              </span>
+              <i
+                data-lucide="eye"
+                class="mt-10 h-12 w-12 rounded-2xl bg-white p-3 text-[#F58220]"
+              ></i>
+              <h3 class="mt-8 text-2xl font-black">Our vision</h3>
+              <p class="mt-5 max-w-xl text-sm font-medium leading-7 text-slate-600">
+                Our vision is to be a trusted bridge between international
+                travelers and Nepal, while protecting the mountains, traditions
+                and cultures that make Nepal unique.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-20 lg:px-8">
+        <div class="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p
+              class="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
+            >
+              <span class="h-0.5 w-8 bg-[#F58220]"></span>
+              What We Offer
+            </p>
+            <h2 class="text-2xl font-black sm:text-3xl">
+              The services offered
+            </h2>
+            <div class="mt-6 space-y-3 text-sm font-medium leading-7 text-slate-600">
+              <p>
+                Panorama Himalaya offers trekking and high mountain experiences
+                adapted to your desires and physical conditions in Nepalese
+                regions such as Mustang, Everest, Annapurnas, Kanchenjunga and
+                Mount Kailash.
+              </p>
+              <p>
+                We also offer cultural visits to Nepal's cities and sports
+                activities such as rafting, with guides commonly using French,
+                English, Italian and Spanish.
+              </p>
+            </div>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex gap-4 rounded-2xl bg-white p-4 shadow-sm">
+                <i
+                  data-lucide="mountain"
+                  class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+                ></i>
+                <div>
+                  <h3 class="text-sm font-black">
+                    Trekking and high mountain experiences
+                  </h3>
+                  <p class="mt-1 text-xs font-medium leading-5 text-slate-500">
+                    Adventures adapted to your goals, physical condition and
+                    preferred level of challenge.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4 rounded-2xl bg-white p-4 shadow-sm">
+                <i
+                  data-lucide="landmark"
+                  class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+                ></i>
+                <div>
+                  <h3 class="text-sm font-black">Cultural visits</h3>
+                  <p class="mt-1 text-xs font-medium leading-5 text-slate-500">
+                    Discover Nepal's cities, heritage sites, communities and
+                    cultural traditions.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4 rounded-2xl bg-white p-4 shadow-sm">
+                <i
+                  data-lucide="waves"
+                  class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+                ></i>
+                <div>
+                  <h3 class="text-sm font-black">Rafting and active travel</h3>
+                  <p class="mt-1 text-xs font-medium leading-5 text-slate-500">
+                    Complement your trekking journey with exciting outdoor and
+                    sports activities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative overflow-hidden rounded-3xl bg-slate-200">
+            <img
+              src="./Images/Home/manaslu.png"
+              alt="Panorama Himalaya trekking services in Nepal"
+              class="h-[520px] w-full object-cover object-center"
+            />
+            <div class="absolute inset-x-6 bottom-6 rounded-2xl bg-[#10233f] p-6 text-white">
+              <h3 class="text-base font-black">
+                Journeys adapted to every traveler
+              </h3>
+              <p class="mt-2 text-xs font-medium text-white/70">
+                Personalized trekking, cultural travel and mountain experiences
+                across Nepal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f1f4f8] px-5 py-20 lg:px-8">
+        <div class="mx-auto max-w-[1400px]">
+          <p
+            class="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
+          >
+            <span class="h-0.5 w-8 bg-[#F58220]"></span>
+            What Guides Us
+          </p>
+          <h2 class="text-2xl font-black sm:text-3xl">Our values</h2>
+          <p class="mt-5 max-w-2xl text-sm font-medium leading-7 text-slate-500">
+            These principles guide how we organize every trek and how we care
+            for travelers, guides, communities and the environment.
+          </p>
+
+          <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-2xl bg-white p-7 shadow-sm">
+              <i
+                data-lucide="shield-check"
+                class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+              ></i>
+              <h3 class="mt-5 text-base font-black">Safety</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                Careful planning, knowledgeable guides and attention to every
+                detail throughout your journey.
+              </p>
+            </article>
+            <article class="rounded-2xl bg-white p-7 shadow-sm">
+              <i
+                data-lucide="heart"
+                class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+              ></i>
+              <h3 class="mt-5 text-base font-black">Personal care</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                Every person is different, so every journey should reflect
+                their needs, interests and expectations.
+              </p>
+            </article>
+            <article class="rounded-2xl bg-white p-7 shadow-sm">
+              <i
+                data-lucide="user-round"
+                class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+              ></i>
+              <h3 class="mt-5 text-base font-black">Local knowledge</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                Our Sherpa roots and years of guiding experience give travelers
+                meaningful insight into Nepal.
+              </p>
+            </article>
+            <article class="rounded-2xl bg-white p-7 shadow-sm">
+              <i
+                data-lucide="users"
+                class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+              ></i>
+              <h3 class="mt-5 text-base font-black">Cultural exchange</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                We encourage genuine connection between visitors and the people,
+                cultures and traditions of Nepal.
+              </p>
+            </article>
+            <article class="rounded-2xl bg-white p-7 shadow-sm">
+              <i
+                data-lucide="leaf"
+                class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+              ></i>
+              <h3 class="mt-5 text-base font-black">Responsible tourism</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                Our journeys are designed to respect mountain environments and
+                support local livelihoods.
+              </p>
+            </article>
+            <article class="rounded-2xl bg-white p-7 shadow-sm">
+              <i
+                data-lucide="book-open"
+                class="h-10 w-10 rounded-xl bg-orange-50 p-3 text-[#F58220]"
+              ></i>
+              <h3 class="mt-5 text-base font-black">Education support</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                We contribute to projects that improve access to education for
+                children and rural families.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-20 lg:px-8">
+        <div class="mx-auto grid max-w-[1400px] gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <div class="rounded-3xl bg-[#12365f] p-8 text-white lg:p-10">
+            <p
+              class="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
+            >
+              <span class="h-0.5 w-8 bg-[#F58220]"></span>
+              Community Project
+            </p>
+            <h2 class="max-w-xl text-2xl font-black leading-tight sm:text-3xl">
+              Because each person can contribute to a beautiful project!
+            </h2>
+            <div class="mt-6 space-y-4 text-sm font-medium leading-7 text-white/75">
+              <p>
+                The mountain is part of our lives, just like its inhabitants.
+                The founders and guides of this association are keen to
+                contribute to the education of the local population.
+              </p>
+              <p>
+                By choosing our trekking agency in Nepal, you will contribute to
+                developing the country's educational conditions.
+              </p>
+            </div>
+            <div class="mt-8 grid gap-3 sm:grid-cols-2">
+              <span class="rounded-xl bg-white/10 px-4 py-3 text-xs font-black">
+                Access to education
+              </span>
+              <span class="rounded-xl bg-white/10 px-4 py-3 text-xs font-black">
+                Support for rural families
+              </span>
+              <span class="rounded-xl bg-white/10 px-4 py-3 text-xs font-black">
+                School and facility improvement
+              </span>
+              <span class="rounded-xl bg-white/10 px-4 py-3 text-xs font-black">
+                Profits supporting local projects
+              </span>
+            </div>
+          </div>
+
+          <img
+            src="./Images/Home/mustang.png"
+            alt="Education and community project in Nepal"
+            class="h-full min-h-[420px] rounded-3xl object-cover"
+          />
         </div>
 
         <div
-          id="galleryGrid"
-          class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-          aria-live="polite"
-        ></div>
+          class="mx-auto mt-12 flex max-w-[1400px] flex-col gap-5 rounded-3xl bg-orange-50 p-7 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div class="flex gap-5">
+            <i
+              data-lucide="badge-check"
+              class="h-12 w-12 shrink-0 rounded-2xl bg-white p-3 text-[#F58220]"
+            ></i>
+            <div>
+              <h2 class="text-xl font-black">
+                Personalized guidance from start to finish
+              </h2>
+              <p class="mt-2 max-w-3xl text-sm font-medium leading-6 text-slate-600">
+                Our specialized guides will help make your trip an unforgettable
+                experience and take care of every detail.
+              </p>
+            </div>
+          </div>
+          <a
+            href="./index.html#contact"
+            class="inline-flex shrink-0 justify-center rounded-lg bg-[#F58220] px-6 py-3 text-xs font-black uppercase text-white transition-colors hover:bg-[#d96b11]"
+          >
+            Contact Us
+          </a>
+        </div>
       </section>
     </main>
+
       <footer
         class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8"
       >
@@ -1073,26 +1503,20 @@
             <div>
               <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
               <ul class="mt-3 space-y-1 text-sm text-white/80">
+                <li><a href="./index.html" class="hover:text-[#F58220]">Home</a></li>
                 <li>
-                  <a href="./index.html" class="hover:text-[#F58220]">Home</a>
+                  <a href="./about-panorama.html" class="hover:text-[#F58220]">About Us</a>
                 </li>
                 <li>
-                  <a href="./index.html#aboutus" class="hover:text-[#F58220]">
-                    About Us
-                  </a>
+                  <a href="./index.html#treks" class="hover:text-[#F58220]">All Treks</a>
                 </li>
                 <li>
-                  <a href="./index.html#treks" class="hover:text-[#F58220]">
-                    All Treks
-                  </a>
-                </li>
-                <li>
-                  <a href="#destinations" class="hover:text-[#F58220]">
+                  <a href="./index.html#destinations" class="hover:text-[#F58220]">
                     Peak & Expenditions
                   </a>
                 </li>
                 <li>
-                  <a href="#travel-guide" class="hover:text-[#F58220]">
+                  <a href="./index.html#travel-guide" class="hover:text-[#F58220]">
                     Travel Guide
                   </a>
                 </li>
@@ -1154,6 +1578,6 @@
       </footer>
 
     <script src="./navigation.js"></script>
-    <script src="./gallery.js"></script>
+    <script src="./about-panorama.js"></script>
   </body>
 </html>

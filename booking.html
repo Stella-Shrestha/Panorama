@@ -102,7 +102,7 @@
         class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-4 px-5 py-3"
       >
         <!-- Logo -->
-        <a href="#" class="shrink-0" aria-label="Panorama Trekking home">
+        <a href="./index.html" class="shrink-0" aria-label="Panorama Trekking home">
           <!-- Change Images to images if your folder is lowercase -->
           <img
             src="./Images/logo.png"
@@ -117,7 +117,7 @@
         >
           <li>
             <a
-              href="#"
+              href="./index.html"
               class="relative inline-flex py-3 text-[#F58220] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#F58220] after:content-['']"
               aria-current="page"
             >
@@ -125,13 +125,65 @@
             </a>
           </li>
 
-          <li>
-            <a
-              href="#aboutus"
-              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="aboutDropdown"
             >
               About Us
-            </a>
+
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+
+            <div
+              id="aboutDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute opacity-0 translate-y-2.5 transition-all duration-200 left-1/2 top-full w-64 -translate-x-1/2 pt-3"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="./about-panorama.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="info" class="h-4 w-4"></i>
+
+                  About Panorama
+                </a>
+
+                <a
+                  href="./our-team.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="users" class="h-4 w-4"></i>
+
+                  Our Team
+                </a>
+
+                <a
+                  href="./legal-documents.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="file-text" class="h-4 w-4"></i>
+
+                  Legal Documents
+                </a>
+
+                <a
+                  href="./testimonials.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="message-square-heart" class="h-4 w-4"></i>
+
+                  Testimonials
+                </a>
+              </div>
+            </div>
           </li>
 
           <!-- Treks Dropdown -->
@@ -332,7 +384,7 @@
                   </div>
 
                   <a
-                    href="#treks"
+                    href="./index.html#treks"
                     class="inline-flex items-center gap-2 rounded-lg bg-[#F58220] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-white hover:text-[#122B55]"
                   >
                     View All Treks
@@ -408,7 +460,7 @@
 
           <li>
             <a
-              href="#dayTours"
+              href="./index.html#dayTours"
               class="inline-flex py-3 transition-colors hover:text-[#F58220]"
             >
               Day Tours
@@ -488,7 +540,7 @@
 
           <li>
             <a
-              href="#contact"
+              href="./index.html#contact"
               class="inline-flex py-3 transition-colors hover:text-[#F58220]"
             >
               Contact Us
@@ -498,7 +550,7 @@
 
         <!-- Quote Button -->
         <a
-          href="#quote"
+          href="./index.html#quote"
           class="hidden shrink-0 rounded-lg bg-[#F58220] px-4 py-3 text-sm font-bold uppercase text-white shadow-sm transition-colors duration-300 hover:bg-[#d96b11] lg:inline-flex xl:px-7"
         >
           Get a Quote
@@ -526,7 +578,7 @@
           <ul class="space-y-1 text-sm font-semibold text-[#122B55]">
             <li>
               <a
-                href="#"
+                href="./index.html"
                 class="mobile-link block rounded-lg bg-orange-50 px-4 py-3 text-[#F58220]"
               >
                 Home
@@ -534,12 +586,56 @@
             </li>
 
             <li>
-              <a
-                href="#aboutus"
-                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileAboutDropdown"
               >
-                About Us
-              </a>
+                <span>About Us</span>
+
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+
+              <div
+                id="mobileAboutDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="./about-panorama.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    About Panorama
+                  </a>
+
+                  <a
+                    href="./our-team.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Our Team
+                  </a>
+
+                  <a
+                    href="./legal-documents.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Legal Documents
+                  </a>
+
+                  <a
+                    href="./testimonials.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Testimonials
+                  </a>
+                </div>
+              </div>
             </li>
 
             <!-- Mobile Treks -->
@@ -719,7 +815,7 @@
 
             <li>
               <a
-                href="#dayTours"
+                href="./index.html#dayTours"
                 class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
               >
                 Day Tours
@@ -782,7 +878,7 @@
 
             <li>
               <a
-                href="#contact"
+                href="./index.html#contact"
                 class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
               >
                 Contact Us
@@ -791,7 +887,7 @@
           </ul>
 
           <a
-            href="#quote"
+            href="./index.html#quote"
             class="mobile-link mt-4 flex items-center justify-center rounded-lg bg-[#F58220] px-6 py-3 text-sm font-bold uppercase text-white transition-colors hover:bg-[#d96b11]"
           >
             Get a Quote
@@ -1253,12 +1349,18 @@
           <div>
             <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
             <ul class="mt-3 space-y-1 text-sm text-white/80">
-              <li><a href="#" class="hover:text-[#F58220]">Home</a></li>
               <li>
-                <a href="#aboutus" class="hover:text-[#F58220]">About Us</a>
+                <a href="./index.html" class="hover:text-[#F58220]">Home</a>
               </li>
               <li>
-                <a href="#treks" class="hover:text-[#F58220]">All Treks</a>
+                <a href="./index.html#aboutus" class="hover:text-[#F58220]">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="./index.html#treks" class="hover:text-[#F58220]">
+                  All Treks
+                </a>
               </li>
               <li>
                 <a href="#destinations" class="hover:text-[#F58220]">
@@ -1327,205 +1429,7 @@
       </div>
     </footer>
 
-    <script>
-      (function () {
-        if (window.lucide) {
-          window.lucide.createIcons();
-        }
-
-        const travelerCount = document.getElementById("travelerCount");
-        const summaryTrekkers = document.getElementById("summaryTrekkers");
-        const pricePerTrekker = document.getElementById("pricePerTrekker");
-        const baseCost = document.getElementById("baseCost");
-        const totalCost = document.getElementById("totalCost");
-        const paymentDueLabel = document.getElementById("paymentDueLabel");
-        const paymentDueCost = document.getElementById("paymentDueCost");
-        const remainingBalance = document.getElementById("remainingBalance");
-        const paymentNote = document.getElementById("paymentNote");
-        const startDateInput = document.getElementById("startDateInput");
-        const summaryStartDate = document.getElementById("summaryStartDate");
-        const countrySelect = document.getElementById("countrySelect");
-        const bookingMessage = document.getElementById("bookingMessage");
-        const bookingForm = document.getElementById("bookingForm");
-        const bookingStatus = document.getElementById("bookingStatus");
-        const paymentOptions = document.querySelectorAll(".payment-option");
-        function getPricePerPerson() {
-          if (travelers >= 6) return 1550;
-          if (travelers >= 3) return 1750;
-          return 1950;
-        }
-
-        const permitsAndTaxesPerPerson = 0;
-        let travelers = Number(travelerCount.textContent) || 1;
-        let selectedPayment = "deposit";
-
-        function formatCurrency(value) {
-          return "$" + value.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          });
-        }
-
-        function formatDate(dateValue) {
-          if (!dateValue) return "Date not selected";
-
-          return new Intl.DateTimeFormat("en", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-          }).format(new Date(dateValue + "T00:00:00"));
-        }
-
-        function getTotals() {
-          const pricePerPerson = getPricePerPerson();
-          const base = travelers * pricePerPerson;
-          const tax = travelers * permitsAndTaxesPerPerson;
-          const total = base + tax;
-          const dueNow = selectedPayment === "full" ? total : total * 0.25;
-          const remaining = total - dueNow;
-
-          return {
-            base,
-            dueNow,
-            remaining,
-            tax,
-            total,
-            pricePerPerson,
-          };
-        }
-
-        function updateSummary() {
-          const totals = getTotals();
-
-          if (
-            !travelerCount ||
-            !summaryTrekkers ||
-            !pricePerTrekker ||
-            !baseCost ||
-            !totalCost ||
-            !paymentDueLabel ||
-            !paymentDueCost ||
-            !remainingBalance ||
-            !paymentNote
-          ) {
-            return;
-          }
-
-          travelerCount.textContent = travelers;
-          summaryTrekkers.textContent =
-            travelers + (travelers === 1 ? " Adult" : " Adults");
-          if (summaryStartDate && startDateInput) {
-            summaryStartDate.textContent = formatDate(startDateInput.value);
-          }
-          pricePerTrekker.textContent = formatCurrency(totals.pricePerPerson);
-          baseCost.textContent = formatCurrency(totals.base);
-          totalCost.textContent = formatCurrency(totals.total);
-
-          if (selectedPayment === "full") {
-            paymentDueLabel.textContent = "Full Payment Due";
-            paymentDueCost.textContent = formatCurrency(totals.dueNow);
-            remainingBalance.textContent = formatCurrency(totals.remaining);
-            paymentNote.textContent =
-              "Your full expedition balance will be paid now.";
-          } else {
-            paymentDueLabel.textContent = "25% Advance Deposit";
-            paymentDueCost.textContent = formatCurrency(totals.dueNow);
-            remainingBalance.textContent = formatCurrency(totals.remaining);
-            paymentNote.textContent =
-              "Final balance is due 60 days before departure.";
-          }
-        }
-
-        function updatePaymentOptions(selectedOption) {
-          paymentOptions.forEach((item) => {
-            const input = item.querySelector("input[name='payment']");
-            const indicator = item.querySelector("[data-payment-indicator]");
-            const isSelected = item === selectedOption;
-
-            item.classList.toggle("border-[#F58220]", isSelected);
-            item.classList.toggle("bg-[#FFF7ED]", isSelected);
-            item.classList.toggle("border-slate-300", !isSelected);
-            item.classList.toggle("bg-white", !isSelected);
-
-            if (input) {
-              input.checked = isSelected;
-              selectedPayment = isSelected ? input.value : selectedPayment;
-            }
-
-            if (indicator) {
-              indicator.classList.toggle("border-[#F58220]", isSelected);
-              indicator.classList.toggle("border-slate-300", !isSelected);
-              indicator.classList.toggle(
-                "after:absolute",
-                isSelected,
-              );
-              indicator.classList.toggle("after:left-1/2", isSelected);
-              indicator.classList.toggle("after:top-1/2", isSelected);
-              indicator.classList.toggle("after:h-1.5", isSelected);
-              indicator.classList.toggle("after:w-1.5", isSelected);
-              indicator.classList.toggle("after:-translate-x-1/2", isSelected);
-              indicator.classList.toggle("after:-translate-y-1/2", isSelected);
-              indicator.classList.toggle("after:rounded-full", isSelected);
-              indicator.classList.toggle("after:bg-[#F58220]", isSelected);
-              indicator.classList.toggle("after:content-['']", isSelected);
-            }
-          });
-
-          updateSummary();
-        }
-
-        document.querySelectorAll("[data-traveler-change]").forEach((button) => {
-          button.addEventListener("click", () => {
-            const nextValue =
-              travelers + Number(button.getAttribute("data-traveler-change"));
-            travelers = Math.min(12, Math.max(1, nextValue));
-            updateSummary();
-          });
-        });
-
-        paymentOptions.forEach((option) => {
-          option.addEventListener("click", () => {
-            updatePaymentOptions(option);
-          });
-        });
-
-        if (startDateInput) {
-          startDateInput.addEventListener("change", updateSummary);
-        }
-
-        bookingForm.addEventListener("submit", (event) => {
-          event.preventDefault();
-
-          if (!bookingForm.checkValidity()) {
-            bookingStatus.textContent =
-              "Please complete the required contact details and select your country.";
-            bookingStatus.classList.remove("hidden");
-            bookingForm.reportValidity();
-            return;
-          }
-
-          const totals = getTotals();
-          const country = countrySelect.value || "country not selected";
-          const message = bookingMessage.value.trim();
-          bookingStatus.textContent =
-            "Ready for " +
-            (selectedPayment === "full" ? "full payment" : "25% deposit") +
-            ": " +
-            formatCurrency(totals.dueNow) +
-            " for " +
-            travelers +
-            (travelers === 1 ? " trekker" : " trekkers") +
-            " from " +
-            country +
-            " starting " +
-            formatDate(startDateInput.value) +
-            (message ? ". Message saved with your inquiry." : ".") +
-            " Secure payment integration can be connected next.";
-          bookingStatus.classList.remove("hidden");
-        });
-
-        updateSummary();
-      })();
-    </script>
+    <script src="./navigation.js"></script>
+    <script src="./booking.js"></script>
   </body>
 </html>
