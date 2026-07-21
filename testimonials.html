@@ -20,17 +20,23 @@
       body {
         font-family: "Inter", sans-serif;
       }
+
+      .review-card-excerpt {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        min-height: 5.25rem;
+        overflow: hidden;
+      }
     </style>
   </head>
 
-  <body class="bg-[#f5f6f8] text-slate-900">
-   <header>
-
+  <body class="min-h-full overflow-x-hidden bg-[#f5f6f8] text-slate-900">
+    <header>
       <div class="hidden w-full bg-[#122B55] lg:block">
         <div
           class="mx-auto flex w-full max-w-[1584px] items-center justify-between px-5 py-2"
         >
-
           <div class="flex items-center gap-6">
             <a
               href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal"
@@ -62,10 +68,7 @@
               href="mailto:info@panoramatrekking.com"
               class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
             >
-              <i
-                data-lucide="mail"
-                class="h-4 w-4 shrink-0 text-[#FAB331]"
-              ></i>
+              <i data-lucide="mail" class="h-4 w-4 shrink-0 text-[#FAB331]"></i>
 
               <span>info@panoramatrekking.com</span>
             </a>
@@ -84,10 +87,7 @@
               English
             </a>
 
-            <span
-              class="h-4 w-px bg-white/30"
-              aria-hidden="true"
-            ></span>
+            <span class="h-4 w-px bg-white/30" aria-hidden="true"></span>
 
             <a
               href="#"
@@ -100,20 +100,18 @@
         </div>
       </div>
     </header>
-     <nav
+    <nav
       class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm"
       aria-label="Main navigation"
     >
       <div
-        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 py-3 lg:px-5 py-3"
+        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 px-5 py-3 lg:px-5"
       >
-
         <a
           href="./index.html"
           class="shrink-0"
           aria-label="Panorama Trekking home"
         >
-
           <img
             src="./Images/logo.png"
             alt="Panorama Trekking"
@@ -218,7 +216,6 @@
                 class="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_24px_65px_-20px_rgba(15,23,42,0.35)]"
               >
                 <div class="grid grid-cols-3 gap-6">
-
                   <div>
                     <div
                       class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
@@ -226,15 +223,10 @@
                       <span
                         class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
                       >
-                        <i
-                          data-lucide="mountain"
-                          class="h-5 w-5"
-                        ></i>
+                        <i data-lucide="mountain" class="h-5 w-5"></i>
                       </span>
 
-                      <h3 class="font-bold text-[#122B55]">
-                        Everest Region
-                      </h3>
+                      <h3 class="font-bold text-[#122B55]">Everest Region</h3>
                     </div>
 
                     <ul class="space-y-1">
@@ -283,15 +275,10 @@
                       <span
                         class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
                       >
-                        <i
-                          data-lucide="map"
-                          class="h-5 w-5"
-                        ></i>
+                        <i data-lucide="map" class="h-5 w-5"></i>
                       </span>
 
-                      <h3 class="font-bold text-[#122B55]">
-                        Annapurna Region
-                      </h3>
+                      <h3 class="font-bold text-[#122B55]">Annapurna Region</h3>
                     </div>
 
                     <ul class="space-y-1">
@@ -340,15 +327,10 @@
                       <span
                         class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
                       >
-                        <i
-                          data-lucide="trees"
-                          class="h-5 w-5"
-                        ></i>
+                        <i data-lucide="trees" class="h-5 w-5"></i>
                       </span>
 
-                      <h3 class="font-bold text-[#122B55]">
-                        Langtang Region
-                      </h3>
+                      <h3 class="font-bold text-[#122B55]">Langtang Region</h3>
                     </div>
 
                     <ul class="space-y-1">
@@ -410,10 +392,7 @@
                   >
                     View All Treks
 
-                    <i
-                      data-lucide="arrow-right"
-                      class="h-4 w-4"
-                    ></i>
+                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
                   </a>
                 </div>
               </div>
@@ -446,10 +425,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="mountain-snow"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="mountain-snow" class="h-4 w-4"></i>
 
                   Nepal
                 </a>
@@ -458,10 +434,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="landmark"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="landmark" class="h-4 w-4"></i>
 
                   Tibet
                 </a>
@@ -470,10 +443,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="trees"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="trees" class="h-4 w-4"></i>
 
                   Bhutan
                 </a>
@@ -482,10 +452,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="map-pinned"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="map-pinned" class="h-4 w-4"></i>
 
                   India
                 </a>
@@ -528,10 +495,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="calendar-days"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="calendar-days" class="h-4 w-4"></i>
 
                   Best Time to Visit
                 </a>
@@ -540,10 +504,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="backpack"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="backpack" class="h-4 w-4"></i>
 
                   Trekking Equipment
                 </a>
@@ -552,10 +513,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="badge-dollar-sign"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="badge-dollar-sign" class="h-4 w-4"></i>
 
                   Nepal Visa Information
                 </a>
@@ -564,10 +522,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="shield-check"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="shield-check" class="h-4 w-4"></i>
 
                   Travel Insurance
                 </a>
@@ -576,10 +531,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="circle-help"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="circle-help" class="h-4 w-4"></i>
 
                   Frequently Asked Questions
                 </a>
@@ -612,11 +564,7 @@
           aria-expanded="false"
           aria-controls="mobileMenu"
         >
-          <i
-            id="mobileMenuIcon"
-            data-lucide="menu"
-            class="h-6 w-6"
-          ></i>
+          <i id="mobileMenuIcon" data-lucide="menu" class="h-6 w-6"></i>
         </button>
       </div>
 
@@ -750,10 +698,7 @@
                     <h3
                       class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
                     >
-                      <i
-                        data-lucide="map"
-                        class="h-4 w-4 text-[#F58220]"
-                      ></i>
+                      <i data-lucide="map" class="h-4 w-4 text-[#F58220]"></i>
 
                       Annapurna Region
                     </h3>
@@ -786,10 +731,7 @@
                     <h3
                       class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
                     >
-                      <i
-                        data-lucide="trees"
-                        class="h-4 w-4 text-[#F58220]"
-                      ></i>
+                      <i data-lucide="trees" class="h-4 w-4 text-[#F58220]"></i>
 
                       Langtang Region
                     </h3>
@@ -950,28 +892,34 @@
     </nav>
 
     <main>
-      <section class="bg-white px-5 py-16 lg:px-8 lg:py-24">
-        <div class="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-[0.88fr_1fr] lg:items-center">
+      <section class="bg-white px-5 py-[52px] lg:px-8 lg:py-[110px]">
+        <div
+          class="mx-auto grid max-w-[1584px] gap-8 lg:grid-cols-[0.88fr_1fr] lg:items-center"
+        >
           <div>
-            <p
+            <!-- <p
               class="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
             >
               <span class="h-0.5 w-8 bg-[#F58220]"></span>
               Traveler Experiences
-            </p>
+            </p> -->
             <h1
-              class="max-w-xl text-4xl font-black leading-tight text-[#10233f] sm:text-5xl lg:text-[56px]"
+                class="mb-3 text-4xl font-bold leading-tight text-[#122B55] sm:text-5xl lg:text-6xl"
             >
-              Real journeys.
+              Real journeys,
               <span class="text-[#F58220]">Real stories.</span>
             </h1>
-            <p class="mt-6 max-w-2xl text-base font-medium leading-8 text-slate-600">
+            <div class="mx-auto mt-3 h-1 w-16 bg-[#F59E0B] sm:mx-0"></div>
+            <p
+              class="mt-3 text-sm font-medium text-slate-400 md:text-base max-w-xl"
+            >
               Read the experiences of travelers who explored Everest, Annapurna,
               Manaslu, Langtang and other Himalayan regions with our local
               trekking team.
             </p>
+            <div class="mx-auto mt-3 h-1 w-16 bg-[#F59E0B] sm:mx-0"></div>
 
-            <div class="mt-8 flex flex-wrap items-center gap-5">
+            <div class="mt-3 flex flex-col items-start gap-3">
               <div class="flex gap-1 text-[#F5A623]" aria-label="5 star rating">
                 <i data-lucide="star" class="h-5 w-5 fill-current"></i>
                 <i data-lucide="star" class="h-5 w-5 fill-current"></i>
@@ -980,65 +928,78 @@
                 <i data-lucide="star" class="h-5 w-5 fill-current"></i>
               </div>
               <div>
-                <p class="text-xl font-black text-[#10233f]">4.9 out of 5</p>
-                <p class="text-xs font-black text-slate-400">
+                <p class="text-xl font-bold text-[#122B55]">4.9 out of 5</p>
+                <p class="text-xs font-bold text-slate-400">
                   Based on verified traveler experiences
                 </p>
               </div>
             </div>
+            <div class="mx-auto mt-3 h-1 w-16 bg-[#F59E0B] sm:mx-0"></div>
 
-            <div class="mt-8 flex flex-wrap gap-3">
+            <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-start">
               <a
                 href="#reviews"
-                class="inline-flex items-center gap-2 rounded-lg bg-[#F58220] px-5 py-3 text-xs font-black uppercase text-white transition-colors hover:bg-[#d96b11]"
+                class="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#F58220] px-7 py-3 text-center text-sm font-normal uppercase text-white transition-colors hover:bg-[#d96b11]"
               >
                 Read Reviews
                 <i data-lucide="arrow-right" class="h-4 w-4"></i>
               </a>
               <a
                 href="./index.html#quote"
-                class="inline-flex rounded-lg bg-slate-100 px-5 py-3 text-xs font-black uppercase text-[#10233f] transition-colors hover:bg-slate-200"
+                class="inline-flex items-center gap-2 rounded-md border border-[#122B55] px-8 py-2.5 text-xs font-bold uppercase text-[#122B55] transition-colors hover:bg-[#122B55] hover:text-white"
               >
                 Plan Your Trek
               </a>
             </div>
           </div>
 
-          <div class="grid min-h-[430px] gap-4 md:grid-cols-[1.2fr_0.8fr]">
-            <div class="relative overflow-hidden rounded-3xl bg-slate-200 shadow-sm">
+          <div class="grid gap-4 md:min-h-[360px] md:grid-cols-[1.2fr_0.8fr]">
+            <div
+              class="relative overflow-hidden rounded-2xl bg-slate-200 shadow-[0_18px_48px_rgba(15,23,42,0.14)]"
+            >
               <img
                 src="./Images/Home/team.png"
                 alt="Travelers trekking in Nepal"
-                class="h-full min-h-[430px] w-full object-cover"
+                class="h-[240px] w-full object-cover sm:h-[320px] md:h-full md:min-h-[360px]"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/70 via-transparent to-transparent"></div>
-              <p class="absolute bottom-7 left-7 text-sm font-black text-white">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#10233f]/70 via-transparent to-transparent"
+              ></div>
+              <!-- <p class="absolute bottom-7 left-7 text-sm font-black text-white">
                 Shared adventures in the Himalayas
-              </p>
+              </p> -->
             </div>
             <div class="grid gap-4">
-              <div class="relative overflow-hidden rounded-3xl bg-slate-200 shadow-sm">
+              <div
+                class="relative overflow-hidden rounded-2xl bg-slate-200 shadow-sm"
+              >
                 <img
                   src="./Images/Home/everest.png"
                   alt="Trekking group in Nepal"
-                  class="h-full min-h-[205px] w-full object-cover"
+                  class="h-[170px] w-full object-cover sm:h-[210px] md:h-full md:min-h-[172px]"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/70 via-transparent to-transparent"></div>
-                <p class="absolute bottom-6 left-6 text-sm font-black text-white">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#10233f]/70 via-transparent to-transparent"
+                ></div>
+                <!-- <p class="absolute bottom-6 left-6 text-sm font-black text-white">
                   Guided by local experts
-                </p>
+                </p> -->
               </div>
-              <div class="relative overflow-hidden rounded-3xl bg-slate-200 shadow-sm">
+              <div
+                class="relative overflow-hidden rounded-2xl bg-slate-200 shadow-sm"
+              >
                 <img
                   src="./Images/Home/annapurna.png"
                   alt="Travelers enjoying Himalayan scenery"
-                  class="h-full min-h-[205px] w-full object-cover"
+                  class="h-[170px] w-full object-cover sm:h-[210px] md:h-full md:min-h-[172px]"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/70 via-transparent to-transparent"></div>
-                <p class="absolute bottom-6 left-6 text-sm font-black text-white">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#10233f]/70 via-transparent to-transparent"
+                ></div>
+                <!-- <p class="absolute bottom-6 left-6 text-sm font-black text-white">
                   Memories beyond the trail
-                </p>
-                <div class="absolute bottom-10 right-[-12px] hidden max-w-[210px] rounded-2xl bg-white p-6 shadow-2xl lg:block">
+                </p> -->
+                <!-- <div class="absolute bottom-10 right-[-12px] hidden max-w-[210px] rounded-2xl bg-white p-6 shadow-2xl lg:block">
                   <i
                     data-lucide="shield-check"
                     class="h-11 w-11 rounded-2xl bg-emerald-50 p-3 text-[#122B55]"
@@ -1050,27 +1011,33 @@
                     Genuine feedback from travelers who joined our trekking
                     journeys.
                   </p>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="reviews" class="px-5 py-16 lg:px-8 lg:py-20">
-        <div class="mx-auto max-w-[1400px]">
-          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <section
+        id="reviews"
+        class="px-5 py-[32px] bg-white lg:px-8 lg:py-[52px]"
+      >
+        <div class="mx-auto max-w-[1584px]">
+          <div class="flex flex-col gap-6">
             <div>
-              <p
+              <!-- <p
                 class="mb-4 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
               >
                 <span class="h-0.5 w-8 bg-[#F58220]"></span>
                 Customer Feedback
-              </p>
-              <h2 class="text-3xl font-black text-[#10233f] sm:text-4xl">
+              </p> -->
+              <h2
+                class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+              >
                 What our travelers say
               </h2>
-              <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-500">
+              <div class="mt-3 h-1 w-16 bg-[#F59E0B]"></div>
+              <p class="mt-3 text-sm font-medium text-slate-400 md:text-base">
                 Select any review to read the traveler's complete story,
                 including their journey, guide experience and personal
                 highlights.
@@ -1078,82 +1045,433 @@
             </div>
 
             <div class="flex flex-wrap gap-2" aria-label="Review categories">
-              <button class="rounded-lg bg-[#122B55] px-5 py-3 text-xs font-black uppercase text-white">
+              <button
+                type="button"
+                data-review-filter="all"
+                aria-pressed="true"
+                class="rounded-[4px] bg-[#122B55] px-5 py-2.5 text-xs font-bold uppercase text-white"
+              >
                 All Reviews
               </button>
-              <button class="rounded-lg bg-white px-5 py-3 text-xs font-black uppercase text-slate-600">
+              <button
+                type="button"
+                data-review-filter="everest"
+                aria-pressed="false"
+                class="rounded-[4px] bg-white px-5 py-2.5 text-xs font-bold uppercase text-slate-600"
+              >
                 Everest
               </button>
-              <button class="rounded-lg bg-white px-5 py-3 text-xs font-black uppercase text-slate-600">
+              <button
+                type="button"
+                data-review-filter="annapurna"
+                aria-pressed="false"
+                class="rounded-[4px] bg-white px-5 py-2.5 text-xs font-bold uppercase text-slate-600"
+              >
                 Annapurna
               </button>
-              <button class="rounded-lg bg-white px-5 py-3 text-xs font-black uppercase text-slate-600">
+              <button
+                type="button"
+                data-review-filter="manaslu"
+                aria-pressed="false"
+                class="rounded-[4px] bg-white px-5 py-2.5 text-xs font-bold uppercase text-slate-600"
+              >
                 Manaslu
               </button>
             </div>
           </div>
 
-          <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <article class="review-card overflow-hidden rounded-3xl border border-[#1f7aff] bg-white shadow-sm">
-              <button type="button" class="review-button block w-full text-left" data-review="everest-base">
-                <div class="relative h-56 bg-slate-200">
-                  <img src="./Images/Home/everest.png" alt="Everest Base Camp trekking experience" class="h-full w-full object-cover" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"></div>
-                  <div class="absolute bottom-6 left-6">
+          <div class="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            <article
+              data-review-category="everest"
+              class="review-card overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-sm"
+            >
+              <button
+                type="button"
+                class="review-button block w-full text-left"
+                data-review="everest-base"
+              >
+                <div class="relative h-52 bg-slate-200 sm:h-56">
+                  <img
+                    src="./Images/Home/everest.png"
+                    alt="Everest Base Camp trekking experience"
+                    class="h-full w-full object-cover object-top"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"
+                  ></div>
+                  <!-- <div class="absolute bottom-6 left-6">
                     <p class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]">Everest Region</p>
                     <h3 class="mt-2 text-base font-black text-white">Everest Base Camp Trek</h3>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="p-6">
                   <div class="flex items-center justify-between">
                     <div class="flex gap-1 text-[#F5A623]">★★★★★</div>
-                    <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Verified</span>
+                    <span
+                      class="rounded-full px-4 py-2 text-[12px] font-black uppercase text-amber-700 tracking-[1px]"
+                      >Everest Region</span
+                    >
                   </div>
-                  <h3 class="mt-5 text-xl font-black leading-7">A journey that exceeded every expectation</h3>
-                  <p class="mt-4 text-sm font-medium leading-7 text-slate-500">The entire Everest Base Camp experience was organized with great care. Our guide was patient, knowledgeable and always attentive.</p>
+                  <h3 class="mt-5 text-xl font-black leading-7 truncate">
+                    A journey that exceeded every expectation
+                  </h3>
+                  <p class="review-card-excerpt mt-4 text-sm font-medium leading-7 text-slate-500">
+                    The strongest part of the journey was the personal care
+                    shown by the guide throughout the trek.
+                  </p>
                   <div class="mt-6 flex items-center justify-between">
                     <div class="flex items-center gap-3">
-                      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-600">Em</span>
-                      <div><p class="text-sm font-black">Emilie Laurent</p><p class="text-xs text-slate-400">France · October 2025</p></div>
+                      <img
+                        src="./Images/Home/everest.png"
+                        alt="Emilie Laurent review"
+                        class="h-11 w-11 rounded-full object-cover object-top"
+                      />
+                      <div>
+                        <p class="text-sm font-bold">Emilie Laurent</p>
+                        <p class="text-xs text-slate-400">
+                          France · October 2025
+                        </p>
+                      </div>
                     </div>
-                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"><i data-lucide="arrow-right" class="h-4 w-4"></i></span>
+                    <span
+                      class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"
+                      ><i data-lucide="arrow-right" class="h-4 w-4"></i
+                    ></span>
                   </div>
                 </div>
               </button>
             </article>
 
-            <article class="review-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <button type="button" class="review-button block w-full text-left" data-review="annapurna-circuit">
-                <div class="relative h-56 bg-slate-200"><img src="./Images/Home/annapurna.png" alt="Annapurna Circuit trekking experience" class="h-full w-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"></div><div class="absolute bottom-6 left-6"><p class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]">Annapurna Region</p><h3 class="mt-2 text-base font-black text-white">Annapurna Circuit Trek</h3></div></div>
-                <div class="p-6"><div class="flex items-center justify-between"><div class="flex gap-1 text-[#F5A623]">★★★★★</div><span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Verified</span></div><h3 class="mt-5 text-xl font-black leading-7">Beautiful landscapes and excellent organization</h3><p class="mt-4 text-sm font-medium leading-7 text-slate-500">Every transfer, lodge and meal was carefully arranged. The changing scenery was unforgettable.</p><div class="mt-6 flex items-center justify-between"><div class="flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-600">Th</span><div><p class="text-sm font-black">Thomas Bernard</p><p class="text-xs text-slate-400">Belgium · April 2025</p></div></div><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"><i data-lucide="arrow-right" class="h-4 w-4"></i></span></div></div>
+            <article
+              data-review-category="annapurna"
+              class="review-card overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-sm"
+            >
+              <button
+                type="button"
+                class="review-button block w-full text-left"
+                data-review="annapurna-circuit"
+              >
+                <div class="relative h-52 bg-slate-200 sm:h-56">
+                  <img
+                    src="./Images/Home/annapurna.png"
+                    alt="Annapurna Circuit trekking experience"
+                    class="h-full w-full object-cover object-top"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"
+                  ></div>
+                  <!-- <div class="absolute bottom-6 left-6">
+                    <p
+                      class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]"
+                    >
+                      Annapurna Region
+                    </p>
+                    <h3 class="mt-2 text-base font-black text-white">
+                      Annapurna Circuit Trek
+                    </h3>
+                  </div> -->
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-1 text-[#F5A623]">★★★★★</div>
+                    <span
+                      class="rounded-full px-4 py-2 text-[12px] font-black uppercase text-amber-700 tracking-[1px]"
+                      >Annapurna Region</span
+                    >
+                  </div>
+                  <h3 class="mt-5 text-xl font-black leading-7 truncate">
+                    Beautiful landscapes and excellent organization
+                  </h3>
+                  <p class="review-card-excerpt mt-4 text-sm font-medium leading-7 text-slate-500">
+                    The organization gave us freedom to enjoy the mountains
+                    without worrying about the details.
+                  </p>
+                  <div class="mt-6 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <img
+                        src="./Images/Home/annapurna.png"
+                        alt="Thomas Bernard review"
+                        class="h-11 w-11 rounded-full object-cover object-top"
+                      />
+                      <div>
+                        <p class="text-sm font-bold">Thomas Bernard</p>
+                        <p class="text-xs text-slate-400">
+                          Belgium · April 2025
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"
+                      ><i data-lucide="arrow-right" class="h-4 w-4"></i
+                    ></span>
+                  </div>
+                </div>
               </button>
             </article>
 
-            <article class="review-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <button type="button" class="review-button block w-full text-left" data-review="manaslu-circuit">
-                <div class="relative h-56 bg-slate-200"><img src="./Images/Home/manaslu1.png" alt="Manaslu Circuit trekking experience" class="h-full w-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"></div><div class="absolute bottom-6 left-6"><p class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]">Manaslu Region</p><h3 class="mt-2 text-base font-black text-white">Manaslu Circuit Trek</h3></div></div>
-                <div class="p-6"><div class="flex items-center justify-between"><div class="flex gap-1 text-[#F5A623]">★★★★★</div><span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Verified</span></div><h3 class="mt-5 text-xl font-black leading-7">A remote trek with exceptional local support</h3><p class="mt-4 text-sm font-medium leading-7 text-slate-500">Manaslu felt authentic, peaceful and far from crowded trails. Our guide's understanding made it special.</p><div class="mt-6 flex items-center justify-between"><div class="flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-600">Is</span><div><p class="text-sm font-black">Isabelle Martin</p><p class="text-xs text-slate-400">Switzerland · November 2025</p></div></div><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"><i data-lucide="arrow-right" class="h-4 w-4"></i></span></div></div>
+            <article
+              data-review-category="manaslu"
+              class="review-card overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-sm"
+            >
+              <button
+                type="button"
+                class="review-button block w-full text-left"
+                data-review="manaslu-circuit"
+              >
+                <div class="relative h-52 bg-slate-200 sm:h-56">
+                  <img
+                    src="./Images/Home/manaslu1.png"
+                    alt="Manaslu Circuit trekking experience"
+                    class="h-full w-full object-cover object-top"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"
+                  ></div>
+                  <!-- <div class="absolute bottom-6 left-6">
+                    <p
+                      class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]"
+                    >
+                      Manaslu Region
+                    </p>
+                    <h3 class="mt-2 text-base font-black text-white">
+                      Manaslu Circuit Trek
+                    </h3>
+                  </div> -->
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-1 text-[#F5A623]">★★★★★</div>
+                    <span
+                      class="rounded-full px-4 py-2 text-[12px] font-black uppercase text-amber-700 tracking-[1px]"
+                      >Manaslu Region</span
+                    >
+                  </div>
+                  <h3 class="mt-5 text-xl font-black leading-7 truncate">
+                    A remote trek with exceptional local support
+                  </h3>
+                  <p class="review-card-excerpt mt-4 text-sm font-medium leading-7 text-slate-500">
+                    The local knowledge transformed a remote trek into a safe
+                    and meaningful journey.
+                  </p>
+                  <div class="mt-6 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <img
+                        src="./Images/Home/manaslu1.png"
+                        alt="Isabelle Martin review"
+                        class="h-11 w-11 rounded-full object-cover object-top"
+                      />
+                      <div>
+                        <p class="text-sm font-bold">Isabelle Martin</p>
+                        <p class="text-xs text-slate-400">
+                          Switzerland · November 2025
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"
+                      ><i data-lucide="arrow-right" class="h-4 w-4"></i
+                    ></span>
+                  </div>
+                </div>
               </button>
             </article>
 
-            <article class="review-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <button type="button" class="review-button block w-full text-left" data-review="three-passes">
-                <div class="relative h-56 bg-slate-200"><img src="./Images/Home/Background.png" alt="Everest Three Passes trekking experience" class="h-full w-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"></div><div class="absolute bottom-6 left-6"><p class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]">Everest Region</p><h3 class="mt-2 text-base font-black text-white">Everest Three Passes Trek</h3></div></div>
-                <div class="p-6"><div class="flex items-center justify-between"><div class="flex gap-1 text-[#F5A623]">★★★★★</div><span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Verified</span></div><h3 class="mt-5 text-xl font-black leading-7">Challenging, safe and incredibly rewarding</h3><p class="mt-4 text-sm font-medium leading-7 text-slate-500">The route was physically demanding, but our guide managed acclimatization perfectly.</p><div class="mt-6 flex items-center justify-between"><div class="flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-600">Da</span><div><p class="text-sm font-black">Daniel Moreau</p><p class="text-xs text-slate-400">Canada · October 2024</p></div></div><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"><i data-lucide="arrow-right" class="h-4 w-4"></i></span></div></div>
+            <article
+              data-review-category="everest"
+              class="review-card overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-sm"
+            >
+              <button
+                type="button"
+                class="review-button block w-full text-left"
+                data-review="three-passes"
+              >
+                <div class="relative h-52 bg-slate-200 sm:h-56">
+                  <img
+                    src="./Images/Home/Background.png"
+                    alt="Everest Three Passes trekking experience"
+                    class="h-full w-full object-cover object-top"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"
+                  ></div>
+                  <!-- <div class="absolute bottom-6 left-6">
+                    <p
+                      class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]"
+                    >
+                      Everest Region
+                    </p>
+                    <h3 class="mt-2 text-base font-black text-white">
+                      Everest Three Passes Trek
+                    </h3>
+                  </div> -->
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-1 text-[#F5A623]">★★★★★</div>
+                    <span
+                      class="rounded-full px-4 py-2 text-[12px] font-black uppercase text-amber-700 tracking-[1px]"
+                      >Everest Region</span
+                    >
+                  </div>
+                  <h3 class="mt-5 text-xl font-black leading-7 truncate">
+                    Challenging, safe and incredibly rewarding
+                  </h3>
+                  <p class="review-card-excerpt mt-4 text-sm font-medium leading-7 text-slate-500">
+                    The team balanced challenge and safety better than any
+                    expedition I have joined.
+                  </p>
+                  <div class="mt-6 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <img
+                        src="./Images/Home/Background.png"
+                        alt="Daniel Moreau review"
+                        class="h-11 w-11 rounded-full object-cover object-top"
+                      />
+                      <div>
+                        <p class="text-sm font-bold">Daniel Moreau</p>
+                        <p class="text-xs text-slate-400">
+                          Canada · October 2024
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"
+                      ><i data-lucide="arrow-right" class="h-4 w-4"></i
+                    ></span>
+                  </div>
+                </div>
               </button>
             </article>
 
-            <article class="review-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <button type="button" class="review-button block w-full text-left" data-review="annapurna-base">
-                <div class="relative h-56 bg-slate-200"><img src="./Images/Home/mustang.png" alt="Annapurna Base Camp trekking experience" class="h-full w-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"></div><div class="absolute bottom-6 left-6"><p class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]">Annapurna Region</p><h3 class="mt-2 text-base font-black text-white">Annapurna Base Camp Trek</h3></div></div>
-                <div class="p-6"><div class="flex items-center justify-between"><div class="flex gap-1 text-[#F5A623]">★★★★★</div><span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Verified</span></div><h3 class="mt-5 text-xl font-black leading-7">The perfect first trekking experience</h3><p class="mt-4 text-sm font-medium leading-7 text-slate-500">This was my first multi-day trek, and the team made everything feel simple and comfortable.</p><div class="mt-6 flex items-center justify-between"><div class="flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-600">Cl</span><div><p class="text-sm font-black">Claire Dubois</p><p class="text-xs text-slate-400">France · March 2025</p></div></div><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"><i data-lucide="arrow-right" class="h-4 w-4"></i></span></div></div>
+            <article
+              data-review-category="annapurna"
+              class="review-card overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-sm"
+            >
+              <button
+                type="button"
+                class="review-button block w-full text-left"
+                data-review="annapurna-base"
+              >
+                <div class="relative h-52 bg-slate-200 sm:h-56">
+                  <img
+                    src="./Images/Home/mustang.png"
+                    alt="Annapurna Base Camp trekking experience"
+                    class="h-full w-full object-cover object-top"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"
+                  ></div>
+                  <!-- <div class="absolute bottom-6 left-6">
+                    <p
+                      class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]"
+                    >
+                      Annapurna Region
+                    </p>
+                    <h3 class="mt-2 text-base font-black text-white">
+                      Annapurna Base Camp Trek
+                    </h3>
+                  </div> -->
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-1 text-[#F5A623]">★★★★★</div>
+                    <span
+                      class="rounded-full px-4 py-2 text-[12px] font-black uppercase text-amber-700 tracking-[1px]"
+                      >Annapurna Region</span
+                    >
+                  </div>
+                  <h3 class="mt-5 text-xl font-black leading-7 truncate">
+                    The perfect first trekking experience
+                  </h3>
+                  <p class="review-card-excerpt mt-4 text-sm font-medium leading-7 text-slate-500">
+                    For a first trek, I could not have asked for better care or
+                    a better route.
+                  </p>
+                  <div class="mt-6 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <img
+                        src="./Images/Home/mustang.png"
+                        alt="Claire Dubois review"
+                        class="h-11 w-11 rounded-full object-cover object-top"
+                      />
+                      <div>
+                        <p class="text-sm font-bold">Claire Dubois</p>
+                        <p class="text-xs text-slate-400">
+                          France · March 2025
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"
+                      ><i data-lucide="arrow-right" class="h-4 w-4"></i
+                    ></span>
+                  </div>
+                </div>
               </button>
             </article>
 
-            <article class="review-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <button type="button" class="review-button block w-full text-left" data-review="tsum-valley">
-                <div class="relative h-56 bg-slate-200"><img src="./Images/Home/manaslu.png" alt="Tsum Valley trekking experience" class="h-full w-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"></div><div class="absolute bottom-6 left-6"><p class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]">Manaslu Region</p><h3 class="mt-2 text-base font-black text-white">Tsum Valley Trek</h3></div></div>
-                <div class="p-6"><div class="flex items-center justify-between"><div class="flex gap-1 text-[#F5A623]">★★★★★</div><span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Verified</span></div><h3 class="mt-5 text-xl font-black leading-7">Culture, mountains and genuine hospitality</h3><p class="mt-4 text-sm font-medium leading-7 text-slate-500">We met local families, visited monasteries and learned about traditions along the route.</p><div class="mt-6 flex items-center justify-between"><div class="flex items-center gap-3"><span class="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-600">Ma</span><div><p class="text-sm font-black">Marco Rossi</p><p class="text-xs text-slate-400">Italy · May 2025</p></div></div><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"><i data-lucide="arrow-right" class="h-4 w-4"></i></span></div></div>
+            <article
+              data-review-category="manaslu"
+              class="review-card overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-sm"
+            >
+              <button
+                type="button"
+                class="review-button block w-full text-left"
+                data-review="tsum-valley"
+              >
+                <div class="relative h-52 bg-slate-200 sm:h-56">
+                  <img
+                    src="./Images/Home/manaslu.png"
+                    alt="Tsum Valley trekking experience"
+                    class="h-full w-full object-cover object-top"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#10233f]/75 via-transparent to-transparent"
+                  ></div>
+                  <!-- <div class="absolute bottom-6 left-6">
+                    <p
+                      class="text-[10px] font-black uppercase tracking-[0.22em] text-[#FAB331]"
+                    >
+                      Manaslu Region
+                    </p>
+                    <h3 class="mt-2 text-base font-black text-white">
+                      Tsum Valley Trek
+                    </h3>
+                  </div> -->
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-1 text-[#F5A623]">★★★★★</div>
+                    <span
+                      class="rounded-full px-4 py-2 text-[12px] font-black uppercase text-amber-700 tracking-[1px]"
+                      >Manaslu Region</span
+                    >
+                  </div>
+                  <h3 class="mt-5 text-xl font-black leading-7 truncate">
+                    Culture, mountains and genuine hospitality
+                  </h3>
+                  <p class="review-card-excerpt mt-4 text-sm font-medium leading-7 text-slate-500">
+                    The hospitality and cultural connection stayed with me long
+                    after the trek ended.
+                  </p>
+                  <div class="mt-6 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <img
+                        src="./Images/Home/manaslu.png"
+                        alt="Marco Rossi review"
+                        class="h-11 w-11 rounded-full object-cover object-top"
+                      />
+                      <div>
+                        <p class="text-sm font-bold">Marco Rossi</p>
+                        <p class="text-xs text-slate-400">Italy · May 2025</p>
+                      </div>
+                    </div>
+                    <span
+                      class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"
+                      ><i data-lucide="arrow-right" class="h-4 w-4"></i
+                    ></span>
+                  </div>
+                </div>
               </button>
             </article>
           </div>
@@ -1163,10 +1481,12 @@
 
     <div
       id="reviewModal"
-      class="fixed inset-0 z-[80] hidden overflow-y-auto bg-[#08213D]/85 px-5 py-8 backdrop-blur-sm"
+      class="fixed inset-0 z-[80] hidden overflow-y-auto bg-[#08213D]/85 px-4 py-5 backdrop-blur-sm sm:px-5 sm:py-8"
       aria-hidden="true"
     >
-      <div class="mx-auto flex min-h-full max-w-[980px] items-center justify-center">
+      <div
+        class="mx-auto flex min-h-full max-w-[980px] items-center justify-center"
+      >
         <section
           class="relative w-full overflow-hidden rounded-3xl bg-white shadow-2xl"
           role="dialog"
@@ -1182,172 +1502,223 @@
             <i data-lucide="x" class="h-5 w-5"></i>
           </button>
 
-          <div class="relative h-80 bg-slate-200">
-            <img id="modalReviewImage" src="./Images/Home/everest.png" alt="" class="h-full w-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#10233f]/80 via-[#10233f]/20 to-transparent"></div>
-            <div class="absolute bottom-8 left-8 right-20 text-white">
-              <p id="modalReviewRoute" class="text-[10px] font-black uppercase tracking-[0.25em] text-[#FAB331]">Everest Base Camp Trek · Everest Region</p>
-              <h2 id="modalReviewTitle" class="mt-4 max-w-2xl text-3xl font-black leading-tight sm:text-4xl">A journey that exceeded every expectation</h2>
+          <div class="relative h-[260px] bg-slate-200 sm:h-[360px] md:h-[420px] lg:h-[460px]">
+            <img
+              id="modalReviewImage"
+              src="./Images/Home/everest.png"
+              alt=""
+              class="h-full w-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#10233f]/80 via-[#10233f]/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-6 left-5 right-16 text-white sm:bottom-8 sm:left-8 sm:right-20">
+              <!-- <p
+                id="modalReviewRoute"
+                class="text-[10px] font-black uppercase tracking-[0.25em] text-[#FAB331]"
+              >
+                Everest Base Camp Trek · Everest Region
+              </p> -->
+              <h2
+                id="modalReviewTitle"
+                class="mt-4 text-2xl font-extrabold uppercase tracking-wide md:text-3xl"
+              > 
+                A journey that exceeded every expectation
+              </h2>
             </div>
           </div>
 
-          <div class="p-7 sm:p-9">
-            <div class="flex flex-col gap-5 border-b border-slate-200 pb-7 sm:flex-row sm:items-center sm:justify-between">
+          <div class="p-5 sm:p-7 md:p-9">
+            <div
+              class="flex flex-col gap-5 border-b border-slate-200 pb-7 sm:flex-row sm:items-center sm:justify-between"
+            >
               <div class="flex items-center gap-4">
-                <span id="modalReviewInitials" class="flex h-14 w-14 items-center justify-center rounded-full bg-slate-100 text-slate-600">Em</span>
+                <img
+                  id="modalReviewAvatar"
+                  src="./Images/Home/everest.png"
+                  alt="Emilie Laurent review"
+                  class="h-14 w-14 rounded-full object-cover object-top"
+                />
                 <div>
-                  <p id="modalReviewName" class="text-sm font-black">Emilie Laurent</p>
-                  <p id="modalReviewMeta" class="mt-1 text-xs font-medium text-slate-400">France · October 2025</p>
+                  <p id="modalReviewName" class="text-sm font-bold">
+                    Emilie Laurent
+                  </p>
+                  <p
+                    id="modalReviewMeta"
+                    class="mt-1 text-xs font-medium text-slate-400"
+                  >
+                    France · October 2025
+                  </p>
                 </div>
               </div>
               <div class="flex gap-1 text-[#F5A623]">★★★★★</div>
             </div>
 
-            <div id="modalReviewBody" class="mt-7 space-y-5 text-base font-medium leading-8 text-slate-600"></div>
+            <div
+              id="modalReviewBody"
+              class="mt-7 space-y-5 text-sm font-medium leading-7 text-slate-700 md:text-base"
+            ></div>
 
-            <blockquote id="modalReviewHighlight" class="mt-8 rounded-2xl bg-orange-50 p-6 text-sm font-black leading-6 text-[#10233f]"></blockquote>
+            <blockquote
+              id="modalReviewHighlight"
+              class="mt-8 rounded-2xl bg-orange-50 p-6 text-sm font-black leading-6 text-[#10233f]"
+            >
+              The strongest part of the journey was the personal care shown by
+              the guide throughout the trek.
+            </blockquote>
 
-            <div class="mt-8 flex items-center justify-between border-t border-slate-200 pt-7">
-              <button id="reviewPrevious" type="button" class="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-5 py-3 text-xs font-black uppercase text-[#10233f]"><i data-lucide="arrow-left" class="h-4 w-4"></i>Previous</button>
-              <p id="reviewCounter" class="text-xs font-black text-slate-400">Review 1 of 6</p>
-              <button id="reviewNext" type="button" class="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-5 py-3 text-xs font-black uppercase text-[#10233f]">Next<i data-lucide="arrow-right" class="h-4 w-4"></i></button>
-            </div>
+            <!-- <div
+              class="mt-8 flex items-center justify-between border-t border-slate-200 pt-7"
+            >
+              <button
+                id="reviewPrevious"
+                type="button"
+                class="inline-flex items-center gap-2 rounded-[4px] bg-slate-100 px-5 py-2.5 text-xs font-bold uppercase text-[#10233f]"
+              >
+                <i data-lucide="arrow-left" class="h-4 w-4"></i>Previous
+              </button>
+              <p id="reviewCounter" class="text-xs font-black text-slate-400">
+                Review 1 of 6
+              </p>
+              <button
+                id="reviewNext"
+                type="button"
+                class="inline-flex items-center gap-2 rounded-[4px] bg-slate-100 px-5 py-2.5 text-xs font-bold uppercase text-[#10233f]"
+              >
+                Next<i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </button>
+            </div> -->
           </div>
         </section>
       </div>
     </div>
-       <footer
-        class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8"
-      >
+    <footer
+      class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8"
+    >
+      <div class="absolute inset-0 bg-[#08213D]/90"></div>
 
-        <div class="absolute inset-0 bg-[#08213D]/90"></div>
-
-        <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
-          <div
-            class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            <div>
-              <h3 class="text-sm font-extrabold uppercase">
-                Panorama Trekking
-              </h3>
-              <p class="mt-3 text-sm leading-6 text-white/80">
-                A local trekking company in Nepal specialized in Himalayan
-                adventures with professional Sherpa guides.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <a
-                  href="#"
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-xs font-bold"
-                  aria-label="Facebook"
-                >
-                  f
-                </a>
-                <a
-                  href="#"
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#E4405F] text-xs font-bold"
-                  aria-label="Instagram"
-                >
-                  ig
-                </a>
-                <a
-                  href="#"
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#16A34A] text-xs font-bold"
-                  aria-label="Tripadvisor"
-                >
-                  ta
-                </a>
-                <a
-                  href="#"
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FF0000] text-xs font-bold"
-                  aria-label="YouTube"
-                >
-                  yt
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
-              <ul class="mt-3 space-y-1 text-sm text-white/80">
-                <li>
-                  <a href="./index.html" class="hover:text-[#F58220]">Home</a>
-                </li>
-                <li>
-                  <a href="./index.html#aboutus" class="hover:text-[#F58220]">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="./index.html#treks" class="hover:text-[#F58220]">
-                    All Treks
-                  </a>
-                </li>
-                <li>
-                  <a href="#destinations" class="hover:text-[#F58220]">
-                    Peak & Expenditions
-                  </a>
-                </li>
-                <li>
-                  <a href="#travel-guide" class="hover:text-[#F58220]">
-                    Travel Guide
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-sm font-extrabold uppercase">Popular Treks</h3>
-              <ul class="mt-3 space-y-1 text-sm text-white/80">
-                <li>Everest Base Camp Trek</li>
-                <li>Annapurna Circuit Trek</li>
-                <li>Manaslu Circuit Trek</li>
-                <li>Langtang Valley Trek</li>
-                <li>Upper Mustang Trek</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-sm font-extrabold uppercase">Contact Info</h3>
-              <ul class="mt-3 space-y-2 text-sm text-white/80">
-                <li class="flex gap-2">
-                  <i
-                    data-lucide="map-pin"
-                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
-                  ></i>
-                  Kapan, Kathmandu, Nepal
-                </li>
-                <li class="flex gap-2">
-                  <i
-                    data-lucide="phone"
-                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
-                  ></i>
-                  +977 9841373860 (24/7)
-                </li>
-                <li class="flex gap-2">
-                  <i
-                    data-lucide="mail"
-                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
-                  ></i>
-                  info@panoramatrekking.com
-                </li>
-                <li class="flex gap-2">
-                  <i
-                    data-lucide="globe"
-                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
-                  ></i>
-                  www.panoramatrekking.com
-                </li>
-              </ul>
+      <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Panorama Trekking</h3>
+            <p class="mt-3 text-sm leading-6 text-white/80">
+              A local trekking company in Nepal specialized in Himalayan
+              adventures with professional Sherpa guides.
+            </p>
+            <div class="mt-4 flex gap-2">
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-xs font-bold"
+                aria-label="Facebook"
+              >
+                f
+              </a>
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#E4405F] text-xs font-bold"
+                aria-label="Instagram"
+              >
+                ig
+              </a>
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#16A34A] text-xs font-bold"
+                aria-label="Tripadvisor"
+              >
+                ta
+              </a>
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FF0000] text-xs font-bold"
+                aria-label="YouTube"
+              >
+                yt
+              </a>
             </div>
           </div>
 
-          <p
-            class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70"
-          >
-            © 2024 Panorama Trekking Nepal Pvt. Ltd. All Rights Reserved.
-          </p>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
+            <ul class="mt-3 space-y-1 text-sm text-white/80">
+              <li>
+                <a href="./index.html" class="hover:text-[#F58220]">Home</a>
+              </li>
+              <li>
+                <a href="./index.html#aboutus" class="hover:text-[#F58220]">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="./index.html#treks" class="hover:text-[#F58220]">
+                  All Treks
+                </a>
+              </li>
+              <li>
+                <a href="#destinations" class="hover:text-[#F58220]">
+                  Peak & Expenditions
+                </a>
+              </li>
+              <li>
+                <a href="#travel-guide" class="hover:text-[#F58220]">
+                  Travel Guide
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Popular Treks</h3>
+            <ul class="mt-3 space-y-1 text-sm text-white/80">
+              <li>Everest Base Camp Trek</li>
+              <li>Annapurna Circuit Trek</li>
+              <li>Manaslu Circuit Trek</li>
+              <li>Langtang Valley Trek</li>
+              <li>Upper Mustang Trek</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Contact Info</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li class="flex gap-2">
+                <i
+                  data-lucide="map-pin"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i>
+                Kapan, Kathmandu, Nepal
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="phone"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i>
+                +977 9841373860 (24/7)
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="mail"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i>
+                info@panoramatrekking.com
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="globe"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i>
+                www.panoramatrekking.com
+              </li>
+            </ul>
+          </div>
         </div>
-      </footer>
+
+        <p
+          class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70"
+        >
+          © 2024 Panorama Trekking Nepal Pvt. Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
 
     <script src="./navigation.js"></script>
     <script src="./testimonials.js"></script>

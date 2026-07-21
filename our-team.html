@@ -17,7 +17,9 @@
     />
   </head>
 
-  <body class="min-h-full overflow-x-hidden bg-[#f5f7fa] font-[Inter,sans-serif] text-[#10233f] antialiased">
+  <body
+    class="min-h-full overflow-x-hidden bg-[#f5f7fa] font-[Inter,sans-serif] text-[#10233f] antialiased"
+  >
     <header>
       <div class="hidden w-full bg-[#122B55] lg:block">
         <div
@@ -49,7 +51,10 @@
             </a>
           </div>
 
-          <div class="inline-flex items-center gap-3" aria-label="Language switcher">
+          <div
+            class="inline-flex items-center gap-3"
+            aria-label="Language switcher"
+          >
             <a
               href="#"
               lang="en"
@@ -78,7 +83,11 @@
       <div
         class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 px-5 py-3"
       >
-        <a href="./index.html" class="shrink-0" aria-label="Panorama Trekking home">
+        <a
+          href="./index.html"
+          class="shrink-0"
+          aria-label="Panorama Trekking home"
+        >
           <img
             src="./Images/logo.png"
             alt="Panorama Trekking"
@@ -116,7 +125,9 @@
               id="aboutDropdown"
               class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
             >
-              <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl">
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
                 <a
                   href="./about-panorama.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
@@ -229,8 +240,13 @@
                   class="dropdown-arrow h-4 w-4 transition-transform duration-200"
                 ></i>
               </button>
-              <div id="mobileAboutDropdown" class="mobile-dropdown hidden px-3 pb-3">
-                <div class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3">
+              <div
+                id="mobileAboutDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
                   <a
                     href="./about-panorama.html"
                     class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
@@ -303,29 +319,35 @@
     </nav>
 
     <main>
-      <section class="bg-white px-5 py-16 lg:px-8 lg:py-24">
-        <div class="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-[0.86fr_1fr] lg:items-center">
+      <section class="bg-white px-5 py-[52px] lg:px-8 lg:py-[110px]">
+        <div
+          class="mx-auto grid max-w-[1584px] gap-12 lg:grid-cols-2 lg:items-center"
+        >
           <div>
-            <p
+            <!-- <p
               class="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
             >
               <span class="h-0.5 w-8 bg-[#F58220]"></span>
               Meet Our Local Experts
-            </p>
+            </p> -->
             <h1
-              class="max-w-xl text-4xl font-black leading-tight text-[#10233f] sm:text-5xl lg:text-[56px]"
+              class="max-w-xl text-3xl font-bold leading-tight text-[#122B55] md:text-4xl lg:text-5xl"
             >
-              The people behind your
-              <span class="text-[#F58220]">Himalayan journey.</span>
+              The people behind your Himalayan
+              <span class="text-[#F58220]"> journey.</span>
             </h1>
-            <p class="mt-6 max-w-2xl text-base font-medium leading-8 text-slate-600">
+            <div class="mx-auto mt-3 h-1 w-16 bg-[#F59E0B] sm:mx-0"></div>
+
+            <p
+              class="mt-3 max-w-xl text-sm font-medium leading-6 text-black/65 md:text-base"
+            >
               Our team is made up of experienced Sherpa guides, mountain
               leaders, trip planners, and local professionals who share one
               goal: to make every journey through Nepal safe, personal, and
               unforgettable.
             </p>
 
-            <div class="mt-6 flex flex-wrap gap-3">
+            <!-- <div class="mt-6 flex flex-wrap gap-3">
               <span
                 class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-[11px] font-black text-[#10233f]"
               >
@@ -344,19 +366,19 @@
                 <i data-lucide="check" class="h-3.5 w-3.5 text-[#F58220]"></i>
                 Personalized support
               </span>
-            </div>
+            </div> -->
 
-            <div class="mt-8 flex flex-wrap gap-3">
+            <div class="mt-5 flex flex-wrap gap-3">
               <a
                 href="#teamGrid"
-                class="inline-flex items-center gap-2 rounded-lg bg-[#F58220] px-5 py-3 text-xs font-black uppercase text-white transition-colors hover:bg-[#d96b11]"
+                class="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#F58220] px-5 py-2.5 text-center text-xs font-bold uppercase text-white transition-colors hover:bg-[#d96b11]"
               >
                 Meet The Team
                 <i data-lucide="arrow-right" class="h-4 w-4"></i>
               </a>
               <a
                 href="./index.html#quote"
-                class="inline-flex rounded-lg bg-slate-100 px-5 py-3 text-xs font-black uppercase text-[#10233f] transition-colors hover:bg-slate-200"
+                class="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#122B55] px-5 py-2.5 text-center text-xs font-bold uppercase text-white transition-colors hover:bg-[#F58220]"
               >
                 Plan With Our Experts
               </a>
@@ -364,13 +386,15 @@
           </div>
 
           <div class="relative">
-            <div class="overflow-hidden rounded-3xl bg-slate-200 shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
+            <div
+              class="overflow-hidden rounded-2xl bg-slate-200 shadow-[0_18px_48px_rgba(15,23,42,0.14)]"
+            >
               <img
                 src="./Images/Home/team.png"
                 alt="Panorama Himalaya Trekking team"
-                class="h-[420px] w-full object-cover object-center"
+                class="h-[360px] w-full object-cover object-[center_35%] sm:h-[430px] md:h-[500px] lg:h-[360px] lg:object-center"
               />
-              <div class="absolute inset-x-0 bottom-0 rounded-b-3xl bg-gradient-to-t from-[#10233f]/85 to-transparent p-8 text-white">
+              <!-- <div class="absolute inset-x-0 bottom-0 rounded-b-3xl bg-gradient-to-t from-[#10233f]/85 to-transparent p-8 text-white">
                 <p class="text-[10px] font-black uppercase tracking-[0.28em] text-[#FAB331]">
                   Panorama Himalaya Trekking
                 </p>
@@ -378,271 +402,423 @@
                   A local team connected by experience, trust, and a love for
                   Nepal's mountains.
                 </p>
-              </div>
+              </div> -->
             </div>
 
-            <div class="absolute -left-8 top-8 max-w-[190px] rounded-2xl bg-white p-5 shadow-2xl">
-              <p class="text-3xl font-black text-[#F58220]">20+</p>
-              <p class="mt-1 text-xs font-black text-[#10233f]">
+            <div
+              class="hero-experience-card mt-4 rounded-xl bg-[#12365f] p-5 shadow-xl sm:rounded-2xl sm:p-6 lg:absolute lg:-bottom-4 lg:-left-4 lg:mt-0 lg:max-w-[240px] lg:rounded-xl lg:p-4"
+            >
+              <p class="text-xl font-bold text-[#F58220]">20+</p>
+              <p class="mt-1 text-[11px] font-bold text-white">
                 Years of mountain experience
               </p>
-              <p class="mt-2 text-[11px] leading-5 text-slate-500">
+              <p class="mt-2 text-xs leading-5 text-slate-300">
                 Local knowledge developed through decades of guiding and
                 organizing journeys.
               </p>
             </div>
 
-            <div class="absolute -right-8 bottom-10 hidden w-60 rounded-2xl border-8 border-white bg-slate-200 shadow-2xl md:block">
+            <!-- <div class="absolute -right-8 bottom-10 hidden w-60 rounded-2xl border-8 border-white bg-slate-200 shadow-2xl md:block">
               <img
                 src="./Images/Home/everest.png"
                 alt="Trekking guides in the Himalayas"
                 class="h-56 w-full rounded-xl object-cover"
               />
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
 
-      <section id="teamGrid" class="px-5 py-16 lg:px-8 lg:py-20">
-        <div class="mx-auto max-w-[1400px]">
-          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <section
+        id="teamGrid"
+        class="px-5 bg-white py-[32px] lg:px-8 lg:py-[64px]"
+      >
+        <div class="mx-auto max-w-[1584px]">
+          <div
+            class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+          >
             <div>
-              <p
+              <!-- <p
                 class="mb-4 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
               >
                 <span class="h-0.5 w-8 bg-[#F58220]"></span>
                 Our People
-              </p>
-              <h2 class="text-3xl font-black text-[#10233f] sm:text-4xl">
+              </p> -->
+              <h2
+                class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+              >
                 Meet our team
               </h2>
-              <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-500">
+              <div class="mt-3 h-1 w-16 bg-[#F59E0B]"></div>
+              <p
+                class="mt-3 max-w-3xl text-sm font-medium leading-7 text-slate-700 md:text-base"
+              >
                 Get to know the local professionals who organize, manage, and
                 guide your journeys across Nepal.
               </p>
             </div>
 
             <div class="flex flex-wrap gap-2" aria-label="Team categories">
-              <button class="rounded-lg bg-[#122B55] px-5 py-3 text-xs font-black uppercase text-white">
+              <button
+                type="button"
+                data-team-filter="all"
+                aria-pressed="true"
+                class="rounded-[4px] bg-[#122B55] px-5 py-2.5 text-xs font-bold uppercase text-white"
+              >
                 All Team
               </button>
-              <button class="rounded-lg bg-white px-5 py-3 text-xs font-black uppercase text-slate-600">
+              <button
+                type="button"
+                data-team-filter="leadership"
+                aria-pressed="false"
+                class="rounded-[4px] bg-white px-5 py-2.5 text-xs font-bold uppercase text-slate-600"
+              >
                 Leadership
               </button>
-              <button class="rounded-lg bg-white px-5 py-3 text-xs font-black uppercase text-slate-600">
+              <button
+                type="button"
+                data-team-filter="guides"
+                aria-pressed="false"
+                class="rounded-[4px] bg-white px-5 py-2.5 text-xs font-bold uppercase text-slate-600"
+              >
                 Guides
               </button>
-              <button class="rounded-lg bg-white px-5 py-3 text-xs font-black uppercase text-slate-600">
+              <button
+                type="button"
+                data-team-filter="support"
+                aria-pressed="false"
+                class="rounded-[4px] bg-white px-5 py-2.5 text-xs font-bold uppercase text-slate-600"
+              >
                 Support
               </button>
             </div>
           </div>
 
-          <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <article class="team-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <div class="relative h-80 bg-slate-200">
-                <img src="./Images/Home/team.png" alt="Pasang Sherpa" class="h-full w-full object-cover" />
-                <span class="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#10233f]">Leadership</span>
-                <span class="absolute bottom-5 right-5 rounded-2xl bg-[#F58220] px-4 py-4 text-xs font-black text-[#10233f]">01</span>
+          <div class="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            <article
+              data-team-category="leadership"
+              class="team-card overflow-hidden rounded-3xl bg-white shadow-sm"
+            >
+              <div class="relative h-64 bg-slate-200 sm:h-72 lg:h-80">
+                <img
+                  src="./Images/Team/chairman.jpg"
+                  alt="Pasang Sherpa"
+                  class="h-full w-full object-cover object-top"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-[4px] bg-[#F58220] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
+                  >Leadership</span
+                >
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-black">Pasang Sherpa</h3>
-                <p class="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[#F58220]">Chairman</p>
-                <p class="mt-5 text-sm font-medium leading-7 text-slate-500">
-                  Pasang brings decades of mountain and tourism experience,
-                  helping shape responsible and traveler-focused direction.
-                </p>
-                <div class="mt-5 border-t border-slate-200 pt-5 text-xs font-bold leading-6">
-                  <p><span class="text-slate-400">Languages:</span> Italian, English, French, Japanese</p>
-                  <p><span class="text-slate-400">Expertise:</span> Leadership, mountain tourism</p>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
-                  <button class="team-profile-button inline-flex items-center gap-2 text-xs font-black uppercase text-[#F58220]" data-member="pasang">
-                    View Profile <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                <div
+                  class="flex items-start justify-between gap-4 pt-5"
+                >
+                  <div
+                    class="flex min-w-0 items-start gap-2 text-sm font-black leading-6 text-slate-500"
+                  >
+                    <i
+                      data-lucide="globe-2"
+                      class="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    ></i>
+                    <span class="max-w-[210px] truncate">Italian/English/French/Hindi/Japanese</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="team-profile-button inline-flex shrink-0 items-center gap-2 text-sm font-black text-[#122B55]"
+                    data-member="pasang"
+                  >
+                    View Profile
+                    <!-- <i data-lucide="arrow-right" class="h-5 w-5"></i> -->
                   </button>
-                  <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Available</span>
                 </div>
               </div>
             </article>
 
-            <article class="team-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <div class="relative h-80 bg-slate-200">
-                <img src="./Images/Home/adventure.png" alt="Kusang Sherpa" class="h-full w-full object-cover" />
-                <span class="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#10233f]">Leadership</span>
-                <span class="absolute bottom-5 right-5 rounded-2xl bg-[#F58220] px-4 py-4 text-xs font-black text-[#10233f]">02</span>
+            <article
+              data-team-category="leadership"
+              class="team-card overflow-hidden rounded-3xl bg-white shadow-sm"
+            >
+              <div class="relative h-64 bg-slate-200 sm:h-72 lg:h-80">
+                <img
+                  src="./Images/Home/adventure.png"
+                  alt="Kusang Sherpa"
+                  class="h-full w-full object-cover object-top"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-[4px] bg-[#F58220] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
+                  >Leadership</span
+                >
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-black">Kusang Sherpa</h3>
-                <p class="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[#F58220]">Co-founder</p>
-                <p class="mt-5 text-sm font-medium leading-7 text-slate-500">
-                  Kusang designs authentic journeys with a focus on communication,
-                  guest care, and local cultural connection.
-                </p>
-                <div class="mt-5 border-t border-slate-200 pt-5 text-xs font-bold leading-6">
-                  <p><span class="text-slate-400">Languages:</span> French, English, Nepali, Hindi</p>
-                  <p><span class="text-slate-400">Expertise:</span> Trip planning and operations</p>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
-                  <button class="team-profile-button inline-flex items-center gap-2 text-xs font-black uppercase text-[#F58220]" data-member="kusang">
-                    View Profile <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                <div
+                  class="flex items-start justify-between gap-4 pt-5"
+                >
+                  <div
+                    class="flex min-w-0 items-start gap-2 text-sm font-black leading-6 text-slate-500"
+                  >
+                    <i
+                      data-lucide="globe-2"
+                      class="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    ></i>
+                    <span class="max-w-[210px] truncate">French/English/Nepali/Hindi</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="team-profile-button inline-flex shrink-0 items-center gap-2 text-sm font-black text-[#122B55]"
+                    data-member="kusang"
+                  >
+                    View Profile
+                    <!-- <i data-lucide="arrow-right" class="h-5 w-5"></i> -->
                   </button>
-                  <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Available</span>
                 </div>
               </div>
             </article>
 
-            <article class="team-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <div class="relative h-80 bg-slate-200">
-                <img src="./Images/Home/everest.png" alt="Pemba Chhiring Sherpa" class="h-full w-full object-cover" />
-                <span class="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#10233f]">Mountain Guide</span>
-                <span class="absolute bottom-5 right-5 rounded-2xl bg-[#F58220] px-4 py-4 text-xs font-black text-[#10233f]">03</span>
+            <article
+              data-team-category="guides"
+              class="team-card overflow-hidden rounded-3xl bg-white shadow-sm"
+            >
+              <div class="relative h-64 bg-slate-200 sm:h-72 lg:h-80">
+                <img
+                  src="./Images/Home/everest.png"
+                  alt="Pemba Chhiring Sherpa"
+                  class="h-full w-full object-cover object-top"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-[4px] bg-[#F58220] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
+                  >Mountain Guide</span
+                >
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-black">Pemba Chhiring Sherpa</h3>
-                <p class="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[#F58220]">Mountain and Trekking Guide</p>
-                <p class="mt-5 text-sm font-medium leading-7 text-slate-500">
-                  Pemba supports travelers through challenging terrain with
-                  patience, confidence, and deep local knowledge.
-                </p>
-                <div class="mt-5 border-t border-slate-200 pt-5 text-xs font-bold leading-6">
-                  <p><span class="text-slate-400">Languages:</span> French, English, Tibetan, Nepali</p>
-                  <p><span class="text-slate-400">Expertise:</span> High-altitude guidance and safety</p>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
-                  <button class="team-profile-button inline-flex items-center gap-2 text-xs font-black uppercase text-[#F58220]" data-member="pemba">
-                    View Profile <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                <div
+                  class="flex items-start justify-between gap-4 pt-5"
+                >
+                  <div
+                    class="flex min-w-0 items-start gap-2 text-sm font-black leading-6 text-slate-500"
+                  >
+                    <i
+                      data-lucide="globe-2"
+                      class="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    ></i>
+                    <span class="max-w-[210px] truncate">French/English/Tibetan/Hindi/Nepali</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="team-profile-button inline-flex shrink-0 items-center gap-2 text-sm font-black text-[#122B55]"
+                    data-member="pemba"
+                  >
+                    View Profile
+                    <!-- <i data-lucide="arrow-right" class="h-5 w-5"></i> -->
                   </button>
-                  <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Available</span>
                 </div>
               </div>
             </article>
 
-            <article class="team-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <div class="relative h-80 bg-slate-200">
-                <img src="./Images/Home/manaslu.png" alt="Dawa Sherpa" class="h-full w-full object-cover" />
-                <span class="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#10233f]">Guide</span>
-                <span class="absolute bottom-5 right-5 rounded-2xl bg-[#F58220] px-4 py-4 text-xs font-black text-[#10233f]">04</span>
+            <article
+              data-team-category="guides"
+              class="team-card overflow-hidden rounded-3xl bg-white shadow-sm"
+            >
+              <div class="relative h-64 bg-slate-200 sm:h-72 lg:h-80">
+                <img
+                  src="./Images/Home/manaslu.png"
+                  alt="Dawa Sherpa"
+                  class="h-full w-full object-cover object-top"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-[4px] bg-[#F58220] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
+                  >Guide</span
+                >
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-black">Dawa Sherpa</h3>
-                <p class="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[#F58220]">Senior Trek Leader</p>
-                <p class="mt-5 text-sm font-medium leading-7 text-slate-500">
-                  Dawa leads classic Himalayan routes with calm decision-making,
-                  strong logistics, and warm guest support.
-                </p>
-                <div class="mt-5 border-t border-slate-200 pt-5 text-xs font-bold leading-6">
-                  <p><span class="text-slate-400">Languages:</span> Nepali, English, Hindi</p>
-                  <p><span class="text-slate-400">Expertise:</span> Everest and Annapurna regions</p>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
-                  <button class="team-profile-button inline-flex items-center gap-2 text-xs font-black uppercase text-[#F58220]" data-member="dawa">
-                    View Profile <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                <div
+                  class="flex items-start justify-between gap-4 pt-5"
+                >
+                  <div
+                    class="flex min-w-0 items-start gap-2 text-sm font-black leading-6 text-slate-500"
+                  >
+                    <i
+                      data-lucide="globe-2"
+                      class="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    ></i>
+                    <span class="max-w-[210px] truncate">Nepali/English/Hindi</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="team-profile-button inline-flex shrink-0 items-center gap-2 text-sm font-black text-[#122B55]"
+                    data-member="dawa"
+                  >
+                    View Profile
+                    <!-- <i data-lucide="arrow-right" class="h-5 w-5"></i> -->
                   </button>
-                  <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Available</span>
                 </div>
               </div>
             </article>
 
-            <article class="team-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <div class="relative h-80 bg-slate-200">
-                <img src="./Images/Home/annapurna.png" alt="Mingma Sherpa" class="h-full w-full object-cover" />
-                <span class="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#10233f]">Guide</span>
-                <span class="absolute bottom-5 right-5 rounded-2xl bg-[#F58220] px-4 py-4 text-xs font-black text-[#10233f]">05</span>
+            <article
+              data-team-category="guides"
+              class="team-card overflow-hidden rounded-3xl bg-white shadow-sm"
+            >
+              <div class="relative h-64 bg-slate-200 sm:h-72 lg:h-80">
+                <img
+                  src="./Images/Home/annapurna.png"
+                  alt="Mingma Sherpa"
+                  class="h-full w-full object-cover object-top"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-[4px] bg-[#F58220] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
+                  >Guide</span
+                >
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-black">Mingma Sherpa</h3>
-                <p class="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[#F58220]">Culture and Trek Guide</p>
-                <p class="mt-5 text-sm font-medium leading-7 text-slate-500">
-                  Mingma connects travelers with landscapes, villages, and
-                  traditions through patient and thoughtful guiding.
-                </p>
-                <div class="mt-5 border-t border-slate-200 pt-5 text-xs font-bold leading-6">
-                  <p><span class="text-slate-400">Languages:</span> Nepali, French, English</p>
-                  <p><span class="text-slate-400">Expertise:</span> Cultural visits and family treks</p>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
-                  <button class="team-profile-button inline-flex items-center gap-2 text-xs font-black uppercase text-[#F58220]" data-member="mingma">
-                    View Profile <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                <div
+                  class="flex items-start justify-between gap-4 pt-5"
+                >
+                  <div
+                    class="flex min-w-0 items-start gap-2 text-sm font-black leading-6 text-slate-500"
+                  >
+                    <i
+                      data-lucide="globe-2"
+                      class="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    ></i>
+                    <span class="max-w-[210px] truncate">Nepali/French/English</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="team-profile-button inline-flex shrink-0 items-center gap-2 text-sm font-black text-[#122B55]"
+                    data-member="mingma"
+                  >
+                    View Profile
+                    <!-- <i data-lucide="arrow-right" class="h-5 w-5"></i> -->
                   </button>
-                  <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Available</span>
                 </div>
               </div>
             </article>
 
-            <article class="team-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <div class="relative h-80 bg-slate-200">
-                <img src="./Images/Home/mustang.png" alt="Nima Sherpa" class="h-full w-full object-cover" />
-                <span class="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#10233f]">Guide</span>
-                <span class="absolute bottom-5 right-5 rounded-2xl bg-[#F58220] px-4 py-4 text-xs font-black text-[#10233f]">06</span>
+            <article
+              data-team-category="guides"
+              class="team-card overflow-hidden rounded-3xl bg-white shadow-sm"
+            >
+              <div class="relative h-64 bg-slate-200 sm:h-72 lg:h-80">
+                <img
+                  src="./Images/Home/mustang.png"
+                  alt="Nima Sherpa"
+                  class="h-full w-full object-cover object-top"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-[4px] bg-[#F58220] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
+                  >Guide</span
+                >
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-black">Nima Sherpa</h3>
-                <p class="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[#F58220]">High Mountain Assistant</p>
-                <p class="mt-5 text-sm font-medium leading-7 text-slate-500">
-                  Nima supports expedition days, acclimatization routines, and
-                  mountain safety with steady attention.
-                </p>
-                <div class="mt-5 border-t border-slate-200 pt-5 text-xs font-bold leading-6">
-                  <p><span class="text-slate-400">Languages:</span> Nepali, English, Hindi</p>
-                  <p><span class="text-slate-400">Expertise:</span> Camps, logistics, and safety</p>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
-                  <button class="team-profile-button inline-flex items-center gap-2 text-xs font-black uppercase text-[#F58220]" data-member="nima">
-                    View Profile <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                <div
+                  class="flex items-start justify-between gap-4 pt-5"
+                >
+                  <div
+                    class="flex min-w-0 items-start gap-2 text-sm font-black leading-6 text-slate-500"
+                  >
+                    <i
+                      data-lucide="globe-2"
+                      class="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    ></i>
+                    <span class="max-w-[210px] truncate">Nepali/English/Hindi</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="team-profile-button inline-flex shrink-0 items-center gap-2 text-sm font-black text-[#122B55]"
+                    data-member="nima"
+                  >
+                    View Profile
+                    <!-- <i data-lucide="arrow-right" class="h-5 w-5"></i> -->
                   </button>
-                  <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Available</span>
                 </div>
               </div>
             </article>
 
-            <article class="team-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <div class="relative h-80 bg-slate-200">
-                <img src="./Images/Home/manaslu1.png" alt="Lhakpa Sherpa" class="h-full w-full object-cover" />
-                <span class="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#10233f]">Support</span>
-                <span class="absolute bottom-5 right-5 rounded-2xl bg-[#F58220] px-4 py-4 text-xs font-black text-[#10233f]">07</span>
+            <article
+              data-team-category="support"
+              class="team-card overflow-hidden rounded-3xl bg-white shadow-sm"
+            >
+              <div class="relative h-64 bg-slate-200 sm:h-72 lg:h-80">
+                <img
+                  src="./Images/Home/manaslu1.png"
+                  alt="Lhakpa Sherpa"
+                  class="h-full w-full object-cover object-top"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-[4px] bg-[#F58220] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
+                  >Support</span
+                >
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-black">Lhakpa Sherpa</h3>
-                <p class="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[#F58220]">Operations Coordinator</p>
-                <p class="mt-5 text-sm font-medium leading-7 text-slate-500">
-                  Lhakpa coordinates permits, local teams, transport, and daily
-                  details so trips run smoothly.
-                </p>
-                <div class="mt-5 border-t border-slate-200 pt-5 text-xs font-bold leading-6">
-                  <p><span class="text-slate-400">Languages:</span> Nepali, English</p>
-                  <p><span class="text-slate-400">Expertise:</span> Permits, logistics, and coordination</p>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
-                  <button class="team-profile-button inline-flex items-center gap-2 text-xs font-black uppercase text-[#F58220]" data-member="lhakpa">
-                    View Profile <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                <div
+                  class="flex items-start justify-between gap-4 pt-5"
+                >
+                  <div
+                    class="flex min-w-0 items-start gap-2 text-sm font-black leading-6 text-slate-500"
+                  >
+                    <i
+                      data-lucide="globe-2"
+                      class="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    ></i>
+                    <span class="max-w-[210px] truncate">Nepali/English</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="team-profile-button inline-flex shrink-0 items-center gap-2 text-sm font-black text-[#122B55]"
+                    data-member="lhakpa"
+                  >
+                    View Profile
+                    <!-- <i data-lucide="arrow-right" class="h-5 w-5"></i> -->
                   </button>
-                  <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Available</span>
                 </div>
               </div>
             </article>
 
-            <article class="team-card overflow-hidden rounded-3xl bg-white shadow-sm">
-              <div class="relative h-80 bg-slate-200">
-                <img src="./Images/Home/details/bg.jpeg" alt="Maya Gurung" class="h-full w-full object-cover" />
-                <span class="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#10233f]">Support</span>
-                <span class="absolute bottom-5 right-5 rounded-2xl bg-[#F58220] px-4 py-4 text-xs font-black text-[#10233f]">08</span>
+            <article
+              data-team-category="support"
+              class="team-card overflow-hidden rounded-3xl bg-white shadow-sm"
+            >
+              <div class="relative h-64 bg-slate-200 sm:h-72 lg:h-80">
+                <img
+                  src="./Images/Home/details/bg.jpeg"
+                  alt="Maya Gurung"
+                  class="h-full w-full object-cover object-top"
+                />
+                <span
+                  class="absolute left-5 top-5 rounded-[4px] bg-[#F58220] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white"
+                  >Support</span
+                >
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-black">Maya Gurung</h3>
-                <p class="mt-2 text-xs font-black uppercase tracking-[0.14em] text-[#F58220]">Guest Care Specialist</p>
-                <p class="mt-5 text-sm font-medium leading-7 text-slate-500">
-                  Maya helps travelers prepare before arrival and stays close to
-                  each detail from inquiry to return.
-                </p>
-                <div class="mt-5 border-t border-slate-200 pt-5 text-xs font-bold leading-6">
-                  <p><span class="text-slate-400">Languages:</span> Nepali, English, French</p>
-                  <p><span class="text-slate-400">Expertise:</span> Guest support and trip preparation</p>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
-                  <button class="team-profile-button inline-flex items-center gap-2 text-xs font-black uppercase text-[#F58220]" data-member="maya">
-                    View Profile <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                <div
+                  class="flex items-start justify-between gap-4 pt-5"
+                >
+                  <div
+                    class="flex min-w-0 items-start gap-2 text-sm font-black leading-6 text-slate-500"
+                  >
+                    <i
+                      data-lucide="globe-2"
+                      class="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    ></i>
+                    <span class="max-w-[210px] truncate">Nepali/English/French</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="team-profile-button inline-flex shrink-0 items-center gap-2 text-sm font-black text-[#122B55]"
+                    data-member="maya"
+                  >
+                    View Profile
+                    <!-- <i data-lucide="arrow-right" class="h-5 w-5"></i> -->
                   </button>
-                  <span class="rounded-full bg-emerald-50 px-4 py-2 text-[10px] font-black uppercase text-emerald-700">Available</span>
                 </div>
               </div>
             </article>
@@ -653,14 +829,14 @@
 
     <div
       id="teamProfileModal"
-      class="fixed inset-0 z-[80] hidden overflow-y-auto bg-[#08213D]/80 px-5 py-8 backdrop-blur-sm"
+      class="fixed inset-0 z-[80] hidden overflow-y-auto bg-slate-950/70 px-4 py-5 backdrop-blur-sm lg:px-6 lg:py-8"
       aria-hidden="true"
     >
       <div
-        class="mx-auto flex min-h-full max-w-[1180px] items-center justify-center"
+        class="mx-auto flex min-h-full max-w-[1540px] items-center justify-center"
       >
         <section
-          class="relative grid w-full overflow-hidden rounded-3xl bg-white shadow-2xl lg:grid-cols-[0.82fr_1.18fr]"
+          class="relative grid w-full overflow-hidden rounded-2xl bg-white shadow-[0_24px_80px_rgba(15,23,42,0.22)] sm:rounded-[28px] lg:min-h-[720px] lg:grid-cols-[0.68fr_1fr]"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modalMemberName"
@@ -668,87 +844,175 @@
           <button
             id="teamModalClose"
             type="button"
-            class="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#122B55] shadow-lg transition-colors hover:bg-[#F58220] hover:text-white"
+            class="absolute right-5 top-5 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#122B55] shadow-[0_10px_28px_rgba(15,23,42,0.16)] transition-colors hover:bg-[#F58220] hover:text-white lg:right-7 lg:top-7 lg:h-16 lg:w-16"
             aria-label="Close profile"
           >
-            <i data-lucide="x" class="h-5 w-5"></i>
+            <i data-lucide="x" class="h-5 w-5 lg:h-7 lg:w-7"></i>
           </button>
 
-          <div class="relative min-h-[420px] bg-slate-200">
+          <div class="relative min-h-[300px] overflow-hidden bg-slate-200 sm:min-h-[420px] lg:min-h-full">
             <img
               id="modalMemberImage"
-              src="./Images/Home/team.png"
+              src="./Images/Team/chairman.jpg"
               alt=""
               class="absolute inset-0 h-full w-full object-cover"
             />
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#10233f]/90 to-transparent p-8 text-white">
-              <p class="text-[10px] font-black uppercase tracking-[0.28em] text-[#FAB331]">
-                Panorama Himalaya Trekking
-              </p>
-              <p id="modalMemberTagline" class="mt-3 text-xl font-black leading-8">
-                Experienced mountain leader and local guide.
-              </p>
-            </div>
-            <div class="absolute bottom-8 right-8 rounded-2xl bg-white p-5 shadow-2xl">
-              <p id="modalMemberYears" class="text-3xl font-black text-[#F58220]">20+</p>
-              <p class="mt-1 text-xs font-black text-[#10233f]">
-                Years of mountain and tourism experience
-              </p>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#061d38] via-[#061d38]/15 to-transparent"></div>
+
+            <div class="absolute inset-x-0 bottom-0 grid gap-5 p-6 text-white sm:grid-cols-1 sm:items-end lg:p-9">
+              <div class="flex items-start gap-4">
+                <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#F58220] text-[#F58220]">
+                  <i data-lucide="person-standing" class="h-8 w-8"></i>
+                </span>
+                <div>
+                  <p
+                    id="modalImageRole"
+                    class="text-xs font-black uppercase tracking-[0.18em] text-[#F58220]"
+                  >
+                    President & Mountain Guide
+                  </p>
+                  <p
+                    id="modalMemberTagline"
+                    class="mt-3 max-w-sm text-base font-semibold leading-7 text-white/90"
+                  >
+                    Experienced mountain leader and local guide.
+                  </p>
+                </div>
+              </div>
+
+              <!-- <div class="rounded-2xl border border-white/25 bg-[#08213D]/45 p-5 text-center backdrop-blur-sm">
+                <i data-lucide="mountain" class="mx-auto h-8 w-8 text-[#F58220]"></i>
+                <p
+                  id="modalMemberYears"
+                  class="mt-1 text-4xl font-black leading-none text-white"
+                >
+                  20+
+                </p>
+                <p class="mt-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/70">
+                  Years of Experience
+                </p>
+              </div> -->
             </div>
           </div>
 
-          <div class="p-7 sm:p-10 lg:p-14">
-            <span
-              id="modalMemberRole"
-              class="inline-flex rounded-full bg-orange-50 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-[#F58220]"
-            >
-              President & Mountain Guide
-            </span>
+          <div class="bg-white p-7 sm:p-10 lg:p-12 xl:p-14">
+            <div class="flex items-center gap-6">
+              <!-- <span class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-orange-50 text-[#F58220]">
+                <i data-lucide="person-standing" class="h-11 w-11"></i>
+              </span> -->
+              <span
+                id="modalMemberRole"
+                class="text-xs font-black uppercase tracking-[0.24em] text-[#F58220]"
+              >
+                President & Mountain Guide
+              </span>
+            </div>
+
             <h2
               id="modalMemberName"
-              class="mt-7 text-4xl font-black leading-tight text-[#10233f] sm:text-5xl"
+              class="mt-6 text-2xl font-bold uppercase leading-none text-[#10233f] lg:text-4xl"
             >
               Pasang Sherpa
             </h2>
-            <p
-              id="modalMemberBio"
-              class="mt-6 text-base font-medium leading-8 text-slate-600"
-            ></p>
+            <!-- <div class="mt-7 flex w-24 items-center gap-1 text-[#F58220]" aria-hidden="true">
+              <span class="h-0.5 w-4 rotate-[-38deg] bg-current"></span>
+              <span class="h-0.5 w-4 rotate-[38deg] bg-current"></span>
+              <span class="h-0.5 w-4 rotate-[-38deg] bg-current"></span>
+              <span class="h-0.5 w-4 rotate-[38deg] bg-current"></span>
+            </div> -->
 
-            <div id="modalMemberHighlights" class="mt-6 flex flex-wrap gap-3"></div>
+            <div class="mt-8">
+              <!-- <p
+                id="modalAboutTitle"
+                class="text-sm font-black uppercase tracking-[0.14em] text-[#10233f]"
+              >
+                About Pasang
+              </p> -->
+              <p
+                id="modalMemberBio"
+                class="mt-3 max-w-4xl text-base font-medium leading-8 text-slate-600 lg:text-lg"
+              ></p>
+            </div>
+
+            <!-- <div
+              id="modalMemberHighlights"
+              class="mt-7 grid gap-4 sm:grid-cols-3"
+            ></div> -->
 
             <div class="mt-8 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-2xl bg-slate-50 p-5">
-                <p class="text-[11px] font-black uppercase tracking-[0.18em] text-slate-400">Experience</p>
-                <p id="modalMemberExperience" class="mt-2 text-sm font-black text-[#10233f]"></p>
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#08213D] text-white">
+                  <i data-lucide="shield-check" class="h-7 w-7"></i>
+                </span>
+                <div>
+                  <p class="text-[11px] font-normal uppercase tracking-[0.18em] text-slate-400">
+                    Experience
+                  </p>
+                  <p
+                    id="modalMemberExperience"
+                    class="mt-1.5 text-base font-bold leading-6 text-[#10233f]"
+                  ></p>
+                </div>
               </div>
-              <div class="rounded-2xl bg-slate-50 p-5">
-                <p class="text-[11px] font-black uppercase tracking-[0.18em] text-slate-400">Specialization</p>
-                <p id="modalMemberSpecialization" class="mt-2 text-sm font-black text-[#10233f]"></p>
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#08213D] text-white">
+                  <i data-lucide="briefcase" class="h-7 w-7"></i>
+                </span>
+                <div>
+                  <p class="text-[11px] font-normal uppercase tracking-[0.18em] text-slate-400">
+                    Specialization
+                  </p>
+                  <p
+                    id="modalMemberSpecialization"
+                    class="mt-1.5 text-base font-bold leading-6 text-[#10233f]"
+                  ></p>
+                </div>
               </div>
-              <div class="rounded-2xl bg-slate-50 p-5">
-                <p class="text-[11px] font-black uppercase tracking-[0.18em] text-slate-400">Languages</p>
-                <p id="modalMemberLanguages" class="mt-2 text-sm font-black text-[#10233f]"></p>
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#08213D] text-white">
+                  <i data-lucide="globe-2" class="h-7 w-7"></i>
+                </span>
+                <div>
+                  <p class="text-[11px] font-normal uppercase tracking-[0.18em] text-slate-400">
+                    Languages
+                  </p>
+                  <p
+                    id="modalMemberLanguages"
+                    class="mt-1.5 text-base font-bold leading-6 text-[#10233f]"
+                  ></p>
+                </div>
               </div>
-              <div class="rounded-2xl bg-slate-50 p-5">
-                <p class="text-[11px] font-black uppercase tracking-[0.18em] text-slate-400">Position</p>
-                <p id="modalMemberPosition" class="mt-2 text-sm font-black text-[#10233f]"></p>
+              <div class="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#08213D] text-white">
+                  <i data-lucide="user" class="h-7 w-7"></i>
+                </span>
+                <div>
+                  <p class="text-[11px] font-normal uppercase tracking-[0.18em] text-slate-400">
+                    Position
+                  </p>
+                  <p
+                    id="modalMemberPosition"
+                    class="mt-1.5 text-base font-bold leading-6 text-[#10233f]"
+                  ></p>
+                </div>
               </div>
             </div>
 
-            <div class="mt-8 flex flex-wrap gap-3">
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="./index.html#quote"
-                class="inline-flex items-center gap-2 rounded-lg bg-[#F58220] px-6 py-4 text-sm font-black uppercase text-white transition-colors hover:bg-[#d96b11]"
+                class="rounded-[4px] bg-[#F58220] inline-flex items-center gap-2  px-7 py-3 text-center text-sm font-normal uppercase text-white transition-colors hover:bg-[#d96b11]"
               >
                 Plan a Trek
-                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                    <i data-lucide="mountain" class="h-6 w-6"></i>
               </a>
               <a
                 href="./index.html#contact"
-                class="inline-flex rounded-lg bg-slate-100 px-6 py-4 text-sm font-black uppercase text-[#10233f] transition-colors hover:bg-slate-200"
+                class="inline-flex items-center gap-2 rounded-md border border-[#122B55] px-8 py-2.5 text-xs font-bold uppercase text-[#122B55] transition-colors hover:bg-[#122B55] hover:text-white"
               >
                 Contact Us
+
+                <i data-lucide="mail" class="h-6 w-6"></i>
               </a>
             </div>
           </div>
@@ -756,7 +1020,9 @@
       </div>
     </div>
 
-    <footer class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8">
+    <footer
+      class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8"
+    >
       <div class="absolute inset-0 bg-[#08213D]/90"></div>
       <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -767,21 +1033,59 @@
               adventures with professional Sherpa guides.
             </p>
             <div class="mt-4 flex gap-2">
-              <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-xs font-bold" aria-label="Facebook">f</a>
-              <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#E4405F] text-xs font-bold" aria-label="Instagram">ig</a>
-              <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#16A34A] text-xs font-bold" aria-label="Tripadvisor">ta</a>
-              <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FF0000] text-xs font-bold" aria-label="YouTube">yt</a>
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-xs font-bold"
+                aria-label="Facebook"
+                >f</a
+              >
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#E4405F] text-xs font-bold"
+                aria-label="Instagram"
+                >ig</a
+              >
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#16A34A] text-xs font-bold"
+                aria-label="Tripadvisor"
+                >ta</a
+              >
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FF0000] text-xs font-bold"
+                aria-label="YouTube"
+                >yt</a
+              >
             </div>
           </div>
 
           <div>
             <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
             <ul class="mt-3 space-y-1 text-sm text-white/80">
-              <li><a href="./index.html" class="hover:text-[#F58220]">Home</a></li>
-              <li><a href="./about-panorama.html" class="hover:text-[#F58220]">About Us</a></li>
-              <li><a href="./index.html#treks" class="hover:text-[#F58220]">All Treks</a></li>
-              <li><a href="./index.html#destinations" class="hover:text-[#F58220]">Peak & Expenditions</a></li>
-              <li><a href="./index.html#travel-guide" class="hover:text-[#F58220]">Travel Guide</a></li>
+              <li>
+                <a href="./index.html" class="hover:text-[#F58220]">Home</a>
+              </li>
+              <li>
+                <a href="./about-panorama.html" class="hover:text-[#F58220]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#treks" class="hover:text-[#F58220]"
+                  >All Treks</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#destinations" class="hover:text-[#F58220]"
+                  >Peak & Expenditions</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#travel-guide" class="hover:text-[#F58220]"
+                  >Travel Guide</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -799,15 +1103,41 @@
           <div>
             <h3 class="text-sm font-extrabold uppercase">Contact Info</h3>
             <ul class="mt-3 space-y-2 text-sm text-white/80">
-              <li class="flex gap-2"><i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"></i>Kapan, Kathmandu, Nepal</li>
-              <li class="flex gap-2"><i data-lucide="phone" class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"></i>+977 9841373860 (24/7)</li>
-              <li class="flex gap-2"><i data-lucide="mail" class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"></i>info@panoramatrekking.com</li>
-              <li class="flex gap-2"><i data-lucide="globe" class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"></i>www.panoramatrekking.com</li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="map-pin"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i
+                >Kapan, Kathmandu, Nepal
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="phone"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i
+                >+977 9841373860 (24/7)
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="mail"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i
+                >info@panoramatrekking.com
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="globe"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i
+                >www.panoramatrekking.com
+              </li>
             </ul>
           </div>
         </div>
 
-        <p class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70">
+        <p
+          class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70"
+        >
           © 2024 Panorama Trekking Nepal Pvt. Ltd. All Rights Reserved.
         </p>
       </div>

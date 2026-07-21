@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     registration: {
       type: "Certificate",
       title: "Company Registration Certificate",
-      image: "./Images/Home/details/routes.png",
+      image: "./Images/docs/officeregistrar.jpeg",
     },
     license: {
       type: "License",

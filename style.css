@@ -14,3 +14,177 @@ body {
   hyphens: auto;
   /* font-family: "Inter", sans-serif; */
 }
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+.mobile-dropdown {
+  overflow-wrap: anywhere;
+}
+
+.team-card,
+.review-card,
+main article {
+  min-width: 0;
+}
+
+.team-card h3,
+.review-card h3,
+main h1,
+main h2,
+main h3,
+footer h2,
+footer h3 {
+  overflow-wrap: anywhere;
+}
+
+.hero-experience-card {
+  color: white;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-experience-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 1.25rem;
+    max-width: 38rem;
+  }
+
+  .hero-experience-card > p:first-child {
+    grid-row: span 2;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1;
+  }
+
+  .hero-experience-card > p:nth-child(2) {
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .hero-experience-card > p:nth-child(3) {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 1023px) {
+  #mobileMenu {
+    overscroll-behavior: contain;
+  }
+
+  #teamGrid [aria-label="Team categories"],
+  #reviews [aria-label="Review categories"] {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  #teamGrid [aria-label="Team categories"] button,
+  #reviews [aria-label="Review categories"] button {
+    width: 100%;
+    padding-inline: 0.75rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  main section {
+    scroll-margin-top: 5rem;
+  }
+
+  .team-card,
+  .review-card,
+  main article {
+    border-radius: 1rem;
+  }
+
+  .team-card > div:last-child,
+  .review-card .p-6,
+  main article > div:last-child {
+    padding: 1.25rem;
+  }
+
+  .team-card h3,
+  .review-card h3 {
+    font-size: 1.125rem;
+    line-height: 1.45;
+  }
+
+  .team-card .pt-5,
+  .review-card .mt-6 {
+    margin-top: 1rem;
+    padding-top: 0;
+  }
+
+  .team-card .flex.items-start.justify-between,
+  .review-card .flex.items-center.justify-between {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .team-card span.truncate {
+    max-width: min(54vw, 14rem);
+  }
+
+  #reviewModal,
+  #teamModal,
+  #legalDocumentModal {
+    padding: 1rem;
+  }
+
+  #reviewModal section,
+  #teamModal section,
+  #legalDocumentModal section {
+    border-radius: 1.25rem;
+  }
+
+  #teamModal [id^="modalMember"] {
+    overflow-wrap: anywhere;
+  }
+
+  #teamModal .grid.gap-4 > .flex {
+    align-items: flex-start;
+  }
+
+  #modalReviewTitle,
+  #modalMemberName,
+  #modalDocumentTitle {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 479px) {
+  #teamGrid [aria-label="Team categories"],
+  #reviews [aria-label="Review categories"] {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card .flex.items-start.justify-between,
+  .review-card .flex.items-center.justify-between {
+    flex-direction: column;
+  }
+
+  .team-card span.truncate {
+    max-width: calc(100vw - 8rem);
+  }
+
+  .team-profile-button,
+  .legal-document-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #teamModal a,
+  #legalDocumentModal a,
+  #legalDocumentModal button {
+    justify-content: center;
+    width: 100%;
+  }
+}
