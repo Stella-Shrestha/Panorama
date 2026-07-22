@@ -176,6 +176,58 @@
               Day Tours
             </a>
           </li>
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="travelGuideDropdown"
+            >
+              Travel Guide
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+
+            <div
+              id="travelGuideDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-72 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="./travel-insurance.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="shield-check" class="h-4 w-4"></i>
+                  Travel Insurance
+                </a>
+                <a
+                  href="./trekking-permit-fee.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="file-text" class="h-4 w-4"></i>
+                  Trekking Permit & Fee
+                </a>
+                <a
+                  href="./visa-info.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="stamp" class="h-4 w-4"></i>
+                  Visa Info
+                </a>
+                <a
+                  href="./foreign-embassies.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="landmark" class="h-4 w-4"></i>
+                  Foreign Embassies in Nepal
+                </a>
+              </div>
+            </div>
+          </li>
           <li>
             <a
               href="./gallery.html?region=all"
@@ -186,7 +238,7 @@
           </li>
           <li>
             <a
-              href="./index.html#contact"
+              href="./contact-us.html"
               class="inline-flex py-3 transition-colors hover:text-[#F58220]"
             >
               Contact Us
@@ -291,6 +343,53 @@
               </a>
             </li>
             <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileTravelDropdown"
+              >
+                <span>Travel Guide</span>
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+              <div
+                id="mobileTravelDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="./travel-insurance.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Travel Insurance
+                  </a>
+                  <a
+                    href="./trekking-permit-fee.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Trekking Permit & Fee
+                  </a>
+                  <a
+                    href="./visa-info.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Visa Info
+                  </a>
+                  <a
+                    href="./foreign-embassies.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Foreign Embassies in Nepal
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
               <a
                 href="./gallery.html?region=all"
                 class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
@@ -300,7 +399,7 @@
             </li>
             <li>
               <a
-                href="./index.html#contact"
+                href="./contact-us.html"
                 class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
               >
                 Contact Us
@@ -1007,7 +1106,7 @@
                     <i data-lucide="mountain" class="h-6 w-6"></i>
               </a>
               <a
-                href="./index.html#contact"
+                href="./contact-us.html"
                 class="inline-flex items-center gap-2 rounded-md border border-[#122B55] px-8 py-2.5 text-xs font-bold uppercase text-[#122B55] transition-colors hover:bg-[#122B55] hover:text-white"
               >
                 Contact Us

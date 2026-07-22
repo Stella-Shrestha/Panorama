@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trekking in Nepal | Panorama Trekking</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Sans+3:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-full overflow-x-hidden bg-[#f5f7fa] font-[Inter,sans-serif] text-[#10233f] antialiased">
+    <header>
+      <div class="hidden w-full bg-[#122B55] lg:block">
+        <div
+          class="mx-auto flex w-full max-w-[1584px] items-center justify-between px-5 py-2"
+        >
+          <div class="flex items-center gap-6">
+            <a
+              href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="map-pin" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>Kapan, Kathmandu, Nepal</span>
+            </a>
+            <a
+              href="tel:+9771234567890"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="phone" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>+977 123 456 7890</span>
+            </a>
+            <a
+              href="mailto:info@panoramatrekking.com"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="mail" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>info@panoramatrekking.com</span>
+            </a>
+          </div>
+
+          <div class="inline-flex items-center gap-3" aria-label="Language switcher">
+            <a
+              href="#"
+              lang="en"
+              aria-current="page"
+              class="text-xs font-bold uppercase tracking-[0.04em] text-[#FAB331] transition-colors hover:text-white sm:text-[13px]"
+            >
+              English
+            </a>
+            <span class="h-4 w-px bg-white/30" aria-hidden="true"></span>
+            <a
+              href="#"
+              lang="fr"
+              class="text-xs font-bold uppercase tracking-[0.04em] text-white transition-colors hover:text-[#FAB331] sm:text-[13px]"
+            >
+              Francais
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav
+      class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm"
+      aria-label="Main navigation"
+    >
+      <div
+        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 px-5 py-3"
+      >
+        <a href="./index.html" class="shrink-0" aria-label="Panorama Trekking home">
+          <img
+            src="./Images/logo.png"
+            alt="Panorama Trekking"
+            class="h-auto w-32 object-contain lg:w-36"
+          />
+        </a>
+
+        <ul
+          class="hidden flex-1 items-center justify-center gap-4 text-[14px] font-semibold text-slate-950 lg:flex xl:gap-9 xl:text-[15px]"
+        >
+          <li>
+            <a
+              href="./index.html"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+            >
+              Home
+            </a>
+          </li>
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="aboutDropdown"
+            >
+              About Us
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              id="aboutDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
+            >
+              <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl">
+                <a
+                  href="./about-panorama.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="info" class="h-4 w-4"></i>
+                  About Panorama
+                </a>
+                <a
+                  href="./our-team.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="users" class="h-4 w-4"></i>
+                  Our Team
+                </a>
+                <a
+                  href="./legal-documents.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="file-text" class="h-4 w-4"></i>
+                  Legal Documents
+                </a>
+                <a
+                  href="./testimonials.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="message-square-heart" class="h-4 w-4"></i>
+                  Testimonials
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a
+              href="./index.html#treks"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+            >
+              Treks
+            </a>
+          </li>
+          <li>
+            <a
+              href="./index.html#dayTours"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+            >
+              Day Tours
+            </a>
+          </li>
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="destinationsDropdown"
+            >
+              Peaks & Expendition
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+
+            <div
+              id="destinationsDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="./nepal.html"
+                  class="flex items-center gap-3 rounded-lg bg-orange-50 px-3 py-3 text-sm font-medium text-[#F58220]"
+                  aria-current="page"
+                >
+                  <i data-lucide="mountain-snow" class="h-4 w-4"></i>
+                  Nepal
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="landmark" class="h-4 w-4"></i>
+                  Tibet
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="trees" class="h-4 w-4"></i>
+                  Bhutan
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="map-pinned" class="h-4 w-4"></i>
+                  India
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="travelGuideDropdown"
+            >
+              Travel Guide
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+
+            <div
+              id="travelGuideDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-72 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="./travel-insurance.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="shield-check" class="h-4 w-4"></i>
+                  Travel Insurance
+                </a>
+                <a
+                  href="./trekking-permit-fee.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="file-text" class="h-4 w-4"></i>
+                  Trekking Permit & Fee
+                </a>
+                <a
+                  href="./visa-info.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="stamp" class="h-4 w-4"></i>
+                  Visa Info
+                </a>
+                <a
+                  href="./foreign-embassies.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="landmark" class="h-4 w-4"></i>
+                  Foreign Embassies in Nepal
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a
+              href="./gallery.html?region=all"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+            >
+              Gallery
+            </a>
+          </li>
+          <li>
+            <a
+              href="./contact-us.html"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+
+        <a
+          href="./index.html#quote"
+          class="hidden shrink-0 rounded-lg bg-[#F58220] px-4 py-3 text-sm font-bold uppercase text-white shadow-sm transition-colors hover:bg-[#d96b11] lg:inline-flex xl:px-7"
+        >
+          Get a Quote
+        </a>
+
+        <button
+          id="mobileMenuButton"
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 text-[#122B55] transition-colors hover:border-[#F58220] hover:bg-[#F58220] hover:text-white lg:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <i id="mobileMenuIcon" data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobileMenu"
+        class="hidden max-h-[calc(100vh-76px)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden"
+      >
+        <div class="px-5 py-5">
+          <ul class="space-y-1 text-sm font-semibold text-[#122B55]">
+            <li>
+              <a
+                href="./index.html"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileAboutDropdown"
+              >
+                <span>About Us</span>
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+              <div
+                id="mobileAboutDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="./about-panorama.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    About Panorama
+                  </a>
+                  <a
+                    href="./our-team.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Our Team
+                  </a>
+                  <a
+                    href="./legal-documents.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Legal Documents
+                  </a>
+                  <a
+                    href="./testimonials.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Testimonials
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="./index.html#treks"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              >
+                Treks
+              </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileDestinationsDropdown"
+              >
+                <span>Peaks & Expendition</span>
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+              <div
+                id="mobileDestinationsDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="./nepal.html"
+                    class="mobile-link block rounded-lg bg-white px-3 py-2.5 text-xs font-bold text-[#F58220]"
+                    aria-current="page"
+                  >
+                    Nepal
+                  </a>
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Tibet
+                  </a>
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Bhutan
+                  </a>
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    India
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="./index.html#dayTours"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              >
+                Day Tours
+              </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileTravelDropdown"
+              >
+                <span>Travel Guide</span>
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+              <div
+                id="mobileTravelDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="./travel-insurance.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Travel Insurance
+                  </a>
+                  <a
+                    href="./trekking-permit-fee.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Trekking Permit & Fee
+                  </a>
+                  <a
+                    href="./visa-info.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Visa Info
+                  </a>
+                  <a
+                    href="./foreign-embassies.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Foreign Embassies in Nepal
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="./gallery.html?region=all"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              >
+                Gallery
+              </a>
+            </li>
+            <li>
+              <a
+                href="./contact-us.html"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              >
+                Contact Us
+              </a>
+            </li>
+          </ul>
+
+          <a
+            href="./index.html#quote"
+            class="mobile-link mt-4 flex items-center justify-center rounded-lg bg-[#F58220] px-6 py-3 text-sm font-bold uppercase text-white transition-colors hover:bg-[#d96b11]"
+          >
+            Get a Quote
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="bg-white px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-[1584px]">
+          <div class="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(520px,1fr)] lg:items-center">
+            <div>
+              <p class="flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#F58220]">
+                <span class="h-px w-8 bg-[#F58220]"></span>
+                Explore the Himalayas
+              </p>
+              <h1 class="mt-5 text-5xl font-black leading-[1.05] text-[#122B55] sm:text-6xl lg:text-7xl">
+                Trekking and hiking
+                <span class="text-[#F58220]"> in Nepal.</span>
+              </h1>
+              <p class="mt-7 max-w-2xl text-sm font-medium leading-7 text-slate-600 md:text-base">
+                Walk through Himalayan valleys, remote villages, ancient
+                monasteries and legendary mountain landscapes with experienced
+                local guides who understand every trail.
+              </p>
+              <div class="mt-6 flex flex-wrap gap-3 text-xs font-black text-[#122B55]">
+                <span class="rounded-full bg-slate-100 px-4 py-2">World-class trails</span>
+                <span class="rounded-full bg-slate-100 px-4 py-2">Local guides</span>
+                <span class="rounded-full bg-slate-100 px-4 py-2">Customized itineraries</span>
+              </div>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href="#regions" class="inline-flex justify-center rounded-[4px] bg-[#F58220] px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-[#d96b11]">Explore Trekking Regions</a>
+                <a href="./index.html#quote" class="inline-flex justify-center rounded-[4px] bg-slate-100 px-7 py-3 text-sm font-bold text-[#122B55] transition-colors hover:bg-[#122B55] hover:text-white">Plan Your Trek</a>
+              </div>
+            </div>
+            <div class="grid min-h-[470px] gap-4 md:grid-cols-[1fr_0.75fr]">
+              <article class="relative overflow-hidden rounded-2xl md:row-span-2">
+                <img src="./Images/Home/Background.png" alt="Trekking group beside a Himalayan lake in Nepal" class="absolute inset-0 h-full w-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 p-6 text-white"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">Himalayan Journeys</p><h2 class="mt-2 text-lg font-black">Walk deeper into Nepal's mountains, culture and local life.</h2></div>
+              </article>
+              <article class="relative overflow-hidden rounded-2xl">
+                <img src="./Images/Home/adventure.png" alt="Trekkers walking through Nepal" class="absolute inset-0 h-full w-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 p-5 text-white"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">Local Guidance</p><h2 class="mt-2 text-sm font-black">Safe and personal trekking experiences</h2></div>
+              </article>
+              <article class="relative overflow-hidden rounded-2xl">
+                <img src="./Images/Home/everest.png" alt="Snowy mountains in Nepal" class="absolute inset-0 h-full w-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 p-5 text-white"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">Mountain Life</p><h2 class="mt-2 text-sm font-black">Trails for every trekker and experience level</h2></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div class="rounded-xl bg-slate-50 p-5"><i data-lucide="mountain" class="h-5 w-5 text-[#F58220]"></i><p class="mt-3 text-lg font-black">8,848.86 m</p><p class="text-xs font-medium text-slate-500">Highest trekking region</p></div>
+            <div class="rounded-xl bg-slate-50 p-5"><i data-lucide="calendar-days" class="h-5 w-5 text-[#F58220]"></i><p class="mt-3 text-lg font-black">3-30 Days</p><p class="text-xs font-medium text-slate-500">Flexible trek duration</p></div>
+            <div class="rounded-xl bg-slate-50 p-5"><i data-lucide="activity" class="h-5 w-5 text-[#F58220]"></i><p class="mt-3 text-lg font-black">Easy-Extreme</p><p class="text-xs font-medium text-slate-500">Routes for every level</p></div>
+            <div class="rounded-xl bg-slate-50 p-5"><i data-lucide="sun" class="h-5 w-5 text-[#F58220]"></i><p class="mt-3 text-lg font-black">Spring & Autumn</p><p class="text-xs font-medium text-slate-500">Popular trekking seasons</p></div>
+            <div class="rounded-xl bg-slate-50 p-5"><i data-lucide="languages" class="h-5 w-5 text-[#F58220]"></i><p class="mt-3 text-lg font-black">Multilingual</p><p class="text-xs font-medium text-slate-500">French and English guides</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f3f5f8] px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-[1584px] gap-12 lg:grid-cols-[0.8fr_1fr] lg:items-center">
+          <div class="relative min-h-[440px]">
+            <img src="./Images/Home/manaslu.png" alt="Trekking route through the mountains of Nepal" class="absolute left-0 top-0 h-[420px] w-[82%] rounded-2xl object-cover" />
+            <img src="./Images/Home/team.png" alt="Local mountain culture in Nepal" class="absolute bottom-0 right-0 h-48 w-56 rounded-2xl border-8 border-white object-cover shadow-xl" />
+          </div>
+          <div>
+            <p class="flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#F58220]"><span class="h-px w-8 bg-[#F58220]"></span>About Trekking in Nepal</p>
+            <h2 class="mt-5 text-4xl font-black leading-tight text-[#122B55] lg:text-5xl">More than a walk through the mountains</h2>
+            <div class="mt-6 space-y-5 text-sm font-medium leading-7 text-slate-600 md:text-base">
+              <p>Trekking in Nepal is a journey through some of the world's most dramatic landscapes. Trails pass through forests, river valleys, high-altitude deserts, glaciers and villages beneath the highest mountains on Earth.</p>
+              <p>Nepal offers trekking experiences for beginners, families, experienced hikers and mountaineers. You can choose a short trek near Kathmandu, a classic Everest or Annapurna route, or a remote expedition through Manaslu, Dolpo, Makalu or Kanchenjunga.</p>
+              <p>Trekking also creates opportunities to meet local communities, stay in traditional tea houses, visit Buddhist monasteries and experience the diverse cultures of the Himalayan region.</p>
+            </div>
+            <div class="mt-7 rounded-xl bg-orange-50 p-5 text-sm font-black leading-7 text-[#122B55]">A journey designed around you: every itinerary can be adjusted to your pace, interests, travel dates and experience level.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="regions" class="bg-white px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-[1584px]">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="text-[11px] font-black uppercase tracking-[0.22em] text-[#F58220]">Trekking Destinations</p>
+            <h2 class="mt-4 text-4xl font-black leading-tight text-[#122B55] lg:text-5xl">Explore Nepal's trekking regions</h2>
+            <p class="mt-5 text-sm font-medium leading-7 text-slate-500">Each region offers different landscapes, cultural experiences, altitudes and levels of challenge.</p>
+          </div>
+          <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"><img src="./Images/Home/annapurna.png" alt="Annapurna trekking region" class="h-56 w-full object-cover" /><div class="p-7"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Central Nepal</p><h3 class="mt-2 text-2xl font-black">Annapurna Region</h3><p class="mt-3 text-sm font-medium leading-7 text-slate-500">Diverse trails through mountain villages, forests, valleys and the high Thorong La Pass.</p><div class="mt-4 flex flex-wrap gap-2 text-[10px] font-black"><span class="rounded-full bg-slate-100 px-3 py-1">Annapurna Circuit</span><span class="rounded-full bg-slate-100 px-3 py-1">ABC Trek</span><span class="rounded-full bg-slate-100 px-3 py-1">Ghorepani</span></div></div></article>
+            <article class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"><img src="./Images/Home/everest.png" alt="Everest trekking region" class="h-56 w-full object-cover" /><div class="p-7"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Eastern Nepal</p><h3 class="mt-2 text-2xl font-black">Everest Region</h3><p class="mt-3 text-sm font-medium leading-7 text-slate-500">Legendary trails, Sherpa communities, high mountain passes and close views of Mount Everest.</p><div class="mt-4 flex flex-wrap gap-2 text-[10px] font-black"><span class="rounded-full bg-slate-100 px-3 py-1">Everest Base Camp</span><span class="rounded-full bg-slate-100 px-3 py-1">Three Passes</span><span class="rounded-full bg-slate-100 px-3 py-1">Gokyo Lakes</span></div></div></article>
+            <article class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"><img src="./Images/Home/mustang.png" alt="Langtang trekking region" class="h-56 w-full object-cover" /><div class="p-7"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Near Kathmandu</p><h3 class="mt-2 text-2xl font-black">Langtang Region</h3><p class="mt-3 text-sm font-medium leading-7 text-slate-500">Accessible Himalayan valleys, Tamang culture, sacred lakes and rewarding mountain viewpoints.</p><div class="mt-4 flex flex-wrap gap-2 text-[10px] font-black"><span class="rounded-full bg-slate-100 px-3 py-1">Langtang Valley</span><span class="rounded-full bg-slate-100 px-3 py-1">Gosaikunda</span><span class="rounded-full bg-slate-100 px-3 py-1">Helambu</span></div></div></article>
+            <article class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"><img src="./Images/Home/manaslu1.png" alt="Manaslu trekking region" class="h-56 w-full object-cover" /><div class="p-7"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Restricted Region</p><h3 class="mt-2 text-2xl font-black">Manaslu Region</h3><p class="mt-3 text-sm font-medium leading-7 text-slate-500">A quieter route through remote villages, dramatic gorges and the high Larkya La Pass.</p><div class="mt-4 flex flex-wrap gap-2 text-[10px] font-black"><span class="rounded-full bg-slate-100 px-3 py-1">Manaslu Circuit</span><span class="rounded-full bg-slate-100 px-3 py-1">Tsum Valley</span><span class="rounded-full bg-slate-100 px-3 py-1">Larkya La</span></div></div></article>
+            <article class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"><img src="./Images/Home/Background.png" alt="Mustang trekking region" class="h-56 w-full object-cover" /><div class="p-7"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Rain Shadow Region</p><h3 class="mt-2 text-2xl font-black">Mustang Region</h3><p class="mt-3 text-sm font-medium leading-7 text-slate-500">Ancient cave settlements, Tibetan-influenced culture and striking high-altitude desert landscapes.</p><div class="mt-4 flex flex-wrap gap-2 text-[10px] font-black"><span class="rounded-full bg-slate-100 px-3 py-1">Upper Mustang</span><span class="rounded-full bg-slate-100 px-3 py-1">Lo Manthang</span><span class="rounded-full bg-slate-100 px-3 py-1">Muktinath</span></div></div></article>
+            <article class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"><img src="./Images/Home/manaslu.png" alt="Dolpo trekking region" class="h-56 w-full object-cover" /><div class="p-7"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Remote Western Nepal</p><h3 class="mt-2 text-2xl font-black">Dolpo Region</h3><p class="mt-3 text-sm font-medium leading-7 text-slate-500">Remote valleys, ancient Bon culture, turquoise lakes and demanding wilderness trekking.</p><div class="mt-4 flex flex-wrap gap-2 text-[10px] font-black"><span class="rounded-full bg-slate-100 px-3 py-1">Upper Dolpo</span><span class="rounded-full bg-slate-100 px-3 py-1">Phoksundo Lake</span><span class="rounded-full bg-slate-100 px-3 py-1">Shey Gompa</span></div></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f3f5f8] px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-[1584px] gap-10 lg:grid-cols-[0.65fr_1fr] lg:items-start">
+          <div>
+            <p class="flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#F58220]"><span class="h-px w-8 bg-[#F58220]"></span>Choose Your Trek</p>
+            <h2 class="mt-4 text-4xl font-black leading-tight text-[#122B55] lg:text-5xl">Find the right trekking style</h2>
+            <p class="mt-5 text-sm font-medium leading-7 text-slate-600">Nepal offers everything from short scenic hikes to remote high-altitude expeditions. Choose a journey that matches your fitness, available time and preferred level of adventure.</p>
+            <a href="./contact-us.html" class="mt-7 inline-flex rounded-[4px] bg-[#F58220] px-7 py-3 text-sm font-bold text-white">Ask Our Trek Expert</a>
+          </div>
+          <div class="grid gap-4">
+            <div class="flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between"><div><h3 class="font-black">Short and easy hikes</h3><p class="mt-1 text-sm font-medium text-slate-500">Scenic routes suitable for beginners and families.</p></div><span class="shrink-0 text-xs font-black">1-5 Days</span></div>
+            <div class="flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between"><div><h3 class="font-black">Classic tea-house treks</h3><p class="mt-1 text-sm font-medium text-slate-500">Comfortable trekking through villages with lodge accommodation.</p></div><span class="shrink-0 text-xs font-black">7-16 Days</span></div>
+            <div class="flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between"><div><h3 class="font-black">Remote camping treks</h3><p class="mt-1 text-sm font-medium text-slate-500">Fully supported journeys through isolated valleys.</p></div><span class="shrink-0 text-xs font-black">14-30 Days</span></div>
+            <div class="flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between"><div><h3 class="font-black">High-pass adventures</h3><p class="mt-1 text-sm font-medium text-slate-500">Long walking days and major mountain passes.</p></div><span class="shrink-0 text-xs font-black">15-25 Days</span></div>
+            <div class="flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between"><div><h3 class="font-black">Cultural trekking journeys</h3><p class="mt-1 text-sm font-medium text-slate-500">Routes focused on monasteries, traditional settlements and heritage.</p></div><span class="shrink-0 text-xs font-black">5-18 Days</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-[1584px] gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+          <div>
+            <p class="flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#F58220]"><span class="h-px w-8 bg-[#F58220]"></span>Best Time to Trek</p>
+            <h2 class="mt-4 text-4xl font-black leading-tight text-[#122B55] lg:text-5xl">Choose the right season for your route</h2>
+            <p class="mt-5 text-sm font-medium leading-7 text-slate-600">Trekking conditions vary by altitude and region. Spring and autumn are most popular, while some destinations can also be explored in winter or monsoon.</p>
+            <div class="mt-8 grid gap-5 sm:grid-cols-2">
+              <article class="rounded-2xl bg-white p-6 shadow-xl shadow-slate-200/60"><h3 class="font-black">Spring</h3><p class="mt-2 text-[11px] font-black uppercase text-[#F58220]">March to May</p><p class="mt-2 text-sm font-medium leading-6 text-slate-500">Warmer temperatures and blooming forests.</p></article>
+              <article class="rounded-2xl bg-white p-6 shadow-xl shadow-slate-200/60"><h3 class="font-black">Autumn</h3><p class="mt-2 text-[11px] font-black uppercase text-[#F58220]">September to November</p><p class="mt-2 text-sm font-medium leading-6 text-slate-500">Stable weather and excellent visibility.</p></article>
+              <article class="rounded-2xl bg-white p-6 shadow-xl shadow-slate-200/60"><h3 class="font-black">Winter</h3><p class="mt-2 text-[11px] font-black uppercase text-[#F58220]">December to February</p><p class="mt-2 text-sm font-medium leading-6 text-slate-500">Quiet trails on lower routes.</p></article>
+              <article class="rounded-2xl bg-white p-6 shadow-xl shadow-slate-200/60"><h3 class="font-black">Monsoon</h3><p class="mt-2 text-[11px] font-black uppercase text-[#F58220]">June to August</p><p class="mt-2 text-sm font-medium leading-6 text-slate-500">Good for rain-shadow areas.</p></article>
+            </div>
+          </div>
+          <div class="relative min-h-[420px] overflow-hidden rounded-3xl"><img src="./Images/Home/annapurna.png" alt="Trekkers walking through the Himalayas in clear weather" class="absolute inset-0 h-full w-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-transparent to-transparent"></div><div class="absolute bottom-0 p-8 text-white"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">Seasonal Planning</p><h3 class="mt-2 text-xl font-black">The right season improves safety, comfort and mountain visibility.</h3></div></div>
+        </div>
+      </section>
+
+      <section class="bg-[#f3f5f8] px-5 py-16 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-[1584px] gap-6 lg:grid-cols-[1fr_0.85fr]">
+          <div class="rounded-3xl bg-[#122B55] p-8 text-white lg:p-12">
+            <p class="flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#FAB331]"><span class="h-px w-8 bg-[#FAB331]"></span>Trekking Safety</p>
+            <h2 class="mt-5 text-4xl font-black leading-tight">Prepared for every stage of the journey</h2>
+            <p class="mt-5 text-sm font-medium leading-7 text-white/75">Trekking in the Himalayas requires thoughtful preparation, realistic pacing and attention to altitude.</p>
+            <div class="mt-8 grid gap-3 sm:grid-cols-2 text-xs font-black"><span class="rounded-lg bg-white/10 px-4 py-3">Experienced licensed local guides</span><span class="rounded-lg bg-white/10 px-4 py-3">Altitude and health monitoring</span><span class="rounded-lg bg-white/10 px-4 py-3">Carefully planned acclimatization</span><span class="rounded-lg bg-white/10 px-4 py-3">Weather and trail condition checks</span><span class="rounded-lg bg-white/10 px-4 py-3">Equipment and packing guidance</span><span class="rounded-lg bg-white/10 px-4 py-3">Emergency communication support</span></div>
+          </div>
+          <div class="rounded-3xl bg-orange-50 p-8 lg:p-12">
+            <i data-lucide="user-round-check" class="h-12 w-12 rounded-xl bg-white p-3 text-[#F58220]"></i>
+            <h2 class="mt-8 text-3xl font-black text-[#122B55]">Not sure which trek is right for you?</h2>
+            <p class="mt-4 text-sm font-medium leading-7 text-slate-600">Tell us your travel dates, fitness level, previous experience and preferred region. Our local team will recommend a suitable itinerary.</p>
+            <a href="./contact-us.html" class="mt-12 inline-flex rounded-[4px] bg-[#F58220] px-7 py-3 text-sm font-bold text-white">Get Trek Advice</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#122B55] px-5 py-16 text-white lg:px-8 lg:py-24">
+        <div class="mx-auto flex max-w-[1584px] flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#FAB331]"><span class="h-px w-8 bg-[#FAB331]"></span>Start Your Himalayan Journey</p>
+            <h2 class="mt-4 max-w-3xl text-4xl font-black leading-tight lg:text-5xl">Let us design your trekking experience in Nepal</h2>
+            <p class="mt-5 max-w-2xl text-sm font-medium leading-7 text-white/75">Share your preferred region, dates, trip length and experience level. We will help create a personalized trek with suitable pacing, accommodation and local support.</p>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            <a href="./index.html#quote" class="inline-flex justify-center rounded-[4px] bg-[#F58220] px-8 py-3 text-sm font-bold text-white">Plan My Trek</a>
+            <a href="./contact-us.html" class="inline-flex justify-center rounded-[4px] bg-white px-8 py-3 text-sm font-bold text-[#122B55]">Contact Our Team</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8">
+      <div class="absolute inset-0 bg-[#08213D]/90"></div>
+      <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Panorama Trekking</h3>
+            <p class="mt-3 text-sm leading-6 text-white/80">
+              A local trekking company in Nepal specialized in Himalayan
+              adventures with professional Sherpa guides.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
+            <ul class="mt-3 space-y-1 text-sm text-white/80">
+              <li><a href="./index.html" class="hover:text-[#F58220]">Home</a></li>
+              <li><a href="./about-panorama.html" class="hover:text-[#F58220]">About Us</a></li>
+              <li><a href="./our-team.html" class="hover:text-[#F58220]">Our Team</a></li>
+              <li><a href="./index.html#treks" class="hover:text-[#F58220]">All Treks</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Popular Treks</h3>
+            <ul class="mt-3 space-y-1 text-sm text-white/80">
+              <li>Everest Base Camp Trek</li>
+              <li>Annapurna Circuit Trek</li>
+              <li>Manaslu Circuit Trek</li>
+              <li>Langtang Valley Trek</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Contact Info</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li class="flex gap-2"><i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"></i>Kapan, Kathmandu, Nepal</li>
+              <li class="flex gap-2"><i data-lucide="phone" class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"></i>+977 9841373860 (24/7)</li>
+              <li class="flex gap-2"><i data-lucide="mail" class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"></i>info@panoramatrekking.com</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70">
+          © 2024 Panorama Trekking Nepal Pvt. Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="./navigation.js"></script>
+  </body>
+</html>
