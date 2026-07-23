@@ -21,6 +21,50 @@ video {
   max-width: 100%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+main,
+section,
+article,
+aside,
+form,
+label,
+input,
+select,
+textarea,
+button,
+a {
+  min-width: 0;
+}
+
+main p,
+main li,
+main dd,
+main dt,
+main a,
+main button,
+main label,
+main input,
+main select,
+main textarea {
+  overflow-wrap: anywhere;
+}
+
+table {
+  max-width: 100%;
+}
+
+main a.inline-flex,
+main button.inline-flex {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
 .mobile-dropdown {
   overflow-wrap: anywhere;
 }
@@ -211,8 +255,117 @@ footer h3 {
 }
 
 @media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  main h1 {
+    font-size: clamp(2.25rem, 11vw, 3.75rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  main h2 {
+    font-size: clamp(1.75rem, 8.5vw, 2.75rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  main h3 {
+    line-height: 1.18 !important;
+  }
+
+  main section {
+    padding-block: clamp(3rem, 10vw, 4.5rem);
+  }
+
   main section {
     scroll-margin-top: 5rem;
+  }
+
+  main [class*="max-w-[1584px]"] {
+    width: 100%;
+  }
+
+  main [class*="grid-cols-["],
+  main [class*="lg:grid-cols-["],
+  main [class*="xl:grid-cols-["] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  main [class*="min-h-[360px]"],
+  main [class*="min-h-[420px]"],
+  main [class*="min-h-[440px]"],
+  main [class*="min-h-[470px]"] {
+    min-height: auto;
+  }
+
+  .destination-hero-collage,
+  .trekking-about-collage {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .destination-hero-collage > img,
+  .destination-hero-collage > div,
+  .trekking-about-collage > img {
+    position: relative !important;
+    inset: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  .destination-hero-collage > img,
+  .trekking-about-collage > img {
+    aspect-ratio: 16 / 11;
+    min-height: 12rem;
+    object-fit: cover;
+  }
+
+  .destination-hero-collage > div,
+  .trekking-about-collage > img + img {
+    border-width: 0.375rem;
+  }
+
+  .trekking-hero-grid {
+    min-height: 0;
+  }
+
+  .trekking-hero-grid > article {
+    min-height: 16rem;
+  }
+
+  main article[class*="min-h-[320px]"],
+  main article[class*="min-h-[360px]"],
+  main div[class*="min-h-[260px]"],
+  main div[class*="min-h-[310px]"],
+  main div[class*="min-h-[360px]"],
+  main div[class*="min-h-[420px]"] {
+    min-height: clamp(16rem, 70vw, 24rem);
+  }
+
+  main .flex.justify-between,
+  main .flex.items-center.justify-between {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  main dl .flex.justify-between {
+    flex-direction: column;
+  }
+
+  main table {
+    min-width: 560px;
+  }
+
+  footer {
+    text-align: left;
   }
 
   .team-card,
@@ -433,6 +586,36 @@ footer h3 {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  main h1 {
+    font-size: clamp(3rem, 7vw, 4.5rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  main h2 {
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  main [class*="max-w-[1584px]"] {
+    width: 100%;
+  }
+
+  main [class*="lg:grid-cols-["],
+  main [class*="xl:grid-cols-["] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .destination-hero-collage,
+  .trekking-about-collage {
+    max-width: 44rem;
+    justify-self: center;
+    width: 100%;
+  }
+
+  .trekking-hero-grid {
+    min-height: 32rem;
+  }
+
   #mobileAboutDropdown {
     padding-inline: 0.75rem;
   }
