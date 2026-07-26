@@ -58,6 +58,17 @@ table {
   max-width: 100%;
 }
 
+main div:has(> table),
+main section:has(> table),
+main article:has(> table) {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+main table {
+  width: 100%;
+}
+
 main a.inline-flex,
 main button.inline-flex {
   max-width: 100%;
@@ -177,6 +188,18 @@ main article {
   border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
+.team-filter-bar {
+  align-items: center;
+}
+
+.team-filter-bar button {
+  min-height: 2.75rem;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
 .team-card img {
   transition:
     transform 0.35s ease,
@@ -198,39 +221,17 @@ footer h3 {
   overflow-wrap: anywhere;
 }
 
-.hero-experience-card {
-  color: white;
-}
-
-@media (min-width: 640px) and (max-width: 1023px) {
-  .hero-experience-card {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    align-items: center;
-    column-gap: 1.25rem;
-    max-width: 38rem;
-  }
-
-  .hero-experience-card > p:first-child {
-    grid-row: span 2;
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    line-height: 1;
-  }
-
-  .hero-experience-card > p:nth-child(2) {
-    margin-top: 0;
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-
-  .hero-experience-card > p:nth-child(3) {
-    margin-top: 0.35rem;
-    font-size: 0.95rem;
-    line-height: 1.65;
+@media (max-width: 1279px) {
+  #secondaryTripNav .secondary-nav-book-now {
+    display: none !important;
   }
 }
 
 @media (max-width: 1023px) {
+  body > nav > div {
+    padding-inline: 1.25rem;
+  }
+
   #mobileMenu {
     overscroll-behavior: contain;
   }
@@ -239,18 +240,48 @@ footer h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  #teamGrid [aria-label="Team categories"],
   #reviews [aria-label="Review categories"] {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
   }
 
-  #teamGrid [aria-label="Team categories"] button,
   #reviews [aria-label="Review categories"] button {
     width: 100%;
     padding-inline: 0.75rem;
     white-space: nowrap;
+  }
+
+  .team-filter-bar {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .team-filter-bar button {
+    width: 100%;
+    padding-inline: 0.75rem;
+    white-space: nowrap;
+  }
+
+  main [class*="md:grid-cols-["],
+  main [class*="lg:grid-cols-["],
+  main [class*="xl:grid-cols-["] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  main [class*="lg:max-w-["],
+  main [class*="xl:max-w-["] {
+    max-width: 100% !important;
+  }
+
+  main [class*="lg:w-["],
+  main [class*="xl:w-["] {
+    width: 100% !important;
+  }
+
+  main .sticky {
+    position: static;
   }
 }
 
@@ -520,9 +551,12 @@ footer h3 {
     grid-template-columns: 1fr;
   }
 
-  #teamGrid [aria-label="Team categories"],
   #reviews [aria-label="Review categories"] {
     grid-template-columns: 1fr;
+  }
+
+  .team-filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .team-card .flex.items-start.justify-between,

@@ -19,9 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const modal = document.getElementById("legalDocumentModal");
   const closeButton = document.getElementById("legalModalClose");
-  const documentButtons = document.querySelectorAll(
-    ".legal-document-button, .legal-preview-button",
-  );
 
   const fields = {
     image: document.getElementById("modalDocumentImage"),
@@ -60,10 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove("overflow-hidden");
   }
 
-  documentButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      openModal(button.dataset.document);
-    });
+  document.addEventListener("click", function (event) {
+    const documentButton = event.target.closest("[data-document]");
+
+    if (!documentButton) {
+      return;
+    }
+
+    openModal(documentButton.dataset.document);
   });
 
   if (closeButton) {
