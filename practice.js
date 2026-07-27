@@ -449,14 +449,12 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("groupPricingToggle");
     const groupPricingPanel =
       document.getElementById("groupPricingPanel");
-    const highlightsSection = document.getElementById("highlights");
 
     if (!travelerCount || !estimatedTotal || !currentPricePerPerson) {
       return;
     }
 
     let travelers = Number(travelerCount.textContent) || 2;
-    let groupPricingAutoClosed = false;
 
     function getPricePerPerson() {
       if (travelers >= 6) return 1550;
@@ -722,30 +720,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    function closeGroupPricingAtHighlights() {
-      if (!highlightsSection || !groupPricingToggle) return;
-
-      const hasReachedHighlights =
-        highlightsSection.getBoundingClientRect().top <=
-        window.innerHeight * 0.65;
-
-      if (hasReachedHighlights && !groupPricingAutoClosed) {
-        setGroupPricingOpen(false);
-        groupPricingAutoClosed = true;
-      }
-
-      if (!hasReachedHighlights) {
-        groupPricingAutoClosed = false;
-      }
-    }
-
-    window.addEventListener("scroll", closeGroupPricingAtHighlights, {
-      passive: true,
-    });
-    window.addEventListener("resize", closeGroupPricingAtHighlights);
-
     updateTravelerPrice();
-    closeGroupPricingAtHighlights();
   }
 
   if (document.readyState === "loading") {
@@ -757,7 +732,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 (function () {
   function initSecondaryTripNav() {
-    const body = document.body;
     const siteHeader = document.getElementById("siteHeader");
     const mainNavigation = document.getElementById("mainNavigation");
     const secondaryTripNav = document.getElementById("secondaryTripNav");
@@ -768,6 +742,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!mainNavigation || !secondaryTripNav || !overviewSection) {
       return;
+    }
+
+    document.body.appendChild(secondaryTripNav);
+
+    function hasReachedOverviewSection() {
+      const mainNavHeight = mainNavigation.offsetHeight || 0;
+      const overviewTop = overviewSection.getBoundingClientRect().top;
+
+      return overviewTop <= mainNavHeight;
     }
 
     function setActiveSecondaryLink(targetId) {
@@ -790,57 +773,88 @@ document.addEventListener("DOMContentLoaded", function () {
           link.removeAttribute("aria-current");
         }
       });
+
+      if (targetId === "highlights") {
+        const groupPricingToggle =
+          document.getElementById("groupPricingToggle");
+        const groupPricingPanel =
+          document.getElementById("groupPricingPanel");
+        const groupPricingChevron = document.querySelector(
+          ".group-pricing-chevron",
+        );
+
+        if (groupPricingToggle && groupPricingPanel) {
+          groupPricingToggle.setAttribute("aria-expanded", "false");
+          groupPricingPanel.classList.add("hidden");
+        }
+
+        if (groupPricingChevron) {
+          groupPricingChevron.classList.add("rotate-180");
+        }
+      }
+    }
+
+    function setPrimaryNavigationVisible(isVisible) {
+      [siteHeader, mainNavigation].forEach(function (element) {
+        if (!element) return;
+
+        if (isVisible) {
+          element.style.removeProperty("display");
+        } else {
+          element.style.setProperty("display", "none", "important");
+        }
+
+        element.style.setProperty("opacity", isVisible ? "1" : "0");
+        element.style.setProperty(
+          "pointer-events",
+          isVisible ? "auto" : "none",
+        );
+        element.style.setProperty(
+          "transform",
+          isVisible ? "translateY(0)" : "translateY(-100%)",
+        );
+        element.style.setProperty(
+          "visibility",
+          isVisible ? "visible" : "hidden",
+        );
+      });
+    }
+
+    function setSecondaryNavigationVisible(isVisible) {
+      secondaryTripNav.style.setProperty(
+        "display",
+        isVisible ? "block" : "none",
+        "important",
+      );
+      secondaryTripNav.style.setProperty("position", "fixed");
+      secondaryTripNav.style.setProperty("top", "0");
+      secondaryTripNav.style.setProperty("left", "0");
+      secondaryTripNav.style.setProperty("right", "0");
+      secondaryTripNav.style.setProperty("width", "100%");
+      secondaryTripNav.style.setProperty("z-index", "9999");
+      secondaryTripNav.style.setProperty(
+        "visibility",
+        isVisible ? "visible" : "hidden",
+      );
+      secondaryTripNav.style.setProperty("opacity", isVisible ? "1" : "0");
+      secondaryTripNav.style.setProperty(
+        "pointer-events",
+        isVisible ? "auto" : "none",
+      );
+      secondaryTripNav.style.setProperty("transform", "translateY(0)");
     }
 
     function syncTripNavigation() {
-      const overviewTop = overviewSection.getBoundingClientRect().top;
-      const mainNavHeight = mainNavigation.offsetHeight || 0;
-      const shouldShowSecondary = overviewTop <= mainNavHeight;
+      const shouldShowSecondary = hasReachedOverviewSection();
 
-      body.classList.toggle("show-secondary-nav", shouldShowSecondary);
-
-      if (siteHeader) {
-        siteHeader.style.opacity = shouldShowSecondary ? "0" : "";
-        siteHeader.style.pointerEvents = shouldShowSecondary
-          ? "none"
-          : "";
-        siteHeader.style.transform = shouldShowSecondary
-          ? "translateY(-100%)"
-          : "";
-        siteHeader.style.visibility = shouldShowSecondary ? "hidden" : "";
-      }
-
-      mainNavigation.style.opacity = shouldShowSecondary ? "0" : "";
-      mainNavigation.style.pointerEvents = shouldShowSecondary
-        ? "none"
-        : "";
-      mainNavigation.style.transform = shouldShowSecondary
-        ? "translateY(-100%)"
-        : "";
-      mainNavigation.style.visibility = shouldShowSecondary
-        ? "hidden"
-        : "";
-
-      secondaryTripNav.style.display = shouldShowSecondary
-        ? "block"
-        : "none";
-      secondaryTripNav.style.opacity = shouldShowSecondary ? "1" : "0";
-      secondaryTripNav.style.pointerEvents = shouldShowSecondary
-        ? "auto"
-        : "none";
-      secondaryTripNav.style.position = shouldShowSecondary
-        ? "fixed"
-        : "";
-      secondaryTripNav.style.top = shouldShowSecondary ? "0" : "";
-      secondaryTripNav.style.left = shouldShowSecondary ? "0" : "";
-      secondaryTripNav.style.right = shouldShowSecondary ? "0" : "";
-      secondaryTripNav.style.transform = shouldShowSecondary
-        ? "translateY(0)"
-        : "translateY(-100%)";
-      secondaryTripNav.style.visibility = shouldShowSecondary
-        ? "visible"
-        : "hidden";
-      secondaryTripNav.style.zIndex = shouldShowSecondary ? "60" : "";
+      document.body.classList.toggle(
+        "show-secondary-nav",
+        shouldShowSecondary,
+      );
+      document.body.dataset.tripNav =
+        shouldShowSecondary ? "secondary" : "primary";
+      setPrimaryNavigationVisible(!shouldShowSecondary);
+      setSecondaryNavigationVisible(shouldShowSecondary);
     }
 
     secondaryNavLinks.forEach(function (link) {
@@ -851,8 +865,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!target) return;
 
         event.preventDefault();
-        body.classList.add("show-secondary-nav");
+        document.body.classList.add("show-secondary-nav");
         setActiveSecondaryLink(targetId);
+        setPrimaryNavigationVisible(false);
+        setSecondaryNavigationVisible(true);
 
         const navHeight = secondaryTripNav.offsetHeight || 0;
         const targetTop =
@@ -872,7 +888,13 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", syncTripNavigation, {
       passive: true,
     });
-    window.addEventListener("resize", syncTripNavigation);
+    window.addEventListener("resize", function () {
+      syncTripNavigation();
+    });
+    window.addEventListener("load", function () {
+      syncTripNavigation();
+    });
+
     syncTripNavigation();
 
     if ("IntersectionObserver" in window) {

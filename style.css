@@ -306,11 +306,11 @@ footer h3 {
     line-height: 1.18 !important;
   }
 
-  main section {
-    padding-block: clamp(3rem, 10vw, 4.5rem);
+  main > section:not(#secondaryTripNav) {
+    padding-block: clamp(2rem, 10vw, 4.5rem);
   }
 
-  main section {
+  main .section-target {
     scroll-margin-top: 5rem;
   }
 
