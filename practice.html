@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css?v=secondary-nav-2" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
   </head>
 
   <body
-    class="min-h-full overflow-x-hidden bg-[#FCFCFC] font-[Inter,sans-serif] text-[#122B55] antialiased"
+    class="trip-detail-page min-h-full overflow-x-hidden bg-[#FCFCFC] font-[Inter,sans-serif] text-[#122B55] antialiased"
   >
     
     <header id="siteHeader">
@@ -905,103 +905,169 @@
 
     <main>
       
-      <section
-        class="px-4 pb-[22px] pt-[18px] sm:px-5 sm:pb-[26px] sm:pt-[22px]"
-      >
-        <div class="mx-auto max-w-[1510px]">
-          
+      <section class="trek-hero px-4 pb-8 py-[52px] sm:px-5 lg:px-8">
+        <div class="mx-auto max-w-[1584px]">
+          <div class="mb-7">
+            <h1
+              class="text-3xl font-extrabold leading-[0.95] tracking-normal text-[#132846] sm:text-4xl lg:text-6xl"
+            >
+              Everest Base Camp Hike
+            </h1>
 
-          <div
-            class="mt-6 grid grid-cols-1 items-end gap-7 min-[901px]:mt-8 min-[901px]:grid-cols-[minmax(0,1fr)_auto]"
-          >
-            <div>
-              <h1
-                class="lg:text-6xl md:text-5xl text-3xl font-extrabold leading-[0.95] tracking-normal text-[#132846]"
+            <div
+              class="mt-6 flex flex-wrap gap-3"
+              aria-label="Trip highlights"
+            >
+            <span
+                class="inline-flex items-center gap-2 rounded-full bg-[#FFF2E9] px-5 py-3 text-sm font-black leading-none text-[#C94F0D]"
+                >Everest Region</span
               >
-                Everest Base Camp Hike
-              </h1>
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-[#EDF5FB] px-5 py-3 text-sm font-black leading-none text-[#0F2A49]"
+                >High Adventure</span
+              >
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-[#EDF5FB] px-5 py-3 text-sm font-black leading-none text-[#0F2A49]"
+              >
+                <i
+                  data-lucide="star"
+                  class="h-4 w-4 fill-current"
+                  aria-hidden="true"
+                ></i>
+                4.9 &middot; 94 Reviews
+              </span>
+            </div>
+          </div>
 
-              <div
-                class="mt-[22px] flex flex-wrap gap-3"
-                aria-label="Trip highlights"
+          <div class="trek-hero-shell relative overflow-hidden bg-slate-200">
+            <img
+              id="trekHeroImage"
+              src="Images/Home/everest.png"
+              alt="Everest mountain view"
+              class="h-full w-full object-cover"
+            />
+
+            <!-- <div
+              class="absolute left-5 top-5 z-10 inline-flex items-center gap-3 rounded-full bg-white/95 px-5 py-3 text-sm font-black text-[#122B55] shadow-[0_16px_34px_-28px_rgba(8,33,61,0.9)] backdrop-blur sm:left-8 sm:top-8"
+            >
+              <span class="h-2.5 w-2.5 rounded-full bg-[#F58220]"></span>
+              Khumbu, Nepal
+            </div> -->
+
+            <div
+              class="trek-hero-thumbnails"
+              aria-label="Hero photo thumbnails"
+            >
+              <button
+                type="button"
+                class="trek-hero-thumb is-active"
+                data-hero-image="Images/Home/everest.png"
+                data-hero-alt="Everest mountain view"
+                aria-label="Show photo 1"
               >
-                <span
-                  class="inline-flex items-center gap-[5px] rounded-full bg-[#EDF5FB] px-[15px] py-3 text-xs font-black leading-none text-[#0F2A49]"
-                  >High Adventure</span
-                >
-                <span
-                  class="inline-flex items-center gap-[5px] rounded-full bg-[#EDF5FB] px-[15px] py-3 text-xs font-black leading-none text-[#0F2A49]"
-                >
-                  <i
-                    data-lucide="star"
-                    class="h-[13px] w-[13px] fill-current"
-                    aria-hidden="true"
-                  ></i>
-                  4.9 &middot; 94 Reviews
-                </span>
-                <span
-                  class="inline-flex items-center gap-[5px] rounded-full bg-[#FFF2E9] px-[15px] py-3 text-xs font-black leading-none text-[#C94F0D]"
-                  >Everest Region</span
-                >
-              </div>
+                <img src="Images/Home/everest.png" alt="" />
+                <span>01</span>
+              </button>
+              <button
+                type="button"
+                class="trek-hero-thumb"
+                data-hero-image="Images/Home/annapurna.png"
+                data-hero-alt="Himalayan night mountain view"
+                aria-label="Show photo 2"
+              >
+                <img src="Images/Home/annapurna.png" alt="" />
+                <span>02</span>
+              </button>
+              <button
+                type="button"
+                class="trek-hero-thumb"
+                data-hero-image="Images/Home/manaslu.png"
+                data-hero-alt="Himalayan valley landscape"
+                aria-label="Show photo 3"
+              >
+                <img src="Images/Home/manaslu.png" alt="" />
+                <span>03</span>
+              </button>
+              <button
+                type="button"
+                class="trek-hero-thumb"
+                data-hero-image="Images/Home/mustang.png"
+                data-hero-alt="Snow covered Himalayan peak"
+                aria-label="Show photo 4"
+              >
+                <img src="Images/Home/mustang.png" alt="" />
+                <span>04</span>
+              </button>
             </div>
 
-            
+            <div class="trek-hero-cta">
+              <div class="trek-hero-price">
+                <span
+                  class="hidden h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#F58220]/10 text-[#F58220] sm:flex"
+                >
+                  <i data-lucide="badge-dollar-sign" class="h-6 w-6"></i>
+                </span>
+                <div>
+                  <p class="text-sm font-black text-slate-500">
+                    Starting from
+                  </p>
+                  <p class="mt-1 text-5xl font-black leading-none text-[#122B55]">
+                    $1,950
+                    <span class="text-lg font-bold text-slate-500">
+                      / person
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="trek-hero-actions">
+                <button
+                  id="trekHeroViewPhotos"
+                  type="button"
+                  class="inline-flex h-14 items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-7 text-sm font-black text-[#122B55] transition-colors hover:border-[#F58220]/40 hover:text-[#F58220]"
+                >
+                  <i data-lucide="images" class="h-5 w-5"></i>
+                  View photos
+                  <span
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-xs"
+                    >4</span
+                  >
+                </button>
+                <button
+                  id="trekHeroBookButton"
+                  type="button"
+                  class="inline-flex h-14 items-center justify-center gap-4 rounded-full bg-[#F58220] px-8 text-sm font-black text-white shadow-[0_18px_34px_-24px_rgba(245,130,32,0.95)] transition-colors hover:bg-[#d96b11]"
+                >
+                  Book this trek
+                  <i data-lucide="arrow-right" class="h-5 w-5"></i>
+                </button>
+              </div>
+            </div>
           </div>
 
           <div
-            class="mt-7 flex snap-x gap-3 overflow-x-auto pb-1 sm:grid sm:grid-cols-2 sm:grid-rows-3 sm:overflow-visible sm:pb-0 min-[901px]:grid-cols-[minmax(0,1.18fr)_minmax(0,0.69fr)_minmax(0,0.69fr)] min-[901px]:grid-rows-[260px_220px]"
+            id="trekHeroPhotoModal"
+            class="fixed inset-0 z-[120] hidden items-center justify-center bg-[#08213D]/80 px-4 py-6 backdrop-blur-sm"
+            aria-modal="true"
+            role="dialog"
+            aria-label="Trek photo gallery"
           >
-            <figure
-              class="group relative aspect-[4/3] shrink-0 basis-[82%] snap-start overflow-hidden rounded-[18px] bg-slate-200 after:pointer-events-none after:absolute after:inset-0 after:bg-gradient-to-b after:from-[#08213D]/0 after:from-[45%] after:to-[#08213D]/40 after:content-[''] sm:col-span-2 sm:aspect-auto sm:basis-auto min-[901px]:col-span-1 min-[901px]:row-span-2"
-            >
+            <div class="relative w-full max-w-5xl">
+              <button
+                id="trekHeroClosePhotos"
+                type="button"
+                class="absolute -top-12 right-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#122B55]"
+                aria-label="Close photo gallery"
+              >
+                <i data-lucide="x" class="h-5 w-5"></i>
+              </button>
               <img
+                id="trekHeroModalImage"
                 src="Images/Home/everest.png"
                 alt="Everest mountain view"
-                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                class="max-h-[78vh] w-full rounded-2xl object-contain shadow-2xl"
               />
-              
-            </figure>
-
-            <figure
-              class="group relative aspect-[4/3] shrink-0 basis-[82%] snap-start overflow-hidden rounded-[18px] bg-slate-200 after:pointer-events-none after:absolute after:inset-0 after:bg-gradient-to-b after:from-[#08213D]/0 after:from-[45%] after:to-[#08213D]/40 after:content-[''] sm:aspect-auto sm:basis-auto"
-            >
-              <img
-                src="Images/Home/annapurna.png"
-                alt="Everest glacier"
-                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
-              />
-              
-            </figure>
-
-            <figure
-              class="group relative aspect-[4/3] shrink-0 basis-[82%] snap-start overflow-hidden rounded-[18px] bg-slate-200 after:pointer-events-none after:absolute after:inset-0 after:bg-gradient-to-b after:from-[#08213D]/0 after:from-[45%] after:to-[#08213D]/40 after:content-[''] sm:aspect-auto sm:basis-auto"
-            >
-              <img
-                src="Images/Home/manaslu.png"
-                alt="Everest forest trail"
-                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
-              />
-              
-            </figure>
-
-            <figure
-              class="group relative aspect-[4/3] shrink-0 basis-[82%] snap-start overflow-hidden rounded-[18px] bg-slate-200 after:pointer-events-none after:absolute after:inset-0 after:bg-gradient-to-b after:from-[#08213D]/0 after:from-[45%] after:to-[#08213D]/40 after:content-[''] sm:col-span-2 sm:aspect-auto sm:basis-auto"
-            >
-              <img
-                src="Images/Home/mustang.png"
-                alt="Everest trekking route"
-                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
-              />
-              
-              <a
-                href="#gallery"
-                class="absolute bottom-[18px] right-[18px] z-[2] inline-flex items-center gap-2 rounded-xl bg-white px-[18px] py-3.5 text-xs font-black text-[#132846] shadow-[0_12px_26px_-18px_rgba(8,33,61,0.9)]"
-              >
-                <i data-lucide="images" class="h-4 w-4" aria-hidden="true"></i>
-                View all photos
-              </a>
-            </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -1078,7 +1144,7 @@
           </nav>
 
           <a
-            href="booking.html"
+            href="#booking"
             class="secondary-nav-book-now hidden shrink-0 items-center justify-center gap-2 rounded-2xl bg-[#F58220] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_25px_-16px_rgba(245,130,32,0.9)] transition-colors hover:bg-[#d96b11] xl:inline-flex"
           >
             <i data-lucide="bookmark" class="h-5 w-5"></i>
@@ -1090,10 +1156,10 @@
       
       <section class="px-5 lg:px-6">
         <div
-          class="mx-auto grid max-w-[1584px] gap-[32px] xl:grid-cols-[minmax(0,1fr)_400px]"
+          class="trip-detail-layout mx-auto grid max-w-[1584px] gap-[32px] xl:grid-cols-[minmax(0,1fr)_400px]"
         >
           
-          <div class="min-w-0 space-y-12 lg:space-y-16">
+          <div class="trip-detail-main min-w-0 space-y-12 lg:space-y-16">
             <section
               aria-labelledby="trip-facts-heading"
               class="rounded-2xl bg-slate-50 px-0 sm:px-7"
@@ -1554,7 +1620,7 @@
                   <div
                     class="accordion-content hidden border-t border-slate-100"
                   >
-                    <div class="p-4 sm:p-5">
+                    <div class=" ">
                       <p class="text-[16px] leading-6 text-slate-600">
                         Arrive at Tribhuvan International Airport in Kathmandu.
                         Our representative will welcome you and transfer you to
@@ -1683,7 +1749,7 @@
                   <div
                     class="accordion-content hidden border-t border-slate-100"
                   >
-                    <div class="p-4 sm:p-5">
+                    <div class=" ">
                       <p class="text-[16px] leading-6 text-slate-600">
                         Take a scenic mountain flight to Lukla and begin the
                         trek beside the Dudh Koshi River through small Sherpa
@@ -1811,7 +1877,7 @@
                   <div
                     class="accordion-content hidden border-t border-slate-100"
                   >
-                    <div class="p-4 sm:p-5">
+                    <div class=" ">
                       <p class="text-[16px] leading-6 text-slate-600">
                         Cross suspension bridges and climb through Sagarmatha
                         National Park to reach the Sherpa hub of Namche Bazaar.
@@ -1938,7 +2004,7 @@
                   <div
                     class="accordion-content hidden border-t border-slate-100"
                   >
-                    <div class="p-4 sm:p-5">
+                    <div class=" ">
                       <p class="text-[16px] leading-6 text-slate-600">
                         Spend the day adapting to altitude with a short hike,
                         mountain views, and time to explore Namche's markets and
@@ -2066,7 +2132,7 @@
                   <div
                     class="accordion-content hidden border-t border-slate-100"
                   >
-                    <div class="p-4 sm:p-5">
+                    <div class=" ">
                       <p class="text-[16px] leading-6 text-slate-600">
                         Trek through rhododendron forest and open viewpoints to
                         Tengboche, home to one of the Everest region's most
@@ -2377,7 +2443,7 @@
               <h2 class="mt-3 text-3xl font-black text-[#122B55] md:text-4xl">
                 Departure
               </h2>
-              <div class="rounded-[22px] mt-9 bg-slate-50 px-4 py-5 sm:px-5">
+              <div class="rounded-[22px] mt-9 bg-slate-50 py-5 ">
                 <div class="space-y-4">
                   <article
                     class="grid gap-5 rounded-xl bg-white px-5 py-5 shadow-sm md:grid-cols-[84px_minmax(130px,1fr)_minmax(130px,1fr)_minmax(130px,1fr)_minmax(130px,1fr)_124px] md:items-center md:gap-7 md:px-6"
@@ -2789,7 +2855,7 @@
 
                   <div class="">
                     <div
-                      class="rounded-[28px] border border-slate-200 bg-[#EFF6FF] p-4 sm:p-5"
+                      class="rounded-[28px] border border-slate-200 bg-[#EFF6FF]  "
                     >
                       <div
                         class="flex flex-col gap-4 border-b border-slate-200 pb-4"
@@ -2819,7 +2885,7 @@
                         class="mt-4 grid gap-3 lg:grid-cols-[1fr_auto] lg:items-start"
                       >
                         <div
-                          class="overflow-hidden rounded-[24px] border border-[#BFD3FF] bg-[#F5F9FF] p-4 sm:p-5"
+                          class="overflow-hidden rounded-[24px] border border-[#BFD3FF] bg-[#F5F9FF]  "
                         >
                           <svg
                             viewBox="0 0 1200 760"
@@ -3690,7 +3756,7 @@
 </section>          </div>
 
           
-          <aside>
+          <aside class="trip-booking-sidebar">
             <div
               id="booking"
               class="top-28 overflow-hidden rounded-[22px] border border-slate-100 bg-white shadow-[0_28px_80px_-34px_rgba(8,33,61,0.45)] xl:sticky"
@@ -3902,14 +3968,14 @@
                 </a>
 
                 <div
-                  class="flex items-center gap-4 rounded-2xl bg-slate-50 px-4 py-4 pb-5 text-[#08213D]"
+                  class="flex lg:flex-row flex-col items-center gap-4 rounded-2xl bg-slate-50 px-4 py-4 pb-5 text-[#08213D]"
                 >
                   <span
                     class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[#122B55] shadow-sm"
                   >
                     <i data-lucide="shield-check" class="h-6 w-6"></i>
                   </span>
-                  <p class="text-xs leading-5 text-slate-600">
+                  <p class="text-xs leading-5 text-slate-600 lg:text-start text-center ">
                     <strong class="block text-[#08213D]"
                       >No immediate payment required.</strong
                     >
@@ -4498,7 +4564,85 @@
     </footer>
 
     <script src="./navigation.js"></script>
-    <script src="./practice.js"></script>
+    <script src="./practice.js?v=secondary-nav-2"></script>
+    <script>
+      (function () {
+        var primaryHeader = document.getElementById("siteHeader");
+        var primaryNav = document.getElementById("mainNavigation");
+        var secondaryNav = document.getElementById("secondaryTripNav");
+        var overview = document.getElementById("overview");
+
+        if (!secondaryNav || !overview) return;
+
+        if (secondaryNav.parentElement !== document.body) {
+          document.body.appendChild(secondaryNav);
+        }
+
+        secondaryNav.style.setProperty("display", "none", "important");
+
+        var primaryNavHeight = primaryNav ? primaryNav.offsetHeight : 0;
+
+        function getScrollTop() {
+          return (
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0
+          );
+        }
+
+        var triggerTop = 0;
+
+        function refreshTriggerTop() {
+          if (primaryNav && primaryNav.offsetHeight) {
+            primaryNavHeight = primaryNav.offsetHeight;
+          }
+
+          triggerTop =
+            overview.getBoundingClientRect().top +
+            getScrollTop() -
+            primaryNavHeight -
+            1
+          ;
+        }
+
+        function syncTripNav() {
+          var showSecondary = getScrollTop() >= triggerTop;
+
+          secondaryNav.style.setProperty(
+            "display",
+            showSecondary ? "block" : "none",
+            "important",
+          );
+
+          if (primaryHeader) {
+            primaryHeader.style.setProperty(
+              "display",
+              showSecondary ? "none" : "",
+            );
+          }
+
+          if (primaryNav) {
+            primaryNav.style.setProperty(
+              "display",
+              showSecondary ? "none" : "",
+            );
+          }
+        }
+
+        window.addEventListener("scroll", syncTripNav, { passive: true });
+        window.addEventListener("resize", function () {
+          refreshTriggerTop();
+          syncTripNav();
+        });
+        window.addEventListener("load", function () {
+          refreshTriggerTop();
+          syncTripNav();
+        });
+        refreshTriggerTop();
+        syncTripNav();
+      })();
+    </script>
 
 
   </body>

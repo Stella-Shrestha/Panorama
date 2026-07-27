@@ -10,6 +10,160 @@ document.addEventListener("DOMContentLoaded", function () {
 
   renderIcons();
 
+  function initTrekHero() {
+    const heroImage = document.getElementById("trekHeroImage");
+    const heroThumbs = document.querySelectorAll(".trek-hero-thumb");
+    const viewPhotosButton = document.getElementById("trekHeroViewPhotos");
+    const bookButton = document.getElementById("trekHeroBookButton");
+    const photoModal = document.getElementById("trekHeroPhotoModal");
+    const modalImage = document.getElementById("trekHeroModalImage");
+    const closePhotosButton = document.getElementById("trekHeroClosePhotos");
+    const booking = document.getElementById("booking");
+
+    if (!heroImage || !heroThumbs.length) return;
+
+    function setHeroImage(button) {
+      const image = button.dataset.heroImage;
+      const alt = button.dataset.heroAlt || "";
+
+      if (!image) return;
+
+      heroImage.src = image;
+      heroImage.alt = alt;
+
+      if (modalImage) {
+        modalImage.src = image;
+        modalImage.alt = alt;
+      }
+
+      heroThumbs.forEach(function (thumb) {
+        const isActive = thumb === button;
+        thumb.classList.toggle("is-active", isActive);
+        thumb.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    function openPhotoModal() {
+      if (!photoModal) return;
+
+      photoModal.classList.remove("hidden");
+      photoModal.classList.add("flex");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closePhotoModal() {
+      if (!photoModal) return;
+
+      photoModal.classList.add("hidden");
+      photoModal.classList.remove("flex");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    heroThumbs.forEach(function (button, index) {
+      button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+      button.addEventListener("click", function () {
+        setHeroImage(button);
+      });
+    });
+
+    if (viewPhotosButton) {
+      viewPhotosButton.addEventListener("click", openPhotoModal);
+    }
+
+    if (closePhotosButton) {
+      closePhotosButton.addEventListener("click", closePhotoModal);
+    }
+
+    if (photoModal) {
+      photoModal.addEventListener("click", function (event) {
+        if (event.target === photoModal) {
+          closePhotoModal();
+        }
+      });
+    }
+
+    if (bookButton && booking) {
+      bookButton.addEventListener("click", function () {
+        booking.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Escape" &&
+        photoModal &&
+        !photoModal.classList.contains("hidden")
+      ) {
+        closePhotoModal();
+      }
+    });
+  }
+
+  initTrekHero();
+
+  function initResponsiveBookingPlacement() {
+    const layout = document.querySelector(".trip-detail-layout");
+    const main = document.querySelector(".trip-detail-main");
+    const bookingSidebar = document.querySelector(".trip-booking-sidebar");
+    const tripFacts = main ? main.querySelector("section:first-child") : null;
+
+    if (
+      !layout ||
+      !main ||
+      !bookingSidebar ||
+      !tripFacts ||
+      !window.matchMedia
+    ) {
+      return;
+    }
+
+    const compactQuery = window.matchMedia("(max-width: 1279px)");
+
+    function syncBookingPlacement() {
+      if (compactQuery.matches) {
+        tripFacts.insertAdjacentElement("afterend", bookingSidebar);
+      } else {
+        layout.appendChild(bookingSidebar);
+      }
+    }
+
+    syncBookingPlacement();
+
+    if (typeof compactQuery.addEventListener === "function") {
+      compactQuery.addEventListener("change", syncBookingPlacement);
+    } else if (typeof compactQuery.addListener === "function") {
+      compactQuery.addListener(syncBookingPlacement);
+    }
+  }
+
+  initResponsiveBookingPlacement();
+
+  function initResponsiveIncludesDetails() {
+    const includesDetails = document.querySelectorAll("#includes details");
+    if (!includesDetails.length || !window.matchMedia) return;
+
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+
+    function syncIncludesDetails() {
+      includesDetails.forEach(function (details) {
+        details.open = !mobileQuery.matches;
+      });
+    }
+
+    syncIncludesDetails();
+
+    if (typeof mobileQuery.addEventListener === "function") {
+      mobileQuery.addEventListener("change", syncIncludesDetails);
+    } else if (typeof mobileQuery.addListener === "function") {
+      mobileQuery.addListener(syncIncludesDetails);
+    }
+  }
+
+  initResponsiveIncludesDetails();
+
   function initElevationTooltip() {
     const tooltip = document.getElementById("elevationTooltip");
     const tooltipLabel = document.getElementById("elevationTooltipLabel");
@@ -739,18 +893,87 @@ document.addEventListener("DOMContentLoaded", function () {
     const secondaryNavLinks = document.querySelectorAll(
       ".secondary-nav-link",
     );
+    const secondaryBookNow = secondaryTripNav
+      ? secondaryTripNav.querySelector(".secondary-nav-book-now")
+      : null;
+    const linkedSections = Array.from(secondaryNavLinks)
+      .map(function (link) {
+        return document.getElementById(link.getAttribute("href").slice(1));
+      })
+      .filter(Boolean);
 
-    if (!mainNavigation || !secondaryTripNav || !overviewSection) {
+    if (!secondaryTripNav || !overviewSection) {
       return;
     }
 
     document.body.appendChild(secondaryTripNav);
+    secondaryTripNav.style.setProperty("display", "none", "important");
+
+    let overviewTriggerTop = 0;
+    let primaryNavigationHeight = mainNavigation
+      ? mainNavigation.offsetHeight
+      : 0;
+
+    function getScrollTop() {
+      return (
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0
+      );
+    }
+
+    function refreshOverviewTriggerTop() {
+      if (mainNavigation && mainNavigation.offsetHeight) {
+        primaryNavigationHeight = mainNavigation.offsetHeight;
+      }
+
+      overviewTriggerTop =
+        overviewSection.getBoundingClientRect().top +
+        getScrollTop() -
+        primaryNavigationHeight -
+        1;
+    }
 
     function hasReachedOverviewSection() {
-      const mainNavHeight = mainNavigation.offsetHeight || 0;
-      const overviewTop = overviewSection.getBoundingClientRect().top;
+      return getScrollTop() >= overviewTriggerTop;
+    }
 
-      return overviewTop <= mainNavHeight;
+    function syncTripNavigation() {
+      const showSecondaryNav = hasReachedOverviewSection();
+
+      document.body.classList.toggle("show-secondary-nav", showSecondaryNav);
+      secondaryTripNav.style.setProperty(
+        "display",
+        showSecondaryNav ? "block" : "none",
+        "important",
+      );
+
+      if (siteHeader) {
+        if (showSecondaryNav) {
+          siteHeader.style.setProperty("display", "none", "important");
+        } else {
+          siteHeader.style.removeProperty("display");
+        }
+
+        siteHeader.setAttribute(
+          "aria-hidden",
+          showSecondaryNav ? "true" : "false",
+        );
+      }
+
+      if (mainNavigation) {
+        if (showSecondaryNav) {
+          mainNavigation.style.setProperty("display", "none", "important");
+        } else {
+          mainNavigation.style.removeProperty("display");
+        }
+
+        mainNavigation.setAttribute(
+          "aria-hidden",
+          showSecondaryNav ? "true" : "false",
+        );
+      }
     }
 
     function setActiveSecondaryLink(targetId) {
@@ -794,140 +1017,65 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    function setPrimaryNavigationVisible(isVisible) {
-      [siteHeader, mainNavigation].forEach(function (element) {
-        if (!element) return;
+    function updateActiveSecondaryLink() {
+      syncTripNavigation();
 
-        if (isVisible) {
-          element.style.removeProperty("display");
-        } else {
-          element.style.setProperty("display", "none", "important");
+      if (!linkedSections.length) return;
+
+      const navHeight = secondaryTripNav.offsetHeight || 0;
+      const activationLine = window.pageYOffset + navHeight + 40;
+      let activeSection = linkedSections[0];
+
+      linkedSections.forEach(function (section) {
+        if (section.offsetTop <= activationLine) {
+          activeSection = section;
         }
-
-        element.style.setProperty("opacity", isVisible ? "1" : "0");
-        element.style.setProperty(
-          "pointer-events",
-          isVisible ? "auto" : "none",
-        );
-        element.style.setProperty(
-          "transform",
-          isVisible ? "translateY(0)" : "translateY(-100%)",
-        );
-        element.style.setProperty(
-          "visibility",
-          isVisible ? "visible" : "hidden",
-        );
       });
-    }
 
-    function setSecondaryNavigationVisible(isVisible) {
-      secondaryTripNav.style.setProperty(
-        "display",
-        isVisible ? "block" : "none",
-        "important",
-      );
-      secondaryTripNav.style.setProperty("position", "fixed");
-      secondaryTripNav.style.setProperty("top", "0");
-      secondaryTripNav.style.setProperty("left", "0");
-      secondaryTripNav.style.setProperty("right", "0");
-      secondaryTripNav.style.setProperty("width", "100%");
-      secondaryTripNav.style.setProperty("z-index", "9999");
-      secondaryTripNav.style.setProperty(
-        "visibility",
-        isVisible ? "visible" : "hidden",
-      );
-      secondaryTripNav.style.setProperty("opacity", isVisible ? "1" : "0");
-      secondaryTripNav.style.setProperty(
-        "pointer-events",
-        isVisible ? "auto" : "none",
-      );
-      secondaryTripNav.style.setProperty("transform", "translateY(0)");
-    }
-
-    function syncTripNavigation() {
-      const shouldShowSecondary = hasReachedOverviewSection();
-
-      document.body.classList.toggle(
-        "show-secondary-nav",
-        shouldShowSecondary,
-      );
-      document.body.dataset.tripNav =
-        shouldShowSecondary ? "secondary" : "primary";
-      setPrimaryNavigationVisible(!shouldShowSecondary);
-      setSecondaryNavigationVisible(shouldShowSecondary);
+      setActiveSecondaryLink(activeSection.id);
     }
 
     secondaryNavLinks.forEach(function (link) {
       link.addEventListener("click", function (event) {
         const targetId = link.getAttribute("href").slice(1);
-        const target = document.getElementById(targetId);
 
-        if (!target) return;
-
-        event.preventDefault();
-        document.body.classList.add("show-secondary-nav");
-        setActiveSecondaryLink(targetId);
-        setPrimaryNavigationVisible(false);
-        setSecondaryNavigationVisible(true);
-
-        const navHeight = secondaryTripNav.offsetHeight || 0;
-        const targetTop =
-          target.getBoundingClientRect().top + window.pageYOffset;
-
-        window.scrollTo({
-          top: Math.max(targetTop - navHeight - 18, 0),
-          behavior: "smooth",
-        });
-
-        if (window.history && window.history.pushState) {
-          window.history.pushState(null, "", "#" + targetId);
+        if (document.getElementById(targetId)) {
+          setActiveSecondaryLink(targetId);
         }
       });
     });
 
+    if (secondaryBookNow) {
+      secondaryBookNow.addEventListener("click", function (event) {
+        const targetId = secondaryBookNow.getAttribute("href").slice(1);
+
+        if (document.getElementById(targetId)) {
+          setActiveSecondaryLink(targetId);
+        }
+      });
+    }
+
     window.addEventListener("scroll", syncTripNavigation, {
       passive: true,
     });
+    window.addEventListener("scroll", updateActiveSecondaryLink, {
+      passive: true,
+    });
     window.addEventListener("resize", function () {
+      refreshOverviewTriggerTop();
       syncTripNavigation();
+      updateActiveSecondaryLink();
     });
     window.addEventListener("load", function () {
+      refreshOverviewTriggerTop();
       syncTripNavigation();
+      updateActiveSecondaryLink();
     });
 
+    refreshOverviewTriggerTop();
     syncTripNavigation();
-
-    if ("IntersectionObserver" in window) {
-      const linkedSections = Array.from(secondaryNavLinks)
-        .map(function (link) {
-          return document.getElementById(
-            link.getAttribute("href").slice(1),
-          );
-        })
-        .filter(Boolean);
-
-      const observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              setActiveSecondaryLink(entry.target.id);
-            }
-          });
-        },
-        {
-          rootMargin: "-25% 0px -65% 0px",
-        },
-      );
-
-      linkedSections.forEach(function (section) {
-        observer.observe(section);
-      });
-    }
+    updateActiveSecondaryLink();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initSecondaryTripNav);
-  } else {
-    initSecondaryTripNav();
-  }
+  initSecondaryTripNav();
 })();

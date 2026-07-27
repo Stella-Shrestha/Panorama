@@ -58,6 +58,255 @@ table {
   max-width: 100%;
 }
 
+.trek-hero-shell {
+  min-height: clamp(32rem, 56vw, 40rem);
+  border-radius: 2rem;
+  box-shadow: 0 28px 80px -52px rgba(8, 33, 61, 0.65);
+}
+
+.trek-hero-shell > #trekHeroImage {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.trek-hero-thumbnails {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.85rem;
+  width: auto;
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.75rem;
+  box-shadow: 0 24px 48px -34px rgba(8, 33, 61, 0.75);
+  backdrop-filter: blur(14px);
+}
+
+.trek-hero-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  width: 8.5rem;
+  overflow: hidden;
+  border: 0.2rem solid transparent;
+  border-radius: 1rem;
+  background: #e2e8f0;
+  padding: 0;
+  box-shadow: 0 10px 20px -18px rgba(8, 33, 61, 0.8);
+}
+
+.trek-hero-thumb.is-active {
+  border-color: #f58220;
+}
+
+.trek-hero-thumb img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.trek-hero-thumb span {
+  position: absolute;
+  right: 0.45rem;
+  bottom: 0.45rem;
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(8, 33, 61, 0.82);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.trek-hero-cta {
+  position: absolute;
+  right: 2.4rem;
+  bottom: 2.4rem;
+  left: 2.4rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 1.8rem 2rem;
+  box-shadow: 0 26px 64px -44px rgba(8, 33, 61, 0.75);
+  backdrop-filter: blur(16px);
+}
+
+.trek-hero-price,
+.trek-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media (max-width: 1023px) {
+  .trek-hero {
+    padding-top: 1rem;
+  }
+
+  .trek-hero-shell {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    overflow: visible;
+    border-radius: 1.5rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .trek-hero-shell > #trekHeroImage {
+    position: static;
+    aspect-ratio: 1.42 / 1;
+    height: auto;
+    border-radius: 1.5rem;
+  }
+
+  .trek-hero-thumbnails {
+    position: static;
+    display: flex;
+    width: 100%;
+    gap: 0.75rem;
+    overflow-x: auto;
+    border-radius: 0;
+    background: transparent;
+    padding: 0.85rem 0 0;
+    box-shadow: none;
+  }
+
+  .trek-hero-thumb {
+    width: min(24vw, 12rem);
+    min-width: 6rem;
+    border-radius: 0.8rem;
+  }
+
+  .trek-hero-thumb span {
+    height: 1.7rem;
+    width: 1.7rem;
+    font-size: 0.65rem;
+  }
+
+  .trek-hero-cta {
+    position: static;
+    display: grid;
+    gap: 1.4rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 1.25rem;
+    padding: 1.6rem 1.25rem;
+  }
+
+  .trek-hero-price {
+    align-items: flex-start;
+  }
+
+  .trek-hero-price p:last-child {
+    font-size: clamp(3rem, 9vw, 4rem);
+  }
+
+  .trek-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trek-hero-actions button {
+    width: 100%;
+  }
+}
+
+#secondaryTripNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-left: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+#secondaryTripNav > div {
+  width: 100%;
+  max-width: none;
+  /* padding-inline: clamp(1rem, 2.5vw, 2rem); */
+}
+
+#secondaryTripNav nav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+#secondaryTripNav .secondary-nav-book-now {
+  flex-shrink: 0;
+}
+
+.trip-detail-page #mainNavigation {
+  position: sticky;
+}
+
+.trip-detail-page.show-secondary-nav #secondaryTripNav {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.trip-detail-page.show-secondary-nav #siteHeader,
+.trip-detail-page.show-secondary-nav #mainNavigation {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+}
+
+.section-target,
+#booking {
+  scroll-margin-top: 6.5rem;
+}
+
+#routes article:nth-of-type(2) h4,
+#routes article:nth-of-type(2) p {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+#includes details > div > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  background: transparent;
+}
+
+#includes details > div > div > i {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+#includes details > div > div > p {
+  margin: 0;
+  min-width: 0;
+}
+
 main div:has(> table),
 main section:has(> table),
 main article:has(> table) {
@@ -383,7 +632,7 @@ footer h3 {
 
   main .flex.justify-between,
   main .flex.items-center.justify-between {
-    align-items: flex-start;
+    /* align-items: flex-start; */
     gap: 0.75rem;
   }
 
@@ -423,7 +672,7 @@ footer h3 {
   .team-card > div:last-child,
   .review-card .p-6,
   main article > div:last-child {
-    padding: 1.25rem;
+    /* padding: 1.25rem; */
   }
 
   .team-card h3,
@@ -616,6 +865,258 @@ footer h3 {
   #legalDocumentModal button {
     justify-content: center;
     width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .itinerary-day .accordion-button h3 + div {
+    display: none;
+  }
+
+  .itinerary-day.is-open .accordion-button h3 + div {
+    display: flex;
+  }
+
+  #includes summary {
+    min-height: 4rem;
+  }
+
+  #includes summary > span {
+    font-size: 1.125rem;
+    line-height: 1.25;
+  }
+
+  #includes details > div {
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  #includes details > div > div {
+    gap: 0.85rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  #includes details > div > div > i {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .trek-hero {
+    padding-top: 1rem;
+  }
+
+  .trek-hero-shell {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    overflow: visible;
+    border-radius: 1.5rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .trek-hero-shell > #trekHeroImage {
+    position: static;
+    aspect-ratio: 1.42 / 1;
+    height: auto;
+    border-radius: 1.5rem;
+  }
+
+  .trek-hero-thumbnails {
+    position: static;
+    display: flex;
+    width: 100%;
+    gap: 0.75rem;
+    overflow-x: auto;
+    border-radius: 0;
+    background: transparent;
+    padding: 0.85rem 0 0;
+    box-shadow: none;
+  }
+
+  .trek-hero-thumb {
+    width: min(24vw, 8rem);
+    min-width: 5.8rem;
+    border-radius: 0.8rem;
+  }
+
+  .trek-hero-thumb span {
+    height: 1.7rem;
+    width: 1.7rem;
+    font-size: 0.65rem;
+  }
+
+  .trek-hero-cta {
+    position: static;
+    display: grid;
+    gap: 1.4rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 1.25rem;
+    padding: 1.6rem 1.25rem;
+  }
+
+  .trek-hero-price {
+    align-items: flex-start;
+  }
+
+  .trek-hero-price p:last-child {
+    font-size: clamp(3rem, 14vw, 4rem);
+  }
+
+  .trek-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .trek-hero-actions button {
+    width: 100%;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child {
+    /* padding: 1rem; */
+  }
+
+  #routes article:nth-of-type(2) > div:last-child > div {
+    border-radius: 1.25rem;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child > div > div:first-child {
+    gap: 0.75rem;
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  #routes article:nth-of-type(2) h4 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child p:not(:first-child) {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child > div > div:last-child {
+    margin-top: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child > div > div:last-child > div {
+    min-width: 42rem;
+  }
+
+  #routes article:nth-of-type(2) svg {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 1279px) {
+  .trip-detail-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .trip-booking-sidebar {
+    width: 100%;
+  }
+
+  #departures > div {
+    padding: 0;
+    background: transparent;
+  }
+
+  #departures article {
+    display: block !important;
+    width: 100%;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 1.375rem;
+    padding: 2rem 1.5rem 1.5rem;
+    background: #ffffff;
+    box-shadow: 0 18px 42px -34px rgba(18, 43, 85, 0.45);
+  }
+
+  #departures article > div:first-child {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+    padding: 0 0 1.45rem;
+    text-align: left;
+  }
+
+  #departures article > div:first-child span {
+    margin: 0 !important;
+  }
+
+  #departures article > div:first-child span:first-child,
+  #departures article > div:first-child span:last-child {
+    color: #122b55;
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+
+  #departures article > div:first-child span:nth-child(2) {
+    color: #f58220;
+    line-height: 0.9;
+  }
+
+  #departures article > h3 {
+    margin-top: 1.7rem;
+    color: #08213d;
+    line-height: 1.15;
+  }
+
+  #departures article > div:not(:first-child) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  #departures article > div:not(:first-child) > p:first-child {
+    margin: 0;
+    color: #3f4742;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+  }
+
+  #departures article > div:not(:first-child) > p:last-child {
+    margin: 0;
+    justify-self: end;
+  }
+
+  #departures article > div:not(:first-child) > p:last-child span.h-2 {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  #departures article > div:not(:first-child) > p:last-child span:not(.h-2) {
+    color: #3f4742;
+  }
+
+  #departures article > div:not(:first-child):last-of-type > p:last-child {
+    color: #08213d;
+    line-height: 1;
+  }
+
+  #departures article > a,
+  #departures article > button {
+    width: 100%;
+    height: 4rem;
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+    letter-spacing: 0.08em;
+    box-shadow: 0 16px 32px -24px rgba(245, 130, 32, 0.75);
+  }
+
+  #departures article > button:disabled {
+    box-shadow: none;
   }
 }
 
