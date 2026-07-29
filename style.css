@@ -15,6 +15,11 @@ body {
   /* font-family: "Inter", sans-serif; */
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8.5rem;
+}
+
 img,
 svg,
 video {
@@ -59,8 +64,11 @@ table {
 }
 
 .trek-hero-shell {
-  min-height: clamp(32rem, 56vw, 40rem);
+  position: relative;
+  min-height: clamp(25rem, 44vw, 34rem);
+  margin-bottom: 4.75rem;
   border-radius: 2rem;
+  overflow: visible;
   box-shadow: 0 28px 80px -52px rgba(8, 33, 61, 0.65);
 }
 
@@ -69,6 +77,7 @@ table {
   inset: 0;
   height: 100%;
   width: 100%;
+  border-radius: inherit;
 }
 
 .trek-hero-thumbnails {
@@ -127,11 +136,14 @@ table {
 
 .trek-hero-cta {
   position: absolute;
-  right: 2.4rem;
-  bottom: 2.4rem;
-  left: 2.4rem;
+  /* right: 2.4rem; */
+  bottom: -3rem;
+  /* left: 2.4rem; */
   z-index: 10;
+  width:100%;
   display: flex;
+  margin-left:auto;
+  margin-right:auto;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
@@ -157,6 +169,7 @@ table {
   .trek-hero-shell {
     display: flex;
     min-height: 0;
+    margin-bottom: 0;
     flex-direction: column;
     overflow: visible;
     border-radius: 1.5rem;
@@ -224,7 +237,7 @@ table {
 }
 
 #secondaryTripNav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -261,24 +274,26 @@ table {
   position: sticky;
 }
 
-.trip-detail-page.show-secondary-nav #secondaryTripNav {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.trip-detail-page.show-secondary-nav #siteHeader,
-.trip-detail-page.show-secondary-nav #mainNavigation {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-100%);
-}
-
 .section-target,
 #booking {
-  scroll-margin-top: 6.5rem;
+  scroll-margin-top: 8.5rem;
+}
+
+.section-target {
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    outline-color 0.25s ease;
+}
+
+.section-target:focus {
+  outline: none;
+}
+
+.section-target.is-secondary-nav-target {
+  border-radius: 1rem;
+  background: rgba(245, 130, 32, 0.06);
+  box-shadow: 0 0 0 1px rgba(245, 130, 32, 0.2);
 }
 
 #routes article:nth-of-type(2) h4,
@@ -288,6 +303,30 @@ table {
   hyphens: none;
 }
 
+.elevation-profile-card {
+  background: #eff6ff;
+}
+
+.elevation-profile-body {
+  border-top: 1px solid rgba(226, 232, 240, 0.95);
+}
+
+.elevation-chart-frame {
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  -webkit-overflow-scrolling: touch;
+}
+
+.elevation-chart {
+  display: block;
+  min-width: 52rem;
+}
+
+@media (min-width: 1024px) {
+  .elevation-chart {
+    min-width: 0;
+  }
+}
+
 #includes details > div > div {
   display: flex;
   align-items: flex-start;
@@ -295,9 +334,10 @@ table {
   background: transparent;
 }
 
-#includes details > div > div > i {
-  width: 1.3rem;
-  height: 1.3rem;
+#includes details > div > div > i,
+#includes details > div > div > svg {
+  width: 1.2rem;
+  height: 1.2rem;
   margin-top: 0.1rem;
   flex-shrink: 0;
 }
@@ -897,9 +937,11 @@ footer h3 {
     line-height: 1.55;
   }
 
-  #includes details > div > div > i {
-    width: 1.35rem;
-    height: 1.35rem;
+  #includes details > div > div > i,
+  #includes details > div > div > svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-top: 0.15rem;
   }
 
   .trek-hero {
@@ -1002,10 +1044,6 @@ footer h3 {
     padding: 1rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-  }
-
-  #routes article:nth-of-type(2) > div:last-child > div > div:last-child > div {
-    min-width: 42rem;
   }
 
   #routes article:nth-of-type(2) svg {
