@@ -13,12 +13,28 @@ document.addEventListener("DOMContentLoaded", function () {
   function initTrekHero() {
     const heroImage = document.getElementById("trekHeroImage");
     const heroThumbs = document.querySelectorAll(".trek-hero-thumb");
+    const heroPrevButton = document.getElementById("trekHeroPrev");
+    const heroNextButton = document.getElementById("trekHeroNext");
     const viewPhotosButton = document.getElementById("trekHeroViewPhotos");
-    const bookButton = document.getElementById("trekHeroBookButton");
     const photoModal = document.getElementById("trekHeroPhotoModal");
     const modalImage = document.getElementById("trekHeroModalImage");
+    const modalTitle = document.getElementById("trekPhotoLightboxTitle");
+    const modalCount = document.getElementById("trekPhotoLightboxCount");
+    const modalCaption = document.getElementById("trekPhotoLightboxCaption");
+    const modalThumbs = document.querySelectorAll(
+      "#trekPhotoLightboxThumbs button",
+    );
+    const modalStage = document.querySelector(".trek-photo-lightbox-stage");
+    const zoomInButton = document.getElementById("trekPhotoZoomIn");
+    const zoomOutButton = document.getElementById("trekPhotoZoomOut");
     const closePhotosButton = document.getElementById("trekHeroClosePhotos");
-    const booking = document.getElementById("booking");
+    let activeModalIndex = 0;
+    let modalWheelLocked = false;
+    let modalZoom = 1;
+    let heroAutoTimer = null;
+    const compactHeroQuery = window.matchMedia
+      ? window.matchMedia("(max-width: 1023px)")
+      : null;
 
     if (!heroImage || !heroThumbs.length) return;
 
@@ -43,9 +59,148 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    function showHeroImageByIndex(index) {
+      const thumbs = Array.from(heroThumbs);
+      if (!thumbs.length) return;
+
+      const nextIndex = (index + thumbs.length) % thumbs.length;
+      setHeroImage(thumbs[nextIndex]);
+    }
+
+    function showAdjacentHeroImage(direction) {
+      const thumbs = Array.from(heroThumbs);
+      const activeIndex = thumbs.findIndex(function (thumb) {
+        return thumb.classList.contains("is-active");
+      });
+
+      showHeroImageByIndex((activeIndex < 0 ? 0 : activeIndex) + direction);
+    }
+
+    function stopHeroAutoRotate() {
+      if (!heroAutoTimer) return;
+
+      window.clearInterval(heroAutoTimer);
+      heroAutoTimer = null;
+    }
+
+    function syncHeroAutoRotate() {
+      const shouldRotate = compactHeroQuery ? compactHeroQuery.matches : false;
+
+      if (!shouldRotate) {
+        stopHeroAutoRotate();
+        return;
+      }
+
+      if (heroAutoTimer) return;
+
+      heroAutoTimer = window.setInterval(function () {
+        showAdjacentHeroImage(1);
+      }, 6000);
+    }
+
+    function restartHeroAutoRotate() {
+      stopHeroAutoRotate();
+      syncHeroAutoRotate();
+    }
+
+    function setModalImage(button) {
+      if (!modalImage || !button) return;
+
+      const image = button.dataset.photoSrc;
+      const alt = button.dataset.photoAlt || "";
+      const title = button.dataset.photoTitle || alt;
+      const index = Number(button.dataset.photoIndex || 0) + 1;
+
+      if (!image) return;
+
+      activeModalIndex = Math.max(0, index - 1);
+      modalImage.src = image;
+      modalImage.alt = alt;
+
+      if (modalTitle) {
+        modalTitle.textContent = title;
+      }
+
+      if (modalCaption) {
+        modalCaption.textContent = title;
+      }
+
+      if (modalCount) {
+        modalCount.textContent = String(index);
+      }
+
+      modalThumbs.forEach(function (thumb) {
+        thumb.classList.toggle("active", thumb === button);
+      });
+
+      button.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+    }
+
+    function setModalZoom(nextZoom) {
+      if (!modalImage) return;
+
+      modalZoom = Math.min(2.5, Math.max(1, nextZoom));
+      modalImage.style.setProperty("--lightbox-zoom", modalZoom.toFixed(2));
+
+      if (modalStage && modalZoom === 1) {
+        modalStage.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    }
+
+    function resetModalZoom() {
+      setModalZoom(1);
+    }
+
+    function showModalImageByIndex(index) {
+      if (!modalThumbs.length) return;
+
+      const nextIndex =
+        (index + modalThumbs.length) % modalThumbs.length;
+      resetModalZoom();
+      setModalImage(modalThumbs[nextIndex]);
+    }
+
+    function handleModalStageWheel(event) {
+      if (!photoModal || photoModal.classList.contains("hidden")) return;
+
+      if (modalZoom > 1) return;
+
+      event.preventDefault();
+
+      if (modalWheelLocked || Math.abs(event.deltaY) < 8) return;
+
+      modalWheelLocked = true;
+      showModalImageByIndex(
+        activeModalIndex + (event.deltaY > 0 ? 1 : -1),
+      );
+
+      window.setTimeout(function () {
+        modalWheelLocked = false;
+      }, 220);
+    }
+
     function openPhotoModal() {
       if (!photoModal) return;
 
+      const activeHeroThumb = Array.from(heroThumbs).find(function (thumb) {
+        return thumb.classList.contains("is-active");
+      });
+      const activeImage = activeHeroThumb ? activeHeroThumb.dataset.heroImage : "";
+      const matchingModalThumb =
+        Array.from(modalThumbs).find(function (thumb) {
+          return thumb.dataset.photoSrc === activeImage;
+        }) || modalThumbs[0];
+
+      setModalImage(matchingModalThumb);
+      resetModalZoom();
       photoModal.classList.remove("hidden");
       photoModal.classList.add("flex");
       document.body.classList.add("overflow-hidden");
@@ -63,11 +218,61 @@ document.addEventListener("DOMContentLoaded", function () {
       button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
       button.addEventListener("click", function () {
         setHeroImage(button);
+        restartHeroAutoRotate();
       });
     });
 
+    if (heroPrevButton) {
+      heroPrevButton.addEventListener("click", function () {
+        showAdjacentHeroImage(-1);
+        restartHeroAutoRotate();
+      });
+    }
+
+    if (heroNextButton) {
+      heroNextButton.addEventListener("click", function () {
+        showAdjacentHeroImage(1);
+        restartHeroAutoRotate();
+      });
+    }
+
     if (viewPhotosButton) {
       viewPhotosButton.addEventListener("click", openPhotoModal);
+    }
+
+    if (compactHeroQuery) {
+      if (typeof compactHeroQuery.addEventListener === "function") {
+        compactHeroQuery.addEventListener("change", syncHeroAutoRotate);
+      } else if (typeof compactHeroQuery.addListener === "function") {
+        compactHeroQuery.addListener(syncHeroAutoRotate);
+      }
+    }
+
+    syncHeroAutoRotate();
+
+    modalThumbs.forEach(function (button) {
+      button.addEventListener("click", function () {
+        resetModalZoom();
+        setModalImage(button);
+      });
+    });
+
+    if (zoomInButton) {
+      zoomInButton.addEventListener("click", function () {
+        setModalZoom(modalZoom + 0.25);
+      });
+    }
+
+    if (zoomOutButton) {
+      zoomOutButton.addEventListener("click", function () {
+        setModalZoom(modalZoom - 0.25);
+      });
+    }
+
+    if (modalStage) {
+      modalStage.addEventListener("wheel", handleModalStageWheel, {
+        passive: false,
+      });
     }
 
     if (closePhotosButton) {
@@ -79,15 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target === photoModal) {
           closePhotoModal();
         }
-      });
-    }
-
-    if (bookButton && booking) {
-      bookButton.addEventListener("click", function () {
-        booking.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
       });
     }
 
@@ -603,6 +799,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("groupPricingToggle");
     const groupPricingPanel =
       document.getElementById("groupPricingPanel");
+    const tripHighlights = document.getElementById("highlights");
 
     if (!travelerCount || !estimatedTotal || !currentPricePerPerson) {
       return;
@@ -867,6 +1064,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (groupPricingToggle && groupPricingPanel) {
+      let isInHighlightsZone = false;
+
+      setGroupPricingOpen(true);
+
+      function syncGroupPricingWithHighlights() {
+        if (!tripHighlights) return;
+
+        const nextHighlightsZone =
+          tripHighlights.getBoundingClientRect().top <= window.innerHeight;
+
+        if (nextHighlightsZone === isInHighlightsZone) return;
+
+        isInHighlightsZone = nextHighlightsZone;
+        setGroupPricingOpen(!isInHighlightsZone);
+      }
+
+      if ("IntersectionObserver" in window && tripHighlights) {
+        const groupPricingHighlightsObserver = new IntersectionObserver(
+          syncGroupPricingWithHighlights,
+          { root: null, threshold: 0 },
+        );
+
+        groupPricingHighlightsObserver.observe(tripHighlights);
+      }
+
+      window.addEventListener("scroll", syncGroupPricingWithHighlights, {
+        passive: true,
+      });
+      window.addEventListener("resize", syncGroupPricingWithHighlights);
+      window.addEventListener("load", syncGroupPricingWithHighlights);
+      syncGroupPricingWithHighlights();
+
       groupPricingToggle.addEventListener("click", function () {
         const isOpen =
           groupPricingToggle.getAttribute("aria-expanded") === "true";

@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="./style.css?v=services-icons-bigger-2" />
+    <link rel="stylesheet" href="./style.css?v=hero-mobile-arrows-1" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -905,7 +905,7 @@
 
     <main>
       
-      <section class="trek-hero px-4 pb-8 py-[52px] sm:px-5 lg:px-8">
+      <section class="trek-hero px-4 pb-8 py-[52px] lg:mb-[36px] mb-0 px-5">
         <div class="mx-auto max-w-[1584px]">
           <div class="mb-7">
             <h1
@@ -939,13 +939,32 @@
             </div>
           </div>
 
-          <div class="trek-hero-shell relative bg-slate-200">
-            <img
-              id="trekHeroImage"
-              src="Images/Home/everest.png"
-              alt="Everest mountain view"
-              class="h-full w-full object-cover"
-            />
+          <div class="trek-hero-shell relative">
+            <div class="trek-hero-image-stage">
+              <img
+                id="trekHeroImage"
+                src="Images/Home/everest.png"
+                alt="Everest mountain view"
+                class="h-full w-full object-cover"
+              />
+
+              <button
+                id="trekHeroPrev"
+                type="button"
+                class="trek-hero-arrow trek-hero-arrow-prev"
+                aria-label="Previous hero photo"
+              >
+                &lt;
+              </button>
+              <button
+                id="trekHeroNext"
+                type="button"
+                class="trek-hero-arrow trek-hero-arrow-next"
+                aria-label="Next hero photo"
+              >
+                &gt;
+              </button>
+            </div>
 
             <!-- <div
               class="absolute left-5 top-5 z-10 inline-flex items-center gap-3 rounded-full bg-white/95 px-5 py-3 text-sm font-black text-[#122B55] shadow-[0_16px_34px_-28px_rgba(8,33,61,0.9)] backdrop-blur sm:left-8 sm:top-8"
@@ -954,50 +973,52 @@
               Khumbu, Nepal
             </div> -->
 
-            <div
-              class="trek-hero-thumbnails"
-              aria-label="Hero photo thumbnails"
-            >
-              <button
-                type="button"
-                class="trek-hero-thumb is-active"
-                data-hero-image="Images/Home/everest.png"
-                data-hero-alt="Everest mountain view"
-                aria-label="Show photo 1"
+            <div class="trek-hero-mobile-slider">
+              <div
+                class="trek-hero-thumbnails"
+                aria-label="Hero photo thumbnails"
               >
-                <img src="Images/Home/everest.png" alt="" />
-                <span>01</span>
-              </button>
-              <button
-                type="button"
-                class="trek-hero-thumb"
-                data-hero-image="Images/Home/annapurna.png"
-                data-hero-alt="Himalayan night mountain view"
-                aria-label="Show photo 2"
-              >
-                <img src="Images/Home/annapurna.png" alt="" />
-                <span>02</span>
-              </button>
-              <button
-                type="button"
-                class="trek-hero-thumb"
-                data-hero-image="Images/Home/manaslu.png"
-                data-hero-alt="Himalayan valley landscape"
-                aria-label="Show photo 3"
-              >
-                <img src="Images/Home/manaslu.png" alt="" />
-                <span>03</span>
-              </button>
-              <button
-                type="button"
-                class="trek-hero-thumb"
-                data-hero-image="Images/Home/mustang.png"
-                data-hero-alt="Snow covered Himalayan peak"
-                aria-label="Show photo 4"
-              >
-                <img src="Images/Home/mustang.png" alt="" />
-                <span>04</span>
-              </button>
+                <button
+                  type="button"
+                  class="trek-hero-thumb is-active"
+                  data-hero-image="Images/Home/everest.png"
+                  data-hero-alt="Everest mountain view"
+                  aria-label="Show photo 1"
+                >
+                  <img src="Images/Home/everest.png" alt="" />
+                  <!-- <span>01</span> -->
+                </button>
+                <button
+                  type="button"
+                  class="trek-hero-thumb"
+                  data-hero-image="Images/Home/annapurna.png"
+                  data-hero-alt="Himalayan night mountain view"
+                  aria-label="Show photo 2"
+                >
+                  <img src="Images/Home/annapurna.png" alt="" />
+                  <!-- <span>02</span> -->
+                </button>
+                <button
+                  type="button"
+                  class="trek-hero-thumb"
+                  data-hero-image="Images/Home/manaslu.png"
+                  data-hero-alt="Himalayan valley landscape"
+                  aria-label="Show photo 3"
+                >
+                  <img src="Images/Home/manaslu.png" alt="" />
+                  <!-- <span>03</span> -->
+                </button>
+                <button
+                  type="button"
+                  class="trek-hero-thumb"
+                  data-hero-image="Images/Home/mustang.png"
+                  data-hero-alt="Snow covered Himalayan peak"
+                  aria-label="Show photo 4"
+                >
+                  <img src="Images/Home/mustang.png" alt="" />
+                  <!-- <span>04</span> -->
+                </button>
+              </div>
             </div>
 
             <div class="trek-hero-cta">
@@ -1011,7 +1032,7 @@
                   <p class="text-xs font-black text-slate-500">
                     Starting from
                   </p>
-                  <p class="mt-1 text-4xl font-black leading-none text-[#122B55]">
+                  <p class="mt-1 text-2xl lg:text-3xl font-black leading-none text-[#122B55]">
                     $1,950
                     <span class="text-base font-bold text-slate-500">
                       / person
@@ -1024,49 +1045,125 @@
                 <button
                   id="trekHeroViewPhotos"
                   type="button"
-                  class="inline-flex h-14 items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-7 text-sm font-black text-[#122B55] transition-colors hover:border-[#F58220]/40 hover:text-[#F58220]"
+                  class="inline-flex h-14 items-center justify-center gap-3 rounded-[8px] border border-slate-200 bg-white px-7 text-[16px] font-bold text-[#122B55] transition-colors hover:border-[#F58220]/40 hover:text-[#F58220]"
                 >
                   <i data-lucide="images" class="h-5 w-5"></i>
                   View photos
                   <span
                     class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-xs"
-                    >4</span
+                    >14</span
                   >
                 </button>
-                <button
+                <a
                   id="trekHeroBookButton"
-                  type="button"
-                  class="inline-flex h-14 items-center justify-center gap-4 rounded-full bg-[#F58220] px-8 text-sm font-black text-white shadow-[0_18px_34px_-24px_rgba(245,130,32,0.95)] transition-colors hover:bg-[#d96b11]"
+                  href="booking.html"
+                  class="inline-flex h-14 items-center justify-center gap-4 rounded-[8px] bg-[#F58220] px-8 text-[16px] font-bold text-white shadow-[0_18px_34px_-24px_rgba(245,130,32,0.95)] transition-colors hover:bg-[#d96b11]"
                 >
                   Book this trek
                   <i data-lucide="arrow-right" class="h-5 w-5"></i>
-                </button>
+                </a>
               </div>
             </div>
           </div>
 
           <div
             id="trekHeroPhotoModal"
-            class="fixed inset-0 z-[120] hidden items-center justify-center bg-[#08213D]/80 px-4 py-6 backdrop-blur-sm"
+            class="trek-photo-lightbox fixed inset-0 z-[120] hidden bg-black/80 px-4 py-5 backdrop-blur-sm"
             aria-modal="true"
             role="dialog"
             aria-label="Trek photo gallery"
           >
-            <div class="relative w-full max-w-5xl">
+            <div class="trek-photo-lightbox-header">
               <button
                 id="trekHeroClosePhotos"
                 type="button"
-                class="absolute -top-12 right-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#122B55]"
+                class="trek-photo-lightbox-close"
                 aria-label="Close photo gallery"
               >
                 <i data-lucide="x" class="h-5 w-5"></i>
               </button>
-              <img
-                id="trekHeroModalImage"
-                src="Images/Home/everest.png"
-                alt="Everest mountain view"
-                class="max-h-[78vh] w-full rounded-2xl object-contain shadow-2xl"
-              />
+              <div class="trek-photo-lightbox-copy">
+                <h2 id="trekPhotoLightboxTitle">Everest Base Camp Hike</h2>
+                <p><span id="trekPhotoLightboxCount">1</span> / 14 photos</p>
+              </div>
+              <div class="trek-photo-lightbox-zoom" aria-label="Image zoom controls">
+                <button
+                  id="trekPhotoZoomOut"
+                  type="button"
+                  aria-label="Zoom out"
+                >
+                  <i data-lucide="minus" class="h-5 w-5"></i>
+                </button>
+                <button
+                  id="trekPhotoZoomIn"
+                  type="button"
+                  aria-label="Zoom in"
+                >
+                  <i data-lucide="plus" class="h-5 w-5"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="trek-photo-lightbox-body">
+              <figure class="trek-photo-lightbox-stage">
+                <img
+                  id="trekHeroModalImage"
+                  src="Images/Home/everest.png"
+                  alt="Everest mountain view"
+                />
+                <!-- <figcaption id="trekPhotoLightboxCaption">
+                  Everest Base Camp Hike
+                </figcaption> -->
+              </figure>
+
+              <div
+                id="trekPhotoLightboxThumbs"
+                class="trek-photo-lightbox-thumbs"
+                aria-label="Gallery thumbnails"
+              >
+                <button type="button" class="active" data-photo-index="0" data-photo-src="Images/Home/everest.png" data-photo-alt="Everest mountain view" data-photo-title="Everest Base Camp Hike">
+                  <img src="Images/Home/everest.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="1" data-photo-src="Images/Home/annapurna.png" data-photo-alt="Annapurna mountain panorama" data-photo-title="Annapurna Mountain Panorama">
+                  <img src="Images/Home/annapurna.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="2" data-photo-src="Images/Home/manaslu.png" data-photo-alt="Manaslu mountain valley" data-photo-title="Manaslu Valley Trail">
+                  <img src="Images/Home/manaslu.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="3" data-photo-src="Images/Home/mustang.png" data-photo-alt="Himalayan lake landscape" data-photo-title="High Himalayan Lake">
+                  <img src="Images/Home/mustang.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="4" data-photo-src="Images/Home/Background.png" data-photo-alt="Mountain trekking landscape" data-photo-title="Mountain Trekking Landscape">
+                  <img src="Images/Home/Background.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="5" data-photo-src="Images/Home/adventure.png" data-photo-alt="Adventure trekking scene" data-photo-title="Adventure Trekking Scene">
+                  <img src="Images/Home/adventure.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="6" data-photo-src="Images/Home/details/bg.jpeg" data-photo-alt="Everest trail mountain background" data-photo-title="Everest Trail">
+                  <img src="Images/Home/details/bg.jpeg" alt="" />
+                </button>
+                <button type="button" data-photo-index="7" data-photo-src="Images/Home/details/routes.png" data-photo-alt="Trekking route map" data-photo-title="Trekking Route Map">
+                  <img src="Images/Home/details/routes.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="8" data-photo-src="Images/Home/manaslu1.png" data-photo-alt="Manaslu trek landscape" data-photo-title="Manaslu Trek Landscape">
+                  <img src="Images/Home/manaslu1.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="9" data-photo-src="Images/Aboutpage/mountain.jpg" data-photo-alt="Snow mountain landscape" data-photo-title="Snow Mountain Landscape">
+                  <img src="Images/Aboutpage/mountain.jpg" alt="" />
+                </button>
+                <button type="button" data-photo-index="10" data-photo-src="Images/Home/team.png" data-photo-alt="Trekking team in Nepal" data-photo-title="Trekking Team">
+                  <img src="Images/Home/team.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="11" data-photo-src="Images/Aboutpage/adventure.png" data-photo-alt="Adventure travel in Nepal" data-photo-title="Adventure Travel">
+                  <img src="Images/Aboutpage/adventure.png" alt="" />
+                </button>
+                <button type="button" data-photo-index="12" data-photo-src="Images/Aboutpage/whychoose.jpg" data-photo-alt="Mountain trekking guide" data-photo-title="Mountain Trekking Guide">
+                  <img src="Images/Aboutpage/whychoose.jpg" alt="" />
+                </button>
+                <button type="button" data-photo-index="13" data-photo-src="Images/Aboutpage/m1.jpg" data-photo-alt="Himalayan trekking landscape" data-photo-title="Himalayan Trekking Landscape">
+                  <img src="Images/Aboutpage/m1.jpg" alt="" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1075,68 +1172,69 @@
       
       <section
         id="secondaryTripNav"
-        class="secondary-nav-shell border-b border-[#F58220]/25 bg-[#122B55] px-4 py-3 backdrop-blur lg:px-6"
+        class="secondary-nav-shell border-b border-slate-200 bg-white px-4 py-4 shadow-sm lg:px-8"
+        aria-hidden="true"
       >
         <div
-          class="mx-auto flex max-w-[1584px] flex-col gap-3 lg:flex-row lg:items-center lg:justify-between"
+          class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-4"
         >
           <nav
-            class="flex items-center gap-3 overflow-x-auto pb-1 lg:pb-0"
+            class="flex min-w-0 flex-1 items-center gap-3 overflow-x-auto pb-1 pr-4 text-[#334155] lg:pb-0"
             aria-label="Trip section navigation"
           >
             <a
-              href="#overview"
-              class="secondary-nav-link active inline-flex shrink-0 items-center gap-2 rounded-2xl border border-transparent bg-[#F58220] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#d96b11]"
+              href="#trip-overview"
+              class="secondary-nav-link active inline-flex shrink-0 items-center gap-2 py-2 text-sm font-bold transition-colors hover:text-[#F58220] lg:text-base"
               aria-current="page"
             >
-              <i data-lucide="eye" class="h-5 w-5"></i>
+              <i data-lucide="layout-grid" class="h-5 w-5"></i>
               Overview
             </a>
             <a
               href="#highlights"
-              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white/85 transition-colors hover:border-[#F58220]/50 hover:bg-white/10 hover:text-white"
+              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 py-2 text-sm font-bold transition-colors hover:text-[#F58220] lg:text-base"
             >
-              <i data-lucide="eye" class="h-5 w-5"></i>
+              <i data-lucide="sparkles" class="h-5 w-5"></i>
               Highlights
             </a>
             <a
               href="#itinerary"
-              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white/85 transition-colors hover:border-[#F58220]/50 hover:bg-white/10 hover:text-white"
+              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 py-2 text-sm font-bold transition-colors hover:text-[#F58220] lg:text-base"
             >
               <i data-lucide="clipboard-list" class="h-5 w-5"></i>
               Itinerary
             </a>
             <a
               href="#includes"
-              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white/85 transition-colors hover:border-[#F58220]/50 hover:bg-white/10 hover:text-white"
+              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 py-2 text-sm font-bold transition-colors hover:text-[#F58220] lg:text-base"
             >
-              <i data-lucide="badge-check" class="h-5 w-5"></i>
-              Services
+              <i data-lucide="circle-check" class="h-5 w-5"></i>
+              Included
             </a>
             <a
               href="#departures"
-              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white/85 transition-colors hover:border-[#F58220]/50 hover:bg-white/10 hover:text-white"
+              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 py-2 text-sm font-bold transition-colors hover:text-[#F58220] lg:text-base"
             >
-              <i data-lucide="calendar-range" class="h-5 w-5"></i>
+              <i data-lucide="circle-plus" class="h-5 w-5"></i>
               Departures
             </a>
             <a
               href="#routes"
-              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white/85 transition-colors hover:border-[#F58220]/50 hover:bg-white/10 hover:text-white"
+              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 py-2 text-sm font-bold transition-colors hover:text-[#F58220] lg:text-base"
             >
               <i data-lucide="map" class="h-5 w-5"></i>
-              Routes
+              Map
             </a>
             <a
               href="#equipment"
-              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white/85 transition-colors hover:border-[#F58220]/50 hover:bg-white/10 hover:text-white"
+              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 py-2 text-sm font-bold transition-colors hover:text-[#F58220] lg:text-base"
             >
-              <i data-lucide="map" class="h-5 w-5"></i>
+              <i data-lucide="package" class="h-5 w-5"></i>
               Equipment
             </a>
             <a
               href="#faq"
-              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-white/85 transition-colors hover:border-[#F58220]/50 hover:bg-white/10 hover:text-white"
+              class="secondary-nav-link inline-flex shrink-0 items-center gap-2 py-2 text-sm font-bold transition-colors hover:text-[#F58220] lg:text-base"
             >
               <i data-lucide="circle-help" class="h-5 w-5"></i>
               FAQ
@@ -1145,7 +1243,7 @@
 
           <a
             href="#booking"
-            class="secondary-nav-book-now hidden shrink-0 items-center justify-center gap-2 rounded-2xl bg-[#F58220] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_25px_-16px_rgba(245,130,32,0.9)] transition-colors hover:bg-[#d96b11] xl:inline-flex"
+            class="secondary-nav-book-now hidden shrink-0 items-center justify-center gap-3 rounded-lg bg-[#F58220] px-6 py-3 text-base font-semibold text-white shadow-[0_10px_22px_-16px_rgba(245,158,11,0.8)] transition-colors hover:bg-[#F58220] xl:inline-flex"
           >
             <i data-lucide="bookmark" class="h-5 w-5"></i>
             Book Now
@@ -1159,10 +1257,10 @@
           class="trip-detail-layout mx-auto grid max-w-[1584px] gap-[32px] xl:grid-cols-[minmax(0,1fr)_400px]"
         >
           
-          <div class="trip-detail-main min-w-0 space-y-12 lg:space-y-16">
+          <div class="trip-detail-main min-w-0">
             <section
               aria-labelledby="trip-facts-heading"
-              class="rounded-2xl bg-slate-50 px-0 sm:px-7"
+              class="mb-[32px] rounded-2xl lg:mb-[64px]"
             >
               <h2
                 id="trip-facts-heading"
@@ -1182,7 +1280,7 @@
                   </span>
                   <div>
                     <p
-                      class="text-[11px] font-semibold uppercase text-slate-500"
+                      class="text-[12px] font-semibold uppercase text-slate-500"
                     >
                       Duration
                     </p>
@@ -1204,7 +1302,7 @@
                   </span>
                   <div>
                     <p
-                      class="text-[11px] font-semibold uppercase text-slate-500"
+                      class="text-[12px] font-semibold uppercase text-slate-500"
                     >
                       Difficulty
                     </p>
@@ -1226,7 +1324,7 @@
                   </span>
                   <div>
                     <p
-                      class="text-[11px] font-semibold uppercase text-slate-500"
+                      class="text-[12px] font-semibold uppercase text-slate-500"
                     >
                       Max Altitude
                     </p>
@@ -1248,7 +1346,7 @@
                   </span>
                   <div>
                     <p
-                      class="text-[11px] font-semibold uppercase text-slate-500"
+                      class="text-[12px] font-semibold uppercase text-slate-500"
                     >
                       Best Season
                     </p>
@@ -1270,7 +1368,7 @@
                   </span>
                   <div>
                     <p
-                      class="text-[11px] font-semibold uppercase text-slate-500"
+                      class="text-[12px] font-semibold uppercase text-slate-500"
                     >
                       Group Size
                     </p>
@@ -1292,7 +1390,7 @@
                   </span>
                   <div>
                     <p
-                      class="text-[11px] font-semibold uppercase text-slate-500"
+                      class="text-[12px] font-semibold uppercase text-slate-500"
                     >
                       Transportation
                     </p>
@@ -1314,7 +1412,7 @@
                   </span>
                   <div>
                     <p
-                      class="text-[11px] font-semibold uppercase text-slate-500"
+                      class="text-[12px] font-semibold uppercase text-slate-500"
                     >
                       Accommodation
                     </p>
@@ -1328,7 +1426,7 @@
               </div>
             </section>
 
-            <section id="overview" class="section-target lg:scroll-mt-[120px]">
+            <section id="trip-overview" class="section-target mb-[32px] lg:mb-[64px] lg:scroll-mt-[120px]">
               <p
                 class="text-xs font-extrabold uppercase tracking-[0.22em] text-[#F58220]"
               >
@@ -1340,7 +1438,7 @@
                 Trip Overview
               </h2>
 
-              <div class="mt-7 space-y-5 text-[18px] leading-8 font-normal text-black">
+              <div class="mt-7 space-y-5 text-[16px] lg:text-[18px] leading-8 font-normal text-black">
                 <p>
                   The Three Passes Trek is a legendary high-altitude circuit in
                   the Everest (Khumbu) region of Nepal, designed for experienced
@@ -1357,12 +1455,12 @@
               </div>
 
               <div class="mt-8">
-                <h3 class="text-xl font-black text-white sm:text-[#122B55]">
+                <h3 class="text-xl font-black text-[#122B55]">
                   Why Choose the Three Passes Trek?
                 </h3>
 
                 <ul
-                  class="mt-5 space-y-4 text-[17px] font-semibold leading-7 text-slate-700"
+                  class="mt-5 space-y-4 text-[16px] lg:text-[18px] font-semibold leading-7 text-slate-700"
                 >
                   <li class="flex gap-3">
                     <i
@@ -1370,7 +1468,7 @@
                       class="mt-1 h-5 w-5 shrink-0 text-[#F58220]"
                     ></i>
                     <span>
-                      Most complete Everest Region trek - covers all major
+                      Most complete Everest Region trek covers all major
                       highlights.
                     </span>
                   </li>
@@ -1402,7 +1500,7 @@
               
             </section>
 
-            <section id="highlights" class="section-target scroll-mt-[120px]">
+            <section id="highlights" class="section-target mb-[32px] scroll-mt-[120px] lg:mb-[64px]">
               <div
                 class="relative overflow-hidden rounded-3xl bg-[#122B55] px-6 py-10 text-white md:px-10"
               >
@@ -1427,10 +1525,10 @@
                         class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#F58220]"
                         ><i
                           data-lucide="circle-check"
-                          class="h-6 w-6 stroke-[2.5]"
+                          class="h-5 w-5 stroke-[2.5]"
                         ></i
                       ></span>
-                      <p class="text-[18px] leading-7 text-white/80">
+                      <p class="text-[16px] lg:text-[18px] leading-7 text-white/80">
                         Kongma La Pass (5,535 m) – The highest of the three,
                         offering raw and remote landscapes with views of Makalu
                         and Lhotse.
@@ -1442,10 +1540,10 @@
                         class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#F58220]"
                         ><i
                           data-lucide="circle-check"
-                          class="h-6 w-6 stroke-[2.5]"
+                          class="h-5 w-5 stroke-[2.5]"
                         ></i
                       ></span>
-                      <p class="text-[18px] leading-7 text-white/80">
+                      <p class="text-[16px] lg:text-[18px] leading-7 text-white/80">
                         Cho La Pass (5,420 m) – A dramatic traverse across
                         glaciers, linking Lobuche and Gokyo.
                       </p>
@@ -1456,10 +1554,10 @@
                         class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#F58220]"
                         ><i
                           data-lucide="circle-check"
-                          class="h-6 w-6 stroke-[2.5]"
+                          class="h-5 w-5 stroke-[2.5]"
                         ></i
                       ></span>
-                      <p class="text-[18px] leading-7 text-white/80">
+                      <p class="text-[16px] lg:text-[18px] leading-7 text-white/80">
                         Renjo La Pass (5,360 m) – One of the most scenic passes
                         with a breathtaking view over the Gokyo Lakes and Mt.
                         Everest.
@@ -1471,10 +1569,10 @@
                         class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#F58220]"
                         ><i
                           data-lucide="circle-check"
-                          class="h-6 w-6 stroke-[2.5]"
+                          class="h-5 w-5 stroke-[2.5]"
                         ></i
                       ></span>
-                      <p class="text-[18px] leading-7 text-white/80">
+                      <p class="text-[16px] lg:text-[18px] leading-7 text-white/80">
                         Everest Base Camp (5,364 m) – The iconic destination at
                         the foot of the world’s highest peak.
                       </p>
@@ -1485,10 +1583,10 @@
                         class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#F58220]"
                         ><i
                           data-lucide="circle-check"
-                          class="h-6 w-6 stroke-[2.5]"
+                          class="h-5 w-5 stroke-[2.5]"
                         ></i
                       ></span>
-                      <p class="text-[18px] leading-7 text-white/80">
+                      <p class="text-[16px] lg:text-[18px] leading-7 text-white/80">
                         Kala Patthar (5,545 m) – The best viewpoint to see Mount
                         Everest up close.
                       </p>
@@ -1499,10 +1597,10 @@
                         class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#F58220]"
                         ><i
                           data-lucide="circle-check"
-                          class="h-6 w-6 stroke-[2.5]"
+                          class="h-5 w-5 stroke-[2.5]"
                         ></i
                       ></span>
-                      <p class="text-[18px] leading-7 text-white/80">
+                      <p class="text-[16px] lg:text-[18px] leading-7 text-white/80">
                         Gokyo Valley & Lakes – A magical series of turquoise
                         glacial lakes and panoramic views from Gokyo Ri (5,360
                         m).
@@ -1513,10 +1611,10 @@
                         class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#F58220]"
                         ><i
                           data-lucide="circle-check"
-                          class="h-6 w-6 stroke-[2.5]"
+                          class="h-5 w-5 stroke-[2.5]"
                         ></i
                       ></span>
-                      <p class="text-[18px] leading-7 text-white/80">
+                      <p class="text-[16px] lg:text-[18px] leading-7 text-white/80">
                         Authentic Sherpa Culture – Explore traditional villages
                         like Namche Bazaar, Thame, Dingboche, and Chhukhung, and
                         visit ancient monasteries.
@@ -1527,10 +1625,10 @@
                         class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[#F58220]"
                         ><i
                           data-lucide="circle-check"
-                          class="h-6 w-6 stroke-[2.5]"
+                          class="h-5 w-5 stroke-[2.5]"
                         ></i
                       ></span>
-                      <p class="text-[18px] leading-7 text-white/80">
+                      <p class="text-[16px] lg:text-[18px] leading-7 text-white/80">
                         Wildlife & Nature – Cross paths with yaks, blue sheep,
                         and Himalayan birds in Sagarmatha National Park (UNESCO
                         site).
@@ -1541,7 +1639,7 @@
               </div>
             </section>
 
-            <section id="itinerary" class="section-target scroll-mt-[120px]">
+            <section id="itinerary" class="section-target mb-[32px] scroll-mt-[120px] lg:mb-[64px]">
               <p
                 class="text-xs font-extrabold uppercase tracking-[0.22em] text-[#F58220]"
               >
@@ -2206,7 +2304,7 @@
               </div>
             </section>
 
-            <section id="includes" class="section-target scroll-mt-[120px]">
+            <section id="includes" class="section-target mb-[32px] scroll-mt-[120px] lg:mb-[64px]">
               <p
                 class="text-xs font-extrabold uppercase tracking-[0.22em] text-[#F58220]"
               >
@@ -2249,7 +2347,7 @@
                     class="grid gap-[22px] border-t border-[#D8F6E5] px-6 py-6 pb-7 sm:px-[30px] sm:pb-8 sm:pt-7"
                   >
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="car-front"
@@ -2262,7 +2360,7 @@
                       </p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="plane"
@@ -2272,7 +2370,7 @@
                       <p>Kathmandu-Lukla-Kathmandu return flight tickets.</p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="house"
@@ -2284,7 +2382,7 @@
                       </p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="utensils"
@@ -2296,7 +2394,7 @@
                       </p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="shield-check"
@@ -2309,7 +2407,7 @@
                       </p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="apple"
@@ -2356,7 +2454,7 @@
                     class="grid gap-[22px] border-t border-[#FDE0DF] px-6 py-6 pb-7 sm:px-[30px] sm:pb-8 sm:pt-7"
                   >
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="info"
@@ -2366,7 +2464,7 @@
                       <p>International airfare and Nepal entry visa fees.</p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="utensils-crossed"
@@ -2379,7 +2477,7 @@
                       </p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="shield-alert"
@@ -2392,7 +2490,7 @@
                       </p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="sparkles"
@@ -2405,7 +2503,7 @@
                       </p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="backpack"
@@ -2418,7 +2516,7 @@
                       </p>
                     </div>
                     <div
-                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] font-noramal leading-[1.35] text-black"
+                      class="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-4 text-[16px] lg:text-[18px] font-normal leading-[1.35] text-black"
                     >
                       <i
                         data-lucide="hand-coins"
@@ -2434,7 +2532,7 @@
               </div>
             </section>
 
-            <section id="departures" class="section-target scroll-mt-[120px]">
+            <section id="departures" class="section-target mb-[32px] scroll-mt-[120px] lg:mb-[64px]">
               <p
                 class="text-xs font-extrabold uppercase tracking-[0.22em] text-[#F58220]"
               >
@@ -2721,7 +2819,7 @@
               </div>
             </section>
             
-            <section id="routes" class="section-target scroll-mt-[120px]">
+            <section id="routes" class="section-target mb-[32px] scroll-mt-[120px] lg:mb-[64px]">
               <p
                 class="text-xs font-extrabold uppercase tracking-[0.22em] text-[#F58220]"
               >
@@ -3286,7 +3384,7 @@
                 </article>
               </div>
             </section>
-            <section id="equipment" class="section-target scroll-mt-[120px]">
+            <section id="equipment" class="section-target mb-[32px] scroll-mt-[120px] lg:mb-[64px]">
               <p
                 class="text-xs font-extrabold uppercase tracking-[0.22em] text-[#F58220]"
               >
@@ -3319,15 +3417,15 @@
                     <span class="flex items-center gap-4">
                       <i
                         data-lucide="file-text"
-                        class="h-4 w-4 shrink-0 text-slate-500"
+                        class="h-5 w-5 shrink-0 text-slate-500"
                       ></i>
-                      <span class="text-base font-extrabold text-[#122B55]">
+                      <span class="text-lg font-extrabold text-[#122B55]">
                         General
                       </span>
                     </span>
                     <i
                       data-lucide="chevron-down"
-                      class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+                      class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
                     ></i>
                   </button>
                   <div
@@ -3335,7 +3433,7 @@
                   >
                     <div>
                       <div
-                        class="space-y-3 px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+                        class="space-y-3 px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
                       >
                         <p class="flex gap-3">
                           <i
@@ -3382,15 +3480,15 @@
                     <span class="flex items-center gap-4">
                       <i
                         data-lucide="shirt"
-                        class="h-4 w-4 shrink-0 text-slate-500"
+                        class="h-5 w-5 shrink-0 text-slate-500"
                       ></i>
-                      <span class="text-base font-extrabold text-[#122B55]">
+                      <span class="text-lg font-extrabold text-[#122B55]">
                         Upper Body
                       </span>
                     </span>
                     <i
                       data-lucide="chevron-down"
-                      class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+                      class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
                     ></i>
                   </button>
                   <div
@@ -3398,7 +3496,7 @@
                   >
                     <div>
                       <div
-                        class="space-y-3 px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+                        class="space-y-3 px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
                       >
                         <p class="flex gap-3">
                           <i
@@ -3443,15 +3541,15 @@
                     <span class="flex items-center gap-4">
                       <i
                         data-lucide="layers"
-                        class="h-4 w-4 shrink-0 text-slate-500"
+                        class="h-5 w-5 shrink-0 text-slate-500"
                       ></i>
-                      <span class="text-base font-extrabold text-[#122B55]">
+                      <span class="text-lg font-extrabold text-[#122B55]">
                         Torso
                       </span>
                     </span>
                     <i
                       data-lucide="chevron-down"
-                      class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+                      class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
                     ></i>
                   </button>
                   <div
@@ -3459,7 +3557,7 @@
                   >
                     <div>
                       <div
-                        class="space-y-3 px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+                        class="space-y-3 px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
                       >
                         <p class="flex gap-3">
                           <i
@@ -3497,15 +3595,15 @@
                     <span class="flex items-center gap-4">
                       <i
                         data-lucide="footprints"
-                        class="h-4 w-4 shrink-0 text-slate-500"
+                        class="h-5 w-5 shrink-0 text-slate-500"
                       ></i>
-                      <span class="text-base font-extrabold text-[#122B55]">
+                      <span class="text-lg font-extrabold text-[#122B55]">
                         Lower Body
                       </span>
                     </span>
                     <i
                       data-lucide="chevron-down"
-                      class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+                      class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
                     ></i>
                   </button>
                   <div
@@ -3513,7 +3611,7 @@
                   >
                     <div>
                       <div
-                        class="space-y-3 px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+                        class="space-y-3 px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
                       >
                         <p class="flex gap-3">
                           <i
@@ -3583,15 +3681,15 @@
         <span class="flex items-center gap-4">
           <i
             data-lucide="circle-help"
-            class="h-4 w-4 shrink-0 text-slate-500"
+            class="h-5 w-5 shrink-0 text-slate-500"
           ></i>
-          <span class="text-base font-extrabold text-[#122B55]">
+          <span class="text-lg font-extrabold text-[#122B55]">
             Is previous trekking experience required?
           </span>
         </span>
         <i
           data-lucide="chevron-down"
-          class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+          class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
         ></i>
       </button>
       <div
@@ -3599,7 +3697,7 @@
       >
         <div>
           <p
-            class="px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+            class="px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
           >
             Previous high-altitude trekking experience is strongly
             recommended because this route crosses three major high
@@ -3619,15 +3717,15 @@
         <span class="flex items-center gap-4">
           <i
             data-lucide="shield-check"
-            class="h-4 w-4 shrink-0 text-slate-500"
+            class="h-5 w-5 shrink-0 text-slate-500"
           ></i>
-          <span class="text-base font-extrabold text-[#122B55]">
+          <span class="text-lg font-extrabold text-[#122B55]">
             What is the best season?
           </span>
         </span>
         <i
           data-lucide="chevron-down"
-          class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+          class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
         ></i>
       </button>
       <div
@@ -3635,7 +3733,7 @@
       >
         <div>
           <p
-            class="px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+            class="px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
           >
             March to May and September to November offer the best
             conditions, with clearer skies, stable weather, and
@@ -3655,15 +3753,15 @@
         <span class="flex items-center gap-4">
           <i
             data-lucide="heart-pulse"
-            class="h-4 w-4 shrink-0 text-slate-500"
+            class="h-5 w-5 shrink-0 text-slate-500"
           ></i>
-          <span class="text-base font-extrabold text-[#122B55]">
+          <span class="text-lg font-extrabold text-[#122B55]">
             How difficult is the Three Passes Trek?
           </span>
         </span>
         <i
           data-lucide="chevron-down"
-          class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+          class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
         ></i>
       </button>
       <div
@@ -3671,7 +3769,7 @@
       >
         <div>
           <p
-            class="px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+            class="px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
           >
             It is a strenuous trek with long walking days, steep
             ascents, glacier crossings, and high-altitude passes, so
@@ -3691,15 +3789,15 @@
         <span class="flex items-center gap-4">
           <i
             data-lucide="shield-check"
-            class="h-4 w-4 shrink-0 text-slate-500"
+            class="h-5 w-5 shrink-0 text-slate-500"
           ></i>
-          <span class="text-base font-extrabold text-[#122B55]">
+          <span class="text-lg font-extrabold text-[#122B55]">
             Do I need travel insurance?
           </span>
         </span>
         <i
           data-lucide="chevron-down"
-          class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+          class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
         ></i>
       </button>
       <div
@@ -3707,7 +3805,7 @@
       >
         <div>
           <p
-            class="px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+            class="px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
           >
             Yes. Your policy should cover high-altitude trekking and
             emergency helicopter evacuation, as the route reaches
@@ -3727,15 +3825,15 @@
         <span class="flex items-center gap-4">
           <i
             data-lucide="wifi"
-            class="h-4 w-4 shrink-0 text-slate-500"
+            class="h-5 w-5 shrink-0 text-slate-500"
           ></i>
-          <span class="text-base font-extrabold text-[#122B55]">
+          <span class="text-lg font-extrabold text-[#122B55]">
             Is Wi-Fi or charging available on the trek?
           </span>
         </span>
         <i
           data-lucide="chevron-down"
-          class="accordion-arrow h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200"
+          class="accordion-arrow h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200"
         ></i>
       </button>
       <div
@@ -3743,7 +3841,7 @@
       >
         <div>
           <p
-            class="px-5 pb-6 pt-4 text-sm font-medium leading-7 text-slate-600"
+            class="px-5 pb-6 pt-4 text-[16px] font-medium leading-7 text-slate-600"
           >
             Wi-Fi and battery charging are available in many
             teahouses for an extra fee, but service can be slow or
@@ -3885,8 +3983,8 @@
                       </span>
                     </span>
                     <i
-                      id="groupPricingChevron"
-                      data-lucide="chevron-up"
+                    id="groupPricingChevron"
+                    data-lucide="chevron-up"
                       class="group-pricing-chevron h-5 w-5 shrink-0 text-[#F58220] transition-transform"
                     ></i>
                   </button>
@@ -3994,7 +4092,7 @@
       </section>
 
       <section class="bg-white px-5 py-[52px] lg:px-8 lg:py-[110px]">
-        <div class="mx-auto w-full max-w-[1400px]">
+        <div class="mx-auto w-full max-w-[1584px]">
           <div class="mb-8 text-center">
             <h2
               class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
@@ -4180,7 +4278,7 @@
         <div class="absolute inset-0 bg-[#08213D]/15"></div>
 
         <div
-          class="relative z-10 mx-auto grid w-full max-w-[1400px] items-center gap-10 py-[52px] lg:grid-cols-[1.25fr_0.75fr] lg:py-[110px]"
+          class="relative z-10 mx-auto grid w-full max-w-[1584px] items-center gap-10 py-[52px] lg:grid-cols-[1.25fr_0.75fr] lg:py-[110px]"
         >
           <div class="max-w-3xl text-left">
             <div
@@ -4446,7 +4544,7 @@
     >
       <div class="absolute inset-0 bg-[#08213D]/90"></div>
 
-      <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
+      <div class="relative z-10 mx-auto w-full max-w-[1584px] pt-[52px]">
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <h3 class="text-sm font-extrabold uppercase">Panorama Trekking</h3>
@@ -4564,8 +4662,8 @@
     </footer>
 
     <script src="./navigation.js"></script>
-    <script src="./practice.js?v=secondary-nav-9"></script>
-    <script src="./secondary-nav.js?v=secondary-nav-9"></script>
+    <script src="./practice.js?v=hero-mobile-arrows-1"></script>
+    <script src="./secondary-nav.js?v=secondary-nav-active-2"></script>
 
 
   </body>

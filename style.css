@@ -72,9 +72,14 @@ table {
   box-shadow: 0 28px 80px -52px rgba(8, 33, 61, 0.65);
 }
 
-.trek-hero-shell > #trekHeroImage {
+.trek-hero-image-stage {
   position: absolute;
   inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.trek-hero-image-stage > #trekHeroImage {
   height: 100%;
   width: 100%;
   border-radius: inherit;
@@ -82,16 +87,16 @@ table {
 
 .trek-hero-thumbnails {
   position: absolute;
-  right: 2rem;
-  top: 2rem;
+  right: 1.5rem;
+  top: 1.5rem;
   z-index: 10;
   display: flex;
-  gap: 0.85rem;
+  gap: 0.55rem;
   width: auto;
-  border-radius: 1.4rem;
+  border-radius: 1rem;
   background: rgba(255, 255, 255, 0.92);
-  padding: 0.75rem;
-  box-shadow: 0 24px 48px -34px rgba(8, 33, 61, 0.75);
+  padding: 0.5rem;
+  box-shadow: 0 18px 38px -30px rgba(8, 33, 61, 0.7);
   backdrop-filter: blur(14px);
 }
 
@@ -99,13 +104,13 @@ table {
   position: relative;
   display: block;
   aspect-ratio: 16 / 9;
-  width: 8.5rem;
+  width: 6.25rem;
   overflow: hidden;
-  border: 0.2rem solid transparent;
-  border-radius: 1rem;
+  border: 0.15rem solid transparent;
+  border-radius: 0.65rem;
   background: #e2e8f0;
   padding: 0;
-  box-shadow: 0 10px 20px -18px rgba(8, 33, 61, 0.8);
+  box-shadow: 0 8px 16px -14px rgba(8, 33, 61, 0.75);
 }
 
 .trek-hero-thumb.is-active {
@@ -134,10 +139,18 @@ table {
   font-weight: 900;
 }
 
+.trek-hero-mobile-slider {
+  display: contents;
+}
+
+.trek-hero-arrow {
+  display: none;
+}
+
 .trek-hero-cta {
   position: absolute;
   /* right: 2.4rem; */
-  bottom: -3rem;
+  bottom: -4rem;
   /* left: 2.4rem; */
   z-index: 10;
   width:100%;
@@ -161,6 +174,154 @@ table {
   gap: 1.25rem;
 }
 
+.trek-photo-lightbox {
+  color: #ffffff;
+}
+
+.trek-photo-lightbox-header {
+  position: absolute;
+  top: 2rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.trek-photo-lightbox-close {
+  display: inline-flex;
+  height: 3.2rem;
+  width: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.35rem;
+  background: #000000;
+  color: #ffffff;
+}
+
+.trek-photo-lightbox-zoom {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  background: #000000;
+}
+
+.trek-photo-lightbox-zoom button {
+  display: inline-flex;
+  height: 3.2rem;
+  width: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.trek-photo-lightbox-zoom button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #f59e0b;
+}
+
+.trek-photo-lightbox-copy h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.4vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.trek-photo-lightbox-copy p {
+  margin-top: 0.35rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.trek-photo-lightbox-body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) 6.5rem;
+  gap: clamp(1rem, 2vw, 2rem);
+  align-items: center;
+  padding: 5rem 1rem 2rem 4rem;
+}
+
+.trek-photo-lightbox-stage {
+  min-width: 0;
+  max-height: 70vh;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.trek-photo-lightbox-stage::-webkit-scrollbar {
+  display: none;
+}
+
+.trek-photo-lightbox-stage img {
+  display: block;
+  width: calc(100% * var(--lightbox-zoom, 1));
+  max-width: none;
+  max-height: calc(70vh * var(--lightbox-zoom, 1));
+  object-fit: contain;
+  transition:
+    width 0.18s ease,
+    max-height 0.18s ease;
+}
+
+.trek-photo-lightbox-stage figcaption {
+  margin-top: 0.75rem;
+  color: #f59e0b;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: right;
+}
+
+.trek-photo-lightbox-thumbs {
+  display: grid;
+  max-height: 76vh;
+  gap: 0.55rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.35rem;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  scrollbar-width: thin;
+}
+
+.trek-photo-lightbox-thumbs::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+.trek-photo-lightbox-thumbs::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.trek-photo-lightbox-thumbs button {
+  aspect-ratio: 1 / 1;
+  width: 5.75rem;
+  overflow: hidden;
+  border: 0.16rem solid transparent;
+  border-radius: 0.35rem;
+  background: #111827;
+  padding: 0;
+}
+
+.trek-photo-lightbox-thumbs button.active {
+  border-color: #f58220;
+}
+
+.trek-photo-lightbox-thumbs img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 1023px) {
   .trek-hero {
     padding-top: 1rem;
@@ -177,29 +338,53 @@ table {
     box-shadow: none;
   }
 
-  .trek-hero-shell > #trekHeroImage {
-    position: static;
+  .trek-hero-image-stage {
+    position: relative;
+    inset: auto;
+    overflow: visible;
+  }
+
+  .trek-hero-image-stage > #trekHeroImage {
     aspect-ratio: 1.42 / 1;
     height: auto;
     border-radius: 1.5rem;
   }
 
-  .trek-hero-thumbnails {
-    position: static;
-    display: flex;
-    width: 100%;
-    gap: 0.75rem;
-    overflow-x: auto;
-    border-radius: 0;
-    background: transparent;
-    padding: 0.85rem 0 0;
-    box-shadow: none;
+  .trek-hero-mobile-slider {
+    display: none;
+  }
+
+  .trek-hero-arrow {
+    position: absolute;
+    bottom: 0.85rem;
+    z-index: 12;
+    display: inline-flex;
+    height: 2.15rem;
+    width: 2.15rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #122b55;
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: 0 14px 30px -20px rgba(8, 33, 61, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .trek-hero-arrow-prev {
+    left: calc(50% - 2.45rem);
+  }
+
+  .trek-hero-arrow-next {
+    right: calc(50% - 2.45rem);
   }
 
   .trek-hero-thumb {
-    width: min(24vw, 12rem);
-    min-width: 6rem;
-    border-radius: 0.8rem;
+    width: min(21vw, 9rem);
+    min-width: 4.75rem;
+    border-radius: 0.6rem;
   }
 
   .trek-hero-thumb span {
@@ -223,7 +408,7 @@ table {
   }
 
   .trek-hero-price p:last-child {
-    font-size: clamp(3rem, 9vw, 4rem);
+    /* font-size: clamp(3rem, 9vw, 4rem); */
   }
 
   .trek-hero-actions {
@@ -234,36 +419,191 @@ table {
   .trek-hero-actions button {
     width: 100%;
   }
+
+  .trek-photo-lightbox-header {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "close copy"
+      "close zoom";
+    align-items: start;
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+  }
+
+  .trek-photo-lightbox-close {
+    grid-area: close;
+  }
+
+  .trek-photo-lightbox-copy {
+    grid-area: copy;
+  }
+
+  .trek-photo-lightbox-copy h2 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    line-height: 1.05;
+    text-align: left;
+  }
+
+  .trek-photo-lightbox-copy p {
+    font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+    text-align: left;
+  }
+
+  .trek-photo-lightbox-zoom {
+    grid-area: zoom;
+    width: max-content;
+  }
+
+  .trek-photo-lightbox-body {
+    grid-template-columns: 1fr;
+    padding: 13.5rem 0 1rem;
+  }
+
+  .trek-photo-lightbox-stage img {
+    max-height: 58vh;
+  }
+
+  .trek-photo-lightbox-stage figcaption {
+    text-align: left;
+  }
+
+  .trek-photo-lightbox-thumbs {
+    display: flex;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 0 0.25rem;
+  }
+
+  .trek-photo-lightbox-thumbs button {
+    width: 5.25rem;
+    min-width: 5.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .trek-photo-lightbox-header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "close copy zoom";
+    align-items: center;
+  }
+
+  .trek-photo-lightbox-copy h2,
+  .trek-photo-lightbox-copy p {
+    text-align: center;
+  }
+
+  .trek-photo-lightbox-body {
+    padding-top: 8rem;
+  }
+
+  .trek-photo-lightbox-stage {
+    max-height: 62vh;
+  }
+
+  .trek-photo-lightbox-stage img {
+    max-height: 62vh;
+  }
+}
+
+@media (max-width: 420px) {
+  .trek-photo-lightbox-header {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.75rem;
+  }
+
+  .trek-photo-lightbox-close,
+  .trek-photo-lightbox-zoom button {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+
+  .trek-photo-lightbox-copy h2 {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+
+  .trek-photo-lightbox-body {
+    padding-top: 13rem;
+  }
 }
 
 #secondaryTripNav {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   margin-left: 0;
-  z-index: 100;
+  z-index: 60;
   box-sizing: border-box;
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
   transition:
     opacity 0.2s ease,
     transform 0.2s ease,
     visibility 0.2s ease;
 }
 
+.trip-detail-page.is-swapped #secondaryTripNav {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 #secondaryTripNav > div {
   width: 100%;
-  max-width: none;
+  max-width: 1584px;
+  margin-inline: auto;
   /* padding-inline: clamp(1rem, 2.5vw, 2rem); */
+}
+
+@media (min-width: 1648px) {
+  #secondaryTripNav > div {
+    width: 1584px;
+  }
 }
 
 #secondaryTripNav nav {
   flex: 1 1 auto;
   min-width: 0;
+  scrollbar-width: none;
+}
+
+#secondaryTripNav nav::-webkit-scrollbar {
+  display: none;
+}
+
+#secondaryTripNav .secondary-nav-link {
+  position: relative;
+  border-radius: 8px;
+  color: #334155;
+  padding: 0.625rem 0.875rem;
+}
+
+#secondaryTripNav .secondary-nav-link i {
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+#secondaryTripNav .secondary-nav-link:hover,
+#secondaryTripNav .secondary-nav-link:hover i {
+  color: #f58220;
+}
+
+#secondaryTripNav .secondary-nav-link.active {
+  background: #f58220;
+  color: #ffffff;
+  box-shadow: 0 12px 24px -18px rgba(245, 130, 32, 0.85);
+}
+
+#secondaryTripNav .secondary-nav-link.active i {
+  color: #ffffff;
 }
 
 #secondaryTripNav .secondary-nav-book-now {
@@ -271,7 +611,38 @@ table {
 }
 
 .trip-detail-page #mainNavigation {
-  position: sticky;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  transform: translateY(0);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.trip-detail-page {
+  --sticky-nav-height: 5rem;
+}
+
+.trip-detail-page main {
+  padding-top: var(--sticky-nav-height, 0px);
+}
+
+.trip-overview-trigger-sentinel {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.trip-detail-page.is-swapped #mainNavigation {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
 .section-target,
@@ -513,6 +884,27 @@ footer h3 {
 @media (max-width: 1279px) {
   #secondaryTripNav .secondary-nav-book-now {
     display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #secondaryTripNav {
+    padding-inline: 0.75rem;
+  }
+
+  #secondaryTripNav > div {
+    gap: 0;
+  }
+
+  #secondaryTripNav nav {
+    gap: 0.5rem;
+    padding-right: 0;
+    scroll-padding-inline: 1rem;
+  }
+
+  #secondaryTripNav .secondary-nav-link {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -958,29 +1350,53 @@ footer h3 {
     box-shadow: none;
   }
 
-  .trek-hero-shell > #trekHeroImage {
-    position: static;
+  .trek-hero-image-stage {
+    position: relative;
+    inset: auto;
+    overflow: visible;
+  }
+
+  .trek-hero-image-stage > #trekHeroImage {
     aspect-ratio: 1.42 / 1;
     height: auto;
     border-radius: 1.5rem;
   }
 
-  .trek-hero-thumbnails {
-    position: static;
-    display: flex;
-    width: 100%;
-    gap: 0.75rem;
-    overflow-x: auto;
-    border-radius: 0;
-    background: transparent;
-    padding: 0.85rem 0 0;
-    box-shadow: none;
+  .trek-hero-mobile-slider {
+    display: none;
+  }
+
+  .trek-hero-arrow {
+    position: absolute;
+    bottom: 0.85rem;
+    z-index: 12;
+    display: inline-flex;
+    height: 2.15rem;
+    width: 2.15rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #122b55;
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: 0 14px 30px -20px rgba(8, 33, 61, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .trek-hero-arrow-prev {
+    left: calc(50% - 2.45rem);
+  }
+
+  .trek-hero-arrow-next {
+    right: calc(50% - 2.45rem);
   }
 
   .trek-hero-thumb {
-    width: min(24vw, 8rem);
-    min-width: 5.8rem;
-    border-radius: 0.8rem;
+    width: min(21vw, 7rem);
+    min-width: 4.75rem;
+    border-radius: 0.6rem;
   }
 
   .trek-hero-thumb span {
@@ -1004,7 +1420,7 @@ footer h3 {
   }
 
   .trek-hero-price p:last-child {
-    font-size: clamp(3rem, 14vw, 4rem);
+    /* font-size: clamp(3rem, 14vw, 4rem); */
   }
 
   .trek-hero-actions {
@@ -1225,5 +1641,60 @@ footer h3 {
 
   #teamProfileModal section {
     max-width: 44rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .trek-hero-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 1.8rem 1.6rem;
+  }
+
+  .trek-hero-price {
+    /* justify-content: flex-start;
+    width: 100%; */
+  }
+
+  .trek-hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .trek-hero-actions button {
+    width: 100%;
+    min-height: 4.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .trek-hero-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.55rem;
+    padding: 1.6rem 1.25rem;
+    text-align: start;
+  }
+
+  .trek-hero-price {
+    /* justify-content: center;
+    width: 100%; */
+  }
+
+  .trek-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    width: 100%;
+  }
+
+  .trek-hero-actions button {
+    width: 100%;
+    min-height: 4.25rem;
+    font-size: 1.05rem;
   }
 }

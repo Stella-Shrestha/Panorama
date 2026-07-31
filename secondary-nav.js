@@ -1,8 +1,9 @@
 function initSecondaryTripNav() {
   const mainNavigation = document.getElementById("mainNavigation");
   const secondaryTripNav = document.getElementById("secondaryTripNav");
+  const tripOverview = document.getElementById("trip-overview");
 
-  if (!secondaryTripNav) {
+  if (!mainNavigation || !secondaryTripNav || !tripOverview) {
     return;
   }
 
@@ -18,9 +19,17 @@ function initSecondaryTripNav() {
     })
     .filter(Boolean);
 
-  let primaryNavigationHeight = mainNavigation
-    ? mainNavigation.offsetHeight
-    : 0;
+  const triggerSentinel = document.createElement("span");
+  triggerSentinel.className = "trip-overview-trigger-sentinel";
+  triggerSentinel.setAttribute("aria-hidden", "true");
+  tripOverview.before(triggerSentinel);
+
+  let topObserver = null;
+  let sectionObserver = null;
+  const visibleSectionRatios = new Map();
+  let ticking = false;
+  let rebuildQueued = false;
+  let activeSectionId = "";
 
   function getScrollTop() {
     return (
@@ -31,50 +40,171 @@ function initSecondaryTripNav() {
     );
   }
 
-  function refreshOverviewTriggerTop() {
-    if (mainNavigation && mainNavigation.offsetHeight) {
-      primaryNavigationHeight = mainNavigation.offsetHeight;
+  function measureNavigation() {
+    const primaryHeight = mainNavigation.offsetHeight || 0;
+    const secondaryHeight = secondaryTripNav.offsetHeight || primaryHeight;
+    const activeHeight = Math.max(primaryHeight, secondaryHeight);
+
+    document.documentElement.style.setProperty(
+      "--sticky-nav-height",
+      activeHeight + "px",
+    );
+    document.documentElement.style.setProperty(
+      "--sticky-nav-trigger-offset",
+      primaryHeight + "px",
+    );
+  }
+
+  function setNavigationSwapped(shouldSwap) {
+    document.body.classList.toggle("is-swapped", shouldSwap);
+    mainNavigation.setAttribute("aria-hidden", shouldSwap ? "true" : "false");
+    secondaryTripNav.setAttribute("aria-hidden", shouldSwap ? "false" : "true");
+  }
+
+  function updateNavigationSwap() {
+    const primaryHeight = mainNavigation.offsetHeight || 0;
+    const triggerTop = triggerSentinel.getBoundingClientRect().top;
+
+    setNavigationSwapped(triggerTop <= primaryHeight);
+    ticking = false;
+  }
+
+  function requestNavigationUpdate() {
+    if (ticking) return;
+
+    ticking = true;
+    window.requestAnimationFrame(updateNavigationSwap);
+  }
+
+  function rebuildTopObserver() {
+    rebuildQueued = false;
+
+    if (topObserver) {
+      topObserver.disconnect();
     }
+
+    measureNavigation();
+
+    const primaryHeight = mainNavigation.offsetHeight || 0;
+
+    topObserver = new IntersectionObserver(
+      function () {
+        requestNavigationUpdate();
+      },
+      {
+        root: null,
+        rootMargin: "-" + primaryHeight + "px 0px 0px 0px",
+        threshold: 0,
+      },
+    );
+
+    topObserver.observe(triggerSentinel);
+    requestNavigationUpdate();
+  }
+
+  function rebuildSectionObserver() {
+    if (sectionObserver) {
+      sectionObserver.disconnect();
+    }
+
+    if (!linkedSections.length) return;
+
+    visibleSectionRatios.clear();
+
+    const navHeight =
+      secondaryTripNav.offsetHeight || mainNavigation.offsetHeight || 0;
+
+    function setMostVisibleSectionActive() {
+      let bestSection = null;
+      let bestRatio = 0;
+
+      visibleSectionRatios.forEach(function (ratio, section) {
+        if (ratio > bestRatio) {
+          bestRatio = ratio;
+          bestSection = section;
+        }
+      });
+
+      if (bestSection) {
+        setActiveSecondaryLink(bestSection.id);
+        return;
+      }
+
+      linkedSections.forEach(function (section) {
+        if (section.getBoundingClientRect().top <= navHeight + 48) {
+          bestSection = section;
+        }
+      });
+
+      if (bestSection) {
+        setActiveSecondaryLink(bestSection.id);
+      }
+    }
+
+    sectionObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            visibleSectionRatios.set(entry.target, entry.intersectionRatio);
+          } else {
+            visibleSectionRatios.delete(entry.target);
+          }
+        });
+
+        setMostVisibleSectionActive();
+      },
+      {
+        root: null,
+        rootMargin: "-" + (navHeight + 16) + "px 0px -45% 0px",
+        threshold: [0.12, 0.25, 0.5, 0.75],
+      },
+    );
+
+    linkedSections.forEach(function (section) {
+      sectionObserver.observe(section);
+    });
+  }
+
+  function requestObserverRebuild() {
+    if (rebuildQueued) return;
+
+    rebuildQueued = true;
+    window.requestAnimationFrame(function () {
+      rebuildTopObserver();
+      rebuildSectionObserver();
+    });
   }
 
   function setActiveSecondaryLink(targetId) {
+    if (activeSectionId === targetId) return;
+
+    activeSectionId = targetId;
+    let activeLink = null;
+
     secondaryNavLinks.forEach(function (link) {
       const isActive = link.getAttribute("href") === "#" + targetId;
 
       link.classList.toggle("active", isActive);
-      link.classList.toggle("border-transparent", isActive);
-      link.classList.toggle("border-white/10", !isActive);
-      link.classList.toggle("bg-[#F58220]", isActive);
-      link.classList.toggle("text-white", isActive);
-      link.classList.toggle("text-white/85", !isActive);
-      link.classList.toggle(
-        "shadow-[0_12px_24px_-18px_rgba(245,130,32,0.8)]",
-        isActive,
-      );
 
       if (isActive) {
+        activeLink = link;
         link.setAttribute("aria-current", "page");
       } else {
         link.removeAttribute("aria-current");
       }
     });
+
+    if (activeLink) {
+      activeLink.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
   }
 
-  function updateActiveSecondaryLink() {
-    if (!linkedSections.length) return;
-
-    const navHeight = secondaryTripNav.offsetHeight || 0;
-    const activationLine =
-      getScrollTop() + primaryNavigationHeight + navHeight + 40;
-    let activeSection = linkedSections[0];
-
-    linkedSections.forEach(function (section) {
-      if (section.offsetTop <= activationLine) {
-        activeSection = section;
-      }
-    });
-
-    setActiveSecondaryLink(activeSection.id);
+  function updateOnScroll() {
+    requestNavigationUpdate();
   }
 
   secondaryTripNav.addEventListener("click", function (event) {
@@ -90,23 +220,47 @@ function initSecondaryTripNav() {
       return;
     }
 
-    setActiveSecondaryLink(targetId);
+    const targetSection = document.getElementById(targetId);
+    event.preventDefault();
+
+    if (link.classList.contains("secondary-nav-link")) {
+      setActiveSecondaryLink(targetId);
+    }
+
+    const navHeight =
+      secondaryTripNav.offsetHeight || mainNavigation.offsetHeight || 0;
+    const targetTop =
+      targetSection.getBoundingClientRect().top + getScrollTop() - navHeight;
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: "smooth",
+    });
   });
 
-  window.addEventListener("scroll", updateActiveSecondaryLink, {
+  window.addEventListener("scroll", updateOnScroll, {
     passive: true,
   });
-  window.addEventListener("resize", function () {
-    refreshOverviewTriggerTop();
-    updateActiveSecondaryLink();
-  });
+  window.addEventListener("resize", requestObserverRebuild);
   window.addEventListener("load", function () {
-    refreshOverviewTriggerTop();
-    updateActiveSecondaryLink();
+    requestObserverRebuild();
+    window.setTimeout(requestObserverRebuild, 100);
   });
 
-  refreshOverviewTriggerTop();
-  updateActiveSecondaryLink();
+  if ("ResizeObserver" in window) {
+    const resizeObserver = new ResizeObserver(function () {
+      requestObserverRebuild();
+    });
+
+    resizeObserver.observe(document.body);
+    resizeObserver.observe(tripOverview.parentElement || tripOverview);
+  }
+
+  rebuildTopObserver();
+  rebuildSectionObserver();
+  if (linkedSections[0]) {
+    setActiveSecondaryLink(linkedSections[0].id);
+  }
 }
 
 if (document.readyState === "loading") {
