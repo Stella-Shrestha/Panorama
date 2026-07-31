@@ -1,43 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photo Gallery | Panorama Trekking</title>
+    <title>Book Three Passes Trek | Panorama Trekking</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Sans+3:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-
-      .gallery-filter[aria-selected="true"] {
-        border-color: #122b55;
-        background: #122b55;
-        color: #ffffff;
-      }
-    </style>
   </head>
 
-  <body class="bg-[#fcfcfc] text-slate-900">
-  <header>
-
+  <body
+    class="min-h-screen bg-[#FCFCFC] font-[Inter,sans-serif] text-[#122B55] antialiased"
+  >
+   
+    <header id="siteHeader">
+      
       <div class="hidden w-full bg-[#122B55] lg:block">
         <div
           class="mx-auto flex w-full max-w-[1584px] items-center justify-between px-5 py-2"
         >
-
-          <div class="flex items-center gap-6">
+          
+          <div class="flex items-center gap-4">
             <a
               href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal"
               target="_blank"
@@ -68,15 +60,13 @@
               href="mailto:info@panoramatrekking.com"
               class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
             >
-              <i
-                data-lucide="mail"
-                class="h-4 w-4 shrink-0 text-[#FAB331]"
-              ></i>
+              <i data-lucide="mail" class="h-4 w-4 shrink-0 text-[#FAB331]"></i>
 
               <span>info@panoramatrekking.com</span>
             </a>
           </div>
 
+          
           <div
             class="inline-flex items-center gap-3"
             aria-label="Language switcher"
@@ -90,10 +80,7 @@
               English
             </a>
 
-            <span
-              class="h-4 w-px bg-white/30"
-              aria-hidden="true"
-            ></span>
+            <span class="h-4 w-px bg-white/30" aria-hidden="true"></span>
 
             <a
               href="#"
@@ -106,27 +93,27 @@
         </div>
       </div>
     </header>
-   <nav
+
+     
+    <nav
+      id="mainNavigation"
       class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm"
       aria-label="Main navigation"
     >
       <div
-        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 py-3 lg:px-5 py-3"
+        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-4 px-5 py-3"
       >
-
-        <a
-          href="./index.html"
-          class="shrink-0"
-          aria-label="Panorama Trekking home"
-        >
-
+        
+        <a href="./index.html" class="shrink-0" aria-label="Panorama Trekking home">
+          
           <img
-            src="./Images/logo.png"
+            src="../Images/logo.png"
             alt="Panorama Trekking"
             class="h-auto w-32 object-contain lg:w-36"
           />
         </a>
 
+        
         <ul
           class="hidden flex-1 items-center justify-center gap-4 text-[14px] font-semibold text-slate-950 lg:flex xl:gap-9 xl:text-[15px]"
         >
@@ -201,6 +188,7 @@
             </div>
           </li>
 
+          
           <li class="relative">
             <button
               type="button"
@@ -223,31 +211,26 @@
               <div
                 class="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_24px_65px_-20px_rgba(15,23,42,0.35)]"
               >
-                <div class="grid grid-cols-3 gap-6">
-
+                <div class="grid grid-cols-3 gap-4">
+                  
                   <div>
                     <div
                       class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
                     >
                       <span
-                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                        class="flex h-6 w-6 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
                       >
-                        <i
-                          data-lucide="mountain"
-                          class="h-5 w-5"
-                        ></i>
+                        <i data-lucide="mountain" class="h-5 w-5"></i>
                       </span>
 
-                      <h3 class="font-bold text-[#122B55]">
-                        Everest Region
-                      </h3>
+                      <h3 class="font-bold text-[#122B55]">Everest Region</h3>
                     </div>
 
                     <ul class="space-y-1">
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Everest Base Camp Trek
                         </a>
@@ -256,7 +239,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Everest Gokyo Lake Trek
                         </a>
@@ -265,7 +248,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Three Passes Trek
                         </a>
@@ -274,7 +257,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Island Peak Climbing
                         </a>
@@ -282,29 +265,25 @@
                     </ul>
                   </div>
 
+                  
                   <div>
                     <div
                       class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
                     >
                       <span
-                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                        class="flex h-6 w-6 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
                       >
-                        <i
-                          data-lucide="map"
-                          class="h-5 w-5"
-                        ></i>
+                        <i data-lucide="map" class="h-5 w-5"></i>
                       </span>
 
-                      <h3 class="font-bold text-[#122B55]">
-                        Annapurna Region
-                      </h3>
+                      <h3 class="font-bold text-[#122B55]">Annapurna Region</h3>
                     </div>
 
                     <ul class="space-y-1">
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Annapurna Base Camp
                         </a>
@@ -313,7 +292,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Annapurna Circuit Trek
                         </a>
@@ -322,7 +301,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Mardi Himal Trek
                         </a>
@@ -331,7 +310,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Ghorepani Poon Hill
                         </a>
@@ -339,29 +318,25 @@
                     </ul>
                   </div>
 
+                  
                   <div>
                     <div
                       class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
                     >
                       <span
-                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                        class="flex h-6 w-6 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
                       >
-                        <i
-                          data-lucide="trees"
-                          class="h-5 w-5"
-                        ></i>
+                        <i data-lucide="trees" class="h-5 w-5"></i>
                       </span>
 
-                      <h3 class="font-bold text-[#122B55]">
-                        Langtang Region
-                      </h3>
+                      <h3 class="font-bold text-[#122B55]">Langtang Region</h3>
                     </div>
 
                     <ul class="space-y-1">
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Langtang Valley Trek
                         </a>
@@ -370,7 +345,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Gosaikunda Lake Trek
                         </a>
@@ -379,7 +354,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Tamang Heritage Trek
                         </a>
@@ -388,7 +363,7 @@
                       <li>
                         <a
                           href="#"
-                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 sm:text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                         >
                           Helambu Trek
                         </a>
@@ -416,16 +391,14 @@
                   >
                     View All Treks
 
-                    <i
-                      data-lucide="arrow-right"
-                      class="h-4 w-4"
-                    ></i>
+                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
                   </a>
                 </div>
               </div>
             </div>
           </li>
 
+          
           <li class="relative">
             <button
               type="button"
@@ -452,10 +425,7 @@
                   href="./nepal.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="mountain-snow"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="mountain-snow" class="h-4 w-4"></i>
 
                   Nepal
                 </a>
@@ -464,10 +434,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="landmark"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="landmark" class="h-4 w-4"></i>
 
                   Tibet
                 </a>
@@ -476,10 +443,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="trees"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="trees" class="h-4 w-4"></i>
 
                   Bhutan
                 </a>
@@ -488,10 +452,7 @@
                   href="#"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="map-pinned"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="map-pinned" class="h-4 w-4"></i>
 
                   India
                 </a>
@@ -508,6 +469,7 @@
             </a>
           </li>
 
+          
           <li class="relative">
             <button
               type="button"
@@ -534,10 +496,7 @@
                   href="./travel-insurance.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="shield-check"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="shield-check" class="h-4 w-4"></i>
 
                   Travel Insurance
                 </a>
@@ -546,10 +505,7 @@
                   href="./trekking-permit-fee.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="file-text"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="file-text" class="h-4 w-4"></i>
 
                   Trekking Permit & Fee
                 </a>
@@ -558,10 +514,7 @@
                   href="./visa-info.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="stamp"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="stamp" class="h-4 w-4"></i>
 
                   Visa Info
                 </a>
@@ -570,10 +523,7 @@
                   href="./foreign-embassies.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i
-                    data-lucide="landmark"
-                    class="h-4 w-4"
-                  ></i>
+                  <i data-lucide="landmark" class="h-4 w-4"></i>
 
                   Foreign Embassies in Nepal
                 </a>
@@ -593,6 +543,7 @@
           </li>
         </ul>
 
+        
         <a
           href="./index.html#quote"
           class="hidden shrink-0 rounded-lg bg-[#F58220] px-4 py-3 text-sm font-bold uppercase text-white shadow-sm transition-colors duration-300 hover:bg-[#d96b11] lg:inline-flex xl:px-7"
@@ -600,6 +551,7 @@
           Get a Quote
         </a>
 
+        
         <button
           id="mobileMenuButton"
           type="button"
@@ -608,14 +560,11 @@
           aria-expanded="false"
           aria-controls="mobileMenu"
         >
-          <i
-            id="mobileMenuIcon"
-            data-lucide="menu"
-            class="h-6 w-6"
-          ></i>
+          <i id="mobileMenuIcon" data-lucide="menu" class="h-6 w-6"></i>
         </button>
       </div>
 
+      
       <div
         id="mobileMenu"
         class="hidden max-h-[calc(100vh-76px)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden"
@@ -684,6 +633,7 @@
               </div>
             </li>
 
+            
             <li>
               <button
                 type="button"
@@ -746,10 +696,7 @@
                     <h3
                       class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
                     >
-                      <i
-                        data-lucide="map"
-                        class="h-4 w-4 text-[#F58220]"
-                      ></i>
+                      <i data-lucide="map" class="h-4 w-4 text-[#F58220]"></i>
 
                       Annapurna Region
                     </h3>
@@ -782,10 +729,7 @@
                     <h3
                       class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
                     >
-                      <i
-                        data-lucide="trees"
-                        class="h-4 w-4 text-[#F58220]"
-                      ></i>
+                      <i data-lucide="trees" class="h-4 w-4 text-[#F58220]"></i>
 
                       Langtang Region
                     </h3>
@@ -810,6 +754,7 @@
               </div>
             </li>
 
+            
             <li>
               <button
                 type="button"
@@ -872,6 +817,7 @@
               </a>
             </li>
 
+            
             <li>
               <button
                 type="button"
@@ -945,205 +891,506 @@
       </div>
     </nav>
 
-    <main>
-      <section class="bg-white">
-        <div
-          class="mx-auto grid w-full max-w-[1584px] gap-8 px-5 py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(360px,0.55fr)] lg:items-end lg:py-16"
-        >
-          <div>
-            <a
-              href="./index.html"
-              class="mb-7 inline-flex items-center gap-2 text-sm font-bold text-[#122B55] transition-colors hover:text-[#F58220]"
-            >
-              <i data-lucide="arrow-left" class="h-4 w-4"></i>
-              Back to Home
-            </a>
-
-            <p class="mb-2 text-sm font-bold uppercase text-[#F58220]">
-              Photo Gallery
+    <main class="px-5 py-8 lg:py-12">
+      <div class="mx-auto grid max-w-[1320px] gap-6 lg:grid-cols-[1fr_360px]">
+        <section>
+          <div class="mb-7">
+            <p class="text-xs font-black uppercase tracking-[0.22em] text-[#F58220]">
+              Finalize Your Expedition
             </p>
             <h1
-              class="max-w-3xl text-4xl font-extrabold leading-tight text-[#122B55] md:text-5xl"
+              class="mt-2 text-3xl font-black leading-tight text-[#122B55] sm:text-4xl"
             >
-              Trekking albums from Nepal's mountain regions
+              Traveler Details
             </h1>
+
           </div>
 
-          <p class="max-w-xl text-base font-medium leading-7 text-slate-600">
-            Browse each region as its own album, or keep View All selected to
-            scan the complete collection.
-          </p>
-        </div>
-      </section>
+          <form
+            id="bookingForm"
+            novalidate
+            class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7"
+          >
+            <section>
+              <div
+                class="mb-5 flex items-center justify-between border-b border-slate-200 pb-3"
+              >
+                <h2 class="text-xl font-black text-[#122B55]">
+                  Lead Explorer Details
+                </h2>
+                <i data-lucide="user-round" class="h-5 w-5 text-[#F58220]"></i>
+              </div>
 
-      <section class="border-y border-slate-200 bg-slate-50">
-        <div class="mx-auto w-full max-w-[1584px] px-5 py-5">
-          <div
-            id="galleryFilters"
-            class="flex gap-3 overflow-x-auto pb-1"
-            role="tablist"
-            aria-label="Gallery categories"
-          ></div>
-        </div>
-      </section>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block">
+                  <span class="text-xs font-bold text-slate-600">Full Name</span>
+                  <input
+                    type="text"
+                    required
+                    placeholder="John Doe"
+                    class="mt-2 h-12 w-full rounded-md border border-slate-300 px-4 text-sm font-semibold text-[#122B55] outline-none transition focus:border-[#F58220] focus:ring-4 focus:ring-[#F58220]/15"
+                  />
+                </label>
 
-      <section class="mx-auto w-full max-w-[1584px] px-5 py-10 lg:py-14">
-        <div
-          class="mb-7 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between"
-        >
-          <div>
-            <h2
-              id="galleryTitle"
-              class="text-2xl font-extrabold text-[#122B55]"
-            ></h2>
+                <label class="block">
+                  <span class="text-xs font-bold text-slate-600"
+                    >Email Address</span
+                  >
+                  <input
+                    type="email"
+                    required
+                    placeholder="john@expedition.com"
+                    class="mt-2 h-12 w-full rounded-md border border-slate-300 px-4 text-sm font-semibold text-[#122B55] outline-none transition focus:border-[#F58220] focus:ring-4 focus:ring-[#F58220]/15"
+                  />
+                </label>
+
+                <label class="block">
+                  <span class="text-xs font-bold text-slate-600"
+                    >Phone Number</span
+                  >
+                  <div class="mt-2 grid grid-cols-[82px_1fr]">
+                    <select
+                      class="h-12 rounded-l-md border border-r-0 border-slate-300 bg-slate-50 px-3 text-sm font-bold text-[#122B55] outline-none"
+                    >
+                      <option>+1</option>
+                      <option>+44</option>
+                      <option>+61</option>
+                      <option>+977</option>
+                    </select>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="123-456-7890"
+                      class="h-12 rounded-r-md border border-slate-300 px-4 text-sm font-semibold text-[#122B55] outline-none transition focus:border-[#F58220] focus:ring-4 focus:ring-[#F58220]/15"
+                    />
+                  </div>
+                </label>
+
+                <label class="block">
+                  <span class="text-xs font-bold text-slate-600"
+                    >Emergency Contact</span
+                  >
+                  <input
+                    type="text"
+                    placeholder="Name & Phone"
+                    class="mt-2 h-12 w-full rounded-md border border-slate-300 px-4 text-sm font-semibold text-[#122B55] outline-none transition focus:border-[#F58220] focus:ring-4 focus:ring-[#F58220]/15"
+                  />
+                </label>
+              </div>
+            </section>
+
+            <section class="mt-8">
+              <div
+                class="mb-5 flex items-center justify-between border-b border-slate-200 pb-3"
+              >
+                <h2 class="text-xl font-black text-[#122B55]">Group & Gear</h2>
+                <i data-lucide="backpack" class="h-5 w-5 text-[#F58220]"></i>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label class="block">
+                  <span class="text-xs font-bold text-slate-600"
+                    >Number of Trekkers</span
+                  >
+                  <div
+                    class="mt-2 grid h-12 grid-cols-[48px_1fr_48px] overflow-hidden rounded-md border border-slate-300"
+                  >
+                    <button
+                      type="button"
+                      data-traveler-change="-1"
+                      class="grid place-items-center bg-slate-50 text-[#122B55] transition hover:bg-[#F58220] hover:text-white"
+                    >
+                      <i data-lucide="minus" class="h-4 w-4"></i>
+                    </button>
+                    <span
+                      id="travelerCount"
+                      class="grid place-items-center text-sm font-black text-[#122B55]"
+                      >1</span
+                    >
+                    <button
+                      type="button"
+                      data-traveler-change="1"
+                      class="grid place-items-center bg-slate-50 text-[#122B55] transition hover:bg-[#F58220] hover:text-white"
+                    >
+                      <i data-lucide="plus" class="h-4 w-4"></i>
+                    </button>
+                  </div>
+                </label>
+
+                <label class="block">
+                  <span class="text-xs font-bold text-slate-600"
+                    >Select Country</span
+                  >
+                  <select
+                    id="countrySelect"
+                    required
+                    class="mt-2 h-12 w-full rounded-md border border-slate-300 bg-white px-4 text-sm font-semibold text-[#122B55] outline-none transition focus:border-[#F58220] focus:ring-4 focus:ring-[#F58220]/15"
+                  >
+                    <option value="">Select country</option>
+                    <option>Australia</option>
+                    <option>Canada</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                    <option>India</option>
+                    <option>Nepal</option>
+                    <option>United Kingdom</option>
+                    <option>United States</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="mt-4 block">
+                <span class="text-xs font-bold text-slate-600">Message</span>
+                <textarea
+                  id="bookingMessage"
+                  rows="5"
+                  placeholder="Tell us your preferred travel dates, questions, dietary needs, or anything we should know..."
+                  class="mt-2 w-full resize-y rounded-md border border-slate-300 px-4 py-3 text-sm font-semibold leading-6 text-[#122B55] outline-none transition focus:border-[#F58220] focus:ring-4 focus:ring-[#F58220]/15"
+                ></textarea>
+              </label>
+            </section>
+
+            <section class="mt-8">
+              <div
+                class="mb-5 flex items-center justify-between border-b border-slate-200 pb-3"
+              >
+                <h2 class="text-xl font-black text-[#122B55]">
+                  Payment Strategy
+                </h2>
+                <i
+                  data-lucide="credit-card"
+                  class="h-5 w-5 text-[#F58220]"
+                ></i>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label
+                  class="payment-option relative cursor-pointer rounded-lg border-2 border-[#F58220] bg-[#FFF7ED] p-5"
+                >
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="deposit"
+                    checked
+                    class="peer sr-only"
+                  />
+                  <span
+                    data-payment-indicator
+                    class="absolute right-4 top-4 h-4 w-4 rounded-full border-2 border-[#F58220] bg-white after:absolute after:left-1/2 after:top-1/2 after:h-1.5 after:w-1.5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-[#F58220] after:content-['']"
+                  ></span>
+                  <span class="text-xs font-black uppercase text-[#F58220]"
+                    >Option 01</span
+                  >
+                  <strong class="mt-3 block text-xl font-black text-[#122B55]"
+                    >25% Deposit</strong
+                  >
+                  <span class="mt-2 block text-sm font-semibold text-slate-600">
+                    Secure your spot today. Pay the remainder 60 days before
+                    departure.
+                  </span>
+                </label>
+
+                <label
+                  class="payment-option relative cursor-pointer rounded-lg border-2 border-slate-300 bg-white p-5 transition hover:border-[#122B55]/50"
+                >
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="full"
+                    class="peer sr-only"
+                  />
+                  <span
+                    data-payment-indicator
+                    class="absolute right-4 top-4 h-4 w-4 rounded-full border-2 border-slate-300 bg-white"
+                  ></span>
+                  <span class="text-xs font-black uppercase text-[#F58220]"
+                    >Option 02</span
+                  >
+                  <strong class="mt-3 block text-xl font-black text-[#122B55]"
+                    >Full Payment</strong
+                  >
+                  <span class="mt-2 block text-sm font-semibold text-slate-600">
+                    Pay in full now and receive a complimentary Kathmandu trip
+                    briefing.
+                  </span>
+                </label>
+              </div>
+            </section>
+
+            <button
+              type="submit"
+              class="mt-8 flex w-full items-center justify-center gap-3 rounded-lg bg-[#F58220] px-6 py-4 text-sm font-black text-white shadow-[0_18px_32px_-22px_rgba(245,130,32,0.9)] transition-colors hover:bg-[#d96b11]"
+            >
+              Proceed to Secure Payment
+              <i data-lucide="arrow-right" class="h-5 w-5"></i>
+            </button>
+
             <p
-              id="galleryCount"
-              class="mt-1 text-sm font-medium text-slate-600"
+              id="bookingStatus"
+              class="mt-4 hidden rounded-lg bg-[#F58220]/10 px-4 py-3 text-center text-xs font-bold text-[#122B55]"
             ></p>
-          </div>
-        </div>
 
-        <div
-          id="galleryGrid"
-          class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-          aria-live="polite"
-        ></div>
-      </section>
+            <p
+              class="mt-4 flex items-center justify-center gap-2 text-[11px] font-bold text-slate-500"
+            >
+              <i data-lucide="lock-keyhole" class="h-4 w-4"></i>
+              Encrypted 256-bit SSL secure checkout
+            </p>
+          </form>
+
+          
+        </section>
+
+        <aside class="space-y-6 lg:sticky lg:top-8 lg:self-start">
+          <section
+            class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_22px_65px_-38px_rgba(8,33,61,0.65)]"
+          >
+            <div class="relative aspect-[16/9] overflow-hidden">
+              <img
+                src="../Images/Home/everest.png"
+                alt="Everest Base Camp Trek"
+                class="h-full w-full object-cover"
+              />
+              <span
+                class="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-[#F58220] px-4 py-2 text-xs font-black text-white shadow-[0_14px_30px_-18px_rgba(245,130,32,0.9)]"
+              >
+                <i
+                  data-lucide="star"
+                  class="h-4 w-4 fill-current"
+                  aria-hidden="true"
+                ></i>
+                4.9 (124 Reviews)
+              </span>
+            </div>
+
+            <div class="p-6">
+              <h2 class="text-2xl font-black text-[#122B55]">
+                Everest Base Camp Trek
+              </h2>
+
+              <dl class="mt-6 space-y-3 pb-5">
+                <div class="flex items-center justify-between gap-4">
+                  <dt class="flex items-center gap-2 text-sm font-semibold">
+                    <i data-lucide="calendar-days" class="h-4 w-4"></i>
+                    Start Date
+                  </dt>
+                  <dd id="summaryStartDate" class="text-sm font-bold">
+                    Oct 15, 2026
+                  </dd>
+                </div>
+                <div class="flex items-center justify-between gap-4">
+                  <dt class="flex items-center gap-2 text-sm font-semibold">
+                    <i data-lucide="clock" class="h-4 w-4"></i>
+                    Duration
+                  </dt>
+                  <dd class="text-sm font-bold">14 Days</dd>
+                </div>
+                <div class="flex items-center justify-between gap-4">
+                  <dt class="flex items-center gap-2 text-sm font-semibold">
+                    <i data-lucide="users-round" class="h-4 w-4"></i>
+                    Trekkers
+                  </dt>
+                  <dd id="summaryTrekkers" class="text-sm font-bold">1 Adult</dd>
+                </div>
+              </dl>
+
+              <label class=" block">
+                <span class="text-xs font-bold text-slate-600"
+                  >Choose Start Date</span
+                >
+                <input
+                  id="startDateInput"
+                  type="date"
+                  value="2026-10-15"
+                  class="mt-2 h-12 w-full rounded-md border border-slate-300 px-4 text-sm font-bold text-[#122B55] outline-none transition focus:border-[#F58220] focus:ring-4 focus:ring-[#F58220]/15"
+                />
+              </label>
+
+              <dl class="mt-5 space-y-3 text-sm">
+                <div class="flex justify-between gap-4">
+                  <dt class="text-slate-500">Price Per Trekker</dt>
+                  <dd id="pricePerTrekker" class="font-bold">$1,950.00</dd>
+                </div>
+                <div class="flex justify-between gap-4">
+                  <dt class="text-slate-500">Base Expedition Cost</dt>
+                  <dd id="baseCost" class="font-bold">$1,950.00</dd>
+                </div>
+                <div class="flex items-center justify-between gap-4 pt-2">
+                  <dt class="text-xl font-semibold text-[#122B55]">Total Price</dt>
+                  <dd id="totalCost" class="text-2xl font-black text-[#122B55]">
+                    $1,950.00
+                  </dd>
+                </div>
+              </dl>
+
+              <div
+                class="mt-5 rounded-lg bg-[#FFF7ED] px-4 py-3 text-center text-sm font-black text-[#F58220]"
+              >
+                <span id="paymentDueLabel">25% Advance Deposit</span>
+                <span id="paymentDueCost" class="ml-2 text-xl">$487.50</span>
+              </div>
+
+              <div
+                class="mt-3 flex items-center justify-between gap-4 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm"
+              >
+                <span class="font-bold text-slate-500">Remaining Balance</span>
+                <span
+                  id="remainingBalance"
+                  class="text-lg font-black text-[#122B55]"
+                  >$1,462.50</span
+                >
+              </div>
+
+              <p
+                id="paymentNote"
+                class="mt-4 text-[11px] font-semibold text-slate-500"
+              >
+                Final balance is due 60 days before departure.
+              </p>
+
+              <a
+                href="practice.html"
+                class="mt-5 flex w-full items-center justify-center gap-3 rounded-lg border border-[#122B55]/15 bg-white px-5 py-3 text-sm font-black text-[#122B55] transition-colors hover:bg-[#122B55] hover:text-white"
+              >
+                <i data-lucide="x-circle" class="h-5 w-5"></i>
+                Cancel Booking
+              </a>
+            </div>
+          </section>
+
+          
+        </aside>
+      </div>
     </main>
       <footer
-        class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8"
-      >
+      class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8"
+    >
+      <div class="absolute inset-0 bg-[#08213D]/90"></div>
 
-        <div class="absolute inset-0 bg-[#08213D]/90"></div>
-
-        <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
-          <div
-            class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            <div>
-              <h3 class="text-sm font-extrabold uppercase">
-                Panorama Trekking
-              </h3>
-              <p class="mt-3 text-sm leading-6 text-white/80">
-                A local trekking company in Nepal specialized in Himalayan
-                adventures with professional Sherpa guides.
-              </p>
-              <div class="mt-4 flex gap-2">
-                <a
-                  href="#"
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-xs font-bold"
-                  aria-label="Facebook"
-                >
-                  f
-                </a>
-                <a
-                  href="#"
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#E4405F] text-xs font-bold"
-                  aria-label="Instagram"
-                >
-                  ig
-                </a>
-                <a
-                  href="#"
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#16A34A] text-xs font-bold"
-                  aria-label="Tripadvisor"
-                >
-                  ta
-                </a>
-                <a
-                  href="#"
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FF0000] text-xs font-bold"
-                  aria-label="YouTube"
-                >
-                  yt
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
-              <ul class="mt-3 space-y-1 text-sm text-white/80">
-                <li>
-                  <a href="./index.html" class="hover:text-[#F58220]">Home</a>
-                </li>
-                <li>
-                  <a href="./index.html#aboutus" class="hover:text-[#F58220]">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="./index.html#treks" class="hover:text-[#F58220]">
-                    All Treks
-                  </a>
-                </li>
-                <li>
-                  <a href="#destinations" class="hover:text-[#F58220]">
-                    Peak & Expenditions
-                  </a>
-                </li>
-                <li>
-                  <a href="#travel-guide" class="hover:text-[#F58220]">
-                    Travel Guide
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-sm font-extrabold uppercase">Popular Treks</h3>
-              <ul class="mt-3 space-y-1 text-sm text-white/80">
-                <li>Everest Base Camp Trek</li>
-                <li>Annapurna Circuit Trek</li>
-                <li>Manaslu Circuit Trek</li>
-                <li>Langtang Valley Trek</li>
-                <li>Upper Mustang Trek</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-sm font-extrabold uppercase">Contact Info</h3>
-              <ul class="mt-3 space-y-2 text-sm text-white/80">
-                <li class="flex gap-2">
-                  <i
-                    data-lucide="map-pin"
-                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
-                  ></i>
-                  Kapan, Kathmandu, Nepal
-                </li>
-                <li class="flex gap-2">
-                  <i
-                    data-lucide="phone"
-                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
-                  ></i>
-                  +977 9841373860 (24/7)
-                </li>
-                <li class="flex gap-2">
-                  <i
-                    data-lucide="mail"
-                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
-                  ></i>
-                  info@panoramatrekking.com
-                </li>
-                <li class="flex gap-2">
-                  <i
-                    data-lucide="globe"
-                    class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
-                  ></i>
-                  www.panoramatrekking.com
-                </li>
-              </ul>
+      <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Panorama Trekking</h3>
+            <p class="mt-3 text-sm leading-6 text-white/80">
+              A local trekking company in Nepal specialized in Himalayan
+              adventures with professional Sherpa guides.
+            </p>
+            <div class="mt-4 flex gap-2">
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2] text-xs font-bold"
+                aria-label="Facebook"
+              >
+                f
+              </a>
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#E4405F] text-xs font-bold"
+                aria-label="Instagram"
+              >
+                ig
+              </a>
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#16A34A] text-xs font-bold"
+                aria-label="Tripadvisor"
+              >
+                ta
+              </a>
+              <a
+                href="#"
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FF0000] text-xs font-bold"
+                aria-label="YouTube"
+              >
+                yt
+              </a>
             </div>
           </div>
 
-          <p
-            class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70"
-          >
-            © 2024 Panorama Trekking Nepal Pvt. Ltd. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
+            <ul class="mt-3 space-y-1 text-sm text-white/80">
+              <li>
+                <a href="./index.html" class="hover:text-[#F58220]">Home</a>
+              </li>
+              <li>
+                <a href="./index.html#aboutus" class="hover:text-[#F58220]">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="./index.html#treks" class="hover:text-[#F58220]">
+                  All Treks
+                </a>
+              </li>
+              <li>
+                <a href="#destinations" class="hover:text-[#F58220]">
+                  Peak & Expenditions
+                </a>
+              </li>
+              <li>
+                <a href="#travel-guide" class="hover:text-[#F58220]">
+                  Travel Guide
+                </a>
+              </li>
+            </ul>
+          </div>
 
-    <script src="./navigation.js"></script>
-    <script src="./gallery.js"></script>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Popular Treks</h3>
+            <ul class="mt-3 space-y-1 text-sm text-white/80">
+              <li>Everest Base Camp Trek</li>
+              <li>Annapurna Circuit Trek</li>
+              <li>Manaslu Circuit Trek</li>
+              <li>Langtang Valley Trek</li>
+              <li>Upper Mustang Trek</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Contact Info</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li class="flex gap-2">
+                <i
+                  data-lucide="map-pin"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i>
+                Kapan, Kathmandu, Nepal
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="phone"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i>
+                +977 9841373860 (24/7)
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="mail"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i>
+                info@panoramatrekking.com
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="globe"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i>
+                www.panoramatrekking.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p
+          class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70"
+        >
+          © 2024 Panorama Trekking Nepal Pvt. Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/booking.js"></script>
   </body>
 </html>

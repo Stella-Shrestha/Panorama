@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visa Info | Panorama Trekking</title>
+    <title>Contact Us | Panorama Trekking</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -80,7 +80,7 @@
       >
         <a href="./index.html" class="shrink-0" aria-label="Panorama Trekking home">
           <img
-            src="./Images/logo.png"
+            src="../Images/logo.png"
             alt="Panorama Trekking"
             class="h-auto w-32 object-contain lg:w-36"
           />
@@ -165,7 +165,7 @@
           <li class="relative">
             <button
               type="button"
-              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 text-[#F58220]"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
               aria-expanded="false"
               aria-controls="travelGuideDropdown"
             >
@@ -199,8 +199,7 @@
                 </a>
                 <a
                   href="./visa-info.html"
-                  class="flex items-center gap-3 rounded-lg bg-orange-50 px-3 py-3 text-sm font-medium text-[#F58220]"
-                  aria-current="page"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
                   <i data-lucide="stamp" class="h-4 w-4"></i>
                   Visa Info
@@ -226,7 +225,8 @@
           <li>
             <a
               href="./contact-us.html"
-              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+              class="inline-flex py-3 text-[#F58220]"
+              aria-current="page"
             >
               Contact Us
             </a>
@@ -332,7 +332,7 @@
             <li>
               <button
                 type="button"
-                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-[#F58220]"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
                 aria-expanded="false"
                 aria-controls="mobileTravelDropdown"
               >
@@ -363,8 +363,7 @@
                   </a>
                   <a
                     href="./visa-info.html"
-                    class="mobile-link block rounded-lg bg-white px-3 py-2.5 text-xs font-bold text-[#F58220]"
-                    aria-current="page"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
                   >
                     Visa Info
                   </a>
@@ -388,7 +387,8 @@
             <li>
               <a
                 href="./contact-us.html"
-                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                class="mobile-link block rounded-lg bg-slate-100 px-4 py-3 text-[#F58220]"
+                aria-current="page"
               >
                 Contact Us
               </a>
@@ -406,230 +406,149 @@
     </nav>
 
     <main>
-      <section class="px-5 py-14 lg:px-8 lg:py-24">
+      <section class="bg-white px-5 py-14 lg:px-8 lg:py-20">
         <div class="mx-auto max-w-[1584px]">
-          <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start xl:gap-12">
-            <div>
-              <div class="flex w-fit items-center gap-2 rounded-full bg-orange-50 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                <span class="h-2 w-2 rounded-full bg-[#F58220]"></span>
-                Immigration Guide
+          <p class="text-[11px] font-black uppercase tracking-[0.22em] text-[#007A1F]">
+            Premium Trekking Services
+          </p>
+          <h1 class="mt-4 max-w-3xl text-4xl font-black leading-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            Reach Out to the Summit
+          </h1>
+          <p class="mt-6 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
+            Our expert team of mountain guides and travel specialists is ready
+            to help you plan your next high-altitude adventure. Trust in our
+            decades of experience to ensure your safety and success.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-[#f5f7fa] px-5 py-12 lg:px-8 lg:py-16">
+        <div class="mx-auto grid max-w-[1584px] gap-8 lg:grid-cols-[minmax(0,1fr)_460px]">
+          <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:p-8 lg:p-10">
+            <h2 class="text-2xl font-black text-slate-950">Send us a Message</h2>
+            <form class="mt-8 grid gap-6" action="#" method="post">
+              <div class="grid gap-5 md:grid-cols-2">
+                <label class="block">
+                  <span class="text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Full Name</span>
+                  <input type="text" name="full-name" placeholder="John Doe" class="mt-2 h-12 w-full rounded-[4px] border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[#007A1F]" />
+                </label>
+                <label class="block">
+                  <span class="text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Email Address</span>
+                  <input type="email" name="email" placeholder="john@example.com" class="mt-2 h-12 w-full rounded-[4px] border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[#007A1F]" />
+                </label>
+                <label class="block">
+                  <span class="text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Phone Number</span>
+                  <input type="tel" name="phone" placeholder="+1 (555) 000-0000" class="mt-2 h-12 w-full rounded-[4px] border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[#007A1F]" />
+                </label>
+                <label class="block">
+                  <span class="text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Trip Interest</span>
+                  <select name="trip-interest" class="mt-2 h-12 w-full rounded-[4px] border border-slate-200 bg-white px-4 text-sm font-medium text-slate-700 outline-none transition-colors focus:border-[#007A1F]">
+                    <option>Everest Base Camp Trek</option>
+                    <option>Annapurna Circuit Trek</option>
+                    <option>Manaslu Circuit Trek</option>
+                    <option>Peak Climbing</option>
+                    <option>Custom Nepal Journey</option>
+                  </select>
+                </label>
               </div>
 
-              <div class="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end">
-                <h1 class="text-4xl font-black leading-[1.05] text-slate-950 sm:text-5xl lg:text-6xl">
-                  Nepalese Visa:
-                  <span class="block text-[#F58220]">Everything You Need to Know</span>
-                </h1>
-                <p class="border-l-2 border-[#F58220] pl-5 text-sm font-medium leading-7 text-slate-600 md:text-base">
-                  A precise guide to securing your entry for the ultimate
-                  Himalayan adventure with Panorama Trekking.
-                </p>
-              </div>
+              <label class="block">
+                <span class="text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Your Message</span>
+                <textarea name="message" rows="6" placeholder="Tell us about your mountaineering experience and what you hope to achieve..." class="mt-2 w-full resize-y rounded-[4px] border border-slate-200 bg-white px-4 py-4 text-sm font-medium text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-[#007A1F]"></textarea>
+              </label>
 
-              <div class="mt-10 grid gap-8">
-                <article class="relative pl-10">
-                  <div class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#122B55] text-sm font-black text-white">
-                    1
-                  </div>
-                  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                      Step One
-                    </p>
-                    <h2 class="mt-2 text-2xl font-black text-slate-950 md:text-3xl">
-                      Fill in the Arrival Card
-                    </h2>
-                    <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
-                      Complete your initial documentation through the official
-                      immigration portal or airport kiosks for faster processing.
-                    </p>
-                    <div class="mt-6 grid gap-4 border-t border-slate-100 pt-6 sm:grid-cols-2">
-                      <div class="flex items-start gap-3">
-                        <i data-lucide="monitor-check" class="mt-1 h-5 w-5 shrink-0 text-[#F58220]"></i>
-                        <div>
-                          <p class="text-sm font-black">Online or Kiosks</p>
-                          <p class="mt-1 text-xs font-medium text-slate-500">
-                            Available at the airport and official portal.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="flex items-start gap-3">
-                        <i data-lucide="calendar-check" class="mt-1 h-5 w-5 shrink-0 text-[#F58220]"></i>
-                        <div>
-                          <p class="text-sm font-black">2-Week Validity</p>
-                          <p class="mt-1 text-xs font-medium text-slate-500">
-                            Pre-applications are valid for 15 days.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <a
-                      href="https://nepaliport.immigration.gov.np/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#F58220] transition-colors hover:text-[#F58220]"
-                    >
-                      Official Application Portal
-                      <i data-lucide="arrow-right" class="h-4 w-4"></i>
-                    </a>
-                  </div>
-                </article>
+              <button type="submit" class="inline-flex w-full items-center justify-center gap-3 rounded-[4px] bg-[#007A1F] px-8 py-4 text-sm font-black text-white shadow-lg shadow-green-900/15 transition-colors hover:bg-[#006118] sm:w-fit">
+                Send Message
+                <i data-lucide="send" class="h-4 w-4"></i>
+              </button>
+            </form>
+          </article>
 
-                <article class="relative pl-10">
-                  <div class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#122B55] text-sm font-black text-white">
-                    2
-                  </div>
-                  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                      Step Two
-                    </p>
-                    <h2 class="mt-2 text-2xl font-black text-slate-950 md:text-3xl">
-                      Fee Settlement
-                    </h2>
-                    <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
-                      Transparent pricing for every journey length. Stays over
-                      30 days require the 90-day tourist visa option.
-                    </p>
-
-                    <div class="mt-6 overflow-hidden rounded-xl border border-slate-100">
-                      <div class="flex items-center justify-between gap-4 px-4 py-4 text-sm font-semibold">
-                        <span>15 Days Tourist Visa</span>
-                        <span class="font-black text-[#F58220]">$30 USD</span>
-                      </div>
-                      <div class="flex items-center justify-between gap-4 bg-orange-50 px-4 py-4 text-sm font-black">
-                        <span>30 Days Tourist Visa</span>
-                        <span class="text-[#F58220]">$50 USD</span>
-                      </div>
-                      <div class="flex items-center justify-between gap-4 px-4 py-4 text-sm font-semibold">
-                        <span>90 Days Tourist Visa</span>
-                        <span class="font-black text-[#F58220]">$125 USD</span>
-                      </div>
-                    </div>
-
-                    <div class="mt-6 flex gap-3 rounded-xl bg-slate-100 p-4 text-xs font-medium leading-6 text-slate-600">
-                      <i data-lucide="info" class="mt-0.5 h-5 w-5 shrink-0 text-[#F58220]"></i>
-                      <p>
-                        <span class="font-black text-slate-900">Accepted:</span>
-                        USD, EUR, GBP, AUD, CAD, HKD and JPY. Credit cards may
-                        be available at dedicated counters.
-                      </p>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="relative pl-10">
-                  <div class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#122B55] text-sm font-black text-white">
-                    3
-                  </div>
-                  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                      Step Three
-                    </p>
-                    <h2 class="mt-2 text-2xl font-black text-slate-950 md:text-3xl">
-                      Immigration Processing
-                    </h2>
-                    <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
-                      The final checkpoint. Keep all hard copies ready for
-                      inspection before heading to baggage and arrivals.
-                    </p>
-
-                    <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                      <div class="flex items-center gap-3 text-sm font-medium">
-                        <i data-lucide="circle-check" class="h-4 w-4 text-[#F58220]"></i>
-                        Online Form Receipt
-                      </div>
-                      <div class="flex items-center gap-3 text-sm font-medium">
-                        <i data-lucide="circle-check" class="h-4 w-4 text-[#F58220]"></i>
-                        Fee Payment Receipt
-                      </div>
-                      <div class="flex items-center gap-3 text-sm font-medium">
-                        <i data-lucide="circle-check" class="h-4 w-4 text-[#F58220]"></i>
-                        Passport with 6-month validity
-                      </div>
-                      <div class="flex items-center gap-3 text-sm font-medium">
-                        <i data-lucide="circle-check" class="h-4 w-4 text-[#F58220]"></i>
-                        Recent Passport Photo
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <aside class="grid gap-6 lg:sticky lg:top-28">
-              <div class="rounded-2xl bg-[#e6e8ec] p-6 shadow-sm">
-                <div class="flex items-center gap-3">
-                  <i data-lucide="scan-line" class="h-5 w-5 text-[#F58220]"></i>
-                  <h2 class="text-base font-black">Visa Extensions</h2>
-                </div>
-                <p class="mt-4 text-sm font-medium leading-7 text-slate-700">
-                  Need more time in the mountains? Extensions are handled at the
-                  Department of Immigration in Kathmandu.
-                </p>
-                <div class="mt-5 rounded-xl bg-white p-4">
-                  <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">
-                    Cost Per Day
-                  </p>
-                  <p class="mt-2 text-lg font-black text-[#F58220]">
-                    $3 USD
-                    <span class="text-xs font-medium text-slate-500">(Min. 15 days)</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="overflow-hidden rounded-2xl bg-white shadow-sm">
-                <div class="border-b border-slate-200 p-6">
-                  <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                    Primary Gateway
-                  </p>
-                  <h2 class="mt-2 text-2xl font-black text-[#122B55]">
-                    Tribhuvan International Airport
-                  </h2>
-                  <p class="mt-3 text-sm font-medium leading-7 text-slate-600">
-                    Visa-on-arrival counters are available at Kathmandu's main
-                    international airport.
-                  </p>
-                </div>
-                <div
-                  class="relative min-h-[310px] bg-cover bg-center p-6 text-white"
-                  style="background-image: url('./Images/Home/Background.png')"
-                >
-                  <div class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-[#08213D]/60 to-transparent"></div>
-                  <div class="relative flex h-full min-h-[260px] flex-col justify-end">
-                    <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">
-                      Quick Procedure
-                    </p>
-                    <ol class="mt-3 space-y-2 text-sm font-medium leading-6 text-white/90">
-                      <li>1. Fill in the arrival card.</li>
-                      <li>2. Pay the visa fee.</li>
-                      <li>3. Present documents for processing.</li>
-                    </ol>
-                  </div>
-                </div>
-              </div>
-
-              <div class="rounded-2xl bg-[#122B55] p-6 text-white">
-                <div class="flex items-start gap-4">
-                  <i data-lucide="message-circle-question" class="h-10 w-10 shrink-0 rounded-xl bg-[#F58220] p-2.5"></i>
-                  <div>
-                    <h2 class="text-lg font-black">Need help before arrival?</h2>
-                    <p class="mt-2 text-sm font-medium leading-7 text-white/75">
-                      Our team can help you prepare documents before your trek.
-                    </p>
-                  </div>
-                </div>
-                <a
-                  href="./contact-us.html"
-                  class="mt-5 inline-flex w-full justify-center rounded-[4px] bg-white px-5 py-3 text-xs font-bold uppercase text-[#122B55]"
-                >
-                  Contact Panorama
+          <aside class="space-y-6">
+            <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+              <h2 class="text-2xl font-black text-slate-950">Our Headquarters</h2>
+              <div class="mt-6 space-y-5">
+                <a href="mailto:info@panoramatrekking.com" class="flex gap-4">
+                  <span class="grid h-12 w-12 shrink-0 place-items-center rounded-[4px] bg-[#eef8f0] text-[#007A1F]"><i data-lucide="mail" class="h-5 w-5"></i></span>
+                  <span><span class="block text-[10px] font-black uppercase tracking-[0.12em] text-slate-400">Email Us</span><span class="mt-1 block text-sm font-black text-slate-900">info@panoramatrekking.com</span></span>
+                </a>
+                <a href="tel:+9779841373860" class="flex gap-4">
+                  <span class="grid h-12 w-12 shrink-0 place-items-center rounded-[4px] bg-[#eef8f0] text-[#007A1F]"><i data-lucide="phone" class="h-5 w-5"></i></span>
+                  <span><span class="block text-[10px] font-black uppercase tracking-[0.12em] text-slate-400">Direct Call</span><span class="mt-1 block text-sm font-black text-slate-900">+977 9841373860</span></span>
+                </a>
+                <a href="https://wa.me/9779841373860" target="_blank" rel="noopener noreferrer" class="flex gap-4">
+                  <span class="grid h-12 w-12 shrink-0 place-items-center rounded-[4px] bg-[#eef8f0] text-[#007A1F]"><i data-lucide="message-square" class="h-5 w-5"></i></span>
+                  <span><span class="block text-[10px] font-black uppercase tracking-[0.12em] text-slate-400">WhatsApp Support</span><span class="mt-1 block text-sm font-black text-slate-900">+977 9841373860</span></span>
+                </a>
+                <a href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal" target="_blank" rel="noopener noreferrer" class="flex gap-4">
+                  <span class="grid h-12 w-12 shrink-0 place-items-center rounded-[4px] bg-[#eef8f0] text-[#007A1F]"><i data-lucide="map-pin" class="h-5 w-5"></i></span>
+                  <span><span class="block text-[10px] font-black uppercase tracking-[0.12em] text-slate-400">Base Camp Office</span><span class="mt-1 block text-sm font-black leading-6 text-slate-900">Kapan, Kathmandu, Nepal</span></span>
                 </a>
               </div>
-            </aside>
+            </article>
+
+            <article class="rounded-xl border border-green-100 bg-[#e8fff0] p-6 shadow-sm">
+              <div class="flex gap-4">
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#007A1F] text-white shadow-lg shadow-green-900/20"><i data-lucide="badge-check" class="h-6 w-6"></i></span>
+                <div>
+                  <h2 class="text-lg font-black text-slate-950">Trusted by 5,000+ Explorers</h2>
+                  <p class="mt-2 text-sm font-medium leading-6 text-slate-600">
+                    Our safety protocols are certified by the International
+                    Mountaineering Association.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-12 lg:px-8 lg:py-16">
+        <div class="mx-auto max-w-[1584px]">
+          <h2 class="text-3xl font-black text-slate-950">Find Our Base Camp</h2>
+          <div class="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm">
+            <div class="grid lg:grid-cols-[minmax(0,1fr)_300px]">
+              <div class="relative min-h-[360px] overflow-hidden bg-[#dfe7ef]">
+                <div class="absolute inset-0 opacity-80">
+                  <div class="absolute left-[-10%] top-12 h-16 w-[125%] rotate-[-8deg] bg-white/70"></div>
+                  <div class="absolute left-[-10%] top-44 h-14 w-[130%] rotate-[12deg] bg-white/70"></div>
+                  <div class="absolute left-16 top-[-10%] h-[130%] w-14 rotate-[18deg] bg-white/60"></div>
+                  <div class="absolute right-24 top-[-10%] h-[130%] w-12 rotate-[-14deg] bg-white/60"></div>
+                  <div class="absolute left-0 right-0 top-1/2 h-px bg-slate-400/50"></div>
+                  <div class="absolute bottom-20 left-0 right-0 h-px bg-slate-400/50"></div>
+                </div>
+                <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(15,23,42,0.08)_1px,transparent_1px)] bg-[size:54px_54px]"></div>
+                <div class="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3 text-center">
+                  <a href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-slate-800 shadow-xl shadow-slate-500/20 transition-colors hover:text-[#007A1F]">
+                    <i data-lucide="navigation" class="h-4 w-4 text-[#007A1F]"></i>
+                    Get Directions to Kathmandu
+                  </a>
+                  <div class="inline-flex items-center gap-2 rounded-full bg-[#007A1F] px-5 py-3 text-sm font-black text-white shadow-xl shadow-green-900/20">
+                    <i data-lucide="map-pin" class="h-4 w-4"></i>
+                    Panorama HQ
+                  </div>
+                </div>
+              </div>
+
+              <aside class="bg-white p-6 md:p-8">
+                <h3 class="text-lg font-black text-slate-950">Our Location</h3>
+                <p class="mt-3 text-sm font-medium leading-6 text-slate-600">
+                  Kapan, Kathmandu, Nepal
+                </p>
+                <div class="mt-6 space-y-4 text-sm font-medium text-slate-600">
+                  <p class="flex gap-3"><i data-lucide="phone" class="h-5 w-5 shrink-0 text-[#007A1F]"></i>+977 9841373860</p>
+                  <p class="flex gap-3"><i data-lucide="mail" class="h-5 w-5 shrink-0 text-[#007A1F]"></i>info@panoramatrekking.com</p>
+                  <p class="flex gap-3"><i data-lucide="clock" class="h-5 w-5 shrink-0 text-[#007A1F]"></i>Mon-Sat, 8am-6pm</p>
+                </div>
+                <a href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex w-full justify-center rounded-[4px] border border-slate-200 px-5 py-3 text-sm font-black text-slate-700 transition-colors hover:border-[#007A1F] hover:text-[#007A1F]">
+                  Get Directions
+                </a>
+              </aside>
+            </div>
           </div>
         </div>
       </section>
     </main>
-
     <footer class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8">
       <div class="absolute inset-0 bg-[#08213D]/90"></div>
       <div class="relative z-10 mx-auto w-full max-w-[1400px] pt-[52px]">
@@ -674,6 +593,6 @@
       </div>
     </footer>
 
-    <script src="./navigation.js"></script>
+    <script src="../js/navigation.js"></script>
   </body>
 </html>
