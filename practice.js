@@ -518,42 +518,6 @@ document.addEventListener("DOMContentLoaded", function () {
     closeDesktopDropdowns();
   });
 
-  const mobileMenuButton = document.getElementById("mobileMenuButton");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const mobileMenuIcon = document.getElementById("mobileMenuIcon");
-
-  if (mobileMenuButton && mobileMenu && mobileMenuIcon) {
-    mobileMenuButton.addEventListener("click", function () {
-      const isOpen = !mobileMenu.classList.contains("hidden");
-
-      mobileMenu.classList.toggle("hidden");
-      mobileMenuButton.setAttribute("aria-expanded", String(!isOpen));
-      mobileMenuIcon.setAttribute("data-lucide", isOpen ? "menu" : "x");
-
-      renderIcons();
-    });
-  }
-
-  document
-    .querySelectorAll(".mobile-dropdown-button")
-    .forEach(function (button) {
-      button.addEventListener("click", function () {
-        const dropdown = document.getElementById(
-          button.getAttribute("aria-controls"),
-        );
-        const arrow = button.querySelector(".dropdown-arrow");
-        if (!dropdown) return;
-
-        const isOpen = !dropdown.classList.contains("hidden");
-        dropdown.classList.toggle("hidden", isOpen);
-        button.setAttribute("aria-expanded", String(!isOpen));
-
-        if (arrow) {
-          arrow.classList.toggle("rotate-180", !isOpen);
-        }
-      });
-    });
-
   function setAccordionOpen(item, isOpen) {
     const content = item.querySelector(".accordion-content");
     const arrow = item.querySelector(".accordion-arrow");

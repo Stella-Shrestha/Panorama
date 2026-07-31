@@ -31,15 +31,6 @@ function initSecondaryTripNav() {
   let rebuildQueued = false;
   let activeSectionId = "";
 
-  function getScrollTop() {
-    return (
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0
-    );
-  }
-
   function measureNavigation() {
     const primaryHeight = mainNavigation.offsetHeight || 0;
     const secondaryHeight = secondaryTripNav.offsetHeight || primaryHeight;
@@ -175,7 +166,7 @@ function initSecondaryTripNav() {
     });
   }
 
-  function setActiveSecondaryLink(targetId) {
+  function setActiveSecondaryLink(targetId, shouldRevealLink) {
     if (activeSectionId === targetId) return;
 
     activeSectionId = targetId;
@@ -194,7 +185,7 @@ function initSecondaryTripNav() {
       }
     });
 
-    if (activeLink) {
+    if (activeLink && shouldRevealLink !== false) {
       activeLink.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
@@ -220,22 +211,12 @@ function initSecondaryTripNav() {
       return;
     }
 
-    const targetSection = document.getElementById(targetId);
-    event.preventDefault();
+    setNavigationSwapped(true);
+    measureNavigation();
 
     if (link.classList.contains("secondary-nav-link")) {
-      setActiveSecondaryLink(targetId);
+      setActiveSecondaryLink(targetId, false);
     }
-
-    const navHeight =
-      secondaryTripNav.offsetHeight || mainNavigation.offsetHeight || 0;
-    const targetTop =
-      targetSection.getBoundingClientRect().top + getScrollTop() - navHeight;
-
-    window.scrollTo({
-      top: Math.max(0, targetTop),
-      behavior: "smooth",
-    });
   });
 
   window.addEventListener("scroll", updateOnScroll, {
