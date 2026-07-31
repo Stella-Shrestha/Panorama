@@ -850,10 +850,17 @@ main article {
 
 .team-filter-bar {
   align-items: center;
+  scrollbar-width: none;
+}
+
+.team-filter-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .team-filter-bar button {
+  flex: 0 0 auto;
   min-height: 2.75rem;
+  white-space: nowrap;
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
@@ -933,16 +940,8 @@ footer h3 {
     white-space: nowrap;
   }
 
-  .team-filter-bar {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    width: 100%;
-  }
-
   .team-filter-bar button {
-    width: 100%;
     padding-inline: 0.75rem;
-    white-space: nowrap;
   }
 
   main [class*="md:grid-cols-["],
@@ -988,7 +987,7 @@ footer h3 {
   }
 
   main > section:not(#secondaryTripNav) {
-    padding-block: clamp(2rem, 10vw, 4.5rem);
+    /* padding-block: clamp(2rem, 10vw, 4.5rem); */
   }
 
   main .section-target {
@@ -1234,10 +1233,6 @@ footer h3 {
 
   #reviews [aria-label="Review categories"] {
     grid-template-columns: 1fr;
-  }
-
-  .team-filter-bar {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .team-card .flex.items-start.justify-between,
