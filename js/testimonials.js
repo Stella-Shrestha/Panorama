@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Emilie Laurent",
       initials: "Em",
       meta: "France · October 2025",
-      image: "./Images/Home/everest.png",
+      image: "../Images/Home/everest.png",
       imagePosition: "center top",
       body: [
         "From the moment we arrived in Kathmandu, the organization was smooth and reassuring. The airport transfer, hotel arrangements and trek briefing were all handled professionally. The team answered every question clearly and helped us prepare before leaving for Lukla.",
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Thomas Bernard",
       initials: "Th",
       meta: "Belgium · April 2025",
-      image: "./Images/Home/annapurna.png",
+      image: "../Images/Home/annapurna.png",
       imagePosition: "center top",
       body: [
         "From our arrival in Kathmandu to the final day of the trek, every transfer, lodge and meal was carefully arranged. The changing scenery from green valleys to high mountain landscapes was unforgettable.",
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Isabelle Martin",
       initials: "Is",
       meta: "Switzerland · November 2025",
-      image: "./Images/Home/manaslu1.png",
+      image: "../Images/Home/manaslu1.png",
       imagePosition: "center top",
       body: [
         "Manaslu felt authentic, peaceful and far from crowded trails. The route passed through villages and valleys that felt deeply connected to local life.",
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Daniel Moreau",
       initials: "Da",
       meta: "Canada · October 2024",
-      image: "./Images/Home/Background.png",
+      image: "../Images/Home/Background.png",
       imagePosition: "center top",
       body: [
         "The Three Passes route was physically demanding, but our guide managed the pace and acclimatization perfectly. Every long day felt achievable because the plan was realistic.",
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Claire Dubois",
       initials: "Cl",
       meta: "France · March 2025",
-      image: "./Images/Home/mustang.png",
+      image: "../Images/Home/mustang.png",
       imagePosition: "center top",
       body: [
         "This was my first multi-day trek, and the team made everything feel simple and comfortable. I was nervous before arriving, but the preparation and briefing helped a lot.",
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Marco Rossi",
       initials: "Ma",
       meta: "Italy · May 2025",
-      image: "./Images/Home/manaslu.png",
+      image: "../Images/Home/manaslu.png",
       imagePosition: "center top",
       body: [
         "The Tsum Valley journey offered much more than beautiful scenery. We met local families, visited monasteries and learned about traditions along the route.",

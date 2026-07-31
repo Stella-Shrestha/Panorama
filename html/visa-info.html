@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foreign Embassies in Nepal | Panorama Trekking</title>
+    <title>Visa Info | Panorama Trekking</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -80,7 +80,7 @@
       >
         <a href="./index.html" class="shrink-0" aria-label="Panorama Trekking home">
           <img
-            src="./Images/logo.png"
+            src="../Images/logo.png"
             alt="Panorama Trekking"
             class="h-auto w-32 object-contain lg:w-36"
           />
@@ -206,15 +206,15 @@
                 </a>
                 <a
                   href="./visa-info.html"
-                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  class="flex items-center gap-3 rounded-lg bg-orange-50 px-3 py-3 text-sm font-medium text-[#F58220]"
+                  aria-current="page"
                 >
                   <i data-lucide="stamp" class="h-4 w-4"></i>
                   Visa Info
                 </a>
                 <a
                   href="./foreign-embassies.html"
-                  class="flex items-center gap-3 rounded-lg bg-orange-50 px-3 py-3 text-sm font-medium text-[#F58220]"
-                  aria-current="page"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
                   <i data-lucide="landmark" class="h-4 w-4"></i>
                   Foreign Embassies in Nepal
@@ -368,14 +368,14 @@
                   </a>
                   <a
                     href="./visa-info.html"
-                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    class="mobile-link block rounded-lg bg-white px-3 py-2.5 text-xs font-bold text-[#F58220]"
+                    aria-current="page"
                   >
                     Visa Info
                   </a>
                   <a
                     href="./foreign-embassies.html"
-                    class="mobile-link block rounded-lg bg-white px-3 py-2.5 text-xs font-bold text-[#F58220]"
-                    aria-current="page"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
                   >
                     Foreign Embassies in Nepal
                   </a>
@@ -403,198 +403,226 @@
     </nav>
 
     <main>
-      <section class="bg-white px-5 py-14 text-center lg:px-8 lg:py-20">
-        <div class="mx-auto max-w-3xl">
-          <p class="text-[11px] font-black uppercase tracking-[0.2em] text-[#F58220]">
-            Directory & Administrative Support
-          </p>
-          <h1 class="mt-3 text-4xl font-black leading-tight text-slate-950 md:text-5xl">
-            Foreign Embassies in Nepal
-          </h1>
-          <p class="mx-auto mt-5 max-w-2xl text-sm font-medium leading-7 text-slate-600 md:text-base">
-            Your essential guide to diplomatic missions and consular services in
-            Kathmandu. We provide up-to-date contact information to facilitate
-            smooth international travel and visa processes for our expedition
-            members.
-          </p>
-        </div>
-      </section>
-
-      <section class="border-y border-slate-200 bg-[#f3f5f8] px-5 py-6 lg:px-8">
-        <div class="mx-auto flex max-w-[1584px] flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <label class="sr-only" for="embassySearch">Search country or mission</label>
-          <input
-            id="embassySearch"
-            type="search"
-            placeholder="Search by country or mission..."
-            class="h-11 w-full border border-slate-200 bg-white px-5 text-sm font-medium text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-[#F58220] lg:max-w-md"
-          />
-          <div class="flex flex-wrap gap-2 text-xs font-black">
-            <button class="rounded-full bg-[#122B55] px-5 py-2 text-white">All Regions</button>
-            <button class="rounded-full border border-slate-200 bg-white px-5 py-2 text-slate-600">Asia</button>
-            <button class="rounded-full border border-slate-200 bg-white px-5 py-2 text-slate-600">Europe</button>
-            <button class="rounded-full border border-slate-200 bg-white px-5 py-2 text-slate-600">North America</button>
-            <button class="rounded-full border border-slate-200 bg-white px-5 py-2 text-slate-600">Oceania</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="px-5 py-10 lg:px-8 lg:py-14">
+      <section class="px-5 py-14 lg:px-8 lg:py-24">
         <div class="mx-auto max-w-[1584px]">
-          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <article class="rounded-xl bg-white p-7 shadow-sm">
-              <div class="flex items-start justify-between gap-4">
-                <h2 class="text-2xl font-black text-[#122B55]">Consulate of Canada</h2>
-                <i data-lucide="flag" class="h-5 w-5 text-[#F58220]"></i>
+          <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start xl:gap-12">
+            <div>
+              <div class="flex w-fit items-center gap-2 rounded-full bg-orange-50 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
+                <span class="h-2 w-2 rounded-full bg-[#F58220]"></span>
+                Immigration Guide
               </div>
-              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
-                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Lazimpat, Kathmandu</li>
-                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>4415389, 4415590, 4415611</li>
-                <li class="flex gap-3"><i data-lucide="mail" class="h-4 w-4 text-slate-400"></i>canadakat@mos.com.np</li>
-              </ul>
-              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
-                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Working Hours</p>
-                <p class="mt-1 text-sm font-black">Mon - Fri: 09:00 - 17:00</p>
-              </div>
-            </article>
 
-            <article class="rounded-xl bg-white p-7 shadow-sm">
-              <div class="flex items-start justify-between gap-4">
-                <h2 class="text-2xl font-black text-[#122B55]">Embassy of the USA</h2>
-                <i data-lucide="shield-check" class="h-5 w-5 text-[#F58220]"></i>
-              </div>
-              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
-                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Maharajgunj, Kathmandu</li>
-                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>4411179, 4413585, 4414000</li>
-                <li class="flex gap-3"><i data-lucide="printer" class="h-4 w-4 text-slate-400"></i>977-1-4419963</li>
-              </ul>
-              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
-                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Visa Section</p>
-                <p class="mt-1 text-sm font-black">Mon - Fri: 08:00 - 17:00</p>
-              </div>
-            </article>
-
-            <article class="rounded-xl bg-white p-7 shadow-sm">
-              <div class="flex items-start justify-between gap-4">
-                <h2 class="text-2xl font-black text-[#122B55]">Embassy of India</h2>
-                <i data-lucide="landmark" class="h-5 w-5 text-[#F58220]"></i>
-              </div>
-              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
-                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Lainchaur, Kathmandu</li>
-                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>4410900, 4414990, 4411699</li>
-                <li class="flex gap-3"><i data-lucide="mail" class="h-4 w-4 text-slate-400"></i>indiaemb@mos.com.np</li>
-              </ul>
-              <div class="mt-7 border-t border-slate-200 bg-orange-50 p-4">
-                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-[#F58220]">Hours</p>
-                <p class="mt-1 text-sm font-black">09:00-13:00, 14:00-17:30</p>
-              </div>
-            </article>
-
-            <article class="rounded-xl bg-white p-7 shadow-sm">
-              <div class="flex items-start justify-between gap-4">
-                <h2 class="text-2xl font-black text-[#122B55]">Embassy of Japan</h2>
-                <i data-lucide="circle-dot" class="h-5 w-5 text-[#F58220]"></i>
-              </div>
-              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
-                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Panipokhari, Kathmandu</li>
-                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>4410010, 4426680</li>
-                <li class="flex gap-3"><i data-lucide="printer" class="h-4 w-4 text-slate-400"></i>977-1-4414101</li>
-              </ul>
-              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
-                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Visa Section</p>
-                <p class="mt-1 text-sm font-black">Tue - Fri: 09:30 - 11:30</p>
-              </div>
-            </article>
-
-            <article class="rounded-xl bg-white p-7 shadow-sm">
-              <div class="flex items-start justify-between gap-4">
-                <h2 class="text-2xl font-black text-[#122B55]">PR of Bangladesh</h2>
-                <i data-lucide="building-2" class="h-5 w-5 text-[#F58220]"></i>
-              </div>
-              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
-                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Chakrapath, Kathmandu</li>
-                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>272843, 270438</li>
-                <li class="flex gap-3"><i data-lucide="briefcase" class="h-4 w-4 text-slate-400"></i>P.O. Box: 789</li>
-              </ul>
-              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
-                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Office Hours</p>
-                <p class="mt-1 text-sm font-black">Mon - Thu: 09:15 - 12:00</p>
-              </div>
-            </article>
-
-            <article class="rounded-xl bg-white p-7 shadow-sm">
-              <div class="flex items-start justify-between gap-4">
-                <h2 class="text-2xl font-black text-[#122B55]">Republic of Korea</h2>
-                <i data-lucide="globe-2" class="h-5 w-5 text-[#F58220]"></i>
-              </div>
-              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
-                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Tahachal, Kathmandu</li>
-                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>270172, 270417, 277319</li>
-                <li class="flex gap-3"><i data-lucide="mail" class="h-4 w-4 text-slate-400"></i>koreaemb@mos.com.np</li>
-              </ul>
-              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
-                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Working Hours</p>
-                <p class="mt-1 text-sm font-black">09:00 - 12:00, 14:00 - 17:00</p>
-              </div>
-            </article>
-          </div>
-
-          <section class="mt-12">
-            <div class="flex items-center gap-5">
-              <h2 class="shrink-0 text-2xl font-black text-slate-950 md:text-3xl">
-                Additional Consulates
-              </h2>
-              <div class="h-px flex-1 bg-slate-200"></div>
-            </div>
-            <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              <article class="bg-white p-6 shadow-sm">
-                <h3 class="text-sm font-black text-[#F58220]">Austria</h3>
-                <p class="mt-3 text-xs font-bold text-slate-700">Hattisar, Kathmandu</p>
-                <p class="mt-2 text-xs font-black">Tel: 4434981</p>
-              </article>
-              <article class="bg-white p-6 shadow-sm">
-                <h3 class="text-sm font-black text-[#F58220]">Brazil</h3>
-                <p class="mt-3 text-xs font-bold text-slate-700">Kathmandu</p>
-                <p class="mt-2 text-xs font-black">Tel: 527223</p>
-              </article>
-              <article class="bg-white p-6 shadow-sm">
-                <h3 class="text-sm font-black text-[#F58220]">Chile</h3>
-                <p class="mt-3 text-xs font-bold text-slate-700">Kupondole, Lalitpur</p>
-                <p class="mt-2 text-xs font-black">Tel: 221617</p>
-              </article>
-              <article class="bg-white p-6 shadow-sm">
-                <h3 class="text-sm font-black text-[#F58220]">Greece</h3>
-                <p class="mt-3 text-xs font-bold text-slate-700">Tripureshwor, Kathmandu</p>
-                <p class="mt-2 text-xs font-black">Tel: 220183</p>
-              </article>
-            </div>
-          </section>
-
-          <section class="mt-12 overflow-hidden rounded-xl bg-[#122B55] p-7 text-white md:p-10">
-            <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_240px] md:items-center">
-              <div>
-                <h2 class="text-2xl font-black md:text-3xl">
-                  Need help with your visa?
-                </h2>
-                <p class="mt-4 max-w-2xl text-sm font-medium leading-7 text-white/80">
-                  Our expert guides and administrative team assist with all
-                  documentation requirements for your expedition. Let us handle
-                  the complexities while you focus on the summit.
+              <div class="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end">
+                <h1 class="text-4xl font-black leading-[1.05] text-slate-950 sm:text-5xl lg:text-6xl">
+                  Nepalese Visa:
+                  <span class="block text-[#F58220]">Everything You Need to Know</span>
+                </h1>
+                <p class="border-l-2 border-[#F58220] pl-5 text-sm font-medium leading-7 text-slate-600 md:text-base">
+                  A precise guide to securing your entry for the ultimate
+                  Himalayan adventure with Panorama Trekking.
                 </p>
+              </div>
+
+              <div class="mt-10 grid gap-8">
+                <article class="relative pl-10">
+                  <div class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#122B55] text-sm font-black text-white">
+                    1
+                  </div>
+                  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
+                      Step One
+                    </p>
+                    <h2 class="mt-2 text-2xl font-black text-slate-950 md:text-3xl">
+                      Fill in the Arrival Card
+                    </h2>
+                    <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
+                      Complete your initial documentation through the official
+                      immigration portal or airport kiosks for faster processing.
+                    </p>
+                    <div class="mt-6 grid gap-4 border-t border-slate-100 pt-6 sm:grid-cols-2">
+                      <div class="flex items-start gap-3">
+                        <i data-lucide="monitor-check" class="mt-1 h-5 w-5 shrink-0 text-[#F58220]"></i>
+                        <div>
+                          <p class="text-sm font-black">Online or Kiosks</p>
+                          <p class="mt-1 text-xs font-medium text-slate-500">
+                            Available at the airport and official portal.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-3">
+                        <i data-lucide="calendar-check" class="mt-1 h-5 w-5 shrink-0 text-[#F58220]"></i>
+                        <div>
+                          <p class="text-sm font-black">2-Week Validity</p>
+                          <p class="mt-1 text-xs font-medium text-slate-500">
+                            Pre-applications are valid for 15 days.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      href="https://nepaliport.immigration.gov.np/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#F58220] transition-colors hover:text-[#F58220]"
+                    >
+                      Official Application Portal
+                      <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                    </a>
+                  </div>
+                </article>
+
+                <article class="relative pl-10">
+                  <div class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#122B55] text-sm font-black text-white">
+                    2
+                  </div>
+                  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
+                      Step Two
+                    </p>
+                    <h2 class="mt-2 text-2xl font-black text-slate-950 md:text-3xl">
+                      Fee Settlement
+                    </h2>
+                    <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
+                      Transparent pricing for every journey length. Stays over
+                      30 days require the 90-day tourist visa option.
+                    </p>
+
+                    <div class="mt-6 overflow-hidden rounded-xl border border-slate-100">
+                      <div class="flex items-center justify-between gap-4 px-4 py-4 text-sm font-semibold">
+                        <span>15 Days Tourist Visa</span>
+                        <span class="font-black text-[#F58220]">$30 USD</span>
+                      </div>
+                      <div class="flex items-center justify-between gap-4 bg-orange-50 px-4 py-4 text-sm font-black">
+                        <span>30 Days Tourist Visa</span>
+                        <span class="text-[#F58220]">$50 USD</span>
+                      </div>
+                      <div class="flex items-center justify-between gap-4 px-4 py-4 text-sm font-semibold">
+                        <span>90 Days Tourist Visa</span>
+                        <span class="font-black text-[#F58220]">$125 USD</span>
+                      </div>
+                    </div>
+
+                    <div class="mt-6 flex gap-3 rounded-xl bg-slate-100 p-4 text-xs font-medium leading-6 text-slate-600">
+                      <i data-lucide="info" class="mt-0.5 h-5 w-5 shrink-0 text-[#F58220]"></i>
+                      <p>
+                        <span class="font-black text-slate-900">Accepted:</span>
+                        USD, EUR, GBP, AUD, CAD, HKD and JPY. Credit cards may
+                        be available at dedicated counters.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="relative pl-10">
+                  <div class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-[#122B55] text-sm font-black text-white">
+                    3
+                  </div>
+                  <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
+                      Step Three
+                    </p>
+                    <h2 class="mt-2 text-2xl font-black text-slate-950 md:text-3xl">
+                      Immigration Processing
+                    </h2>
+                    <p class="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
+                      The final checkpoint. Keep all hard copies ready for
+                      inspection before heading to baggage and arrivals.
+                    </p>
+
+                    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                      <div class="flex items-center gap-3 text-sm font-medium">
+                        <i data-lucide="circle-check" class="h-4 w-4 text-[#F58220]"></i>
+                        Online Form Receipt
+                      </div>
+                      <div class="flex items-center gap-3 text-sm font-medium">
+                        <i data-lucide="circle-check" class="h-4 w-4 text-[#F58220]"></i>
+                        Fee Payment Receipt
+                      </div>
+                      <div class="flex items-center gap-3 text-sm font-medium">
+                        <i data-lucide="circle-check" class="h-4 w-4 text-[#F58220]"></i>
+                        Passport with 6-month validity
+                      </div>
+                      <div class="flex items-center gap-3 text-sm font-medium">
+                        <i data-lucide="circle-check" class="h-4 w-4 text-[#F58220]"></i>
+                        Recent Passport Photo
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <aside class="grid gap-6 lg:sticky lg:top-28">
+              <div class="rounded-2xl bg-[#e6e8ec] p-6 shadow-sm">
+                <div class="flex items-center gap-3">
+                  <i data-lucide="scan-line" class="h-5 w-5 text-[#F58220]"></i>
+                  <h2 class="text-base font-black">Visa Extensions</h2>
+                </div>
+                <p class="mt-4 text-sm font-medium leading-7 text-slate-700">
+                  Need more time in the mountains? Extensions are handled at the
+                  Department of Immigration in Kathmandu.
+                </p>
+                <div class="mt-5 rounded-xl bg-white p-4">
+                  <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">
+                    Cost Per Day
+                  </p>
+                  <p class="mt-2 text-lg font-black text-[#F58220]">
+                    $3 USD
+                    <span class="text-xs font-medium text-slate-500">(Min. 15 days)</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="overflow-hidden rounded-2xl bg-white shadow-sm">
+                <div class="border-b border-slate-200 p-6">
+                  <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
+                    Primary Gateway
+                  </p>
+                  <h2 class="mt-2 text-2xl font-black text-[#122B55]">
+                    Tribhuvan International Airport
+                  </h2>
+                  <p class="mt-3 text-sm font-medium leading-7 text-slate-600">
+                    Visa-on-arrival counters are available at Kathmandu's main
+                    international airport.
+                  </p>
+                </div>
+                <div
+                  class="relative min-h-[310px] bg-cover bg-center p-6 text-white"
+                  style="background-image: url('../Images/Home/Background.png')"
+                >
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-[#08213D]/60 to-transparent"></div>
+                  <div class="relative flex h-full min-h-[260px] flex-col justify-end">
+                    <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">
+                      Quick Procedure
+                    </p>
+                    <ol class="mt-3 space-y-2 text-sm font-medium leading-6 text-white/90">
+                      <li>1. Fill in the arrival card.</li>
+                      <li>2. Pay the visa fee.</li>
+                      <li>3. Present documents for processing.</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl bg-[#122B55] p-6 text-white">
+                <div class="flex items-start gap-4">
+                  <i data-lucide="message-circle-question" class="h-10 w-10 shrink-0 rounded-xl bg-[#F58220] p-2.5"></i>
+                  <div>
+                    <h2 class="text-lg font-black">Need help before arrival?</h2>
+                    <p class="mt-2 text-sm font-medium leading-7 text-white/75">
+                      Our team can help you prepare documents before your trek.
+                    </p>
+                  </div>
+                </div>
                 <a
                   href="./contact-us.html"
-                  class="mt-7 inline-flex items-center gap-2 rounded-[4px] bg-[#F58220] px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#122B55]"
+                  class="mt-5 inline-flex w-full justify-center rounded-[4px] bg-white px-5 py-3 text-xs font-bold uppercase text-[#122B55]"
                 >
-                  Visa Support Services
-                  <i data-lucide="clipboard-list" class="h-4 w-4"></i>
+                  Contact Panorama
                 </a>
               </div>
-              <div class="relative mx-auto flex h-44 w-44 items-center justify-center rounded-full bg-white/15 md:h-56 md:w-56">
-                <div class="absolute inset-6 rounded-full bg-white/10"></div>
-                <i data-lucide="headphones" class="relative h-16 w-16 text-white"></i>
-              </div>
-            </div>
-          </section>
+            </aside>
+          </div>
         </div>
       </section>
     </main>
@@ -643,6 +671,6 @@
       </div>
     </footer>
 
-    <script src="./navigation.js?v=mobile-menu-1"></script>
+    <script src="../js/navigation.js?v=mobile-menu-1"></script>
   </body>
 </html>

@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trekking Permit & Fee | Panorama Trekking</title>
+    <title>Foreign Embassies in Nepal | Panorama Trekking</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -80,7 +80,7 @@
       >
         <a href="./index.html" class="shrink-0" aria-label="Panorama Trekking home">
           <img
-            src="./Images/logo.png"
+            src="../Images/logo.png"
             alt="Panorama Trekking"
             class="h-auto w-32 object-contain lg:w-36"
           />
@@ -199,8 +199,7 @@
                 </a>
                 <a
                   href="./trekking-permit-fee.html"
-                  class="flex items-center gap-3 rounded-lg bg-orange-50 px-3 py-3 text-sm font-medium text-[#F58220]"
-                  aria-current="page"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
                   <i data-lucide="file-text" class="h-4 w-4"></i>
                   Trekking Permit & Fee
@@ -214,7 +213,8 @@
                 </a>
                 <a
                   href="./foreign-embassies.html"
-                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  class="flex items-center gap-3 rounded-lg bg-orange-50 px-3 py-3 text-sm font-medium text-[#F58220]"
+                  aria-current="page"
                 >
                   <i data-lucide="landmark" class="h-4 w-4"></i>
                   Foreign Embassies in Nepal
@@ -362,8 +362,7 @@
                   </a>
                   <a
                     href="./trekking-permit-fee.html"
-                    class="mobile-link block rounded-lg bg-white px-3 py-2.5 text-xs font-bold text-[#F58220]"
-                    aria-current="page"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
                   >
                     Trekking Permit & Fee
                   </a>
@@ -375,7 +374,8 @@
                   </a>
                   <a
                     href="./foreign-embassies.html"
-                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    class="mobile-link block rounded-lg bg-white px-3 py-2.5 text-xs font-bold text-[#F58220]"
+                    aria-current="page"
                   >
                     Foreign Embassies in Nepal
                   </a>
@@ -403,238 +403,198 @@
     </nav>
 
     <main>
-      <section class="px-5 py-14 lg:px-8 lg:py-24">
-        <div class="mx-auto max-w-[1584px]">
-          <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:items-start xl:gap-12">
-            <div>
-              <div class="flex w-fit items-center gap-2 rounded-full bg-orange-50 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                <span class="h-2 w-2 rounded-full bg-[#F58220]"></span>
-                Logistics & Compliance
-              </div>
-              <h1 class="mt-5 text-4xl font-black leading-[1.08] text-slate-950 sm:text-5xl lg:text-6xl">
-                Trekking & Expedition Permit & Fee
-              </h1>
-              <p class="mt-6 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
-                Comprehensive royalty schedules and permit guidance for
-                high-altitude peaks. Panorama helps keep administrative
-                prerequisites organized for your technical ascent.
-              </p>
-            </div>
+      <section class="bg-white px-5 py-14 text-center lg:px-8 lg:py-20">
+        <div class="mx-auto max-w-3xl">
+          <p class="text-[11px] font-black uppercase tracking-[0.2em] text-[#F58220]">
+            Directory & Administrative Support
+          </p>
+          <h1 class="mt-3 text-4xl font-black leading-tight text-slate-950 md:text-5xl">
+            Foreign Embassies in Nepal
+          </h1>
+          <p class="mx-auto mt-5 max-w-2xl text-sm font-medium leading-7 text-slate-600 md:text-base">
+            Your essential guide to diplomatic missions and consular services in
+            Kathmandu. We provide up-to-date contact information to facilitate
+            smooth international travel and visa processes for our expedition
+            members.
+          </p>
+        </div>
+      </section>
 
-            <aside class="rounded-2xl bg-[#e6e8ec] p-6 shadow-sm">
-              <div class="flex items-start gap-4">
-                <i data-lucide="info" class="h-8 w-8 shrink-0 rounded-xl bg-white p-2 text-[#F58220]"></i>
-                <div>
-                  <h2 class="text-base font-black">Official Fee Schedule</h2>
-                  <p class="mt-2 text-sm font-medium leading-7 text-slate-700">
-                    Rates may be adjusted by local authorities. Final permit
-                    totals are confirmed during the expedition planning stage.
-                  </p>
-                </div>
+      <section class="border-y border-slate-200 bg-[#f3f5f8] px-5 py-6 lg:px-8">
+        <div class="mx-auto flex max-w-[1584px] flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <label class="sr-only" for="embassySearch">Search country or mission</label>
+          <input
+            id="embassySearch"
+            type="search"
+            placeholder="Search by country or mission..."
+            class="h-11 w-full border border-slate-200 bg-white px-5 text-sm font-medium text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-[#F58220] lg:max-w-md"
+          />
+          <div class="flex flex-wrap gap-2 text-xs font-black">
+            <button class="rounded-full bg-[#122B55] px-5 py-2 text-white">All Regions</button>
+            <button class="rounded-full border border-slate-200 bg-white px-5 py-2 text-slate-600">Asia</button>
+            <button class="rounded-full border border-slate-200 bg-white px-5 py-2 text-slate-600">Europe</button>
+            <button class="rounded-full border border-slate-200 bg-white px-5 py-2 text-slate-600">North America</button>
+            <button class="rounded-full border border-slate-200 bg-white px-5 py-2 text-slate-600">Oceania</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-5 py-10 lg:px-8 lg:py-14">
+        <div class="mx-auto max-w-[1584px]">
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="rounded-xl bg-white p-7 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <h2 class="text-2xl font-black text-[#122B55]">Consulate of Canada</h2>
+                <i data-lucide="flag" class="h-5 w-5 text-[#F58220]"></i>
               </div>
-            </aside>
+              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
+                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Lazimpat, Kathmandu</li>
+                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>4415389, 4415590, 4415611</li>
+                <li class="flex gap-3"><i data-lucide="mail" class="h-4 w-4 text-slate-400"></i>canadakat@mos.com.np</li>
+              </ul>
+              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Working Hours</p>
+                <p class="mt-1 text-sm font-black">Mon - Fri: 09:00 - 17:00</p>
+              </div>
+            </article>
+
+            <article class="rounded-xl bg-white p-7 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <h2 class="text-2xl font-black text-[#122B55]">Embassy of the USA</h2>
+                <i data-lucide="shield-check" class="h-5 w-5 text-[#F58220]"></i>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
+                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Maharajgunj, Kathmandu</li>
+                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>4411179, 4413585, 4414000</li>
+                <li class="flex gap-3"><i data-lucide="printer" class="h-4 w-4 text-slate-400"></i>977-1-4419963</li>
+              </ul>
+              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Visa Section</p>
+                <p class="mt-1 text-sm font-black">Mon - Fri: 08:00 - 17:00</p>
+              </div>
+            </article>
+
+            <article class="rounded-xl bg-white p-7 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <h2 class="text-2xl font-black text-[#122B55]">Embassy of India</h2>
+                <i data-lucide="landmark" class="h-5 w-5 text-[#F58220]"></i>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
+                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Lainchaur, Kathmandu</li>
+                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>4410900, 4414990, 4411699</li>
+                <li class="flex gap-3"><i data-lucide="mail" class="h-4 w-4 text-slate-400"></i>indiaemb@mos.com.np</li>
+              </ul>
+              <div class="mt-7 border-t border-slate-200 bg-orange-50 p-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-[#F58220]">Hours</p>
+                <p class="mt-1 text-sm font-black">09:00-13:00, 14:00-17:30</p>
+              </div>
+            </article>
+
+            <article class="rounded-xl bg-white p-7 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <h2 class="text-2xl font-black text-[#122B55]">Embassy of Japan</h2>
+                <i data-lucide="circle-dot" class="h-5 w-5 text-[#F58220]"></i>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
+                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Panipokhari, Kathmandu</li>
+                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>4410010, 4426680</li>
+                <li class="flex gap-3"><i data-lucide="printer" class="h-4 w-4 text-slate-400"></i>977-1-4414101</li>
+              </ul>
+              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Visa Section</p>
+                <p class="mt-1 text-sm font-black">Tue - Fri: 09:30 - 11:30</p>
+              </div>
+            </article>
+
+            <article class="rounded-xl bg-white p-7 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <h2 class="text-2xl font-black text-[#122B55]">PR of Bangladesh</h2>
+                <i data-lucide="building-2" class="h-5 w-5 text-[#F58220]"></i>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
+                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Chakrapath, Kathmandu</li>
+                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>272843, 270438</li>
+                <li class="flex gap-3"><i data-lucide="briefcase" class="h-4 w-4 text-slate-400"></i>P.O. Box: 789</li>
+              </ul>
+              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Office Hours</p>
+                <p class="mt-1 text-sm font-black">Mon - Thu: 09:15 - 12:00</p>
+              </div>
+            </article>
+
+            <article class="rounded-xl bg-white p-7 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <h2 class="text-2xl font-black text-[#122B55]">Republic of Korea</h2>
+                <i data-lucide="globe-2" class="h-5 w-5 text-[#F58220]"></i>
+              </div>
+              <ul class="mt-6 space-y-3 text-sm font-medium text-slate-600">
+                <li class="flex gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-slate-400"></i>Tahachal, Kathmandu</li>
+                <li class="flex gap-3"><i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>270172, 270417, 277319</li>
+                <li class="flex gap-3"><i data-lucide="mail" class="h-4 w-4 text-slate-400"></i>koreaemb@mos.com.np</li>
+              </ul>
+              <div class="mt-7 border-t border-slate-200 bg-slate-100 p-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Working Hours</p>
+                <p class="mt-1 text-sm font-black">09:00 - 12:00, 14:00 - 17:00</p>
+              </div>
+            </article>
           </div>
 
-          <div class="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
-            <div>
-              <h2 class="border-l-4 border-[#F58220] pl-4 text-3xl font-black text-slate-950">
-                New Climbing Royalty Fees
+          <section class="mt-12">
+            <div class="flex items-center gap-5">
+              <h2 class="shrink-0 text-2xl font-black text-slate-950 md:text-3xl">
+                Additional Consulates
               </h2>
-
-              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <div class="flex flex-col gap-2 bg-[#122B55] px-5 py-4 text-sm font-black text-white sm:flex-row sm:items-center sm:justify-between">
-                  <span>Peaks Above 8000m</span>
-                  <span class="text-[#FAB331]">Premium Category</span>
-                </div>
-                <div class="p-5">
-                  <p class="text-sm italic leading-7 text-slate-500">
-                    Includes Everest, Kanchenjunga, Lhotse, Makalu, Cho Oyu,
-                    Dhaulagiri, Manaslu, Annapurna and Shisapangma.
-                  </p>
-                  <div class="mt-5 overflow-x-auto">
-                    <table class="w-full min-w-[620px] text-left text-sm">
-                      <thead class="border-b border-slate-200 text-[11px] uppercase tracking-[0.16em] text-slate-500">
-                        <tr>
-                          <th class="py-3 font-black">Peak / Route</th>
-                          <th class="py-3 font-black">Spring (USD)</th>
-                          <th class="py-3 font-black">Autumn (USD)</th>
-                          <th class="py-3 font-black">Winter/Summer (USD)</th>
-                        </tr>
-                      </thead>
-                      <tbody class="divide-y divide-slate-100 font-semibold text-slate-700">
-                        <tr>
-                          <td class="py-4 font-black text-slate-950">Everest (Normal Route)</td>
-                          <td class="py-4 font-black text-[#F58220]">$11,000</td>
-                          <td class="py-4">$5,500</td>
-                          <td class="py-4">$2,750</td>
-                        </tr>
-                        <tr>
-                          <td class="py-4 font-black text-slate-950">Everest (Other Routes)</td>
-                          <td class="py-4 font-black text-[#F58220]">$10,000</td>
-                          <td class="py-4">$5,000</td>
-                          <td class="py-4">$2,500</td>
-                        </tr>
-                        <tr>
-                          <td class="py-4 font-black text-slate-950">Other 8000m Peaks</td>
-                          <td class="py-4 font-black text-[#F58220]">$1,800</td>
-                          <td class="py-4">$900</td>
-                          <td class="py-4">$450</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-8 grid gap-5 md:grid-cols-2">
-                <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 class="text-sm font-black uppercase tracking-[0.12em] text-[#F58220]">7501m to 7999m</h3>
-                  <dl class="mt-5 space-y-4 text-sm font-semibold">
-                    <div class="flex justify-between gap-4"><dt>Spring Season</dt><dd class="text-[#F58220]">$600</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Autumn Season</dt><dd>$300</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Winter/Summer</dt><dd>$150</dd></div>
-                  </dl>
-                </article>
-                <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 class="text-sm font-black uppercase tracking-[0.12em] text-[#F58220]">7000m to 7500m</h3>
-                  <dl class="mt-5 space-y-4 text-sm font-semibold">
-                    <div class="flex justify-between gap-4"><dt>Spring Season</dt><dd class="text-[#F58220]">$500</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Autumn Season</dt><dd>$250</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Winter/Summer</dt><dd>$125</dd></div>
-                  </dl>
-                </article>
-                <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 class="text-sm font-black uppercase tracking-[0.12em] text-[#F58220]">6501m to 6999m</h3>
-                  <dl class="mt-5 space-y-4 text-sm font-semibold">
-                    <div class="flex justify-between gap-4"><dt>Spring Season</dt><dd class="text-[#F58220]">$400</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Autumn Season</dt><dd>$200</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Winter/Summer</dt><dd>$100</dd></div>
-                  </dl>
-                </article>
-                <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 class="text-sm font-black uppercase tracking-[0.12em] text-[#F58220]">Less Than 6500m</h3>
-                  <dl class="mt-5 space-y-4 text-sm font-semibold">
-                    <div class="flex justify-between gap-4"><dt>Spring Season</dt><dd class="text-[#F58220]">$250</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Autumn Season</dt><dd>$125</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Winter/Summer</dt><dd>$70</dd></div>
-                  </dl>
-                </article>
-              </div>
-
-              <article class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <div class="grid md:grid-cols-[300px_minmax(0,1fr)]">
-                  <div
-                    class="min-h-[220px] bg-cover bg-center"
-                    style="background-image: url('./Images/Home/everest.png')"
-                  ></div>
-                  <div class="p-6 md:p-8">
-                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                      Special Case
-                    </p>
-                    <h2 class="mt-3 text-3xl font-black text-[#122B55]">
-                      Mount Amadablam Expedition
-                    </h2>
-                    <p class="mt-3 text-sm font-medium leading-7 text-slate-600">
-                      Special tiered pricing applies specifically to Ama Dablam
-                      due to its technical complexity and conservation
-                      requirements.
-                    </p>
-                    <div class="mt-6 grid grid-cols-3 gap-4 text-sm font-semibold">
-                      <div><p class="text-[10px] uppercase text-slate-400">Spring</p><p class="text-[#F58220]">$400</p></div>
-                      <div><p class="text-[10px] uppercase text-slate-400">Autumn</p><p>$400</p></div>
-                      <div><p class="text-[10px] uppercase text-slate-400">Winter/Summer</p><p>$200</p></div>
-                    </div>
-                  </div>
-                </div>
+              <div class="h-px flex-1 bg-slate-200"></div>
+            </div>
+            <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <article class="bg-white p-6 shadow-sm">
+                <h3 class="text-sm font-black text-[#F58220]">Austria</h3>
+                <p class="mt-3 text-xs font-bold text-slate-700">Hattisar, Kathmandu</p>
+                <p class="mt-2 text-xs font-black">Tel: 4434981</p>
+              </article>
+              <article class="bg-white p-6 shadow-sm">
+                <h3 class="text-sm font-black text-[#F58220]">Brazil</h3>
+                <p class="mt-3 text-xs font-bold text-slate-700">Kathmandu</p>
+                <p class="mt-2 text-xs font-black">Tel: 527223</p>
+              </article>
+              <article class="bg-white p-6 shadow-sm">
+                <h3 class="text-sm font-black text-[#F58220]">Chile</h3>
+                <p class="mt-3 text-xs font-bold text-slate-700">Kupondole, Lalitpur</p>
+                <p class="mt-2 text-xs font-black">Tel: 221617</p>
+              </article>
+              <article class="bg-white p-6 shadow-sm">
+                <h3 class="text-sm font-black text-[#F58220]">Greece</h3>
+                <p class="mt-3 text-xs font-bold text-slate-700">Tripureshwor, Kathmandu</p>
+                <p class="mt-2 text-xs font-black">Tel: 220183</p>
               </article>
             </div>
+          </section>
 
-            <aside class="grid gap-6 lg:sticky lg:top-28">
-              <div class="overflow-hidden rounded-2xl bg-white shadow-sm">
-                <div
-                  class="relative min-h-[260px] bg-cover bg-center p-6 text-white"
-                  style="background-image: url('./Images/docs/officeregistrar.jpeg')"
+          <section class="mt-12 overflow-hidden rounded-xl bg-[#122B55] p-7 text-white md:p-10">
+            <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_240px] md:items-center">
+              <div>
+                <h2 class="text-2xl font-black md:text-3xl">
+                  Need help with your visa?
+                </h2>
+                <p class="mt-4 max-w-2xl text-sm font-medium leading-7 text-white/80">
+                  Our expert guides and administrative team assist with all
+                  documentation requirements for your expedition. Let us handle
+                  the complexities while you focus on the summit.
+                </p>
+                <a
+                  href="./contact-us.html"
+                  class="mt-7 inline-flex items-center gap-2 rounded-[4px] bg-[#F58220] px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#122B55]"
                 >
-                  <div class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-[#08213D]/55 to-transparent"></div>
-                  <div class="relative flex min-h-[210px] flex-col justify-end">
-                    <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">
-                      Technical Advisory
-                    </p>
-                    <h2 class="mt-2 text-2xl font-black">Permit Documentation</h2>
-                  </div>
-                </div>
+                  Visa Support Services
+                  <i data-lucide="clipboard-list" class="h-4 w-4"></i>
+                </a>
               </div>
-
-              <div class="rounded-2xl bg-orange-50 p-6 shadow-sm">
-                <div class="flex items-start gap-3">
-                  <i data-lucide="gavel" class="mt-1 h-5 w-5 shrink-0 text-[#F58220]"></i>
-                  <div>
-                    <h2 class="text-base font-black text-[#122B55]">Government Disclaimer</h2>
-                    <p class="mt-3 text-sm font-medium leading-7 text-slate-700">
-                      The Government of Nepal reserves the right to modify
-                      trekking and expedition royalty fees. Changes are usually
-                      published through official notices.
-                    </p>
-                    <p class="mt-4 text-sm font-medium leading-7 text-slate-700">
-                      Panorama confirms final fees during booking and permit
-                      preparation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h2 class="text-base font-black text-[#122B55]">Planning Resources</h2>
-                <div class="mt-5 grid gap-3">
-                  <a href="#" class="flex items-center justify-between rounded-xl bg-slate-100 px-4 py-3 text-sm font-black text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]">
-                    Download Fee PDF
-                    <i data-lucide="download" class="h-4 w-4"></i>
-                  </a>
-                  <a href="#" class="flex items-center justify-between rounded-xl bg-slate-100 px-4 py-3 text-sm font-black text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]">
-                    Peak List 2024
-                    <i data-lucide="table-2" class="h-4 w-4"></i>
-                  </a>
-                  <a href="./contact-us.html" class="flex items-center justify-between rounded-xl bg-slate-100 px-4 py-3 text-sm font-black text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]">
-                    Custom Expedition Quote
-                    <i data-lucide="mail" class="h-4 w-4"></i>
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
-
-          <div class="mt-10 grid gap-6 border-t border-slate-200 pt-8 md:grid-cols-3">
-            <div class="flex gap-4">
-              <i data-lucide="calendar-days" class="h-6 w-6 shrink-0 text-[#F58220]"></i>
-              <div>
-                <h3 class="text-sm font-black">Seasonality Definitions</h3>
-                <p class="mt-2 text-sm font-medium leading-6 text-slate-600">
-                  Spring: Mar-May. Autumn: Sep-Nov. Winter: Dec-Feb. Summer:
-                  Jun-Aug.
-                </p>
+              <div class="relative mx-auto flex h-44 w-44 items-center justify-center rounded-full bg-white/15 md:h-56 md:w-56">
+                <div class="absolute inset-6 rounded-full bg-white/10"></div>
+                <i data-lucide="headphones" class="relative h-16 w-16 text-white"></i>
               </div>
             </div>
-            <div class="flex gap-4">
-              <i data-lucide="banknote" class="h-6 w-6 shrink-0 text-[#F58220]"></i>
-              <div>
-                <h3 class="text-sm font-black">Payment Methods</h3>
-                <p class="mt-2 text-sm font-medium leading-6 text-slate-600">
-                  Wire transfer, credit cards with surcharge and local bank
-                  drafts may be used depending on the permit.
-                </p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <i data-lucide="users" class="h-6 w-6 shrink-0 text-[#F58220]"></i>
-              <div>
-                <h3 class="text-sm font-black">Group Permissions</h3>
-                <p class="mt-2 text-sm font-medium leading-6 text-slate-600">
-                  Listed rates are per individual. Group discounts may apply for
-                  expeditions of seven or more climbers.
-                </p>
-              </div>
-            </div>
-          </div>
+          </section>
         </div>
       </section>
     </main>
@@ -683,6 +643,6 @@
       </div>
     </footer>
 
-    <script src="./navigation.js?v=mobile-menu-1"></script>
+    <script src="../js/navigation.js?v=mobile-menu-1"></script>
   </body>
 </html>
