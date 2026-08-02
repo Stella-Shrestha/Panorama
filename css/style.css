@@ -878,6 +878,50 @@ main article {
   filter: saturate(1.04);
 }
 
+.review-card img {
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.review-card:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.04);
+}
+
+.review-card-meta {
+  flex-direction: row;
+}
+
+.review-card-meta > div {
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.review-card-meta span {
+  flex: 0 1 auto;
+  min-width: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.review-card-footer {
+  flex-direction: row;
+}
+
+.review-card-action {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.review-card:hover .review-card-action {
+  background-color: #f58220;
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
 .team-card h3,
 .review-card h3,
 main h1,
@@ -928,20 +972,14 @@ footer h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  #reviews [aria-label="Review categories"] {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-  }
-
-  #reviews [aria-label="Review categories"] button {
-    width: 100%;
+  #reviews [aria-label="Review categories"] button,
+  .team-filter-bar button {
     padding-inline: 0.75rem;
     white-space: nowrap;
   }
 
-  .team-filter-bar button {
-    padding-inline: 0.75rem;
+  #reviews [aria-label="Review categories"] button {
+    width: 100%;
   }
 
   main [class*="md:grid-cols-["],
@@ -1124,6 +1162,11 @@ footer h3 {
     gap: 1rem;
   }
 
+  .review-card .review-card-meta.flex.items-center.justify-between,
+  .review-card .review-card-footer.flex.items-center.justify-between {
+    align-items: center;
+  }
+
   .team-card span.truncate {
     max-width: none;
     white-space: normal;
@@ -1221,7 +1264,7 @@ footer h3 {
   #modalReviewTitle,
   #modalMemberName,
   #modalDocumentTitle {
-    font-size: clamp(1.35rem, 7vw, 2rem);
+    /* font-size: clamp(, 7vw, 30px); */
     line-height: 1.1;
   }
 }
@@ -1231,13 +1274,19 @@ footer h3 {
     grid-template-columns: 1fr;
   }
 
-  #reviews [aria-label="Review categories"] {
-    grid-template-columns: 1fr;
-  }
-
   .team-card .flex.items-start.justify-between,
   .review-card .flex.items-center.justify-between {
     flex-direction: column;
+  }
+
+  .review-card .review-card-meta.flex.items-center.justify-between,
+  .review-card .review-card-footer.flex.items-center.justify-between {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .review-card .review-card-meta {
+    gap: 0.5rem;
   }
 
   .team-card > div:last-child {
