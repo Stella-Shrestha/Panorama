@@ -479,8 +479,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function updateMobileMenuIcon(iconName) {
+    if (!mobileMenuIcon) return;
+
     mobileMenuIcon.setAttribute("data-lucide", iconName);
-    lucide.createIcons();
+
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons();
+    }
   }
 
   function closeMobileDropdowns(exceptButton = null) {
@@ -493,36 +498,64 @@ document.addEventListener("DOMContentLoaded", function () {
       const dropdown = document.getElementById(dropdownId);
       const arrow = button.querySelector(".dropdown-arrow");
 
-      dropdown.classList.add("hidden");
-      arrow.classList.remove("rotate-180");
+      if (dropdown) {
+        dropdown.classList.add("hidden");
+      }
+
+      if (arrow) {
+        arrow.classList.remove("rotate-180");
+      }
+
       button.setAttribute("aria-expanded", "false");
     });
   }
 
   function closeMobileMenu() {
+    if (!mobileMenu || !mobileMenuButton) {
+      return;
+    }
+
     mobileMenu.classList.add("hidden");
     mobileMenuButton.setAttribute("aria-expanded", "false");
+    mobileMenuButton.setAttribute("aria-label", "Open navigation menu");
     updateMobileMenuIcon("menu");
     closeMobileDropdowns();
   }
 
-  mobileMenuButton.addEventListener("click", function () {
-    const isOpen = !mobileMenu.classList.contains("hidden");
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-    if (isOpen) {
-      closeMobileMenu();
-    } else {
-      mobileMenu.classList.remove("hidden");
-      mobileMenuButton.setAttribute("aria-expanded", "true");
-      updateMobileMenuIcon("x");
-    }
-  });
+      const isOpen = !mobileMenu.classList.contains("hidden");
+
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        mobileMenu.classList.remove("hidden");
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close navigation menu");
+        updateMobileMenuIcon("x");
+      }
+    });
+
+    mobileMenu.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+  }
 
   mobileDropdownButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
       const dropdownId = button.getAttribute("aria-controls");
       const dropdown = document.getElementById(dropdownId);
       const arrow = button.querySelector(".dropdown-arrow");
+
+      if (!dropdown || !arrow) {
+        return;
+      }
 
       const isOpen = !dropdown.classList.contains("hidden");
 
@@ -557,109 +590,109 @@ document.addEventListener("DOMContentLoaded", function () {
   const homeGalleryImages = [
     {
       id: 1,
-      src: "./Images/Home/mustang.png",
+      src: "../Images/Home/mustang.png",
       title: "Everest Region Lake",
       category: "everest",
     },
     {
       id: 2,
-      src: "./Images/Home/everest.png",
+      src: "../Images/Home/everest.png",
       title: "Everest Trails",
       category: "everest",
     },
     {
       id: 3,
-      src: "./Images/Home/Background.png",
+      src: "../Images/Home/Background.png",
       title: "Everest Snowline",
       category: "everest",
     },
     {
       id: 4,
-      src: "./Images/Home/manaslu.png",
+      src: "../Images/Home/manaslu.png",
       title: "Annapurna Forest Valley",
       category: "annapurna",
     },
     {
       id: 5,
-      src: "./Images/Home/annapurna.png",
+      src: "../Images/Home/annapurna.png",
       title: "Annapurna Panorama",
       category: "annapurna",
     },
     {
       id: 6,
-      src: "./Images/Home/adventure.png",
+      src: "../Images/Home/adventure.png",
       title: "Annapurna Ridge Walk",
       category: "annapurna",
     },
     {
       id: 7,
-      src: "./Images/Home/team.png",
+      src: "../Images/Home/team.png",
       title: "Langtang Group Trek",
       category: "langtang",
     },
     {
       id: 8,
-      src: "./Images/Home/manaslu1.png",
+      src: "../Images/Home/manaslu1.png",
       title: "Langtang Mountain Trail",
       category: "langtang",
     },
     {
       id: 9,
-      src: "./Images/Home/manaslu.png",
+      src: "../Images/Home/manaslu.png",
       title: "Langtang Remote Valley",
       category: "langtang",
     },
     {
       id: 10,
-      src: "./Images/Home/adventure.png",
+      src: "../Images/Home/adventure.png",
       title: "Wilderness Trekking",
       category: "wilderness",
     },
     {
       id: 11,
-      src: "./Images/Home/mustang.png",
+      src: "../Images/Home/mustang.png",
       title: "Upper Mustang Wilderness",
       category: "wilderness",
     },
     {
       id: 12,
-      src: "./Images/Home/manaslu1.png",
+      src: "../Images/Home/manaslu1.png",
       title: "Wild Himalayan Route",
       category: "wilderness",
     },
     {
       id: 13,
-      src: "./Images/Home/everest.png",
+      src: "../Images/Home/everest.png",
       title: "Homestay Trekking Trail",
       category: "homestay",
     },
     {
       id: 14,
-      src: "./Images/Home/team.png",
+      src: "../Images/Home/team.png",
       title: "Village Welcome",
       category: "homestay",
     },
     {
       id: 15,
-      src: "./Images/Home/annapurna.png",
+      src: "../Images/Home/annapurna.png",
       title: "Community Trek",
       category: "homestay",
     },
     {
       id: 16,
-      src: "./Images/Home/annapurna.png",
+      src: "../Images/Home/annapurna.png",
       title: "Newly Opened Route",
       category: "newly-opened",
     },
     {
       id: 17,
-      src: "./Images/Home/Background.png",
+      src: "../Images/Home/Background.png",
       title: "New Mountain Viewpoint",
       category: "newly-opened",
     },
     {
       id: 18,
-      src: "./Images/Home/manaslu1.png",
+      src: "../Images/Home/manaslu1.png",
       title: "Fresh Himalayan Trail",
       category: "newly-opened",
     },

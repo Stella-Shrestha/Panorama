@@ -15,6 +15,11 @@ body {
   /* font-family: "Inter", sans-serif; */
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8.5rem;
+}
+
 img,
 svg,
 video {
@@ -56,6 +61,661 @@ main textarea {
 
 table {
   max-width: 100%;
+}
+
+.trek-hero-shell {
+  position: relative;
+  min-height: clamp(25rem, 44vw, 34rem);
+  margin-bottom: 4.75rem;
+  border-radius: 2rem;
+  overflow: visible;
+  box-shadow: 0 28px 80px -52px rgba(8, 33, 61, 0.65);
+}
+
+.trek-hero-image-stage {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.trek-hero-image-stage > #trekHeroImage {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+}
+
+.trek-hero-thumbnails {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.55rem;
+  width: auto;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.5rem;
+  box-shadow: 0 18px 38px -30px rgba(8, 33, 61, 0.7);
+  backdrop-filter: blur(14px);
+}
+
+.trek-hero-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  width: 6.25rem;
+  overflow: hidden;
+  border: 0.15rem solid transparent;
+  border-radius: 0.65rem;
+  background: #e2e8f0;
+  padding: 0;
+  box-shadow: 0 8px 16px -14px rgba(8, 33, 61, 0.75);
+}
+
+.trek-hero-thumb.is-active {
+  border-color: #f58220;
+}
+
+.trek-hero-thumb img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.trek-hero-thumb span {
+  position: absolute;
+  right: 0.45rem;
+  bottom: 0.45rem;
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(8, 33, 61, 0.82);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.trek-hero-mobile-slider {
+  display: contents;
+}
+
+.trek-hero-arrow {
+  display: none;
+}
+
+.trek-hero-cta {
+  position: absolute;
+  /* right: 2.4rem; */
+  bottom: -4rem;
+  /* left: 2.4rem; */
+  z-index: 10;
+  width:100%;
+  display: flex;
+  margin-left:auto;
+  margin-right:auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 1.8rem 2rem;
+  box-shadow: 0 26px 64px -44px rgba(8, 33, 61, 0.75);
+  backdrop-filter: blur(16px);
+}
+
+.trek-hero-price,
+.trek-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.trek-photo-lightbox {
+  color: #ffffff;
+}
+
+.trek-photo-lightbox-header {
+  position: absolute;
+  top: 2rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.trek-photo-lightbox-close {
+  display: inline-flex;
+  height: 3.2rem;
+  width: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.35rem;
+  background: #000000;
+  color: #ffffff;
+}
+
+.trek-photo-lightbox-zoom {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  background: #000000;
+}
+
+.trek-photo-lightbox-zoom button {
+  display: inline-flex;
+  height: 3.2rem;
+  width: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.trek-photo-lightbox-zoom button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #f59e0b;
+}
+
+.trek-photo-lightbox-copy h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.4vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.trek-photo-lightbox-copy p {
+  margin-top: 0.35rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.trek-photo-lightbox-body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) 6.5rem;
+  gap: clamp(1rem, 2vw, 2rem);
+  align-items: center;
+  padding: 5rem 1rem 2rem 4rem;
+}
+
+.trek-photo-lightbox-stage {
+  min-width: 0;
+  max-height: 70vh;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.trek-photo-lightbox-stage::-webkit-scrollbar {
+  display: none;
+}
+
+.trek-photo-lightbox-stage img {
+  display: block;
+  width: calc(100% * var(--lightbox-zoom, 1));
+  max-width: none;
+  max-height: calc(70vh * var(--lightbox-zoom, 1));
+  object-fit: contain;
+  transition:
+    width 0.18s ease,
+    max-height 0.18s ease;
+}
+
+.trek-photo-lightbox-stage figcaption {
+  margin-top: 0.75rem;
+  color: #f59e0b;
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: right;
+}
+
+.trek-photo-lightbox-thumbs {
+  display: grid;
+  max-height: 76vh;
+  gap: 0.55rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.35rem;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  scrollbar-width: thin;
+}
+
+.trek-photo-lightbox-thumbs::-webkit-scrollbar {
+  width: 0.35rem;
+}
+
+.trek-photo-lightbox-thumbs::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.trek-photo-lightbox-thumbs button {
+  aspect-ratio: 1 / 1;
+  width: 5.75rem;
+  overflow: hidden;
+  border: 0.16rem solid transparent;
+  border-radius: 0.35rem;
+  background: #111827;
+  padding: 0;
+}
+
+.trek-photo-lightbox-thumbs button.active {
+  border-color: #f58220;
+}
+
+.trek-photo-lightbox-thumbs img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .trek-hero {
+    padding-top: 1rem;
+  }
+
+  .trek-hero-shell {
+    display: flex;
+    min-height: 0;
+    margin-bottom: 0;
+    flex-direction: column;
+    overflow: visible;
+    border-radius: 1.5rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .trek-hero-image-stage {
+    position: relative;
+    inset: auto;
+    overflow: visible;
+  }
+
+  .trek-hero-image-stage > #trekHeroImage {
+    aspect-ratio: 1.42 / 1;
+    height: auto;
+    border-radius: 1.5rem;
+  }
+
+  .trek-hero-mobile-slider {
+    display: none;
+  }
+
+  .trek-hero-arrow {
+    position: absolute;
+    bottom: 0.85rem;
+    z-index: 12;
+    display: inline-flex;
+    height: 2.15rem;
+    width: 2.15rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #122b55;
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: 0 14px 30px -20px rgba(8, 33, 61, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .trek-hero-arrow-prev {
+    left: calc(50% - 2.45rem);
+  }
+
+  .trek-hero-arrow-next {
+    right: calc(50% - 2.45rem);
+  }
+
+  .trek-hero-thumb {
+    width: min(21vw, 9rem);
+    min-width: 4.75rem;
+    border-radius: 0.6rem;
+  }
+
+  .trek-hero-thumb span {
+    height: 1.7rem;
+    width: 1.7rem;
+    font-size: 0.65rem;
+  }
+
+  .trek-hero-cta {
+    position: static;
+    display: grid;
+    gap: 1.4rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 1.25rem;
+    padding: 1.6rem 1.25rem;
+  }
+
+  .trek-hero-price {
+    align-items: flex-start;
+  }
+
+  .trek-hero-price p:last-child {
+    /* font-size: clamp(3rem, 9vw, 4rem); */
+  }
+
+  .trek-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trek-hero-actions button {
+    width: 100%;
+  }
+
+  .trek-photo-lightbox-header {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "close copy"
+      "close zoom";
+    align-items: start;
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+  }
+
+  .trek-photo-lightbox-close {
+    grid-area: close;
+  }
+
+  .trek-photo-lightbox-copy {
+    grid-area: copy;
+  }
+
+  .trek-photo-lightbox-copy h2 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    line-height: 1.05;
+    text-align: left;
+  }
+
+  .trek-photo-lightbox-copy p {
+    font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+    text-align: left;
+  }
+
+  .trek-photo-lightbox-zoom {
+    grid-area: zoom;
+    width: max-content;
+  }
+
+  .trek-photo-lightbox-body {
+    grid-template-columns: 1fr;
+    padding: 13.5rem 0 1rem;
+  }
+
+  .trek-photo-lightbox-stage img {
+    max-height: 58vh;
+  }
+
+  .trek-photo-lightbox-stage figcaption {
+    text-align: left;
+  }
+
+  .trek-photo-lightbox-thumbs {
+    display: flex;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 0 0.25rem;
+  }
+
+  .trek-photo-lightbox-thumbs button {
+    width: 5.25rem;
+    min-width: 5.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .trek-photo-lightbox-header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "close copy zoom";
+    align-items: center;
+  }
+
+  .trek-photo-lightbox-copy h2,
+  .trek-photo-lightbox-copy p {
+    text-align: center;
+  }
+
+  .trek-photo-lightbox-body {
+    padding-top: 8rem;
+  }
+
+  .trek-photo-lightbox-stage {
+    max-height: 62vh;
+  }
+
+  .trek-photo-lightbox-stage img {
+    max-height: 62vh;
+  }
+}
+
+@media (max-width: 420px) {
+  .trek-photo-lightbox-header {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.75rem;
+  }
+
+  .trek-photo-lightbox-close,
+  .trek-photo-lightbox-zoom button {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+
+  .trek-photo-lightbox-copy h2 {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+
+  .trek-photo-lightbox-body {
+    padding-top: 13rem;
+  }
+}
+
+#secondaryTripNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-left: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.trip-detail-page.is-swapped #secondaryTripNav {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#secondaryTripNav > div {
+  width: 100%;
+  max-width: 1584px;
+  margin-inline: auto;
+  /* padding-inline: clamp(1rem, 2.5vw, 2rem); */
+}
+
+@media (min-width: 1648px) {
+  #secondaryTripNav > div {
+    width: 1584px;
+  }
+}
+
+#secondaryTripNav nav {
+  flex: 1 1 auto;
+  min-width: 0;
+  scrollbar-width: none;
+}
+
+#secondaryTripNav nav::-webkit-scrollbar {
+  display: none;
+}
+
+#secondaryTripNav .secondary-nav-link {
+  position: relative;
+  border-radius: 8px;
+  color: #334155;
+  padding: 0.625rem 0.875rem;
+}
+
+#secondaryTripNav .secondary-nav-link i {
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+#secondaryTripNav .secondary-nav-link:hover,
+#secondaryTripNav .secondary-nav-link:hover i {
+  color: #f58220;
+}
+
+#secondaryTripNav .secondary-nav-link.active {
+  background: #f58220;
+  color: #ffffff;
+  box-shadow: 0 12px 24px -18px rgba(245, 130, 32, 0.85);
+}
+
+#secondaryTripNav .secondary-nav-link.active i {
+  color: #ffffff;
+}
+
+#secondaryTripNav .secondary-nav-book-now {
+  flex-shrink: 0;
+}
+
+.trip-detail-page #mainNavigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  transform: translateY(0);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.trip-detail-page {
+  --sticky-nav-height: 5rem;
+}
+
+.trip-detail-page main {
+  padding-top: var(--sticky-nav-height, 0px);
+}
+
+.trip-overview-trigger-sentinel {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.trip-detail-page.is-swapped #mainNavigation {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.section-target,
+#booking {
+  scroll-margin-top: 8.5rem;
+}
+
+.section-target {
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    outline-color 0.25s ease;
+}
+
+.section-target:focus {
+  outline: none;
+}
+
+.section-target.is-secondary-nav-target {
+  border-radius: 1rem;
+  background: rgba(245, 130, 32, 0.06);
+  box-shadow: 0 0 0 1px rgba(245, 130, 32, 0.2);
+}
+
+#routes article:nth-of-type(2) h4,
+#routes article:nth-of-type(2) p {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.elevation-profile-card {
+  background: #eff6ff;
+}
+
+.elevation-profile-body {
+  border-top: 1px solid rgba(226, 232, 240, 0.95);
+}
+
+.elevation-chart-frame {
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  -webkit-overflow-scrolling: touch;
+}
+
+.elevation-chart {
+  display: block;
+  min-width: 52rem;
+}
+
+@media (min-width: 1024px) {
+  .elevation-chart {
+    min-width: 0;
+  }
+}
+
+#includes details > div > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  background: transparent;
+}
+
+#includes details > div > div > i,
+#includes details > div > div > svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+#includes details > div > div > p {
+  margin: 0;
+  min-width: 0;
 }
 
 main div:has(> table),
@@ -227,6 +887,27 @@ footer h3 {
   }
 }
 
+@media (max-width: 767px) {
+  #secondaryTripNav {
+    padding-inline: 0.75rem;
+  }
+
+  #secondaryTripNav > div {
+    gap: 0;
+  }
+
+  #secondaryTripNav nav {
+    gap: 0.5rem;
+    padding-right: 0;
+    scroll-padding-inline: 1rem;
+  }
+
+  #secondaryTripNav .secondary-nav-link {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
 @media (max-width: 1023px) {
   body > nav > div {
     padding-inline: 1.25rem;
@@ -306,11 +987,11 @@ footer h3 {
     line-height: 1.18 !important;
   }
 
-  main section {
-    padding-block: clamp(3rem, 10vw, 4.5rem);
+  main > section:not(#secondaryTripNav) {
+    padding-block: clamp(2rem, 10vw, 4.5rem);
   }
 
-  main section {
+  main .section-target {
     scroll-margin-top: 5rem;
   }
 
@@ -383,7 +1064,7 @@ footer h3 {
 
   main .flex.justify-between,
   main .flex.items-center.justify-between {
-    align-items: flex-start;
+    /* align-items: flex-start; */
     gap: 0.75rem;
   }
 
@@ -423,7 +1104,7 @@ footer h3 {
   .team-card > div:last-child,
   .review-card .p-6,
   main article > div:last-child {
-    padding: 1.25rem;
+    /* padding: 1.25rem; */
   }
 
   .team-card h3,
@@ -619,6 +1300,280 @@ footer h3 {
   }
 }
 
+@media (max-width: 767px) {
+  .itinerary-day .accordion-button h3 + div {
+    display: none;
+  }
+
+  .itinerary-day.is-open .accordion-button h3 + div {
+    display: flex;
+  }
+
+  #includes summary {
+    min-height: 4rem;
+  }
+
+  #includes summary > span {
+    font-size: 1.125rem;
+    line-height: 1.25;
+  }
+
+  #includes details > div {
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  #includes details > div > div {
+    gap: 0.85rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  #includes details > div > div > i,
+  #includes details > div > div > svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-top: 0.15rem;
+  }
+
+  .trek-hero {
+    padding-top: 1rem;
+  }
+
+  .trek-hero-shell {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    overflow: visible;
+    border-radius: 1.5rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .trek-hero-image-stage {
+    position: relative;
+    inset: auto;
+    overflow: visible;
+  }
+
+  .trek-hero-image-stage > #trekHeroImage {
+    aspect-ratio: 1.42 / 1;
+    height: auto;
+    border-radius: 1.5rem;
+  }
+
+  .trek-hero-mobile-slider {
+    display: none;
+  }
+
+  .trek-hero-arrow {
+    position: absolute;
+    bottom: 0.85rem;
+    z-index: 12;
+    display: inline-flex;
+    height: 2.15rem;
+    width: 2.15rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #122b55;
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: 0 14px 30px -20px rgba(8, 33, 61, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .trek-hero-arrow-prev {
+    left: calc(50% - 2.45rem);
+  }
+
+  .trek-hero-arrow-next {
+    right: calc(50% - 2.45rem);
+  }
+
+  .trek-hero-thumb {
+    width: min(21vw, 7rem);
+    min-width: 4.75rem;
+    border-radius: 0.6rem;
+  }
+
+  .trek-hero-thumb span {
+    height: 1.7rem;
+    width: 1.7rem;
+    font-size: 0.65rem;
+  }
+
+  .trek-hero-cta {
+    position: static;
+    display: grid;
+    gap: 1.4rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 1.25rem;
+    padding: 1.6rem 1.25rem;
+  }
+
+  .trek-hero-price {
+    align-items: flex-start;
+  }
+
+  .trek-hero-price p:last-child {
+    /* font-size: clamp(3rem, 14vw, 4rem); */
+  }
+
+  .trek-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .trek-hero-actions button {
+    width: 100%;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child {
+    /* padding: 1rem; */
+  }
+
+  #routes article:nth-of-type(2) > div:last-child > div {
+    border-radius: 1.25rem;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child > div > div:first-child {
+    gap: 0.75rem;
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  #routes article:nth-of-type(2) h4 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child p:not(:first-child) {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  #routes article:nth-of-type(2) > div:last-child > div > div:last-child {
+    margin-top: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #routes article:nth-of-type(2) svg {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 1279px) {
+  .trip-detail-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .trip-booking-sidebar {
+    width: 100%;
+  }
+
+  #departures > div {
+    padding: 0;
+    background: transparent;
+  }
+
+  #departures article {
+    display: block !important;
+    width: 100%;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 1.375rem;
+    padding: 2rem 1.5rem 1.5rem;
+    background: #ffffff;
+    box-shadow: 0 18px 42px -34px rgba(18, 43, 85, 0.45);
+  }
+
+  #departures article > div:first-child {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+    padding: 0 0 1.45rem;
+    text-align: left;
+  }
+
+  #departures article > div:first-child span {
+    margin: 0 !important;
+  }
+
+  #departures article > div:first-child span:first-child,
+  #departures article > div:first-child span:last-child {
+    color: #122b55;
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+
+  #departures article > div:first-child span:nth-child(2) {
+    color: #f58220;
+    line-height: 0.9;
+  }
+
+  #departures article > h3 {
+    margin-top: 1.7rem;
+    color: #08213d;
+    line-height: 1.15;
+  }
+
+  #departures article > div:not(:first-child) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  #departures article > div:not(:first-child) > p:first-child {
+    margin: 0;
+    color: #3f4742;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+  }
+
+  #departures article > div:not(:first-child) > p:last-child {
+    margin: 0;
+    justify-self: end;
+  }
+
+  #departures article > div:not(:first-child) > p:last-child span.h-2 {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  #departures article > div:not(:first-child) > p:last-child span:not(.h-2) {
+    color: #3f4742;
+  }
+
+  #departures article > div:not(:first-child):last-of-type > p:last-child {
+    color: #08213d;
+    line-height: 1;
+  }
+
+  #departures article > a,
+  #departures article > button {
+    width: 100%;
+    height: 4rem;
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+    letter-spacing: 0.08em;
+    box-shadow: 0 16px 32px -24px rgba(245, 130, 32, 0.75);
+  }
+
+  #departures article > button:disabled {
+    box-shadow: none;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   main h1 {
     font-size: clamp(3rem, 7vw, 4.5rem) !important;
@@ -686,5 +1641,60 @@ footer h3 {
 
   #teamProfileModal section {
     max-width: 44rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .trek-hero-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 1.8rem 1.6rem;
+  }
+
+  .trek-hero-price {
+    /* justify-content: flex-start;
+    width: 100%; */
+  }
+
+  .trek-hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .trek-hero-actions button {
+    width: 100%;
+    min-height: 4.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .trek-hero-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.55rem;
+    padding: 1.6rem 1.25rem;
+    text-align: start;
+  }
+
+  .trek-hero-price {
+    /* justify-content: center;
+    width: 100%; */
+  }
+
+  .trek-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    width: 100%;
+  }
+
+  .trek-hero-actions button {
+    width: 100%;
+    min-height: 4.25rem;
+    font-size: 1.05rem;
   }
 }

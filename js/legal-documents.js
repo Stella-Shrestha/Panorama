@@ -3,17 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     registration: {
       type: "Certificate",
       title: "Company Registration Certificate",
-      image: "./Images/docs/officeregistrar.jpeg",
+      image: "../Images/docs/officeregistrar.jpeg",
     },
     license: {
       type: "License",
       title: "Trekking Agency Operating License",
-      image: "./Images/Home/details/bg.jpeg",
+      image: "../Images/Home/details/bg.jpeg",
     },
     exchange: {
       type: "Approval",
       title: "Foreign Exchange Authorization",
-      image: "./Images/Home/Background.png",
+      image: "../Images/Home/Background.png",
     },
   };
 

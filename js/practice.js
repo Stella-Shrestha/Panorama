@@ -10,6 +10,356 @@ document.addEventListener("DOMContentLoaded", function () {
 
   renderIcons();
 
+  function initTrekHero() {
+    const heroImage = document.getElementById("trekHeroImage");
+    const heroThumbs = document.querySelectorAll(".trek-hero-thumb");
+    const heroPrevButton = document.getElementById("trekHeroPrev");
+    const heroNextButton = document.getElementById("trekHeroNext");
+    const viewPhotosButton = document.getElementById("trekHeroViewPhotos");
+    const photoModal = document.getElementById("trekHeroPhotoModal");
+    const modalImage = document.getElementById("trekHeroModalImage");
+    const modalTitle = document.getElementById("trekPhotoLightboxTitle");
+    const modalCount = document.getElementById("trekPhotoLightboxCount");
+    const modalCaption = document.getElementById("trekPhotoLightboxCaption");
+    const modalThumbs = document.querySelectorAll(
+      "#trekPhotoLightboxThumbs button",
+    );
+    const modalStage = document.querySelector(".trek-photo-lightbox-stage");
+    const zoomInButton = document.getElementById("trekPhotoZoomIn");
+    const zoomOutButton = document.getElementById("trekPhotoZoomOut");
+    const closePhotosButton = document.getElementById("trekHeroClosePhotos");
+    let activeModalIndex = 0;
+    let modalWheelLocked = false;
+    let modalZoom = 1;
+    let heroAutoTimer = null;
+    const compactHeroQuery = window.matchMedia
+      ? window.matchMedia("(max-width: 1023px)")
+      : null;
+
+    if (!heroImage || !heroThumbs.length) return;
+
+    function setHeroImage(button) {
+      const image = button.dataset.heroImage;
+      const alt = button.dataset.heroAlt || "";
+
+      if (!image) return;
+
+      heroImage.src = image;
+      heroImage.alt = alt;
+
+      if (modalImage) {
+        modalImage.src = image;
+        modalImage.alt = alt;
+      }
+
+      heroThumbs.forEach(function (thumb) {
+        const isActive = thumb === button;
+        thumb.classList.toggle("is-active", isActive);
+        thumb.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    function showHeroImageByIndex(index) {
+      const thumbs = Array.from(heroThumbs);
+      if (!thumbs.length) return;
+
+      const nextIndex = (index + thumbs.length) % thumbs.length;
+      setHeroImage(thumbs[nextIndex]);
+    }
+
+    function showAdjacentHeroImage(direction) {
+      const thumbs = Array.from(heroThumbs);
+      const activeIndex = thumbs.findIndex(function (thumb) {
+        return thumb.classList.contains("is-active");
+      });
+
+      showHeroImageByIndex((activeIndex < 0 ? 0 : activeIndex) + direction);
+    }
+
+    function stopHeroAutoRotate() {
+      if (!heroAutoTimer) return;
+
+      window.clearInterval(heroAutoTimer);
+      heroAutoTimer = null;
+    }
+
+    function syncHeroAutoRotate() {
+      const shouldRotate = compactHeroQuery ? compactHeroQuery.matches : false;
+
+      if (!shouldRotate) {
+        stopHeroAutoRotate();
+        return;
+      }
+
+      if (heroAutoTimer) return;
+
+      heroAutoTimer = window.setInterval(function () {
+        showAdjacentHeroImage(1);
+      }, 6000);
+    }
+
+    function restartHeroAutoRotate() {
+      stopHeroAutoRotate();
+      syncHeroAutoRotate();
+    }
+
+    function setModalImage(button) {
+      if (!modalImage || !button) return;
+
+      const image = button.dataset.photoSrc;
+      const alt = button.dataset.photoAlt || "";
+      const title = button.dataset.photoTitle || alt;
+      const index = Number(button.dataset.photoIndex || 0) + 1;
+
+      if (!image) return;
+
+      activeModalIndex = Math.max(0, index - 1);
+      modalImage.src = image;
+      modalImage.alt = alt;
+
+      if (modalTitle) {
+        modalTitle.textContent = title;
+      }
+
+      if (modalCaption) {
+        modalCaption.textContent = title;
+      }
+
+      if (modalCount) {
+        modalCount.textContent = String(index);
+      }
+
+      modalThumbs.forEach(function (thumb) {
+        thumb.classList.toggle("active", thumb === button);
+      });
+
+      button.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+    }
+
+    function setModalZoom(nextZoom) {
+      if (!modalImage) return;
+
+      modalZoom = Math.min(2.5, Math.max(1, nextZoom));
+      modalImage.style.setProperty("--lightbox-zoom", modalZoom.toFixed(2));
+
+      if (modalStage && modalZoom === 1) {
+        modalStage.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    }
+
+    function resetModalZoom() {
+      setModalZoom(1);
+    }
+
+    function showModalImageByIndex(index) {
+      if (!modalThumbs.length) return;
+
+      const nextIndex =
+        (index + modalThumbs.length) % modalThumbs.length;
+      resetModalZoom();
+      setModalImage(modalThumbs[nextIndex]);
+    }
+
+    function handleModalStageWheel(event) {
+      if (!photoModal || photoModal.classList.contains("hidden")) return;
+
+      if (modalZoom > 1) return;
+
+      event.preventDefault();
+
+      if (modalWheelLocked || Math.abs(event.deltaY) < 8) return;
+
+      modalWheelLocked = true;
+      showModalImageByIndex(
+        activeModalIndex + (event.deltaY > 0 ? 1 : -1),
+      );
+
+      window.setTimeout(function () {
+        modalWheelLocked = false;
+      }, 220);
+    }
+
+    function openPhotoModal() {
+      if (!photoModal) return;
+
+      const activeHeroThumb = Array.from(heroThumbs).find(function (thumb) {
+        return thumb.classList.contains("is-active");
+      });
+      const activeImage = activeHeroThumb ? activeHeroThumb.dataset.heroImage : "";
+      const matchingModalThumb =
+        Array.from(modalThumbs).find(function (thumb) {
+          return thumb.dataset.photoSrc === activeImage;
+        }) || modalThumbs[0];
+
+      setModalImage(matchingModalThumb);
+      resetModalZoom();
+      photoModal.classList.remove("hidden");
+      photoModal.classList.add("flex");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closePhotoModal() {
+      if (!photoModal) return;
+
+      photoModal.classList.add("hidden");
+      photoModal.classList.remove("flex");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    heroThumbs.forEach(function (button, index) {
+      button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+      button.addEventListener("click", function () {
+        setHeroImage(button);
+        restartHeroAutoRotate();
+      });
+    });
+
+    if (heroPrevButton) {
+      heroPrevButton.addEventListener("click", function () {
+        showAdjacentHeroImage(-1);
+        restartHeroAutoRotate();
+      });
+    }
+
+    if (heroNextButton) {
+      heroNextButton.addEventListener("click", function () {
+        showAdjacentHeroImage(1);
+        restartHeroAutoRotate();
+      });
+    }
+
+    if (viewPhotosButton) {
+      viewPhotosButton.addEventListener("click", openPhotoModal);
+    }
+
+    if (compactHeroQuery) {
+      if (typeof compactHeroQuery.addEventListener === "function") {
+        compactHeroQuery.addEventListener("change", syncHeroAutoRotate);
+      } else if (typeof compactHeroQuery.addListener === "function") {
+        compactHeroQuery.addListener(syncHeroAutoRotate);
+      }
+    }
+
+    syncHeroAutoRotate();
+
+    modalThumbs.forEach(function (button) {
+      button.addEventListener("click", function () {
+        resetModalZoom();
+        setModalImage(button);
+      });
+    });
+
+    if (zoomInButton) {
+      zoomInButton.addEventListener("click", function () {
+        setModalZoom(modalZoom + 0.25);
+      });
+    }
+
+    if (zoomOutButton) {
+      zoomOutButton.addEventListener("click", function () {
+        setModalZoom(modalZoom - 0.25);
+      });
+    }
+
+    if (modalStage) {
+      modalStage.addEventListener("wheel", handleModalStageWheel, {
+        passive: false,
+      });
+    }
+
+    if (closePhotosButton) {
+      closePhotosButton.addEventListener("click", closePhotoModal);
+    }
+
+    if (photoModal) {
+      photoModal.addEventListener("click", function (event) {
+        if (event.target === photoModal) {
+          closePhotoModal();
+        }
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Escape" &&
+        photoModal &&
+        !photoModal.classList.contains("hidden")
+      ) {
+        closePhotoModal();
+      }
+    });
+  }
+
+  initTrekHero();
+
+  function initResponsiveBookingPlacement() {
+    const layout = document.querySelector(".trip-detail-layout");
+    const main = document.querySelector(".trip-detail-main");
+    const bookingSidebar = document.querySelector(".trip-booking-sidebar");
+    const tripFacts = main ? main.querySelector("section:first-child") : null;
+
+    if (
+      !layout ||
+      !main ||
+      !bookingSidebar ||
+      !tripFacts ||
+      !window.matchMedia
+    ) {
+      return;
+    }
+
+    const compactQuery = window.matchMedia("(max-width: 1279px)");
+
+    function syncBookingPlacement() {
+      if (compactQuery.matches) {
+        tripFacts.insertAdjacentElement("afterend", bookingSidebar);
+      } else {
+        layout.appendChild(bookingSidebar);
+      }
+    }
+
+    syncBookingPlacement();
+
+    if (typeof compactQuery.addEventListener === "function") {
+      compactQuery.addEventListener("change", syncBookingPlacement);
+    } else if (typeof compactQuery.addListener === "function") {
+      compactQuery.addListener(syncBookingPlacement);
+    }
+  }
+
+  initResponsiveBookingPlacement();
+
+  function initResponsiveIncludesDetails() {
+    const includesDetails = document.querySelectorAll("#includes details");
+    if (!includesDetails.length || !window.matchMedia) return;
+
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+
+    function syncIncludesDetails() {
+      includesDetails.forEach(function (details) {
+        details.open = !mobileQuery.matches;
+      });
+    }
+
+    syncIncludesDetails();
+
+    if (typeof mobileQuery.addEventListener === "function") {
+      mobileQuery.addEventListener("change", syncIncludesDetails);
+    } else if (typeof mobileQuery.addListener === "function") {
+      mobileQuery.addListener(syncIncludesDetails);
+    }
+  }
+
+  initResponsiveIncludesDetails();
+
   function initElevationTooltip() {
     const tooltip = document.getElementById("elevationTooltip");
     const tooltipLabel = document.getElementById("elevationTooltipLabel");
@@ -167,42 +517,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", function () {
     closeDesktopDropdowns();
   });
-
-  const mobileMenuButton = document.getElementById("mobileMenuButton");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const mobileMenuIcon = document.getElementById("mobileMenuIcon");
-
-  if (mobileMenuButton && mobileMenu && mobileMenuIcon) {
-    mobileMenuButton.addEventListener("click", function () {
-      const isOpen = !mobileMenu.classList.contains("hidden");
-
-      mobileMenu.classList.toggle("hidden");
-      mobileMenuButton.setAttribute("aria-expanded", String(!isOpen));
-      mobileMenuIcon.setAttribute("data-lucide", isOpen ? "menu" : "x");
-
-      renderIcons();
-    });
-  }
-
-  document
-    .querySelectorAll(".mobile-dropdown-button")
-    .forEach(function (button) {
-      button.addEventListener("click", function () {
-        const dropdown = document.getElementById(
-          button.getAttribute("aria-controls"),
-        );
-        const arrow = button.querySelector(".dropdown-arrow");
-        if (!dropdown) return;
-
-        const isOpen = !dropdown.classList.contains("hidden");
-        dropdown.classList.toggle("hidden", isOpen);
-        button.setAttribute("aria-expanded", String(!isOpen));
-
-        if (arrow) {
-          arrow.classList.toggle("rotate-180", !isOpen);
-        }
-      });
-    });
 
   function setAccordionOpen(item, isOpen) {
     const content = item.querySelector(".accordion-content");
@@ -449,14 +763,13 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("groupPricingToggle");
     const groupPricingPanel =
       document.getElementById("groupPricingPanel");
-    const highlightsSection = document.getElementById("highlights");
+    const tripHighlights = document.getElementById("highlights");
 
     if (!travelerCount || !estimatedTotal || !currentPricePerPerson) {
       return;
     }
 
     let travelers = Number(travelerCount.textContent) || 2;
-    let groupPricingAutoClosed = false;
 
     function getPricePerPerson() {
       if (travelers >= 6) return 1550;
@@ -715,6 +1028,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (groupPricingToggle && groupPricingPanel) {
+      let isInHighlightsZone = false;
+
+      setGroupPricingOpen(true);
+
+      function syncGroupPricingWithHighlights() {
+        if (!tripHighlights) return;
+
+        const nextHighlightsZone =
+          tripHighlights.getBoundingClientRect().top <= window.innerHeight;
+
+        if (nextHighlightsZone === isInHighlightsZone) return;
+
+        isInHighlightsZone = nextHighlightsZone;
+        setGroupPricingOpen(!isInHighlightsZone);
+      }
+
+      if ("IntersectionObserver" in window && tripHighlights) {
+        const groupPricingHighlightsObserver = new IntersectionObserver(
+          syncGroupPricingWithHighlights,
+          { root: null, threshold: 0 },
+        );
+
+        groupPricingHighlightsObserver.observe(tripHighlights);
+      }
+
+      window.addEventListener("scroll", syncGroupPricingWithHighlights, {
+        passive: true,
+      });
+      window.addEventListener("resize", syncGroupPricingWithHighlights);
+      window.addEventListener("load", syncGroupPricingWithHighlights);
+      syncGroupPricingWithHighlights();
+
       groupPricingToggle.addEventListener("click", function () {
         const isOpen =
           groupPricingToggle.getAttribute("aria-expanded") === "true";
@@ -722,190 +1067,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    function closeGroupPricingAtHighlights() {
-      if (!highlightsSection || !groupPricingToggle) return;
-
-      const hasReachedHighlights =
-        highlightsSection.getBoundingClientRect().top <=
-        window.innerHeight * 0.65;
-
-      if (hasReachedHighlights && !groupPricingAutoClosed) {
-        setGroupPricingOpen(false);
-        groupPricingAutoClosed = true;
-      }
-
-      if (!hasReachedHighlights) {
-        groupPricingAutoClosed = false;
-      }
-    }
-
-    window.addEventListener("scroll", closeGroupPricingAtHighlights, {
-      passive: true,
-    });
-    window.addEventListener("resize", closeGroupPricingAtHighlights);
-
     updateTravelerPrice();
-    closeGroupPricingAtHighlights();
   }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initBookingSidebar);
   } else {
     initBookingSidebar();
-  }
-})();
-
-(function () {
-  function initSecondaryTripNav() {
-    const body = document.body;
-    const siteHeader = document.getElementById("siteHeader");
-    const mainNavigation = document.getElementById("mainNavigation");
-    const secondaryTripNav = document.getElementById("secondaryTripNav");
-    const overviewSection = document.getElementById("overview");
-    const secondaryNavLinks = document.querySelectorAll(
-      ".secondary-nav-link",
-    );
-
-    if (!mainNavigation || !secondaryTripNav || !overviewSection) {
-      return;
-    }
-
-    function setActiveSecondaryLink(targetId) {
-      secondaryNavLinks.forEach(function (link) {
-        const isActive = link.getAttribute("href") === "#" + targetId;
-        link.classList.toggle("active", isActive);
-        link.classList.toggle("border-transparent", isActive);
-        link.classList.toggle("border-white/10", !isActive);
-        link.classList.toggle("bg-[#F58220]", isActive);
-        link.classList.toggle("text-white", isActive);
-        link.classList.toggle("text-white/85", !isActive);
-        link.classList.toggle(
-          "shadow-[0_12px_24px_-18px_rgba(245,130,32,0.8)]",
-          isActive,
-        );
-
-        if (isActive) {
-          link.setAttribute("aria-current", "page");
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      });
-    }
-
-    function syncTripNavigation() {
-      const overviewTop = overviewSection.getBoundingClientRect().top;
-      const mainNavHeight = mainNavigation.offsetHeight || 0;
-      const shouldShowSecondary = overviewTop <= mainNavHeight;
-
-      body.classList.toggle("show-secondary-nav", shouldShowSecondary);
-
-      if (siteHeader) {
-        siteHeader.style.opacity = shouldShowSecondary ? "0" : "";
-        siteHeader.style.pointerEvents = shouldShowSecondary
-          ? "none"
-          : "";
-        siteHeader.style.transform = shouldShowSecondary
-          ? "translateY(-100%)"
-          : "";
-        siteHeader.style.visibility = shouldShowSecondary ? "hidden" : "";
-      }
-
-      mainNavigation.style.opacity = shouldShowSecondary ? "0" : "";
-      mainNavigation.style.pointerEvents = shouldShowSecondary
-        ? "none"
-        : "";
-      mainNavigation.style.transform = shouldShowSecondary
-        ? "translateY(-100%)"
-        : "";
-      mainNavigation.style.visibility = shouldShowSecondary
-        ? "hidden"
-        : "";
-
-      secondaryTripNav.style.display = shouldShowSecondary
-        ? "block"
-        : "none";
-      secondaryTripNav.style.opacity = shouldShowSecondary ? "1" : "0";
-      secondaryTripNav.style.pointerEvents = shouldShowSecondary
-        ? "auto"
-        : "none";
-      secondaryTripNav.style.position = shouldShowSecondary
-        ? "fixed"
-        : "";
-      secondaryTripNav.style.top = shouldShowSecondary ? "0" : "";
-      secondaryTripNav.style.left = shouldShowSecondary ? "0" : "";
-      secondaryTripNav.style.right = shouldShowSecondary ? "0" : "";
-      secondaryTripNav.style.transform = shouldShowSecondary
-        ? "translateY(0)"
-        : "translateY(-100%)";
-      secondaryTripNav.style.visibility = shouldShowSecondary
-        ? "visible"
-        : "hidden";
-      secondaryTripNav.style.zIndex = shouldShowSecondary ? "60" : "";
-    }
-
-    secondaryNavLinks.forEach(function (link) {
-      link.addEventListener("click", function (event) {
-        const targetId = link.getAttribute("href").slice(1);
-        const target = document.getElementById(targetId);
-
-        if (!target) return;
-
-        event.preventDefault();
-        body.classList.add("show-secondary-nav");
-        setActiveSecondaryLink(targetId);
-
-        const navHeight = secondaryTripNav.offsetHeight || 0;
-        const targetTop =
-          target.getBoundingClientRect().top + window.pageYOffset;
-
-        window.scrollTo({
-          top: Math.max(targetTop - navHeight - 18, 0),
-          behavior: "smooth",
-        });
-
-        if (window.history && window.history.pushState) {
-          window.history.pushState(null, "", "#" + targetId);
-        }
-      });
-    });
-
-    window.addEventListener("scroll", syncTripNavigation, {
-      passive: true,
-    });
-    window.addEventListener("resize", syncTripNavigation);
-    syncTripNavigation();
-
-    if ("IntersectionObserver" in window) {
-      const linkedSections = Array.from(secondaryNavLinks)
-        .map(function (link) {
-          return document.getElementById(
-            link.getAttribute("href").slice(1),
-          );
-        })
-        .filter(Boolean);
-
-      const observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              setActiveSecondaryLink(entry.target.id);
-            }
-          });
-        },
-        {
-          rootMargin: "-25% 0px -65% 0px",
-        },
-      );
-
-      linkedSections.forEach(function (section) {
-        observer.observe(section);
-      });
-    }
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initSecondaryTripNav);
-  } else {
-    initSecondaryTripNav();
   }
 })();

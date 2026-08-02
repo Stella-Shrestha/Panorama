@@ -511,6 +511,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mobileMenu.classList.add("hidden");
     mobileMenuButton.setAttribute("aria-expanded", "false");
+    mobileMenuButton.setAttribute("aria-label", "Open navigation menu");
 
     if (mobileMenuIcon) {
       mobileMenuIcon.setAttribute("data-lucide", "menu");
@@ -521,7 +522,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener("click", function () {
+    mobileMenuButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
       const isOpen = !mobileMenu.classList.contains("hidden");
 
       if (isOpen) {
@@ -529,6 +533,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         mobileMenu.classList.remove("hidden");
         mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Close navigation menu");
 
         if (mobileMenuIcon) {
           mobileMenuIcon.setAttribute("data-lucide", "x");
@@ -536,10 +541,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
+
+    mobileMenu.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
   }
 
   mobileDropdownButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
       const dropdown = document.getElementById(
         button.getAttribute("aria-controls"),
       );
