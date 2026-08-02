@@ -190,10 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const isActive = filterButton === button;
 
       filterButton.setAttribute("aria-pressed", String(isActive));
-      filterButton.classList.toggle("bg-[#122B55]", isActive);
-      filterButton.classList.toggle("text-white", isActive);
-      filterButton.classList.toggle("bg-white", !isActive);
-      filterButton.classList.toggle("text-slate-600", !isActive);
     });
   }
 
