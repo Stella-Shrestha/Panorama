@@ -17,7 +17,7 @@
     />
   </head>
 
-  <body class="min-h-full overflow-x-hidden bg-[#f5f7fa] font-[Inter,sans-serif] text-[#10233f] antialiased">
+  <body class="min-h-full overflow-x-hidden bg-[#FCFCFC] font-[Inter,sans-serif] text-[#10233f] antialiased">
     <header>
       <div class="hidden w-full bg-[#122B55] lg:block">
         <div
@@ -242,7 +242,7 @@
         <button
           id="mobileMenuButton"
           type="button"
-          class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 text-[#122B55] transition-colors hover:border-[#F58220] hover:bg-[#F58220] hover:text-white lg:hidden"
+          class="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-slate-200 text-[#122B55] transition-colors hover:border-[#F58220] hover:bg-[#F58220] hover:text-white lg:hidden"
           aria-label="Open navigation menu"
           aria-expanded="false"
           aria-controls="mobileMenu"
@@ -403,235 +403,297 @@
     </nav>
 
     <main>
-      <section class="px-5 py-14 lg:px-8 lg:py-24">
+      <section class="relative overflow-hidden bg-[#FCFCFC] px-5 py-[52px] lg:px-8 lg:py-[110px]">
+        <div class="absolute inset-0 opacity-[0.42] [background-image:linear-gradient(rgba(18,43,85,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(18,43,85,0.08)_1px,transparent_1px)] [background-size:54px_54px]"></div>
+        <div class="relative mx-auto grid max-w-[1584px] gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(470px,0.78fr)] lg:items-center">
+          <div>
+            <!-- <p class="mx-auto flex w-fit items-center gap-2 rounded-full bg-orange-50 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220] lg:mx-0">
+              <span class="h-2 w-2 rounded-full bg-[#F58220]"></span>
+              Official Expedition Information
+            </p> -->
+            <h1 class="mb-3 mt-8 text-center text-3xl font-bold leading-tight text-[#122B55] md:text-4xl lg:text-start lg:text-6xl">
+              Trekking and
+              <span class="text-[#F58220]"> expedition fees.</span>
+            </h1>
+            <div class="mx-auto mt-3 h-1 w-16 bg-[#F59E0B] lg:mx-0"></div>
+            <p class="mt-6 max-w-3xl text-center text-sm font-medium leading-7 text-slate-600 md:text-base lg:text-start">
+              A structured guide to Nepal's climbing royalty rates, seasonal
+              permit prices and expedition categories for foreign climbers.
+            </p>
+            <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:items-start">
+              <a href="#fee-schedule" class="inline-flex items-center justify-center gap-3 rounded-[4px] bg-[#122B55] px-7 py-3 text-[10px] font-black uppercase tracking-wide text-white transition-colors hover:bg-[#F58220]">
+                View Fee Schedule
+                <i data-lucide="arrow-down" class="h-4 w-4"></i>
+              </a>
+              <!-- <a href="#permit-notice" class="inline-flex items-center justify-center gap-3 border-b border-[#122B55] px-1 py-3 text-[10px] font-black uppercase tracking-wide text-[#122B55] transition-colors hover:border-[#F58220] hover:text-[#F58220]">
+                Important Notice
+                <i data-lucide="arrow-up-right" class="h-4 w-4 text-[#F58220]"></i>
+              </a> -->
+            </div>
+            <div class="mt-12 grid gap-6 border-t border-slate-200 pt-8 sm:grid-cols-3 grid-cols-2">
+              <div>
+                <p class="text-3xl font-black text-[#122B55]">10</p>
+                <p class="mt-1 text-xs font-medium text-slate-500">Premium peaks listed</p>
+              </div>
+              <div>
+                <p class="text-3xl font-black text-[#122B55]">4</p>
+                <p class="mt-1 text-xs font-medium text-slate-500">Altitude categories</p>
+              </div>
+              <div>
+                <p class="text-3xl font-black text-[#122B55]">USD</p>
+                <p class="mt-1 text-xs font-medium text-slate-500">Fee calculation currency</p>
+              </div>
+            </div>
+          </div>
+          <aside class="rounded-3xl bg-[#08213D] px-5 py-6 text-white shadow-xl shadow-slate-300/30 sm:p-6 lg:p-10">
+            <div class="flex items-start justify-between gap-6">
+              <div>
+                <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Altitude Overview</p>
+                <h2 class="mt-5 lg:text-2xl text-lg font-extrabold leading-tight text-white">Royalty changes by elevation</h2>
+              </div>
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#F58220]">
+                <i data-lucide="mountain" class="h-6 w-6"></i>
+              </span>
+            </div>
+            <div class="mt-8 space-y-0 px-1 sm:px-0">
+              <div class="flex items-center gap-5">
+                <div class="relative flex justify-center">
+                  <span class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-[#F58220] text-xs font-black text-white">8K+</span>
+                  <span class="absolute bottom-0 left-1/2 top-12 w-px -translate-x-1/2 bg-white/20"></span>
+                </div>
+                <div class="min-w-0 flex-1 border-b border-white/15 pb-5 pr-1 sm:pb-6 sm:pr-0">
+                  <h3 class="text-base font-black">Premium expedition peaks</h3>
+                  <p class="mt-1 text-xs font-medium leading-6 text-white/55">Everest and other mountains above 8,000 metres</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-5">
+                <div class="relative flex justify-center">
+                  <span class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-[#08213D] text-xs font-black text-white">7.5K</span>
+                  <span class="absolute bottom-0 left-1/2 top-12 w-px -translate-x-1/2 bg-white/20"></span>
+                </div>
+                <div class="min-w-0 flex-1 border-b border-white/15 py-5 pr-1 sm:py-6 sm:pr-0">
+                  <h3 class="text-base font-black">High expedition category</h3>
+                  <p class="mt-1 text-xs font-medium leading-6 text-white/55">Peaks from 7,501 to 7,999 metres</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-5">
+                <div class="relative flex justify-center">
+                  <span class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-[#08213D] text-xs font-black text-white">7K</span>
+                  <span class="absolute bottom-0 left-1/2 top-12 w-px -translate-x-1/2 bg-white/20"></span>
+                </div>
+                <div class="min-w-0 flex-1 border-b border-white/15 py-5 pr-1 sm:py-6 sm:pr-0">
+                  <h3 class="text-base font-black">Upper climbing category</h3>
+                  <p class="mt-1 text-xs font-medium leading-6 text-white/55">Peaks from 7,000 to 7,500 metres</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-5">
+                <div class="flex justify-center">
+                  <span class="flex h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-[#08213D] text-xs font-black text-white">6.5K</span>
+                </div>
+                <div class="min-w-0 flex-1 pt-5 pr-1 sm:pt-6 sm:pr-0">
+                  <h3 class="text-base font-black">Lower expedition category</h3>
+                  <p class="mt-1 text-xs font-medium leading-6 text-white/55">Peaks below 7,000 metres</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-9 flex gap-4 rounded-2xl bg-white/10 p-5 text-sm font-medium leading-7 text-white/65">
+              <i data-lucide="info" class="mt-1 h-5 w-5 shrink-0 text-[#F58220]"></i>
+              <p>Spring generally carries the highest royalty because it is the primary climbing season.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="fee-schedule" class="bg-[#eef3f6] px-5 py-14 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-[1584px] gap-12 lg:grid-cols-[0.65fr_1.35fr]">
+          <div class="lg:sticky lg:top-28 lg:self-start">
+            <!-- <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Effective from 01 Jan 2015</p> -->
+            <h2 class="mt-5 text-3xl font-bold leading-tight text-[#122B55] md:text-4xl">Peaks above 8,000 metres.</h2>
+            <div class="mx-auto mt-3 h-1 w-16 bg-[#F59E0B] lg:mx-0"></div>
+            <p class="mt-6 max-w-md text-sm font-medium leading-7 text-slate-600 md:text-base">
+              Premium royalty rates vary according to the selected mountain,
+              route and climbing season.
+            </p>
+            <div class="mt-10  text-sm font-bold leading-7 text-[#122B55]">
+              Fees below apply to foreign climbers and are shown in US dollars.
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-3xl bg-white shadow-xl shadow-slate-300/30">
+            <div class="flex flex-col gap-4 bg-[#08213D] p-6 text-white sm:flex-row sm:items-center sm:justify-between lg:p-8">
+              <div>
+                <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Premium Climbing Category</p>
+                <h2 class="mt-4 text-lg lg:text-2xl font-extrabold leading-tight text-white">New Climbing Royalty Fees</h2>
+              </div>
+              <span class="w-fit rounded-full border border-white/25 px-5 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/70">Fee Per Climber</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full min-w-[760px] text-left">
+                <thead class="border-b border-slate-200 bg-slate-50 text-[10px] uppercase tracking-[0.18em] text-slate-400">
+                  <tr>
+                    <th class="px-6 py-5 font-black">S.N</th>
+                    <th class="px-6 py-5 font-black">Name of Peak</th>
+                    <th class="px-6 py-5 font-black">Spring</th>
+                    <th class="px-6 py-5 font-black">Autumn</th>
+                    <th class="px-6 py-5 font-black">Winter / Summer</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-sm font-semibold text-[#122B55]">
+                  <tr><td class="px-6 py-5 text-slate-400">01</td><td class="px-6 py-5"><p class="font-black">Mount Everest</p><p class="mt-1 text-xs font-medium text-slate-500">8,848m · Normal route</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$11,000</td><td class="px-6 py-5 text-lg font-black">$5,500</td><td class="px-6 py-5 text-lg font-black">$2,750</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">02</td><td class="px-6 py-5"><p class="font-black">Mount Everest</p><p class="mt-1 text-xs font-medium text-slate-500">8,848m · Other routes</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$11,000</td><td class="px-6 py-5 text-lg font-black">$5,000</td><td class="px-6 py-5 text-lg font-black">$2,500</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">03</td><td class="px-6 py-5"><p class="font-black">Kanchenjunga</p><p class="mt-1 text-xs font-medium text-slate-500">8,586 metres</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$1,800</td><td class="px-6 py-5 text-lg font-black">$900</td><td class="px-6 py-5 text-lg font-black">$450</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">04</td><td class="px-6 py-5"><p class="font-black">Lhotse</p><p class="mt-1 text-xs font-medium text-slate-500">8,516 metres</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$1,800</td><td class="px-6 py-5 text-lg font-black">$900</td><td class="px-6 py-5 text-lg font-black">$450</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">05</td><td class="px-6 py-5"><p class="font-black">Makalu</p><p class="mt-1 text-xs font-medium text-slate-500">8,463 metres</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$1,800</td><td class="px-6 py-5 text-lg font-black">$900</td><td class="px-6 py-5 text-lg font-black">$450</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">06</td><td class="px-6 py-5"><p class="font-black">Cho Oyu</p><p class="mt-1 text-xs font-medium text-slate-500">8,201 metres</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$1,800</td><td class="px-6 py-5 text-lg font-black">$900</td><td class="px-6 py-5 text-lg font-black">$450</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">07</td><td class="px-6 py-5"><p class="font-black">Dhaulagiri</p><p class="mt-1 text-xs font-medium text-slate-500">8,167 metres</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$1,800</td><td class="px-6 py-5 text-lg font-black">$900</td><td class="px-6 py-5 text-lg font-black">$450</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">08</td><td class="px-6 py-5"><p class="font-black">Manaslu</p><p class="mt-1 text-xs font-medium text-slate-500">8,163 metres</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$1,800</td><td class="px-6 py-5 text-lg font-black">$900</td><td class="px-6 py-5 text-lg font-black">$450</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">09</td><td class="px-6 py-5"><p class="font-black">Annapurna</p><p class="mt-1 text-xs font-medium text-slate-500">8,091 metres</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$1,800</td><td class="px-6 py-5 text-lg font-black">$900</td><td class="px-6 py-5 text-lg font-black">$450</td></tr>
+                  <tr><td class="px-6 py-5 text-slate-400">10</td><td class="px-6 py-5"><p class="font-black">Shishapangma</p><p class="mt-1 text-xs font-medium text-slate-500">8,013 metres</p></td><td class="px-6 py-5 text-xl font-black text-[#F58220]">$1,800</td><td class="px-6 py-5 text-lg font-black">$900</td><td class="px-6 py-5 text-lg font-black">$450</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#FCFCFC] px-5 py-10 lg:px-8 lg:py-24">
         <div class="mx-auto max-w-[1584px]">
-          <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:items-start xl:gap-12">
+          <div class="gap-2 border-b border-slate-200 pb-10 flex flex-col">
             <div>
-              <div class="flex w-fit items-center gap-2 rounded-full bg-orange-50 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                <span class="h-2 w-2 rounded-full bg-[#F58220]"></span>
-                Logistics & Compliance
+              <!-- <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Other Expedition Categories</p> -->
+              <h2 class="mt-3 max-w-4xl text-3xl font-bold leading-tight text-[#122B55] md:text-4xl">Royalty fees organised by altitude.</h2>
+            </div>
+            <p class="text-sm font-medium leading-7 text-slate-600">Instead of displaying four separate tables, the fee categories are presented as a connected altitude ladder.</p>
+          </div>
+          <div class="relative mt-10 space-y-4">
+            <!-- <div class="absolute bottom-10 left-8 top-10 hidden w-px bg-[#F58220]/30 sm:block"></div> -->
+            <article class="relative flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-xl hover:shadow-slate-200/60 sm:flex-row sm:items-center sm:p-6">
+              <div class="flex items-start gap-4 sm:min-w-[300px] sm:flex-1">
+                <span class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#122B55] text-xs font-black text-white shadow-lg shadow-slate-900/15">01</span>
+                <div class="min-w-0">
+                  <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">High Expedition</p>
+                  <h3 class="mt-1 text-2xl font-black text-[#122B55]">7,501m-7,999m</h3>
+                  <p class="mt-1 text-xs font-medium text-slate-500">All peaks within this elevation range</p>
+                </div>
               </div>
-              <h1 class="mt-5 text-4xl font-black leading-[1.08] text-slate-950 sm:text-5xl lg:text-6xl">
-                Trekking & Expedition Permit & Fee
-              </h1>
-              <p class="mt-6 max-w-3xl text-sm font-medium leading-7 text-slate-600 md:text-base">
-                Comprehensive royalty schedules and permit guidance for
-                high-altitude peaks. Panorama helps keep administrative
-                prerequisites organized for your technical ascent.
+              <div class="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-100 sm:min-w-[520px] sm:flex-1">
+                <div class="p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Spring</p><p class="mt-2 text-xl font-black text-[#F58220]">$600</p></div>
+                <div class="border-l border-slate-200 p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Autumn</p><p class="mt-2 text-xl font-black text-[#122B55]">$300</p></div>
+                <div class="border-l border-slate-200 p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Winter / Summer</p><p class="mt-2 text-xl font-black text-[#122B55]">$150</p></div>
+              </div>
+            </article>
+            <article class="relative flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-xl hover:shadow-slate-200/60 sm:flex-row sm:items-center sm:p-6">
+              <div class="flex items-start gap-4 sm:min-w-[300px] sm:flex-1">
+                <span class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#122B55] text-xs font-black text-white shadow-lg shadow-slate-900/15">02</span>
+                <div class="min-w-0">
+                  <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Upper Category</p>
+                  <h3 class="mt-1 text-2xl font-black text-[#122B55]">7,000m-7,500m</h3>
+                  <p class="mt-1 text-xs font-medium text-slate-500">All peaks within this elevation range</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-100 sm:min-w-[520px] sm:flex-1">
+                <div class="p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Spring</p><p class="mt-2 text-xl font-black text-[#F58220]">$500</p></div>
+                <div class="border-l border-slate-200 p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Autumn</p><p class="mt-2 text-xl font-black text-[#122B55]">$250</p></div>
+                <div class="border-l border-slate-200 p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Winter / Summer</p><p class="mt-2 text-xl font-black text-[#122B55]">$125</p></div>
+              </div>
+            </article>
+            <article class="relative flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-xl hover:shadow-slate-200/60 sm:flex-row sm:items-center sm:p-6">
+              <div class="flex items-start gap-4 sm:min-w-[300px] sm:flex-1">
+                <span class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#122B55] text-xs font-black text-white shadow-lg shadow-slate-900/15">03</span>
+                <div class="min-w-0">
+                  <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Mid Category</p>
+                  <h3 class="mt-1 text-2xl font-black text-[#122B55]">6,501m-6,999m</h3>
+                  <p class="mt-1 text-xs font-medium text-slate-500">All peaks within this elevation range</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-100 sm:min-w-[520px] sm:flex-1">
+                <div class="p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Spring</p><p class="mt-2 text-xl font-black text-[#F58220]">$400</p></div>
+                <div class="border-l border-slate-200 p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Autumn</p><p class="mt-2 text-xl font-black text-[#122B55]">$200</p></div>
+                <div class="border-l border-slate-200 p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Winter / Summer</p><p class="mt-2 text-xl font-black text-[#122B55]">$100</p></div>
+              </div>
+            </article>
+            <article class="relative flex flex-col gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-xl hover:shadow-slate-200/60 sm:flex-row sm:items-center sm:p-6">
+              <div class="flex items-start gap-4 sm:min-w-[300px] sm:flex-1">
+                <span class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#122B55] text-xs font-black text-white shadow-lg shadow-slate-900/15">04</span>
+                <div class="min-w-0">
+                  <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Entry Category</p>
+                  <h3 class="mt-1 text-2xl font-black text-[#122B55]">Below 6,500m</h3>
+                  <p class="mt-1 text-xs font-medium text-slate-500">All peaks below this elevation</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-100 sm:min-w-[520px] sm:flex-1">
+                <div class="p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Spring</p><p class="mt-2 text-xl font-black text-[#F58220]">$250</p></div>
+                <div class="border-l border-slate-200 p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Autumn</p><p class="mt-2 text-xl font-black text-[#122B55]">$125</p></div>
+                <div class="border-l border-slate-200 p-4"><p class="text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">Winter / Summer</p><p class="mt-2 text-xl font-black text-[#122B55]">$70</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white px-5 py-10 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-[1584px]">
+          <article class="overflow-hidden rounded-3xl bg-[#171d21] p-6 text-white shadow-xl shadow-slate-300/30 lg:p-10">
+            <div class="grid gap-10 lg:grid-cols-[0.95fr_1fr] lg:items-center">
+              <div>
+                <!-- <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]">Mount Ama Dablam Expedition</p> -->
+                <h2 class="mt-5 text-lg lg:text-2xl font-extrabold uppercase tracking-wide text-white">
+                  A separate royalty structure for an iconic peak
+                </h2>
+                <p class="mt-5 max-w-2xl text-sm font-medium leading-7 text-white/75 md:text-base">
+                  Ama Dablam uses a dedicated seasonal permit schedule for
+                  foreign climbers rather than the standard altitude-category
+                  fee.
+                </p>
+                <ul class="mt-8 grid gap-4 text-sm font-medium leading-6 text-white/85">
+                  <li class="flex gap-3"><i data-lucide="circle-check" class="mt-0.5 h-5 w-5 shrink-0 text-[#FAB331]"></i>Spring and autumn royalty fee: <span class="font-black text-white">$400 per climber.</span></li>
+                  <li class="flex gap-3"><i data-lucide="circle-check" class="mt-0.5 h-5 w-5 shrink-0 text-[#FAB331]"></i>Winter and summer royalty fee: <span class="font-black text-white">$200 per climber.</span></li>
+                  <li class="flex gap-3"><i data-lucide="circle-check" class="mt-0.5 h-5 w-5 shrink-0 text-[#FAB331]"></i>Peak elevation and technical category: <span class="font-black text-white">6,812 metres.</span></li>
+                </ul>
+              </div>
+              <div class="relative min-h-[260px] overflow-hidden rounded-2xl bg-slate-800 md:min-h-[360px]">
+                <img src="../Images/Home/everest.png" alt="Mount Ama Dablam expedition route in Nepal" class="absolute inset-0 h-full w-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08213D]/65 via-transparent to-transparent"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="permit-notice" class="bg-[#eef3f6] px-5 py-14 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-[1584px] overflow-hidden rounded-3xl bg-white shadow-xl shadow-slate-300/30 ring-1 ring-slate-200/70">
+          <div class="grid lg:grid-cols-[0.38fr_0.62fr]">
+            <div class="flex min-h-[280px] flex-col gap-10 bg-[#122B55] p-8 text-white lg:p-10">
+              <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-[#FAB331] ring-1 ring-white/15">
+                <i data-lucide="landmark" class="h-8 w-8"></i>
+              </span>
+              <div>
+                <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">Government Regulations Apply</p>
+                <h2 class="mt-2 text-2xl font-extrabold leading-tight md:text-3xl">Important permit notice</h2>
+              </div>
+            </div>
+            <div class="p-8 lg:p-10">
+              <p class="text-sm font-medium leading-7 text-slate-600">
+                The listed fees may change gradually due to updates in tourism
+                regulations and government amendments. Final royalty fees,
+                permit conditions and administrative charges should be confirmed
+                before the expedition application is submitted.
               </p>
-            </div>
-
-            <aside class="rounded-2xl bg-[#e6e8ec] p-6 shadow-sm">
-              <div class="flex items-start gap-4">
-                <i data-lucide="info" class="h-8 w-8 shrink-0 rounded-xl bg-white p-2 text-[#F58220]"></i>
+              <div class="mt-8 grid gap-6 border-t border-slate-200 pt-8 md:grid-cols-3">
                 <div>
-                  <h2 class="text-base font-black">Official Fee Schedule</h2>
-                  <p class="mt-2 text-sm font-medium leading-7 text-slate-700">
-                    Rates may be adjusted by local authorities. Final permit
-                    totals are confirmed during the expedition planning stage.
-                  </p>
+                  <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#122B55]/5 text-[#122B55]"><i data-lucide="calendar-days" class="h-5 w-5"></i></span>
+                  <h3 class="mt-4 text-sm font-black text-[#122B55]">Confirm Season</h3>
+                  <p class="mt-2 text-xs font-medium leading-6 text-slate-500">Select spring, autumn or winter/summer.</p>
                 </div>
-              </div>
-            </aside>
-          </div>
-
-          <div class="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
-            <div>
-              <h2 class="border-l-4 border-[#F58220] pl-4 text-3xl font-black text-slate-950">
-                New Climbing Royalty Fees
-              </h2>
-
-              <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <div class="flex flex-col gap-2 bg-[#122B55] px-5 py-4 text-sm font-black text-white sm:flex-row sm:items-center sm:justify-between">
-                  <span>Peaks Above 8000m</span>
-                  <span class="text-[#FAB331]">Premium Category</span>
+                <div>
+                  <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#122B55]/5 text-[#122B55]"><i data-lucide="mountain" class="h-5 w-5"></i></span>
+                  <h3 class="mt-4 text-sm font-black text-[#122B55]">Confirm Peak</h3>
+                  <p class="mt-2 text-xs font-medium leading-6 text-slate-500">Check the exact mountain and approved route.</p>
                 </div>
-                <div class="p-5">
-                  <p class="text-sm italic leading-7 text-slate-500">
-                    Includes Everest, Kanchenjunga, Lhotse, Makalu, Cho Oyu,
-                    Dhaulagiri, Manaslu, Annapurna and Shisapangma.
-                  </p>
-                  <div class="mt-5 overflow-x-auto">
-                    <table class="w-full min-w-[620px] text-left text-sm">
-                      <thead class="border-b border-slate-200 text-[11px] uppercase tracking-[0.16em] text-slate-500">
-                        <tr>
-                          <th class="py-3 font-black">Peak / Route</th>
-                          <th class="py-3 font-black">Spring (USD)</th>
-                          <th class="py-3 font-black">Autumn (USD)</th>
-                          <th class="py-3 font-black">Winter/Summer (USD)</th>
-                        </tr>
-                      </thead>
-                      <tbody class="divide-y divide-slate-100 font-semibold text-slate-700">
-                        <tr>
-                          <td class="py-4 font-black text-slate-950">Everest (Normal Route)</td>
-                          <td class="py-4 font-black text-[#F58220]">$11,000</td>
-                          <td class="py-4">$5,500</td>
-                          <td class="py-4">$2,750</td>
-                        </tr>
-                        <tr>
-                          <td class="py-4 font-black text-slate-950">Everest (Other Routes)</td>
-                          <td class="py-4 font-black text-[#F58220]">$10,000</td>
-                          <td class="py-4">$5,000</td>
-                          <td class="py-4">$2,500</td>
-                        </tr>
-                        <tr>
-                          <td class="py-4 font-black text-slate-950">Other 8000m Peaks</td>
-                          <td class="py-4 font-black text-[#F58220]">$1,800</td>
-                          <td class="py-4">$900</td>
-                          <td class="py-4">$450</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div>
+                  <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#122B55]/5 text-[#122B55]"><i data-lucide="file-check-2" class="h-5 w-5"></i></span>
+                  <h3 class="mt-4 text-sm font-black text-[#122B55]">Verify Final Fee</h3>
+                  <p class="mt-2 text-xs font-medium leading-6 text-slate-500">Confirm current rates before payment.</p>
                 </div>
-              </div>
-
-              <div class="mt-8 grid gap-5 md:grid-cols-2">
-                <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 class="text-sm font-black uppercase tracking-[0.12em] text-[#F58220]">7501m to 7999m</h3>
-                  <dl class="mt-5 space-y-4 text-sm font-semibold">
-                    <div class="flex justify-between gap-4"><dt>Spring Season</dt><dd class="text-[#F58220]">$600</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Autumn Season</dt><dd>$300</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Winter/Summer</dt><dd>$150</dd></div>
-                  </dl>
-                </article>
-                <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 class="text-sm font-black uppercase tracking-[0.12em] text-[#F58220]">7000m to 7500m</h3>
-                  <dl class="mt-5 space-y-4 text-sm font-semibold">
-                    <div class="flex justify-between gap-4"><dt>Spring Season</dt><dd class="text-[#F58220]">$500</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Autumn Season</dt><dd>$250</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Winter/Summer</dt><dd>$125</dd></div>
-                  </dl>
-                </article>
-                <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 class="text-sm font-black uppercase tracking-[0.12em] text-[#F58220]">6501m to 6999m</h3>
-                  <dl class="mt-5 space-y-4 text-sm font-semibold">
-                    <div class="flex justify-between gap-4"><dt>Spring Season</dt><dd class="text-[#F58220]">$400</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Autumn Season</dt><dd>$200</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Winter/Summer</dt><dd>$100</dd></div>
-                  </dl>
-                </article>
-                <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h3 class="text-sm font-black uppercase tracking-[0.12em] text-[#F58220]">Less Than 6500m</h3>
-                  <dl class="mt-5 space-y-4 text-sm font-semibold">
-                    <div class="flex justify-between gap-4"><dt>Spring Season</dt><dd class="text-[#F58220]">$250</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Autumn Season</dt><dd>$125</dd></div>
-                    <div class="flex justify-between gap-4 border-t border-slate-100 pt-4"><dt>Winter/Summer</dt><dd>$70</dd></div>
-                  </dl>
-                </article>
-              </div>
-
-              <article class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <div class="grid md:grid-cols-[300px_minmax(0,1fr)]">
-                  <div
-                    class="min-h-[220px] bg-cover bg-center"
-                    style="background-image: url('../Images/Home/everest.png')"
-                  ></div>
-                  <div class="p-6 md:p-8">
-                    <p class="text-[11px] font-black uppercase tracking-[0.18em] text-[#F58220]">
-                      Special Case
-                    </p>
-                    <h2 class="mt-3 text-3xl font-black text-[#122B55]">
-                      Mount Amadablam Expedition
-                    </h2>
-                    <p class="mt-3 text-sm font-medium leading-7 text-slate-600">
-                      Special tiered pricing applies specifically to Ama Dablam
-                      due to its technical complexity and conservation
-                      requirements.
-                    </p>
-                    <div class="mt-6 grid grid-cols-3 gap-4 text-sm font-semibold">
-                      <div><p class="text-[10px] uppercase text-slate-400">Spring</p><p class="text-[#F58220]">$400</p></div>
-                      <div><p class="text-[10px] uppercase text-slate-400">Autumn</p><p>$400</p></div>
-                      <div><p class="text-[10px] uppercase text-slate-400">Winter/Summer</p><p>$200</p></div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <aside class="grid gap-6 lg:sticky lg:top-28">
-              <div class="overflow-hidden rounded-2xl bg-white shadow-sm">
-                <div
-                  class="relative min-h-[260px] bg-cover bg-center p-6 text-white"
-                  style="background-image: url('../Images/docs/officeregistrar.jpeg')"
-                >
-                  <div class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-[#08213D]/55 to-transparent"></div>
-                  <div class="relative flex min-h-[210px] flex-col justify-end">
-                    <p class="text-[10px] font-black uppercase tracking-[0.18em] text-[#FAB331]">
-                      Technical Advisory
-                    </p>
-                    <h2 class="mt-2 text-2xl font-black">Permit Documentation</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="rounded-2xl bg-orange-50 p-6 shadow-sm">
-                <div class="flex items-start gap-3">
-                  <i data-lucide="gavel" class="mt-1 h-5 w-5 shrink-0 text-[#F58220]"></i>
-                  <div>
-                    <h2 class="text-base font-black text-[#122B55]">Government Disclaimer</h2>
-                    <p class="mt-3 text-sm font-medium leading-7 text-slate-700">
-                      The Government of Nepal reserves the right to modify
-                      trekking and expedition royalty fees. Changes are usually
-                      published through official notices.
-                    </p>
-                    <p class="mt-4 text-sm font-medium leading-7 text-slate-700">
-                      Panorama confirms final fees during booking and permit
-                      preparation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h2 class="text-base font-black text-[#122B55]">Planning Resources</h2>
-                <div class="mt-5 grid gap-3">
-                  <a href="#" class="flex items-center justify-between rounded-xl bg-slate-100 px-4 py-3 text-sm font-black text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]">
-                    Download Fee PDF
-                    <i data-lucide="download" class="h-4 w-4"></i>
-                  </a>
-                  <a href="#" class="flex items-center justify-between rounded-xl bg-slate-100 px-4 py-3 text-sm font-black text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]">
-                    Peak List 2024
-                    <i data-lucide="table-2" class="h-4 w-4"></i>
-                  </a>
-                  <a href="./contact-us.html" class="flex items-center justify-between rounded-xl bg-slate-100 px-4 py-3 text-sm font-black text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]">
-                    Custom Expedition Quote
-                    <i data-lucide="mail" class="h-4 w-4"></i>
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
-
-          <div class="mt-10 grid gap-6 border-t border-slate-200 pt-8 md:grid-cols-3">
-            <div class="flex gap-4">
-              <i data-lucide="calendar-days" class="h-6 w-6 shrink-0 text-[#F58220]"></i>
-              <div>
-                <h3 class="text-sm font-black">Seasonality Definitions</h3>
-                <p class="mt-2 text-sm font-medium leading-6 text-slate-600">
-                  Spring: Mar-May. Autumn: Sep-Nov. Winter: Dec-Feb. Summer:
-                  Jun-Aug.
-                </p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <i data-lucide="banknote" class="h-6 w-6 shrink-0 text-[#F58220]"></i>
-              <div>
-                <h3 class="text-sm font-black">Payment Methods</h3>
-                <p class="mt-2 text-sm font-medium leading-6 text-slate-600">
-                  Wire transfer, credit cards with surcharge and local bank
-                  drafts may be used depending on the permit.
-                </p>
-              </div>
-            </div>
-            <div class="flex gap-4">
-              <i data-lucide="users" class="h-6 w-6 shrink-0 text-[#F58220]"></i>
-              <div>
-                <h3 class="text-sm font-black">Group Permissions</h3>
-                <p class="mt-2 text-sm font-medium leading-6 text-slate-600">
-                  Listed rates are per individual. Group discounts may apply for
-                  expeditions of seven or more climbers.
-                </p>
               </div>
             </div>
           </div>
