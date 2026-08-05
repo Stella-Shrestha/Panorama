@@ -15,6 +15,12 @@ body {
   /* font-family: "Inter", sans-serif; */
 }
 
+:root {
+  --color-primary: #F58220;
+  --color-primary-dark: #d96b11;
+  --color-primary-bg: #fff7ef;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 8.5rem;
@@ -734,6 +740,32 @@ main button.inline-flex {
   max-width: 100%;
   white-space: normal;
   text-align: center;
+}
+
+/* Theme-focused form controls */
+main input:focus,
+main textarea:focus,
+main select:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 10px 30px rgba(245, 130, 32, 0.08);
+  outline: none;
+}
+
+form button[type="submit"] {
+  background-color: var(--color-primary);
+  border-color: transparent;
+}
+
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+  background-color: var(--color-primary-dark);
+}
+
+@media (max-width: 768px) {
+  /* ensure the form actions are comfortable on small screens */
+  form button[type="submit"] {
+    width: 100% !important;
+  }
 }
 
 .mobile-dropdown {
