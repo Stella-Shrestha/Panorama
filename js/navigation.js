@@ -124,8 +124,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function isCurrentPage(href) {
-    const page = href.replace("./", "").split("#")[0];
-    return page && window.location.pathname.endsWith("/" + page);
+    const cleanedHref = href.replace("./", "");
+    const hrefParts = cleanedHref.split("#");
+    const page = hrefParts[0];
+    const targetHash = hrefParts[1] || "";
+
+    if (!page || !window.location.pathname.endsWith("/" + page)) {
+      return false;
+    }
+
+    if (!targetHash) {
+      return true;
+    }
+
+    return window.location.hash === "#" + targetHash;
   }
 
   function getDesktopTrekLinkClass(href) {
