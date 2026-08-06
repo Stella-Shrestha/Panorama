@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nepal Trekking Guide | Panorama Trekking</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Source+Sans+3:wght@200..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="min-h-full overflow-x-hidden bg-[#FCFCFC] font-[Inter,sans-serif] text-[#10233f] antialiased"
+  >
+    <header>
+      <div class="hidden w-full bg-[#122B55] lg:block">
+        <div
+          class="mx-auto flex w-full max-w-[1584px] items-center justify-between px-5 py-2"
+        >
+          <div class="flex items-center gap-6">
+            <a
+              href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="map-pin" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>Kapan, Kathmandu, Nepal</span>
+            </a>
+            <a
+              href="tel:+9771234567890"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="phone" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>+977 123 456 7890</span>
+            </a>
+            <a
+              href="mailto:info@panoramatrekking.com"
+              class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
+            >
+              <i data-lucide="mail" class="h-4 w-4 text-[#FAB331]"></i>
+              <span>info@panoramatrekking.com</span>
+            </a>
+          </div>
+
+          <div
+            class="inline-flex items-center gap-3"
+            aria-label="Language switcher"
+          >
+            <a
+              href="#"
+              lang="en"
+              aria-current="page"
+              class="text-xs font-bold uppercase tracking-[0.04em] text-[#FAB331] transition-colors hover:text-white sm:text-[13px]"
+              >English</a
+            >
+            <span class="h-4 w-px bg-white/30" aria-hidden="true"></span>
+            <a
+              href="#"
+              lang="fr"
+              class="text-xs font-bold uppercase tracking-[0.04em] text-white transition-colors hover:text-[#FAB331] sm:text-[13px]"
+              >Francais</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav
+      class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm"
+      aria-label="Main navigation"
+    >
+      <div
+        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 px-5 py-3"
+      >
+        <a
+          href="./index.html"
+          class="shrink-0"
+          aria-label="Panorama Trekking home"
+        >
+          <img
+            src="../Images/logo.png"
+            alt="Panorama Trekking"
+            class="h-auto w-32 object-contain lg:w-36"
+          />
+        </a>
+
+        <ul
+          class="hidden flex-1 items-center justify-center gap-4 text-[14px] font-semibold text-slate-950 lg:flex xl:gap-9 xl:text-[15px]"
+        >
+          <li>
+            <a
+              href="./index.html"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+              >Home</a
+            >
+          </li>
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="aboutDropdown"
+            >
+              About Us
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              id="aboutDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="./about-panorama.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="info" class="h-4 w-4"></i>About Panorama</a
+                >
+                <a
+                  href="./our-team.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="users" class="h-4 w-4"></i>Our Team</a
+                >
+                <a
+                  href="./legal-documents.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="file-text" class="h-4 w-4"></i>Legal
+                  Documents</a
+                >
+                <a
+                  href="./gallery.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="images" class="h-4 w-4"></i>Gallery</a
+                >
+                <a
+                  href="./testimonials.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="message-square-heart" class="h-4 w-4"></i
+                  >Testimonials</a
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <a
+              href="./index.html#treks"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+              >Treks</a
+            >
+          </li>
+          <li>
+            <a
+              href="./index.html#dayTours"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+              >Day Tours</a
+            >
+          </li>
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="travelGuideDropdown"
+            >
+              Travel Guide
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              id="travelGuideDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-72 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="./travel-insurance.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="shield-check" class="h-4 w-4"></i>Travel
+                  Insurance</a
+                >
+                <a
+                  href="./trekking-permit-fee.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="file-text" class="h-4 w-4"></i>Trekking
+                  Permit &amp; Fee</a
+                >
+                <a
+                  href="./visa-info.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="stamp" class="h-4 w-4"></i>Visa Info</a
+                >
+                <a
+                  href="./foreign-embassies.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  ><i data-lucide="landmark" class="h-4 w-4"></i>Foreign
+                  Embassies in Nepal</a
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <a
+              href="./contact-us.html"
+              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+
+        <a
+          href="./index.html#quote"
+          class="hidden shrink-0 rounded-lg bg-[#F58220] px-4 py-3 text-sm font-bold uppercase text-white shadow-sm transition-colors hover:bg-[#d96b11] lg:inline-flex xl:px-7"
+          >Get a Quote</a
+        >
+        <button
+          id="mobileMenuButton"
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 text-[#122B55] transition-colors hover:border-[#F58220] hover:bg-[#F58220] hover:text-white lg:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <i id="mobileMenuIcon" data-lucide="menu" class="h-6 w-6"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobileMenu"
+        class="hidden max-h-[calc(100vh-76px)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden"
+      >
+        <div class="px-5 py-5">
+          <ul class="space-y-1 text-sm font-semibold text-[#122B55]">
+            <li>
+              <a
+                href="./index.html"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileAboutDropdown"
+              >
+                <span>About Us</span>
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+              <div
+                id="mobileAboutDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="./about-panorama.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >About Panorama</a
+                  >
+                  <a
+                    href="./our-team.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >Our Team</a
+                  >
+                  <a
+                    href="./legal-documents.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >Legal Documents</a
+                  >
+                  <a
+                    href="./gallery.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >Gallery</a
+                  >
+                  <a
+                    href="./testimonials.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >Testimonials</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="./index.html#treks"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                >Treks</a
+              >
+            </li>
+            <li>
+              <a
+                href="./index.html#dayTours"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                >Day Tours</a
+              >
+            </li>
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileTravelDropdown"
+              >
+                <span>Travel Guide</span>
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+              <div
+                id="mobileTravelDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="./travel-insurance.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >Travel Insurance</a
+                  >
+                  <a
+                    href="./trekking-permit-fee.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >Trekking Permit &amp; Fee</a
+                  >
+                  <a
+                    href="./visa-info.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >Visa Info</a
+                  >
+                  <a
+                    href="./foreign-embassies.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                    >Foreign Embassies in Nepal</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="./contact-us.html"
+                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+          <a
+            href="./index.html#quote"
+            class="mobile-link mt-4 flex items-center justify-center rounded-lg bg-[#F58220] px-6 py-3 text-sm font-bold uppercase text-white transition-colors hover:bg-[#d96b11]"
+            >Get a Quote</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="bg-white px-5 py-[52px] lg:px-8 lg:py-[110px]">
+        <div class="mx-auto max-w-[1584px]">
+          <div
+            class="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(520px,1fr)] lg:items-center"
+          >
+            <div>
+              <!-- <nav
+                aria-label="Breadcrumb"
+                class="mx-auto inline-flex w-fit flex-wrap items-center gap-2 rounded-full bg-orange-50 px-4 py-2 text-xs font-medium text-slate-500 lg:mx-0"
+              >
+                <a
+                  href="./index.html"
+                  class="transition-colors hover:text-[#F58220]"
+                  >Home</a
+                >
+                <span>/</span>
+                <span>Travel Guide</span>
+                <span>/</span>
+                <span class="font-bold text-[#122B55]">Nepal Trekking</span>
+              </nav> -->
+              <h1
+                class="mb-3 mt-6 text-center text-3xl font-bold leading-tight text-[#122B55] md:text-4xl lg:text-start lg:text-6xl"
+              >
+                Discover the Enchanting Beauty of
+                <span class="text-[#F58220]"> Nepal.</span>
+              </h1>
+              <div class="mx-auto mt-3 h-1 w-16 bg-[#F59E0B] lg:mx-0"></div>
+              <p
+                class="mt-5 text-center text-sm font-medium leading-7 text-slate-600 md:text-base lg:text-start"
+              >
+                A journey through Everest, Annapurna, Langtang, and Manaslu,
+                and everything that makes Nepal the world's most storied
+                trekking destination.
+              </p>
+              <div
+                class="mt-8 flex flex-wrap items-center justify-center gap-5 text-sm font-medium text-slate-600 lg:justify-start"
+              >
+                <!-- <span class="flex items-center gap-3"
+                  ><span
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-[#F58220] text-xs font-black text-white"
+                    >RS</span
+                  >Rajesh Shrestha</span> -->
+                <span class="flex items-center gap-2"
+                  ><i data-lucide="calendar" class="h-4 w-4 text-[#F58220]"></i
+                  >15 Jul 2026</span
+                >
+                <span class="flex items-center gap-2"
+                  ><i data-lucide="clock" class="h-4 w-4 text-[#F58220]"></i>8
+                  min read</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="relative min-h-[320px] overflow-hidden rounded-3xl bg-[#08213D] shadow-xl shadow-slate-300/40 sm:min-h-[420px] lg:min-h-[560px]"
+            >
+              <img
+                src="../Images/Home/Background.png"
+                alt="Sunrise over the Himalayan range"
+                class="absolute inset-0 h-full w-full object-cover opacity-85"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#08213D] via-[#08213D]/30 to-transparent"
+              ></div>
+              <!-- <div
+                class="absolute bottom-6 left-6 right-6 rounded-2xl bg-white p-5 shadow-xl sm:left-auto sm:w-64"
+              >
+                <p
+                  class="text-[10px] font-black uppercase tracking-[0.18em] text-[#F58220]"
+                >
+                  Travel Guide
+                </p>
+                <p class="mt-4 text-3xl font-black text-[#122B55]">8 min</p>
+                <p class="mt-2 text-xs font-medium leading-5 text-slate-500">
+                  A compact guide to Nepal's classic trekking regions
+                </p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="introduction"
+        class="bg-white px-5 pb-[52px] lg:px-8 lg:pb-[110px]"
+      >
+        <div
+          class="mx-auto grid max-w-[1584px] gap-12  lg:items-start"
+        >
+          <article>
+            <!-- <p
+              class="text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
+            >
+              Introduction
+            </p> -->
+            <h2
+              class="mt-4 max-w-4xl text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+            >
+              Nature's Grandeur, Unveiled Trail by Trail
+            </h2>
+            <div class="mt-3 h-1 w-16 bg-[#F59E0B]"></div>
+            <p
+              class="mt-6 max-w-4xl text-sm font-medium leading-7 text-slate-700 md:text-[16px]"
+            >
+              <span
+                class="float-left mr-3 mt-2 text-6xl font-black leading-[0.8] text-[#F58220]"
+                >N</span
+              >epal, nestled in the heart of the majestic Himalayas, stands as a
+              testament to nature's grandeur and allure. For those seeking the
+              ultimate adventure, Nepal's diverse landscapes, towering peaks,
+              and rich cultural tapestry make it a heaven for trekking
+              enthusiasts. Join us as we unveil the unparalleled beauty and
+              elegance that make Nepal a trekker's paradise.
+            </p>
+          </article>
+          <div
+          class=" px-5 lg:px-8"
+        >
+          <div
+            class="mx-auto grid w-full max-w-[1584px] grid-cols-2 overflow-hidden rounded-xl bg-white px-0 shadow-[0_14px_35px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/80 sm:grid-cols-3 lg:grid-cols-5"
+          >
+            <div
+              class="group flex min-h-28 flex-col items-center justify-center border-b border-r border-slate-200 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-orange-50 lg:border-b-0"
+            >
+              <i
+                data-lucide="mountain"
+                class="mb-3 h-10 w-10 text-[#F58220] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">
+                Destination
+              </h3>
+              <p class="text-xs font-medium text-slate-700">Nepal,Himalayas</p>
+            </div>
+
+            <div
+              class="group flex min-h-28 flex-col items-center justify-center border-b border-slate-200 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-sky-50 sm:border-r lg:border-b-0"
+            >
+              <i
+                data-lucide="zap"
+                class="mb-3 h-10 w-10 text-[#2086D7] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">Difficulty</h3>
+              <p class="text-xs font-medium text-slate-700">Moderate - Challenging</p>
+            </div>
+
+            <div
+              class="group flex min-h-28 flex-col items-center justify-center border-b border-r border-slate-200 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-emerald-50 sm:border-r-0 lg:border-b-0 lg:border-r"
+            >
+              <i
+                data-lucide="sun"
+                class="mb-3 h-10 w-10 text-[#20B15A] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">Best Season</h3>
+              <p class="text-xs font-medium text-slate-700">
+                Mar-May & Sep-Nov
+              </p>
+            </div>
+
+            <div
+              class="group flex min-h-28 flex-col items-center justify-center border-b border-slate-200 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-violet-50 sm:border-b-0 sm:border-r"
+            >
+              <i
+                data-lucide="clock"
+                class="mb-3 h-10 w-10 text-[#7C3AED] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">Duration</h3>
+              <p class="text-xs font-medium text-slate-700">21 Days</p>
+            </div>
+
+            <div
+              class="group col-span-2 flex min-h-28 flex-col items-center justify-center px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 sm:col-span-2 lg:col-span-1"
+            >
+              <i
+                data-lucide="tent"
+                class="mb-3 h-10 w-10 text-[#EF4444] transition-transform duration-300 group-hover:scale-110"
+              ></i>
+              <h3 class="text-sm font-bold text-[#122B55]">Highest Altitude</h3>
+              <p class="text-xs font-medium text-slate-700">5,364m (EBC)</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f3f5f8] px-5 py-14 lg:px-8 lg:py-24">
+        <div
+          class="mx-auto grid max-w-[1584px] gap-10 lg:grid-cols-[280px_minmax(0,1fr)] xl:gap-16"
+        >
+          <aside class="hidden lg:block">
+            <nav
+              class="sticky top-28 rounded-2xl bg-white p-6 shadow-xl shadow-slate-200/60"
+              aria-label="In this guide"
+            >
+              <p
+                class="text-[11px] font-black uppercase tracking-[0.22em] text-slate-500"
+              >
+                In This Guide
+              </p>
+              <div class="mt-5 space-y-2 text-sm font-bold text-slate-500">
+                <a
+                  href="#everest"
+                  class="block rounded-lg bg-orange-50 px-4 py-3 text-[#F58220]"
+                  >Everest Region</a
+                >
+                <a
+                  href="#annapurna"
+                  class="block rounded-lg px-4 py-3 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  >Annapurna Region</a
+                >
+                <a
+                  href="#langtang"
+                  class="block rounded-lg px-4 py-3 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  >Langtang Valley</a
+                >
+                <a
+                  href="#manaslu"
+                  class="block rounded-lg px-4 py-3 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  >Manaslu Circuit</a
+                >
+                <a
+                  href="#choose"
+                  class="block rounded-lg px-4 py-3 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  >Why Choose Panorama</a
+                >
+                <a
+                  href="#conclusion"
+                  class="block rounded-lg px-4 py-3 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                  >Conclusion</a
+                >
+              </div>
+            </nav>
+          </aside>
+
+          <div class="space-y-14 lg:space-y-24">
+            <article
+              id="everest"
+              class="grid gap-10 lg:grid-cols-2 lg:items-center"
+            >
+              <div
+                class="order-2 overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60 lg:order-1"
+              >
+                <img
+                  src="../Images/Home/everest.png"
+                  alt="Trail through the Everest region with prayer flags"
+                  class="h-[260px] w-full object-cover sm:h-[340px] lg:h-[420px]"
+                />
+              </div>
+              <div class="order-1 lg:order-2">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-[#F58220]"
+                  ><i data-lucide="mountain" class="h-5 w-5"></i
+                ></span>
+                <h2
+                  class="mt-5 text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+                >
+                  Embracing the Peaks: Everest Region
+                </h2>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-700 md:text-[16px]"
+                >
+                  Imagine standing beneath the world's highest peak, Mount
+                  Everest. The Everest region captivates with its awe-inspiring
+                  vistas and challenging trails. As you traverse through quaint
+                  Sherpa villages, each step brings you closer to the summit.
+                  The Khumbu Glacier, the Sherpa culture, and the vibrant prayer
+                  flags adorning the landscape create an atmosphere of
+                  unparalleled beauty and spiritual energy.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3 text-xs">
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-medium"
+                    ><strong>12-16</strong> days</span
+                  >
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-medium"
+                    ><strong>5,364m</strong> max altitude</span
+                  >
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-black"
+                    >Challenging</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              id="annapurna"
+              class="grid gap-10 lg:grid-cols-2 lg:items-center"
+            >
+              <div>
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-500"
+                  ><i data-lucide="eye" class="h-5 w-5"></i
+                ></span>
+                <h2
+                  class="mt-5 text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+                >
+                  Annapurna Region: Where Tranquility Meets Majesty
+                </h2>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-700 md:text-[16px]"
+                >
+                  In the heart of Nepal lies the Annapurna region, a heaven for
+                  those seeking a harmonious blend of natural beauty and
+                  cultural richness. Towering peaks like Annapurna and
+                  Machapuchhre frame the horizon, while the diverse flora and
+                  fauna enchant every step of the journey. From terraced fields
+                  to rhododendron forests, the Annapurna region promises a
+                  trekking experience that is both breathtaking and
+                  rejuvenating.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3 text-xs">
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-medium"
+                    ><strong>7-12</strong> days</span
+                  >
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-medium"
+                    ><strong>4,130m</strong> max altitude</span
+                  >
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-black"
+                    >Moderate</span
+                  >
+                </div>
+              </div>
+              <div
+                class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"
+              >
+                <img
+                  src="../Images/Home/annapurna.png"
+                  alt="Terraced fields on the Annapurna trail"
+                  class="h-[260px] w-full object-cover sm:h-[340px] lg:h-[420px]"
+                />
+              </div>
+            </article>
+
+            <article
+              id="langtang"
+              class="grid gap-10 lg:grid-cols-2 lg:items-center"
+            >
+              <div
+                class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"
+              >
+                <img
+                  src="../Images/Home/mustang.png"
+                  alt="Langtang valley with yak pastures"
+                  class="h-[260px] w-full object-cover sm:h-[340px] lg:h-[420px]"
+                />
+              </div>
+              <div>
+                <h2
+                  class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+                >
+                  Langtang Valley: A Symphony of Serenity
+                </h2>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-700 md:text-[16px]"
+                >
+                  For those yearning for a trek that combines alpine meadows,
+                  dense forests, and ancient monasteries, Langtang Valley
+                  beckons. The Langtang region is a sanctuary of tranquility,
+                  with its picturesque landscapes and the welcoming hospitality
+                  of the Tamang community. Each trail offers a glimpse into the
+                  unique culture and unparalleled beauty that defines the
+                  Langtang Valley.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3 text-xs">
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-medium"
+                    ><strong>7-10</strong> days</span
+                  >
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-medium"
+                    ><strong>4,773m</strong> max altitude</span
+                  >
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-black"
+                    >Moderate</span
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              id="manaslu"
+              class="grid gap-10 lg:grid-cols-2 lg:items-center"
+            >
+              <div>
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50 text-teal-500"
+                  ><i data-lucide="mountain" class="h-5 w-5"></i
+                ></span>
+                <h2
+                  class="mt-5 text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+                >
+                  Manaslu Circuit: The Hidden Gem
+                </h2>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-700 md:text-[16px]"
+                >
+                  Venture off the beaten path to the Manaslu Circuit, a hidden
+                  gem that offers a pristine trekking experience. Remote
+                  villages, panoramic mountain views, and the challenge of
+                  crossing the Larkya La pass make this trek an adventurer's
+                  dream. Discover the untamed beauty of Manaslu as you traverse
+                  through diverse landscapes and immerse yourself in the raw
+                  allure of the Himalayas.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3 text-xs">
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-medium"
+                    ><strong>14-18</strong> days</span
+                  >
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-medium"
+                    ><strong>5,106m</strong> max altitude</span
+                  >
+                  <span
+                    class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-black"
+                    >Challenging</span
+                  >
+                </div>
+              </div>
+              <div
+                class="overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-200/60"
+              >
+                <img
+                  src="../Images/Home/manaslu1.png"
+                  alt="Remote village along the Manaslu circuit"
+                  class="h-[260px] w-full object-cover sm:h-[340px] lg:h-[420px]"
+                />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section
+        id="conclusion"
+        class="bg-[#f4f6f8] px-5 py-16 text-center lg:px-8 lg:py-24"
+      >
+        <div class="mx-auto max-w-5xl">
+          <p
+            class="text-[11px] font-black uppercase tracking-[0.28em] text-[#F58220]"
+          >
+            Conclusion
+          </p>
+          <h2
+            class="mt-4 text-3xl font-black leading-tight text-[#111827] md:text-4xl"
+          >
+            Your Himalayan Story Starts Here
+          </h2>
+          <p
+            class="mx-auto mt-5 max-w-4xl text-sm font-medium leading-7 text-slate-700 md:text-base"
+          >
+            Nepal, with its diverse landscapes and majestic peaks, is a treasure
+            trove for trekking enthusiasts. Whether you seek the challenge of
+            Everest, the tranquility of Annapurna, the serenity of Langtang, or
+            the hidden wonders of Manaslu, Nepal offers an adventure like no
+            other. At Panorama treks, we invite you to embark on a journey that
+            transcends the ordinary, a journey into the heart of the Himalayas.
+          </p>
+
+          <figure class="relative isolate mx-auto mt-16 max-w-3xl">
+            <span
+              class="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-[12rem] font-black leading-none text-slate-200/70"
+              >"</span
+            >
+            <blockquote
+              class="relative z-10 text-xl font-black leading-tight text-[#111827] md:text-2xl"
+            >
+              Every mountain tells a story, and every trail leads to a new
+              adventure.
+            </blockquote>
+            <figcaption
+              class="relative z-10 mt-4 text-xs font-medium text-slate-500"
+            >
+              Panorama Himalaya Trekking &amp; Expedition
+            </figcaption>
+          </figure>
+
+          <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-xl bg-white p-6 shadow-md shadow-slate-300/50">
+              <i
+                data-lucide="mountain-snow"
+                class="mx-auto h-7 w-7 text-[#F58220]"
+              ></i>
+              <p class="mt-2 text-2xl font-black text-[#111827]">8</p>
+              <p class="text-xs font-medium text-slate-500">Highest Peaks</p>
+            </div>
+            <div class="rounded-xl bg-white p-6 shadow-md shadow-slate-300/50">
+              <i
+                data-lucide="footprints"
+                class="mx-auto h-7 w-7 text-[#F58220]"
+              ></i>
+              <p class="mt-2 text-2xl font-black text-[#111827]">200+</p>
+              <p class="text-xs font-medium text-slate-500">Trekking Routes</p>
+            </div>
+            <div class="rounded-xl bg-white p-6 shadow-md shadow-slate-300/50">
+              <i
+                data-lucide="globe-2"
+                class="mx-auto h-7 w-7 text-[#F58220]"
+              ></i>
+              <p class="mt-2 text-2xl font-black text-[#111827]">125+</p>
+              <p class="text-xs font-medium text-slate-500">Rich Cultures</p>
+            </div>
+            <div class="rounded-xl bg-white p-6 shadow-md shadow-slate-300/50">
+              <i data-lucide="heart" class="mx-auto h-7 w-7 text-[#F58220]"></i>
+              <p class="mt-2 text-2xl font-black text-[#111827]">10,000+</p>
+              <p class="text-xs font-medium text-slate-500">Happy Trekkers</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="relative overflow-hidden bg-[#08213D] px-5 py-10 text-white lg:px-8"
+    >
+      <div class="absolute inset-0 bg-[#08213D]/90"></div>
+      <div class="relative z-10 mx-auto w-full max-w-[1584px] pt-[52px]">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Panorama Trekking</h3>
+            <p class="mt-3 text-sm leading-6 text-white/80">
+              A local trekking company in Nepal specialized in Himalayan
+              adventures with professional Sherpa guides.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Quick Links</h3>
+            <ul class="mt-3 space-y-1 text-sm text-white/80">
+              <li>
+                <a href="./index.html" class="hover:text-[#F58220]">Home</a>
+              </li>
+              <li>
+                <a href="./about-panorama.html" class="hover:text-[#F58220]"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="./our-team.html" class="hover:text-[#F58220]"
+                  >Our Team</a
+                >
+              </li>
+              <li>
+                <a href="./index.html#treks" class="hover:text-[#F58220]"
+                  >All Treks</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Popular Treks</h3>
+            <ul class="mt-3 space-y-1 text-sm text-white/80">
+              <li>Everest Base Camp Trek</li>
+              <li>Annapurna Circuit Trek</li>
+              <li>Manaslu Circuit Trek</li>
+              <li>Langtang Valley Trek</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold uppercase">Contact Info</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li class="flex gap-2">
+                <i
+                  data-lucide="map-pin"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i
+                >Kapan, Kathmandu, Nepal
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="phone"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i
+                >+977 9841373860 (24/7)
+              </li>
+              <li class="flex gap-2">
+                <i
+                  data-lucide="mail"
+                  class="mt-0.5 h-4 w-4 shrink-0 text-[#F58220]"
+                ></i
+                >info@panoramatrekking.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p
+          class="mt-8 border-t border-white/15 pt-5 text-center text-xs text-white/70"
+        >
+          © 2024 Panorama Trekking Nepal Pvt. Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+  </body>
+</html>

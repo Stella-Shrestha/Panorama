@@ -77,6 +77,44 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
+  const aboutItems = [
+    {
+      label: "About Panorama",
+      href: "./about-panorama.html",
+      icon: "info",
+    },
+    {
+      label: "Our Team",
+      href: "./our-team.html",
+      icon: "users",
+    },
+    {
+      label: "Legal Documents",
+      href: "./legal-documents.html",
+      icon: "file-text",
+    },
+    {
+      label: "Gallery",
+      href: "./gallery.html",
+      icon: "images",
+    },
+    {
+      label: "Blog",
+      href: "./blog.html",
+      icon: "newspaper",
+    },
+    {
+      label: "Testimonials",
+      href: "./testimonials.html",
+      icon: "message-square-heart",
+    },
+    {
+      label: "FAQ",
+      href: "./faq.html",
+      icon: "circle-help",
+    },
+  ];
+
   function isTreksLink(link) {
     return link && link.textContent.trim().toLowerCase() === "treks";
   }
@@ -391,6 +429,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   normalizeTreksNavigation();
+  normalizeDropdownNavigation({
+    label: "About Us",
+    desktopId: "aboutDropdown",
+    mobileId: "mobileAboutDropdown",
+    widthClass: "w-72",
+    items: aboutItems,
+  });
   normalizeDropdownNavigation({
     label: "Peaks & Expendition",
     desktopId: "destinationsDropdown",
