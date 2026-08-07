@@ -440,6 +440,78 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function clearActiveNavigationState() {
+    document.querySelectorAll("nav a").forEach(function (link) {
+      link.removeAttribute("aria-current");
+      link.classList.remove("text-[#F58220]");
+      link.classList.remove("bg-orange-50");
+      link.classList.remove("bg-white");
+      link.classList.remove("relative");
+      link.classList.remove("after:absolute");
+      link.classList.remove("after:bottom-0");
+      link.classList.remove("after:left-0");
+      link.classList.remove("after:h-0.5");
+      link.classList.remove("after:w-full");
+      link.classList.remove("after:bg-[#F58220]");
+      link.classList.remove("after:content-['']");
+    });
+
+    document.querySelectorAll("nav .desktop-dropdown-button, nav .mobile-dropdown-button").forEach(function (button) {
+      button.classList.remove("text-[#F58220]");
+    });
+  }
+
+  function applyActiveNavigationState() {
+    clearActiveNavigationState();
+
+    document.querySelectorAll("nav a[href]").forEach(function (link) {
+      const href = link.getAttribute("href") || "";
+
+      if (!href || href === "#" || !isCurrentPage(href)) {
+        return;
+      }
+
+      link.setAttribute("aria-current", "page");
+
+      if (link.closest(".desktop-dropdown, .mobile-dropdown")) {
+        link.classList.add("bg-orange-50", "text-[#F58220]");
+      } else {
+        link.classList.add("text-[#F58220]");
+
+        if (isTextLink(link, "Home")) {
+          link.classList.add(
+            "relative",
+            "after:absolute",
+            "after:bottom-0",
+            "after:left-0",
+            "after:h-0.5",
+            "after:w-full",
+            "after:bg-[#F58220]",
+            "after:content-['']",
+          );
+        }
+      }
+    });
+
+    document
+      .querySelectorAll("nav .desktop-dropdown-button, nav .mobile-dropdown-button")
+      .forEach(function (button) {
+        const dropdownId = button.getAttribute("aria-controls");
+        const dropdown = dropdownId ? document.getElementById(dropdownId) : null;
+
+        if (!dropdown) {
+          return;
+        }
+
+        const hasActiveLink = Array.from(dropdown.querySelectorAll("a[href]"))
+          .some(function (link) {
+            return isCurrentPage(link.getAttribute("href") || "");
+          });
+
+        button.classList.toggle("text-[#F58220]", hasActiveLink);
+      });
+  }
+
   normalizeTreksNavigation();
   normalizeDropdownNavigation({
     label: "About Us",
@@ -465,6 +537,7 @@ document.addEventListener("DOMContentLoaded", function () {
     insertAfterText: "Peaks & Expendition",
   });
   normalizeContactLinks();
+  applyActiveNavigationState();
 
   const desktopDropdownButtons = document.querySelectorAll(
     ".desktop-dropdown-button",

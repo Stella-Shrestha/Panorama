@@ -20,11 +20,14 @@
   <body
     class="min-h-full overflow-x-hidden bg-[#FCFCFC] font-[Inter,sans-serif] text-[#10233f] antialiased"
   >
+
     <header>
+
       <div class="hidden w-full bg-[#122B55] lg:block">
         <div
           class="mx-auto flex w-full max-w-[1584px] items-center justify-between px-5 py-2"
         >
+
           <div class="flex items-center gap-6">
             <a
               href="https://maps.google.com/?q=Kapan,Kathmandu,Nepal"
@@ -32,21 +35,35 @@
               rel="noopener noreferrer"
               class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
             >
-              <i data-lucide="map-pin" class="h-4 w-4 text-[#FAB331]"></i>
+              <i
+                data-lucide="map-pin"
+                class="h-4 w-4 shrink-0 text-[#FAB331]"
+              ></i>
+
               <span>Kapan, Kathmandu, Nepal</span>
             </a>
+
             <a
               href="tel:+9771234567890"
               class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
             >
-              <i data-lucide="phone" class="h-4 w-4 text-[#FAB331]"></i>
+              <i
+                data-lucide="phone"
+                class="h-4 w-4 shrink-0 text-[#FAB331]"
+              ></i>
+
               <span>+977 123 456 7890</span>
             </a>
+
             <a
               href="mailto:info@panoramatrekking.com"
               class="flex items-center gap-2 text-sm text-white transition-colors hover:text-[#FAB331]"
             >
-              <i data-lucide="mail" class="h-4 w-4 text-[#FAB331]"></i>
+              <i
+                data-lucide="mail"
+                class="h-4 w-4 shrink-0 text-[#FAB331]"
+              ></i>
+
               <span>info@panoramatrekking.com</span>
             </a>
           </div>
@@ -63,7 +80,12 @@
             >
               English
             </a>
-            <span class="h-4 w-px bg-white/30" aria-hidden="true"></span>
+
+            <span
+              class="h-4 w-px bg-white/30"
+              aria-hidden="true"
+            ></span>
+
             <a
               href="#"
               lang="fr"
@@ -81,13 +103,15 @@
       aria-label="Main navigation"
     >
       <div
-        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 px-5 py-3"
+        class="mx-auto flex w-full max-w-[1584px] items-center justify-between gap-6 py-3 lg:px-5 py-3"
       >
+
         <a
-          href="./index.html"
+          href="#"
           class="shrink-0"
           aria-label="Panorama Trekking home"
         >
+
           <img
             src="../Images/logo.png"
             alt="Panorama Trekking"
@@ -100,8 +124,9 @@
         >
           <li>
             <a
-              href="./index.html"
-              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
+              href="#"
+              class="relative inline-flex py-3 text-[#F58220] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#F58220] after:content-['']"
+              aria-current="page"
             >
               Home
             </a>
@@ -110,11 +135,12 @@
           <li class="relative">
             <button
               type="button"
-              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 text-[#F58220]"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
               aria-expanded="false"
               aria-controls="aboutDropdown"
             >
               About Us
+
               <i
                 data-lucide="chevron-down"
                 class="dropdown-arrow h-4 w-4 transition-transform duration-200"
@@ -123,7 +149,7 @@
 
             <div
               id="aboutDropdown"
-              class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
+              class="desktop-dropdown invisible pointer-events-none absolute opacity-0 translate-y-2.5 transition-all duration-200 left-1/2 top-full w-72 -translate-x-1/2 pt-3"
             >
               <div
                 class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
@@ -133,22 +159,28 @@
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
                   <i data-lucide="info" class="h-4 w-4"></i>
+
                   About Panorama
                 </a>
+
                 <a
                   href="./our-team.html"
-                  class="flex items-center gap-3 rounded-lg bg-orange-50 px-3 py-3 text-sm font-medium text-[#F58220]"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
                   <i data-lucide="users" class="h-4 w-4"></i>
+
                   Our Team
                 </a>
+
                 <a
                   href="./legal-documents.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
                   <i data-lucide="file-text" class="h-4 w-4"></i>
+
                   Legal Documents
                 </a>
+
                 <a
                   href="./gallery.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
@@ -157,11 +189,324 @@
                   Gallery
                 </a>
                 <a
+                  href="./blog.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="newspaper" class="h-4 w-4"></i>
+                  Blog
+                </a>
+                <a
                   href="./testimonials.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
                   <i data-lucide="message-square-heart" class="h-4 w-4"></i>
+
                   Testimonials
+                </a>
+                <a
+                  href="./faq.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i data-lucide="circle-help" class="h-4 w-4"></i>
+                  FAQ
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="treksDropdown"
+            >
+              Treks
+
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+
+            <div
+              id="treksDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute opacity-0 translate-y-2.5 transition-all duration-200 left-1/2 top-full w-[min(680px,calc(100vw-2rem))] -translate-x-1/2 pt-3"
+            >
+              <div
+                class="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_24px_65px_-20px_rgba(15,23,42,0.35)]"
+              >
+                <div class="grid grid-cols-3 gap-6">
+
+                  <div>
+                    <div
+                      class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
+                    >
+                      <span
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                      >
+                        <i
+                          data-lucide="mountain"
+                          class="h-5 w-5"
+                        ></i>
+                      </span>
+
+                      <h3 class="font-bold text-[#122B55]">
+                        Everest Region
+                      </h3>
+                    </div>
+
+                    <ul class="space-y-1">
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Everest Base Camp Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Everest Gokyo Lake Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Three Passes Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Island Peak Climbing
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div
+                      class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
+                    >
+                      <span
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                      >
+                        <i
+                          data-lucide="map"
+                          class="h-5 w-5"
+                        ></i>
+                      </span>
+
+                      <h3 class="font-bold text-[#122B55]">
+                        Annapurna Region
+                      </h3>
+                    </div>
+
+                    <ul class="space-y-1">
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Annapurna Base Camp
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Annapurna Circuit Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Mardi Himal Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Ghorepani Poon Hill
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div
+                      class="mb-3 flex items-center gap-2 border-b border-slate-200 pb-3"
+                    >
+                      <span
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#F58220]/10 text-[#F58220]"
+                      >
+                        <i
+                          data-lucide="trees"
+                          class="h-5 w-5"
+                        ></i>
+                      </span>
+
+                      <h3 class="font-bold text-[#122B55]">
+                        Langtang Region
+                      </h3>
+                    </div>
+
+                    <ul class="space-y-1">
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Langtang Valley Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Gosaikunda Lake Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Tamang Heritage Trek
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          href="#"
+                          class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                        >
+                          Helambu Trek
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div
+                  class="mt-6 flex items-center justify-between rounded-xl bg-[#122B55] px-5 py-4"
+                >
+                  <div>
+                    <p class="text-sm font-bold text-white">
+                      Explore trekking adventures
+                    </p>
+
+                    <p class="mt-1 text-xs text-white/70">
+                      Discover the best trekking routes in Nepal.
+                    </p>
+                  </div>
+
+                  <a
+                    href="#treks"
+                    class="inline-flex items-center gap-2 rounded-lg bg-[#F58220] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-white hover:text-[#122B55]"
+                  >
+                    View All Treks
+
+                    <i
+                      data-lucide="arrow-right"
+                      class="h-4 w-4"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="relative">
+            <button
+              type="button"
+              class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]"
+              aria-expanded="false"
+              aria-controls="destinationsDropdown"
+            >
+              Peaks & Expendition
+
+              <i
+                data-lucide="chevron-down"
+                class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+              ></i>
+            </button>
+
+            <div
+              id="destinationsDropdown"
+              class="desktop-dropdown invisible pointer-events-none absolute opacity-0 translate-y-2.5 transition-all duration-200 left-1/2 top-full w-64 -translate-x-1/2 pt-3"
+            >
+              <div
+                class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
+              >
+                <a
+                  href="./nepal.html"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="mountain-snow"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Nepal
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="landmark"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Tibet
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="trees"
+                    class="h-4 w-4"
+                  ></i>
+
+                  Bhutan
+                </a>
+
+                <a
+                  href="#"
+                  class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
+                >
+                  <i
+                    data-lucide="map-pinned"
+                    class="h-4 w-4"
+                  ></i>
+
+                  India
                 </a>
               </div>
             </div>
@@ -169,20 +514,13 @@
 
           <li>
             <a
-              href="./index.html#treks"
-              class="inline-flex py-3 transition-colors hover:text-[#F58220]"
-            >
-              Treks
-            </a>
-          </li>
-          <li>
-            <a
-              href="./index.html#dayTours"
+              href="#dayTours"
               class="inline-flex py-3 transition-colors hover:text-[#F58220]"
             >
               Day Tours
             </a>
           </li>
+
           <li class="relative">
             <button
               type="button"
@@ -191,6 +529,7 @@
               aria-controls="travelGuideDropdown"
             >
               Travel Guide
+
               <i
                 data-lucide="chevron-down"
                 class="dropdown-arrow h-4 w-4 transition-transform duration-200"
@@ -199,7 +538,7 @@
 
             <div
               id="travelGuideDropdown"
-              class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-72 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200"
+              class="desktop-dropdown invisible pointer-events-none absolute opacity-0 translate-y-2.5 transition-all duration-200 left-1/2 top-full w-72 -translate-x-1/2 pt-3"
             >
               <div
                 class="rounded-xl border border-slate-200 bg-white p-3 shadow-xl"
@@ -208,33 +547,55 @@
                   href="./travel-insurance.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i data-lucide="shield-check" class="h-4 w-4"></i>
+                  <i
+                    data-lucide="shield-check"
+                    class="h-4 w-4"
+                  ></i>
+
                   Travel Insurance
                 </a>
+
                 <a
                   href="./trekking-permit-fee.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i data-lucide="file-text" class="h-4 w-4"></i>
+                  <i
+                    data-lucide="file-text"
+                    class="h-4 w-4"
+                  ></i>
+
                   Trekking Permit & Fee
                 </a>
+
                 <a
                   href="./visa-info.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i data-lucide="stamp" class="h-4 w-4"></i>
+                  <i
+                    data-lucide="stamp"
+                    class="h-4 w-4"
+                  ></i>
+
                   Visa Info
                 </a>
+
                 <a
                   href="./foreign-embassies.html"
                   class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-orange-50 hover:text-[#F58220]"
                 >
-                  <i data-lucide="landmark" class="h-4 w-4"></i>
+                  <i
+                    data-lucide="landmark"
+                    class="h-4 w-4"
+                  ></i>
+
                   Foreign Embassies in Nepal
                 </a>
+
+
               </div>
             </div>
           </li>
+
           <li>
             <a
               href="./contact-us.html"
@@ -246,8 +607,8 @@
         </ul>
 
         <a
-          href="./index.html#quote"
-          class="hidden shrink-0 rounded-lg bg-[#F58220] px-4 py-3 text-sm font-bold uppercase text-white shadow-sm transition-colors hover:bg-[#d96b11] lg:inline-flex xl:px-7"
+          href="#quote"
+          class="hidden shrink-0 rounded-lg bg-[#F58220] px-4 py-3 text-sm font-bold uppercase text-white shadow-sm transition-colors duration-300 hover:bg-[#d96b11] lg:inline-flex xl:px-7"
         >
           Get a Quote
         </a>
@@ -260,7 +621,11 @@
           aria-expanded="false"
           aria-controls="mobileMenu"
         >
-          <i id="mobileMenuIcon" data-lucide="menu" class="h-6 w-6"></i>
+          <i
+            id="mobileMenuIcon"
+            data-lucide="menu"
+            class="h-6 w-6"
+          ></i>
         </button>
       </div>
 
@@ -272,25 +637,28 @@
           <ul class="space-y-1 text-sm font-semibold text-[#122B55]">
             <li>
               <a
-                href="./index.html"
-                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                href="#"
+                class="mobile-link block rounded-lg bg-orange-50 px-4 py-3 text-[#F58220]"
               >
                 Home
               </a>
             </li>
+
             <li>
               <button
                 type="button"
-                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-[#F58220]"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
                 aria-expanded="false"
                 aria-controls="mobileAboutDropdown"
               >
                 <span>About Us</span>
+
                 <i
                   data-lucide="chevron-down"
                   class="dropdown-arrow h-4 w-4 transition-transform duration-200"
                 ></i>
               </button>
+
               <div
                 id="mobileAboutDropdown"
                 class="mobile-dropdown hidden px-3 pb-3"
@@ -304,18 +672,21 @@
                   >
                     About Panorama
                   </a>
+
                   <a
                     href="./our-team.html"
-                    class="mobile-link block rounded-lg bg-white px-3 py-2.5 text-xs font-bold text-[#F58220]"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
                   >
                     Our Team
                   </a>
+
                   <a
                     href="./legal-documents.html"
                     class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
                   >
                     Legal Documents
                   </a>
+
                   <a
                     href="./gallery.html"
                     class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
@@ -323,30 +694,215 @@
                     Gallery
                   </a>
                   <a
+                    href="./blog.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Blog
+                  </a>
+                  <a
                     href="./testimonials.html"
                     class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
                   >
                     Testimonials
                   </a>
+                  <a
+                    href="./faq.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    FAQ
+                  </a>
                 </div>
               </div>
             </li>
+
             <li>
-              <a
-                href="./index.html#treks"
-                class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileTreksDropdown"
               >
-                Treks
-              </a>
+                <span>Treks</span>
+
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+
+              <div
+                id="mobileTreksDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-4"
+                >
+                  <div>
+                    <h3
+                      class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
+                    >
+                      <i
+                        data-lucide="mountain"
+                        class="h-4 w-4 text-[#F58220]"
+                      ></i>
+
+                      Everest Region
+                    </h3>
+
+                    <div class="space-y-1 border-l border-slate-300 pl-3">
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Everest Base Camp Trek
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Everest Gokyo Trek
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Three Passes Trek
+                      </a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3
+                      class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
+                    >
+                      <i
+                        data-lucide="map"
+                        class="h-4 w-4 text-[#F58220]"
+                      ></i>
+
+                      Annapurna Region
+                    </h3>
+
+                    <div class="space-y-1 border-l border-slate-300 pl-3">
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Annapurna Base Camp
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Annapurna Circuit
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Mardi Himal Trek
+                      </a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3
+                      class="mb-2 flex items-center gap-2 font-bold text-[#122B55]"
+                    >
+                      <i
+                        data-lucide="trees"
+                        class="h-4 w-4 text-[#F58220]"
+                      ></i>
+
+                      Langtang Region
+                    </h3>
+
+                    <div class="space-y-1 border-l border-slate-300 pl-3">
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Langtang Valley Trek
+                      </a>
+
+                      <a
+                        href="#"
+                        class="mobile-link block rounded-md px-3 py-2 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                      >
+                        Gosaikunda Lake Trek
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
+
+            <li>
+              <button
+                type="button"
+                class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]"
+                aria-expanded="false"
+                aria-controls="mobileDestinationsDropdown"
+              >
+                <span>Destinations</span>
+
+                <i
+                  data-lucide="chevron-down"
+                  class="dropdown-arrow h-4 w-4 transition-transform duration-200"
+                ></i>
+              </button>
+
+              <div
+                id="mobileDestinationsDropdown"
+                class="mobile-dropdown hidden px-3 pb-3"
+              >
+                <div
+                  class="space-y-1 rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <a
+                    href="./nepal.html"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Nepal
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Tibet
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    Bhutan
+                  </a>
+
+                  <a
+                    href="#"
+                    class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
+                  >
+                    India
+                  </a>
+                </div>
+              </div>
+            </li>
+
             <li>
               <a
-                href="./index.html#dayTours"
+                href="#dayTours"
                 class="mobile-link block rounded-lg px-4 py-3 transition-colors hover:bg-slate-100 hover:text-[#F58220]"
               >
                 Day Tours
               </a>
             </li>
+
             <li>
               <button
                 type="button"
@@ -355,11 +911,13 @@
                 aria-controls="mobileTravelDropdown"
               >
                 <span>Travel Guide</span>
+
                 <i
                   data-lucide="chevron-down"
                   class="dropdown-arrow h-4 w-4 transition-transform duration-200"
                 ></i>
               </button>
+
               <div
                 id="mobileTravelDropdown"
                 class="mobile-dropdown hidden px-3 pb-3"
@@ -373,18 +931,21 @@
                   >
                     Travel Insurance
                   </a>
+
                   <a
                     href="./trekking-permit-fee.html"
                     class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
                   >
                     Trekking Permit & Fee
                   </a>
+
                   <a
                     href="./visa-info.html"
                     class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
                   >
                     Visa Info
                   </a>
+
                   <a
                     href="./foreign-embassies.html"
                     class="mobile-link block rounded-lg px-3 py-2.5 text-xs font-medium text-slate-600 hover:bg-white hover:text-[#F58220]"
@@ -394,6 +955,7 @@
                 </div>
               </div>
             </li>
+
             <li>
               <a
                 href="./contact-us.html"
@@ -405,7 +967,7 @@
           </ul>
 
           <a
-            href="./index.html#quote"
+            href="#quote"
             class="mobile-link mt-4 flex items-center justify-center rounded-lg bg-[#F58220] px-6 py-3 text-sm font-bold uppercase text-white transition-colors hover:bg-[#d96b11]"
           >
             Get a Quote
