@@ -2,18 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const documents = {
     registration: {
       type: "Certificate",
-      title: "Company Registration Certificate",
+      title: "Companys Registration Certificate",
       image: "../Images/docs/officeregistrar.jpeg",
     },
     license: {
       type: "License",
       title: "Trekking Agency Operating License",
-      image: "../Images/Home/details/bg.jpeg",
+      image: "../Images/docs/Tourism-board.jpeg",
     },
     exchange: {
       type: "Approval",
       title: "Foreign Exchange Authorization",
-      image: "../Images/Home/Background.png",
+      image: "../Images/docs/NRB-license.jpeg",
     },
   };
 
@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
     title: document.getElementById("modalDocumentTitle"),
   };
 
+  const header = document.getElementById("modalDocumentHeader");
+
   function openModal(documentKey) {
     const item = documents[documentKey];
 
@@ -35,8 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fields.image.src = item.image;
     fields.image.alt = item.title;
-    fields.type.textContent = item.type;
-    fields.title.textContent = item.title;
+    if (fields.type) fields.type.textContent = item.type;
+    if (fields.title) fields.title.textContent = item.title;
+    if (header) header.textContent = item.title;
+    if (header) header.textContent = item.title;
 
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");

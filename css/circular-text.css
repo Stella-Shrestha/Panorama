@@ -1,0 +1,75 @@
+/* Circular text styles */
+.circular-text-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.circular-text-js {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translateZ(0);
+}
+
+.circular-text-js svg {
+  overflow: visible;
+}
+
+.circular-text-js span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 0;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: #b7392f;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: pre;
+  display: inline-block;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* smaller dot separator */
+.circular-text-js span::after {
+  content: "";
+}
+
+@media (min-width: 768px) {
+  .circular-text-js span {
+    font-size: 12px;
+  }
+}
+
+@layer utilities {
+  @keyframes seal-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-seal-spin {
+    transform-origin: center;
+    animation: seal-spin 46s linear infinite;
+  }
+
+  .animate-seal-spin:hover {
+    animation-duration: 10s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-seal-spin {
+      animation: none;
+    }
+  }
+}
