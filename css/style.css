@@ -1274,12 +1274,14 @@ footer h3 {
   }
 
   #reviewModal,
+  #blogPostModal,
   #teamModal,
   #legalDocumentModal {
     padding: 1rem;
   }
 
   #reviewModal section,
+  #blogPostModal section,
   #teamModal section,
   #legalDocumentModal section {
     border-radius: 1.25rem;
@@ -1294,6 +1296,7 @@ footer h3 {
   }
 
   #modalReviewTitle,
+  #modalBlogTitle,
   #modalMemberName,
   #modalDocumentTitle {
     /* font-size: clamp(, 7vw, 30px); */

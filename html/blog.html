@@ -1059,9 +1059,316 @@
         </div>
       </section>
 
+      <section class="bg-[#f3f5f8] px-5 py-[52px] lg:px-8 lg:py-[110px]">
+        <div class="mx-auto w-full max-w-[1584px]">
+          <div
+            class="mb-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <h2
+                class="text-2xl font-extrabold uppercase tracking-wide text-[#122B55] md:text-3xl"
+              >
+                All Blogs
+              </h2>
+              <div class="mt-2 h-1 w-16 bg-[#F58220]"></div>
+            </div>
+
+            <label class="sr-only" for="blogCategory">Filter blogs</label>
+            <select
+              id="blogCategory"
+              class="h-12 w-full rounded-md border border-slate-200 bg-white px-4 text-sm font-bold text-[#122B55] shadow-sm outline-none transition-colors focus:border-[#F58220] focus:ring-2 focus:ring-[#F58220]/20 sm:w-72"
+            >
+              <option value="all">All Categories</option>
+              <option value="trekking-guides">Trekking Guides</option>
+              <option value="travel-tips">Travel Tips</option>
+              <option value="culture">Culture</option>
+              <option value="stories">Stories</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article
+              data-blog-category="trekking-guides"
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                <img
+                  src="../Images/Home/annapurna.png"
+                  alt="Poon Hill mountain view"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5">
+                <h3
+                  class="text-xl font-extrabold leading-tight text-[#111827]"
+                >
+                  Best Time for Poon Hill Trek
+                </h3>
+                <div
+                  class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs font-extrabold uppercase"
+                >
+                  <time class="text-slate-400" datetime="2026-08-05"
+                    >Aug 05, 2026</time
+                  >
+                  <span class="text-[#F58220]">Trekking Guides</span>
+                </div>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-600 md:text-base"
+                >
+                  A practical month-by-month guide to Poon Hill, with clear
+                  notes on views, weather, crowds, and trail comfort.
+                </p>
+                <a
+                  href="#"
+                  data-blog="poon-hill"
+                  class="blog-read-more mt-5 inline-flex text-sm font-extrabold text-[#F58220] transition-colors hover:text-[#d96b11]"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
+
+            <article
+              data-blog-category="stories"
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                <img
+                  src="../Images/Aboutpage/m1.jpg"
+                  alt="Mountaineer in the Himalayas"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5">
+                <h3
+                  class="text-xl font-extrabold leading-tight text-[#111827]"
+                >
+                  Discover the Enchanting Beauty of Nepal: A Trekker's Paradise
+                </h3>
+                <div
+                  class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs font-extrabold uppercase"
+                >
+                  <time class="text-slate-400" datetime="2026-08-02"
+                    >Aug 02, 2026</time
+                  >
+                  <span class="text-[#F58220]">Stories</span>
+                </div>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-600 md:text-base"
+                >
+                  Discover the enchanting beauty of Nepal and why it remains a
+                  top destination for trekkers worldwide.
+                </p>
+                <a
+                  href="#"
+                  data-blog="discover-nepal"
+                  class="blog-read-more mt-5 inline-flex text-sm font-extrabold text-[#F58220] transition-colors hover:text-[#d96b11]"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
+
+            <article
+              data-blog-category="travel-tips"
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                <img
+                  src="../Images/Home/everest.png"
+                  alt="Everest Base Camp trail"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-full w-full object-cover object-left transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5">
+                <h3
+                  class="text-xl font-extrabold leading-tight text-[#111827]"
+                >
+                  Everest Base Camp Trek Cost
+                </h3>
+                <div
+                  class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs font-extrabold uppercase"
+                >
+                  <time class="text-slate-400" datetime="2026-07-27"
+                    >Jul 27, 2026</time
+                  >
+                  <span class="text-[#F58220]">Travel Tips</span>
+                </div>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-600 md:text-base"
+                >
+                  Understand permits, flights, guides, meals, and the real
+                  budgeting details for a smooth Everest Base Camp trek.
+                </p>
+                <a
+                  href="#"
+                  data-blog="everest-cost"
+                  class="blog-read-more mt-5 inline-flex text-sm font-extrabold text-[#F58220] transition-colors hover:text-[#d96b11]"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
+
+            <article
+              data-blog-category="trekking-guides"
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                <img
+                  src="../Images/Home/manaslu1.png"
+                  alt="Manaslu trekking landscape"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5">
+                <h3
+                  class="text-xl font-extrabold leading-tight text-[#111827]"
+                >
+                  Manaslu Circuit Trek Guide
+                </h3>
+                <div
+                  class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs font-extrabold uppercase"
+                >
+                  <time class="text-slate-400" datetime="2026-07-21"
+                    >Jul 21, 2026</time
+                  >
+                  <span class="text-[#F58220]">Trekking Guides</span>
+                </div>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-600 md:text-base"
+                >
+                  Explore route planning, restricted permits, altitude profile,
+                  and what makes Manaslu one of Nepal's best circuits.
+                </p>
+                <a
+                  href="#"
+                  data-blog="manaslu-guide"
+                  class="blog-read-more mt-5 inline-flex text-sm font-extrabold text-[#F58220] transition-colors hover:text-[#d96b11]"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
+
+            <article
+              data-blog-category="culture"
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                <img
+                  src="../Images/Home/mustang.png"
+                  alt="Upper Mustang landscape"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5">
+                <h3
+                  class="text-xl font-extrabold leading-tight text-[#111827]"
+                >
+                  Upper Mustang Travel Notes
+                </h3>
+                <div
+                  class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs font-extrabold uppercase"
+                >
+                  <time class="text-slate-400" datetime="2026-07-16"
+                    >Jul 16, 2026</time
+                  >
+                  <span class="text-[#F58220]">Culture</span>
+                </div>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-600 md:text-base"
+                >
+                  A concise guide to Mustang's desert valleys, ancient caves,
+                  local culture, permits, and best months to visit.
+                </p>
+                <a
+                  href="#"
+                  data-blog="upper-mustang"
+                  class="blog-read-more mt-5 inline-flex text-sm font-extrabold text-[#F58220] transition-colors hover:text-[#d96b11]"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
+
+            <article
+              data-blog-category="travel-tips"
+              class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                <img
+                  src="../Images/Aboutpage/whychoose.jpg"
+                  alt="Trekkers on a Himalayan trail"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="block h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="px-5 pb-6 pt-5">
+                <h3
+                  class="text-xl font-extrabold leading-tight text-[#111827]"
+                >
+                  How to Train for High Altitude
+                </h3>
+                <div
+                  class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs font-extrabold uppercase"
+                >
+                  <time class="text-slate-400" datetime="2026-07-09"
+                    >Jul 09, 2026</time
+                  >
+                  <span class="text-[#F58220]">Travel Tips</span>
+                </div>
+                <p
+                  class="mt-5 text-sm font-medium leading-7 text-slate-600 md:text-base"
+                >
+                  Simple fitness, pacing, hydration, and acclimatization habits
+                  that help make Himalayan trekking safer and more enjoyable.
+                </p>
+                <a
+                  href="#"
+                  data-blog="altitude-training"
+                  class="blog-read-more mt-5 inline-flex text-sm font-extrabold text-[#F58220] transition-colors hover:text-[#d96b11]"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section
         id="introduction"
-        class="bg-white px-5 pb-[52px] lg:px-8 lg:pb-[110px]"
+        class="hidden bg-white px-5 pb-[52px] lg:px-8 lg:pb-[110px]"
       >
         <div class="mx-auto grid max-w-[1584px] gap-12 px-5 lg:items-start">
           <article>
@@ -1158,7 +1465,7 @@
         </div>
       </section>
 
-      <section class="bg-[#f3f5f8] px-5 py-14 lg:px-8 lg:py-24">
+      <section class="hidden bg-[#f3f5f8] px-5 py-14 lg:px-8 lg:py-24">
         <div
           class="mx-auto grid max-w-[1584px] gap-10 lg:grid-cols-[280px_minmax(0,1fr)] xl:gap-16"
         >
@@ -1441,7 +1748,9 @@
         </div>
       </section>
 
-      <div class="mx-auto max-w-[1584px] px-5 pb-[52px] lg:px-8 lg:pb-[110px]">
+      <div
+        class="mx-auto max-w-[1584px] px-5 pb-[52px] lg:px-8 lg:pb-[110px]"
+      >
         <figure class="relative isolate mx-auto mt-16 max-w-3xl">
           <span
             class="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-[12rem] font-black leading-none text-slate-200/70"
@@ -1524,6 +1833,125 @@
         </div>
       </div>
     </main>
+
+    <div
+      id="blogPostModal"
+      class="fixed inset-0 z-[80] hidden overflow-y-auto bg-[#08213D]/85 px-4 py-5 backdrop-blur-sm sm:px-5 sm:py-8"
+      aria-hidden="true"
+    >
+      <div
+        class="mx-auto flex min-h-full max-w-[980px] items-center justify-center"
+      >
+        <section
+          class="relative w-full overflow-hidden rounded-3xl bg-white shadow-2xl"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modalBlogTitle"
+        >
+          <button
+            id="blogPostModalClose"
+            type="button"
+            class="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-xl bg-[#10233f] text-white transition-colors hover:bg-[#F58220]"
+            aria-label="Close blog story"
+          >
+            <i data-lucide="x" class="h-5 w-5"></i>
+          </button>
+
+          <div
+            class="relative h-[260px] bg-slate-200 sm:h-[360px] md:h-[420px] lg:h-[460px]"
+          >
+            <img
+              id="modalBlogImage"
+              src="../Images/Home/annapurna.png"
+              alt="Snow-covered Annapurna mountain landscape"
+              class="h-full w-full object-cover object-top"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#10233f]/80 via-[#10233f]/20 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-6 left-5 right-16 text-white sm:bottom-8 sm:left-8 sm:right-20"
+            >
+              <h3
+                id="modalBlogTitle"
+                class="mt-4 text-xl font-extrabold uppercase tracking-wide md:text-3xl"
+              >
+                Beautiful Landscapes and Excellent Organization
+              </h3>
+              <p
+                id="modalBlogCategory"
+                class="mt-3 text-xs font-extrabold uppercase tracking-[0.18em] text-[#F58220]"
+              >
+                Stories
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-7 md:p-9">
+            <div
+              class="flex flex-col gap-5 border-b border-slate-200 pb-7 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  id="modalBlogAvatar"
+                  src="../Images/Home/annapurna.png"
+                  alt="Thomas Bernard review"
+                  class="h-14 w-14 rounded-full object-cover object-top"
+                />
+                <div>
+                  <p
+                    id="modalBlogAuthor"
+                    class="text-sm font-bold text-[#111827]"
+                  >
+                    Thomas Bernard
+                  </p>
+                  <p
+                    id="modalBlogMeta"
+                    class="mt-1 text-xs font-medium text-slate-400"
+                  >
+                    Belgium · April 2025
+                  </p>
+                </div>
+              </div>
+              <div id="modalBlogRating" class="flex gap-1 text-[#F5A623]">
+                ★★★★★
+              </div>
+            </div>
+
+            <div
+              id="modalBlogBody"
+              class="mt-7 space-y-4 text-sm font-normal leading-7 text-black/70 md:text-base md:leading-8"
+            >
+              <p>
+                From our arrival in Kathmandu to the final day of the trek,
+                every transfer, lodge and meal was carefully arranged. The
+                changing scenery from green valleys to high mountain landscapes
+                was unforgettable.
+              </p>
+              <p>
+                Our guide helped us understand the rhythm of the route and made
+                sure we had enough time to acclimatize. We always felt informed
+                and supported without losing the sense of adventure.
+              </p>
+              <p>
+                The Annapurna Circuit was more than a trek for us. It was a
+                complete cultural and mountain experience, and Panorama made it
+                feel personal.
+              </p>
+            </div>
+
+            <blockquote
+              id="modalBlogHighlight"
+              class="mt-8 rounded-2xl bg-orange-50 p-6 text-sm font-black leading-6 text-[#10233f]"
+            >
+              The organization gave us freedom to enjoy the mountains without
+              worrying about the details.
+            </blockquote>
+          </div>
+        </section>
+      </div>
+    </div>
+
     <section
       class="relative overflow-hidden bg-[#08213D] px-5 py-12 text-white lg:px-8"
     >
