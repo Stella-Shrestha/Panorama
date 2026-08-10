@@ -85,7 +85,7 @@ table {
   overflow: hidden;
 }
 
-.trek-hero-image-stage > #trekHeroImage {
+.trek-hero-image-stage>#trekHeroImage {
   height: 100%;
   width: 100%;
   border-radius: inherit;
@@ -159,10 +159,10 @@ table {
   bottom: -4rem;
   /* left: 2.4rem; */
   z-index: 10;
-  width:100%;
+  width: 100%;
   display: flex;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
@@ -350,7 +350,7 @@ table {
     overflow: visible;
   }
 
-  .trek-hero-image-stage > #trekHeroImage {
+  .trek-hero-image-stage>#trekHeroImage {
     aspect-ratio: 1.42 / 1;
     height: auto;
     border-radius: 1.5rem;
@@ -562,7 +562,7 @@ table {
   transform: translateY(0);
 }
 
-#secondaryTripNav > div {
+#secondaryTripNav>div {
   width: 100%;
   max-width: 1584px;
   margin-inline: auto;
@@ -570,7 +570,7 @@ table {
 }
 
 @media (min-width: 1648px) {
-  #secondaryTripNav > div {
+  #secondaryTripNav>div {
     width: 1584px;
   }
 }
@@ -704,22 +704,22 @@ table {
   }
 }
 
-#includes details > div > div {
+#includes details>div>div {
   display: flex;
   align-items: flex-start;
   gap: 0.9rem;
   background: transparent;
 }
 
-#includes details > div > div > i,
-#includes details > div > div > svg {
+#includes details>div>div>i,
+#includes details>div>div>svg {
   width: 1.2rem;
   height: 1.2rem;
   margin-top: 0.1rem;
   flex-shrink: 0;
 }
 
-#includes details > div > div > p {
+#includes details>div>div>p {
   margin: 0;
   min-width: 0;
 }
@@ -762,6 +762,7 @@ form button[type="submit"]:focus {
 }
 
 @media (max-width: 768px) {
+
   /* ensure the form actions are comfortable on small screens */
   form button[type="submit"] {
     width: 100% !important;
@@ -776,7 +777,7 @@ form button[type="submit"]:focus {
   padding-inline: 0.25rem;
 }
 
-#mobileAboutDropdown > div {
+#mobileAboutDropdown>div {
   display: grid;
   gap: 0.625rem;
   border-radius: 0.875rem;
@@ -906,8 +907,8 @@ main article {
 }
 
 .team-card:hover img {
-  transform: scale(1.035);
-  filter: saturate(1.04);
+  /* transform: scale(1.035);
+  filter: saturate(1.04); */
 }
 
 .review-card img {
@@ -925,7 +926,7 @@ main article {
   flex-direction: row;
 }
 
-.review-card-meta > div {
+.review-card-meta>div {
   flex: 0 0 auto;
   line-height: 1;
 }
@@ -975,7 +976,7 @@ footer h3 {
     padding-inline: 0.75rem;
   }
 
-  #secondaryTripNav > div {
+  #secondaryTripNav>div {
     gap: 0;
   }
 
@@ -992,7 +993,7 @@ footer h3 {
 }
 
 @media (max-width: 1023px) {
-  body > nav > div {
+  body>nav>div {
     padding-inline: 1.25rem;
   }
 
@@ -1000,7 +1001,7 @@ footer h3 {
     overscroll-behavior: contain;
   }
 
-  #mobileAboutDropdown > div {
+  #mobileAboutDropdown>div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1036,6 +1037,7 @@ footer h3 {
 }
 
 @media (max-width: 767px) {
+
   input,
   select,
   textarea {
@@ -1056,7 +1058,7 @@ footer h3 {
     line-height: 1.18 !important;
   }
 
-  main > section:not(#secondaryTripNav) {
+  main>section:not(#secondaryTripNav) {
     /* padding-block: clamp(2rem, 10vw, 4.5rem); */
   }
 
@@ -1087,9 +1089,9 @@ footer h3 {
     gap: 1rem;
   }
 
-  .destination-hero-collage > img,
-  .destination-hero-collage > div,
-  .trekking-about-collage > img {
+  .destination-hero-collage>img,
+  .destination-hero-collage>div,
+  .trekking-about-collage>img {
     position: relative !important;
     inset: auto !important;
     right: auto !important;
@@ -1102,15 +1104,15 @@ footer h3 {
     transform: none !important;
   }
 
-  .destination-hero-collage > img,
-  .trekking-about-collage > img {
+  .destination-hero-collage>img,
+  .trekking-about-collage>img {
     aspect-ratio: 16 / 11;
     min-height: 12rem;
     object-fit: cover;
   }
 
-  .destination-hero-collage > div,
-  .trekking-about-collage > img + img {
+  .destination-hero-collage>div,
+  .trekking-about-collage>img+img {
     border-width: 0.375rem;
   }
 
@@ -1118,7 +1120,7 @@ footer h3 {
     min-height: 0;
   }
 
-  .trekking-hero-grid > article {
+  .trekking-hero-grid>article {
     min-height: 16rem;
   }
 
@@ -1159,20 +1161,20 @@ footer h3 {
     box-shadow: 0 18px 44px -34px rgba(15, 23, 42, 0.42);
   }
 
-  .team-card > div:first-child {
+  .team-card>div:first-child {
     height: clamp(16rem, 74vw, 24rem);
   }
 
-  .team-card > div:first-child span {
+  .team-card>div:first-child span {
     left: 1rem;
     top: 1rem;
     max-width: calc(100% - 2rem);
     white-space: normal;
   }
 
-  .team-card > div:last-child,
+  .team-card>div:last-child,
   .review-card .p-6,
-  main article > div:last-child {
+  main article>div:last-child {
     /* padding: 1.25rem; */
   }
 
@@ -1222,7 +1224,7 @@ footer h3 {
     padding: 0.75rem;
   }
 
-  #teamProfileModal > div {
+  #teamProfileModal>div {
     align-items: flex-start;
   }
 
@@ -1230,11 +1232,11 @@ footer h3 {
     border-radius: 1rem;
   }
 
-  #teamProfileModal section > div:first-of-type {
+  #teamProfileModal section>div:first-of-type {
     min-height: clamp(18rem, 78vw, 25rem);
   }
 
-  #teamProfileModal section > div:first-of-type > div:last-child {
+  #teamProfileModal section>div:first-of-type>div:last-child {
     padding: 1.25rem;
   }
 
@@ -1245,7 +1247,7 @@ footer h3 {
     width: 2.75rem;
   }
 
-  #teamProfileModal section > div:last-child {
+  #teamProfileModal section>div:last-child {
     padding: 1.5rem;
   }
 
@@ -1258,13 +1260,13 @@ footer h3 {
     grid-template-columns: 1fr;
   }
 
-  #teamProfileModal .mt-8.grid.gap-4 > div {
+  #teamProfileModal .mt-8.grid.gap-4>div {
     align-items: flex-start;
     gap: 0.875rem;
     padding: 0.9rem;
   }
 
-  #teamProfileModal .mt-8.grid.gap-4 > div > span {
+  #teamProfileModal .mt-8.grid.gap-4>div>span {
     height: 2.75rem;
     width: 2.75rem;
   }
@@ -1291,7 +1293,7 @@ footer h3 {
     overflow-wrap: anywhere;
   }
 
-  #teamModal .grid.gap-4 > .flex {
+  #teamModal .grid.gap-4>.flex {
     align-items: flex-start;
   }
 
@@ -1305,7 +1307,7 @@ footer h3 {
 }
 
 @media (max-width: 479px) {
-  #mobileAboutDropdown > div {
+  #mobileAboutDropdown>div {
     grid-template-columns: 1fr;
   }
 
@@ -1324,7 +1326,7 @@ footer h3 {
     gap: 0.5rem;
   }
 
-  .team-card > div:last-child {
+  .team-card>div:last-child {
     padding: 1rem;
   }
 
@@ -1332,7 +1334,7 @@ footer h3 {
     font-size: 1.05rem;
   }
 
-  .team-card > div:last-child .flex.min-w-0 {
+  .team-card>div:last-child .flex.min-w-0 {
     width: 100%;
   }
 
@@ -1351,11 +1353,11 @@ footer h3 {
     border-radius: 0;
   }
 
-  #teamProfileModal section > div:first-of-type {
+  #teamProfileModal section>div:first-of-type {
     min-height: 19rem;
   }
 
-  #teamProfileModal section > div:last-child {
+  #teamProfileModal section>div:last-child {
     padding: 1.25rem 1rem 1.5rem;
   }
 
@@ -1380,11 +1382,11 @@ footer h3 {
 }
 
 @media (max-width: 767px) {
-  .itinerary-day .accordion-button h3 + div {
+  .itinerary-day .accordion-button h3+div {
     display: none;
   }
 
-  .itinerary-day.is-open .accordion-button h3 + div {
+  .itinerary-day.is-open .accordion-button h3+div {
     display: flex;
   }
 
@@ -1392,24 +1394,24 @@ footer h3 {
     min-height: 4rem;
   }
 
-  #includes summary > span {
+  #includes summary>span {
     font-size: 1.125rem;
     line-height: 1.25;
   }
 
-  #includes details > div {
+  #includes details>div {
     gap: 1rem;
     padding: 1.25rem;
   }
 
-  #includes details > div > div {
+  #includes details>div>div {
     gap: 0.85rem;
     font-size: 0.9375rem;
     line-height: 1.55;
   }
 
-  #includes details > div > div > i,
-  #includes details > div > div > svg {
+  #includes details>div>div>i,
+  #includes details>div>div>svg {
     width: 1.3rem;
     height: 1.3rem;
     margin-top: 0.15rem;
@@ -1435,7 +1437,7 @@ footer h3 {
     overflow: visible;
   }
 
-  .trek-hero-image-stage > #trekHeroImage {
+  .trek-hero-image-stage>#trekHeroImage {
     aspect-ratio: 1.42 / 1;
     height: auto;
     border-radius: 1.5rem;
@@ -1511,15 +1513,15 @@ footer h3 {
     width: 100%;
   }
 
-  #routes article:nth-of-type(2) > div:last-child {
+  #routes article:nth-of-type(2)>div:last-child {
     /* padding: 1rem; */
   }
 
-  #routes article:nth-of-type(2) > div:last-child > div {
+  #routes article:nth-of-type(2)>div:last-child>div {
     border-radius: 1.25rem;
   }
 
-  #routes article:nth-of-type(2) > div:last-child > div > div:first-child {
+  #routes article:nth-of-type(2)>div:last-child>div>div:first-child {
     gap: 0.75rem;
     padding: 1rem 1rem 1.1rem;
   }
@@ -1529,12 +1531,12 @@ footer h3 {
     line-height: 1.25;
   }
 
-  #routes article:nth-of-type(2) > div:last-child p:not(:first-child) {
+  #routes article:nth-of-type(2)>div:last-child p:not(:first-child) {
     font-size: 0.95rem;
     line-height: 1.6;
   }
 
-  #routes article:nth-of-type(2) > div:last-child > div > div:last-child {
+  #routes article:nth-of-type(2)>div:last-child>div>div:last-child {
     margin-top: 0;
     padding: 1rem;
     overflow-x: auto;
@@ -1557,7 +1559,7 @@ footer h3 {
     width: 100%;
   }
 
-  #departures > div {
+  #departures>div {
     padding: 0;
     background: transparent;
   }
@@ -1572,7 +1574,7 @@ footer h3 {
     box-shadow: 0 18px 42px -34px rgba(18, 43, 85, 0.45);
   }
 
-  #departures article > div:first-child {
+  #departures article>div:first-child {
     display: flex;
     align-items: baseline;
     gap: 0.8rem;
@@ -1582,29 +1584,29 @@ footer h3 {
     text-align: left;
   }
 
-  #departures article > div:first-child span {
+  #departures article>div:first-child span {
     margin: 0 !important;
   }
 
-  #departures article > div:first-child span:first-child,
-  #departures article > div:first-child span:last-child {
+  #departures article>div:first-child span:first-child,
+  #departures article>div:first-child span:last-child {
     color: #122b55;
     line-height: 1;
     letter-spacing: 0.04em;
   }
 
-  #departures article > div:first-child span:nth-child(2) {
+  #departures article>div:first-child span:nth-child(2) {
     color: #f58220;
     line-height: 0.9;
   }
 
-  #departures article > h3 {
+  #departures article>h3 {
     margin-top: 1.7rem;
     color: #08213d;
     line-height: 1.15;
   }
 
-  #departures article > div:not(:first-child) {
+  #departures article>div:not(:first-child) {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
@@ -1612,34 +1614,34 @@ footer h3 {
     margin-top: 1.8rem;
   }
 
-  #departures article > div:not(:first-child) > p:first-child {
+  #departures article>div:not(:first-child)>p:first-child {
     margin: 0;
     color: #3f4742;
     font-weight: 900;
     letter-spacing: 0.06em;
   }
 
-  #departures article > div:not(:first-child) > p:last-child {
+  #departures article>div:not(:first-child)>p:last-child {
     margin: 0;
     justify-self: end;
   }
 
-  #departures article > div:not(:first-child) > p:last-child span.h-2 {
+  #departures article>div:not(:first-child)>p:last-child span.h-2 {
     width: 0.75rem;
     height: 0.75rem;
   }
 
-  #departures article > div:not(:first-child) > p:last-child span:not(.h-2) {
+  #departures article>div:not(:first-child)>p:last-child span:not(.h-2) {
     color: #3f4742;
   }
 
-  #departures article > div:not(:first-child):last-of-type > p:last-child {
+  #departures article>div:not(:first-child):last-of-type>p:last-child {
     color: #08213d;
     line-height: 1;
   }
 
-  #departures article > a,
-  #departures article > button {
+  #departures article>a,
+  #departures article>button {
     width: 100%;
     height: 4rem;
     margin-top: 2rem;
@@ -1648,7 +1650,7 @@ footer h3 {
     box-shadow: 0 16px 32px -24px rgba(245, 130, 32, 0.75);
   }
 
-  #departures article > button:disabled {
+  #departures article>button:disabled {
     box-shadow: none;
   }
 }
@@ -1697,7 +1699,7 @@ footer h3 {
     border-radius: 1.25rem;
   }
 
-  .team-card > div:first-child {
+  .team-card>div:first-child {
     height: 18rem;
   }
 
@@ -1705,7 +1707,7 @@ footer h3 {
     flex-direction: column;
   }
 
-  .team-card > div:last-child .flex.min-w-0 {
+  .team-card>div:last-child .flex.min-w-0 {
     width: 100%;
   }
 
@@ -1776,4 +1778,11 @@ footer h3 {
     min-height: 4.25rem;
     font-size: 1.05rem;
   }
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
