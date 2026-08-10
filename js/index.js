@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (items.some(function (item) {
       return isCurrentPage(item.href);
     })) {
-      return "desktop-dropdown-button inline-flex items-center gap-1 py-3 text-[#F58220]";
+      return "desktop-dropdown-button inline-flex items-center gap-1 py-3 text-[#F58220] relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#F58220] after:content-['']";
     }
 
     return "desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]";
@@ -210,7 +210,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function createDesktopTreksDropdown() {
     return (
-      '<button type="button" class="desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]" aria-expanded="false" aria-controls="treksDropdown">' +
+      '<button type="button" class="' +
+      getDesktopDropdownButtonClass(trekItems) +
+      '" aria-expanded="false" aria-controls="treksDropdown">' +
       'Treks <i data-lucide="chevron-down" class="dropdown-arrow h-4 w-4 transition-transform duration-200"></i>' +
       "</button>" +
       '<div id="treksDropdown" class="desktop-dropdown invisible pointer-events-none absolute left-1/2 top-full w-72 -translate-x-1/2 translate-y-2.5 pt-3 opacity-0 transition-all duration-200">' +
@@ -237,7 +239,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function createMobileTreksDropdown() {
     return (
-      '<button type="button" class="mobile-dropdown-button flex w-full items-center justify-between rounded-lg px-4 py-3 text-left transition-colors hover:bg-slate-100 hover:text-[#F58220]" aria-expanded="false" aria-controls="mobileTreksDropdown">' +
+      '<button type="button" class="' +
+      getMobileDropdownButtonClass(trekItems) +
+      '" aria-expanded="false" aria-controls="mobileTreksDropdown">' +
       '<span>Treks</span><i data-lucide="chevron-down" class="dropdown-arrow h-4 w-4 transition-transform duration-200"></i>' +
       "</button>" +
       '<div id="mobileTreksDropdown" class="mobile-dropdown hidden px-3 pb-3">' +
@@ -384,10 +388,38 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isCurrentPage("./contact-us.html")) {
         link.setAttribute("aria-current", "page");
         link.classList.add("text-[#F58220]");
+        if (!link.classList.contains("mobile-link")) {
+          link.classList.add(
+            "relative",
+            "after:absolute",
+            "after:bottom-0",
+            "after:left-0",
+            "after:h-0.5",
+            "after:w-full",
+            "after:bg-[#F58220]",
+            "after:content-['']",
+          );
+        }
       }
     });
   }
 
+  function normalizeHomeAndLogoLinks() {
+    document.querySelectorAll('a[aria-label*="home" i], a[aria-label*="Home" i], a img[alt*="Panorama Trekking"]').forEach(function (el) {
+      const link = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+      if (link) {
+        link.setAttribute("href", "./index.html");
+      }
+    });
+
+    document.querySelectorAll("nav a, #mobileMenu a").forEach(function (link) {
+      if (isTextLink(link, "Home")) {
+        link.setAttribute("href", "./index.html");
+      }
+    });
+  }
+
+  normalizeHomeAndLogoLinks();
   normalizeTreksNavigation();
   normalizeDropdownNavigation({
     label: "Peaks & Expendition",
