@@ -108,10 +108,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (items.some(function (item) {
       return isCurrentPage(item.href);
     })) {
-      return "desktop-dropdown-button inline-flex items-center gap-1 py-3 text-[#F58220] relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#F58220] after:content-['']";
+      return "desktop-dropdown-button inline-flex items-center gap-1 py-3 px-3 text-[#F58220] relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#F58220] after:content-['']";
     }
 
-    return "desktop-dropdown-button inline-flex items-center gap-1 py-3 transition-colors hover:text-[#F58220]";
+    return "desktop-dropdown-button inline-flex items-center gap-1 py-3 px-3 transition-colors hover:text-[#F58220]";
   }
 
   function getMobileDropdownButtonClass(items) {
@@ -799,7 +799,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setActiveHomeGalleryImage(
       (activeGalleryImageIndex + direction + activeGalleryImages.length) %
-        activeGalleryImages.length,
+      activeGalleryImages.length,
     );
   }
 
@@ -814,8 +814,8 @@ document.addEventListener("DOMContentLoaded", function () {
       safeAlbum === "all"
         ? homeGalleryImages
         : homeGalleryImages.filter(function (image) {
-            return image.category === safeAlbum;
-          });
+          return image.category === safeAlbum;
+        });
 
     homeGalleryTitle.textContent = getAlbumLabel(safeAlbum);
     homeGalleryCount.textContent =
