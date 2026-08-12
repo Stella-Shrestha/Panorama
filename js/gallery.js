@@ -115,13 +115,17 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderFilters() {
     filters.innerHTML = categories
       .map(function (category) {
+        const isActive = category.value === activeCategory;
+        const activeClasses = isActive 
+          ? "bg-[#122B55] text-white border-[#122B55]" 
+          : "bg-white text-[#122B55] border-slate-300 hover:border-[#122B55]";
         return `
           <button
             type="button"
-            class="gallery-filter shrink-0 rounded-md border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold text-[#122B55] transition-colors hover:border-[#122B55]"
+            class="gallery-filter shrink-0 rounded-md border px-4 py-2.5 text-sm font-bold transition-colors ${activeClasses}"
             data-category="${category.value}"
             role="tab"
-            aria-selected="${category.value === activeCategory}"
+            aria-selected="${isActive}"
           >
             ${category.label}
           </button>
